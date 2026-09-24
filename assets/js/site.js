@@ -217,50 +217,6 @@
     if (empty) empty.hidden = true;
   });
 
-  /* ---------- Photographs ---------- */
-  var gallery = document.getElementById("gallery");
-  if (gallery) {
-    var photos = SITE.photos || [];
-    var filterBox = document.getElementById("gallery-filters");
-    var emptyBox = document.getElementById("gallery-empty");
-    if (!photos.length) {
-      gallery.hidden = true; if (filterBox) filterBox.hidden = true;
-    } else {
-      if (emptyBox) emptyBox.hidden = true;
-      var cats = ["All"].concat(photos.map(function (p) { return p.category; }).filter(function (c, i, a) { return c && a.indexOf(c) === i; }));
-      var active = "All";
-      var drawGallery = function () {
-        gallery.innerHTML = photos.map(function (p, i) {
-          if (active !== "All" && p.category !== active) return "";
-          return '<figure class="photo"><button type="button" data-i="' + i + '"><img src="' + esc(p.src) + '" alt="' + esc(p.title) + '" loading="lazy"></button>' +
-            "<figcaption><span>" + esc(p.title) + (p.place ? ", " + esc(p.place) : "") + "</span><span>" + esc(monthYear(p.date)) + "</span></figcaption></figure>";
-        }).join("");
-      };
-      if (filterBox) {
-        filterBox.innerHTML = cats.map(function (c) { return '<button type="button" class="filter" aria-pressed="' + (c === active) + '">' + esc(c) + "</button>"; }).join("");
-        filterBox.addEventListener("click", function (e) {
-          var b = e.target.closest(".filter"); if (!b) return;
-          active = b.textContent;
-          filterBox.querySelectorAll(".filter").forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
-          drawGallery();
-        });
-      }
-      drawGallery();
-      var box = document.getElementById("lightbox");
-      gallery.addEventListener("click", function (e) {
-        var b = e.target.closest("[data-i]"); if (!b || !box || !box.showModal) return;
-        var p = photos[+b.getAttribute("data-i")];
-        box.querySelector("img").src = p.src;
-        box.querySelector("img").alt = p.title;
-        box.querySelector("p").textContent = [p.title, p.place, monthYear(p.date), p.camera].filter(Boolean).join("  ·  ");
-        box.showModal();
-      });
-      if (box) {
-        box.addEventListener("click", function (e) { if (e.target === box || e.target.closest(".icon-btn")) box.close(); });
-      }
-    }
-  }
-
   /* ---------- Generic tab groups (non-publication pages) ---------- */
   document.querySelectorAll(".tabs[data-tabs]").forEach(initTabs);
 

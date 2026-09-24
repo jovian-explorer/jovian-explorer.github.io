@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Photography | Keshav Aggarwal</title>
-  <meta name="description" content="Astrophotography and travel photographs by Keshav Aggarwal.">
+  <meta name="description" content="Astrophotography, travel and conference photographs by Keshav Aggarwal.">
   <meta name="author" content="Keshav Aggarwal">
   <meta property="og:title" content="Photography | Keshav Aggarwal">
-  <meta property="og:description" content="Astrophotography and travel photographs by Keshav Aggarwal.">
+  <meta property="og:description" content="Astrophotography, travel and conference photographs by Keshav Aggarwal.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://jovian-explorer.github.io/assets/img/portrait.jpg">
   <link rel="icon" href="favicon.ico">
@@ -35,6 +35,7 @@
         <a href="publications.html">Publications</a>
         <a href="software.html">Software</a>
         <a href="talks.html">Talks &amp; Media</a>
+        <a href="travel.html">Travel</a>
         <a href="photography.html" aria-current="page">Photography</a>
         <a href="cv.html">CV</a>
       </nav>
@@ -49,21 +50,53 @@
     <header class="page-head">
       <p class="label">Photography</p>
       <h1>Photography</h1>
-      <p>Night sky, travel and conference trips.</p>
+      <p>Night sky, travel and conference trips. Choose a collection, or open any photograph for the full-size image, location and camera settings.</p>
+      <p class="kit" hidden>Camera: <span id="photo-kit"></span></p>
     </header>
 
-    <div class="filters" id="gallery-filters" role="group" aria-label="Filter photographs"></div>
-    <div class="gallery" id="gallery"></div>
-
-    <div class="placeholder" id="gallery-empty">
-      <p><strong>No photographs added yet.</strong></p>
-      <p>Copy image files (JPEG, about 2000&nbsp;px on the long side) into <code>assets/photos/</code> and list each one in the <code>photos</code> section of <code>assets/js/data.js</code>. Categories become filter buttons automatically.</p>
+    <div class="placeholder" id="photo-empty">
+      <strong>No photographs published yet</strong>
+      <ol>
+        <li>Copy full-size images into <code>assets/photos/originals/</code>, with one sub-folder per collection: <code>night-sky</code>, <code>travel</code>, <code>conferences</code>.</li>
+        <li>Run <code>python3 tools/photos.py</code>. It resizes each image, removes GPS and other metadata from the published copy, and lists it in <code>assets/js/photos.js</code> with its camera settings.</li>
+        <li>Add titles, places and descriptions in <code>assets/js/photos.js</code>, then commit.</li>
+      </ol>
+      <p><a href="photography.html#demo">Preview the layout with sample images</a></p>
     </div>
 
-    <dialog class="lightbox" id="lightbox" aria-label="Photograph">
-      <button class="icon-btn" type="button" aria-label="Close"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-close"></use></svg></button>
-      <img src="" alt="">
-      <p></p>
+    <div id="photo-main">
+      <p class="note-bar" id="demo-note" hidden>Sample images generated in the browser to preview the layout. <a href="photography.html">Leave preview</a></p>
+
+      <section class="section" id="albums-section">
+        <div class="section-head"><h2>Collections</h2></div>
+        <div class="albums" id="albums"></div>
+      </section>
+
+      <section class="section">
+        <div class="section-head" id="photo-grid-head"><h2>Photographs</h2></div>
+        <div class="photo-toolbar">
+          <div class="filters" id="photo-filters" role="group" aria-label="Collection"></div>
+          <div class="right">
+            <span id="photo-count"></span>
+            <label for="photo-sort" class="label">Sort</label>
+            <select class="select" id="photo-sort"><option value="new">Newest first</option><option value="old">Oldest first</option></select>
+          </div>
+        </div>
+        <p class="album-desc" id="album-desc" hidden></p>
+        <div class="jgrid" id="photo-grid"></div>
+      </section>
+    </div>
+
+    <dialog class="lb" id="lightbox" aria-label="Photograph viewer">
+      <div class="lb-inner">
+        <div class="lb-top"><span class="lb-count"></span><button class="icon-btn" type="button" data-lb="close" aria-label="Close"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-close"></use></svg></button></div>
+        <div class="lb-stage">
+          <button class="lb-nav prev" type="button" data-lb="prev" aria-label="Previous photograph"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-left"></use></svg></button>
+          <img class="lb-img" src="" alt="">
+          <button class="lb-nav next" type="button" data-lb="next" aria-label="Next photograph"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-right"></use></svg></button>
+        </div>
+        <div class="lb-cap"><p class="lb-title"></p><p class="lb-place"></p><p class="lb-desc"></p><p class="lb-exif"></p></div>
+      </div>
     </dialog>
   </main>
 
@@ -80,5 +113,7 @@
 
   <script src="assets/js/data.js"></script>
   <script src="assets/js/site.js"></script>
+  <script src="assets/js/photos.js"></script>
+  <script src="assets/js/photography.js"></script>
 </body>
 </html>

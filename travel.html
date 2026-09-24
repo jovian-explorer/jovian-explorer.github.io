@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" data-palette="prussian" data-font="source" data-layout="topbar">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Travel | Keshav Aggarwal</title>
+  <meta name="description" content="Districts of India and cities worldwide visited by Keshav Aggarwal, on interactive maps.">
+  <meta name="author" content="Keshav Aggarwal">
+  <meta property="og:title" content="Travel | Keshav Aggarwal">
+  <meta property="og:description" content="Districts of India and cities worldwide visited by Keshav Aggarwal, on interactive maps.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://jovian-explorer.github.io/assets/img/portrait.jpg">
+  <link rel="icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/prefs.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-name">Keshav Aggarwal</span>
+        <span class="brand-role">Space physics &amp; planetary science</span>
+      </a>
+      <div class="header-profile">
+        <img src="assets/img/portrait.jpg" alt="" width="120" height="120">
+        <div class="profile-icons"><a href="mailto:keshavagg1098@gmail.com" aria-label="Email" title="Email"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-mail"></use></svg></a><a href="https://scholar.google.com/citations?user=KO8MtmEAAAAJ" aria-label="Google Scholar" title="Google Scholar"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-scholar"></use></svg></a><a href="https://orcid.org/0000-0002-7004-8670" aria-label="ORCID" title="ORCID"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-orcid"></use></svg></a><a href="https://www.researchgate.net/profile/Keshav-Aggarwal-4" aria-label="ResearchGate" title="ResearchGate"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-researchgate"></use></svg></a><a href="https://github.com/jovian-explorer" aria-label="GitHub" title="GitHub"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-github"></use></svg></a><a href="https://www.linkedin.com/in/dev-aggarwal/" aria-label="LinkedIn" title="LinkedIn"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-linkedin"></use></svg></a><a href="https://www.youtube.com/@keshavagg1098" aria-label="YouTube" title="YouTube"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-youtube"></use></svg></a><a href="https://jovian-explorer.medium.com/" aria-label="Medium" title="Medium"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-medium"></use></svg></a></div>
+      </div>
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <a href="index.html">About</a>
+        <a href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="software.html">Software</a>
+        <a href="talks.html">Talks &amp; Media</a>
+        <a href="travel.html" aria-current="page">Travel</a>
+        <a href="photography.html">Photography</a>
+        <a href="cv.html">CV</a>
+      </nav>
+      <div class="header-tools">
+        <button class="icon-btn theme-toggle" type="button" aria-label="Toggle dark mode"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-moon"></use></svg></button>
+        <button class="icon-btn nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-menu"></use></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <header class="page-head">
+      <p class="label">Travel</p>
+      <h1>Travel</h1>
+      <p>Districts of India and cities abroad visited for research, conferences and otherwise. Drag to pan; zoom with the buttons, a pinch, or Ctrl + scroll; point at a district or pin for details.</p>
+    </header>
+
+    <div class="stats" id="travel-stats"></div>
+
+    <section class="edit-panel" id="edit-panel" hidden>
+      <h2>Edit mode</h2>
+      <p>Click a district on the India map to mark or unmark it, or find it by name below. On the world map, click a location to add a city pin, or click a pin to change or delete it. Changes stay in this browser. To publish them, copy the data and replace the <code>travel</code> block in <code>assets/js/data.js</code>.</p>
+      <div class="edit-row">
+        <input class="search" id="district-search" list="district-options" placeholder="Find a district and mark it visited" autocomplete="off">
+        <datalist id="district-options"></datalist>
+        <span class="mono muted" id="edit-status"></span>
+      </div>
+      <textarea id="edit-output" readonly aria-label="Travel data for data.js"></textarea>
+      <div class="edit-row">
+        <button class="btn small" type="button" data-act="copy">Copy data</button>
+        <button class="btn small ghost" type="button" data-act="discard">Discard changes</button>
+        <button class="btn small ghost" type="button" data-act="exit">Leave edit mode</button>
+      </div>
+    </section>
+
+    <div class="tabs" role="tablist" aria-label="Map" data-tabs>
+      <button class="tab" role="tab" id="tab-india" aria-controls="panel-india" data-hash="india">India</button>
+      <button class="tab" role="tab" id="tab-world" aria-controls="panel-world" data-hash="world">World</button>
+    </div>
+
+    <div class="tab-panel" role="tabpanel" id="panel-india" aria-labelledby="tab-india">
+      <div class="map-layout">
+        <div>
+          <div class="map-wrap" id="india-map">
+            <svg class="map" role="img" aria-label="Map of India with visited districts shaded"></svg>
+            <div class="map-controls"><button type="button" data-zoom="in" aria-label="Zoom in">+</button><button type="button" data-zoom="out" aria-label="Zoom out">&minus;</button><button type="button" data-zoom="reset" aria-label="Reset view">&#8634;</button></div>
+            <div class="map-legend"><span><i style="background:var(--map-visit)"></i>Visited district</span><span><i class="dot"></i>City</span></div>
+            <div class="map-tip" hidden></div>
+          </div>
+          <p class="map-note">District and state boundaries from <a href="https://www.npmjs.com/package/vardhan-maps">vardhan-maps</a>, derived from &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a> (ODbL) and aligned to the Government of India depiction; approximate, not an official map. Lambert conformal conic projection, standard parallels 12&deg;28&prime;&nbsp;N and 35&deg;10&prime;&nbsp;N.</p>
+        </div>
+        <aside>
+          <h3 class="side-head">Visited districts</h3>
+          <div class="state-groups" id="district-list"></div>
+        </aside>
+      </div>
+    </div>
+
+    <div class="tab-panel" role="tabpanel" id="panel-world" aria-labelledby="tab-world" hidden>
+      <div class="map-wrap" id="world-map">
+        <svg class="map" role="img" aria-label="World map with visited countries shaded and cities pinned"></svg>
+        <div class="map-controls"><button type="button" data-zoom="in" aria-label="Zoom in">+</button><button type="button" data-zoom="out" aria-label="Zoom out">&minus;</button><button type="button" data-zoom="reset" aria-label="Reset view">&#8634;</button></div>
+        <div class="map-legend"><span><i style="background:var(--map-visit-soft)"></i>Visited country</span><span><i style="background:var(--accent);border-radius:50%"></i>City</span></div>
+        <div class="map-tip" hidden></div>
+        <form class="pin-form" id="pin-form" hidden>
+          <label for="pin-name">City<input id="pin-name" name="pin-name" required></label>
+          <label for="pin-country">Country<input id="pin-country" name="pin-country"></label>
+          <div class="two">
+            <label for="pin-lat">Latitude<input id="pin-lat" name="pin-lat" inputmode="decimal" required></label>
+            <label for="pin-lon">Longitude<input id="pin-lon" name="pin-lon" inputmode="decimal" required></label>
+          </div>
+          <div class="two">
+            <label for="pin-date">Date (YYYY-MM)<input id="pin-date" name="pin-date" placeholder="2025-09"></label>
+            <label for="pin-note">Note<input id="pin-note" name="pin-note" placeholder="Conference, fieldwork"></label>
+          </div>
+          <div class="edit-row">
+            <button class="btn small" type="submit">Save pin</button>
+            <button class="btn small ghost" type="button" data-act="cancel">Cancel</button>
+            <button class="btn small danger" type="button" data-act="delete">Delete</button>
+          </div>
+        </form>
+      </div>
+      <p class="map-note">Country boundaries from Natural Earth (public domain) via world-atlas; India as on the India map. Equal Earth projection.</p>
+
+      <section class="section">
+        <div class="section-head"><h2>Cities</h2></div>
+        <div class="table-wrap">
+          <table class="place-table">
+            <thead><tr><th>City</th><th>Country</th><th>Visits</th></tr></thead>
+            <tbody id="place-list"></tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-meta">
+        <span>&copy; <span data-year>2026</span> Keshav Aggarwal</span>
+        <a href="mailto:keshavagg1098@gmail.com">keshavagg1098@gmail.com</a>
+        <a href="design.html">Design samples</a>
+      </div>
+      <div class="footer-links"><a href="mailto:keshavagg1098@gmail.com" aria-label="Email" title="Email"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-mail"></use></svg></a><a href="https://scholar.google.com/citations?user=KO8MtmEAAAAJ" aria-label="Google Scholar" title="Google Scholar"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-scholar"></use></svg></a><a href="https://orcid.org/0000-0002-7004-8670" aria-label="ORCID" title="ORCID"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-orcid"></use></svg></a><a href="https://www.researchgate.net/profile/Keshav-Aggarwal-4" aria-label="ResearchGate" title="ResearchGate"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-researchgate"></use></svg></a><a href="https://github.com/jovian-explorer" aria-label="GitHub" title="GitHub"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-github"></use></svg></a><a href="https://www.linkedin.com/in/dev-aggarwal/" aria-label="LinkedIn" title="LinkedIn"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-linkedin"></use></svg></a><a href="https://www.youtube.com/@keshavagg1098" aria-label="YouTube" title="YouTube"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-youtube"></use></svg></a><a href="https://jovian-explorer.medium.com/" aria-label="Medium" title="Medium"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-medium"></use></svg></a></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/site.js"></script>
+  <script src="assets/vendor/d3.min.js"></script>
+  <script src="assets/vendor/topojson-client.min.js"></script>
+  <script src="assets/data/india.js"></script>
+  <script src="assets/data/world.js"></script>
+  <script src="assets/js/travel.js"></script>
+</body>
+</html>
