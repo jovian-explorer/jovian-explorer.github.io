@@ -6,6 +6,7 @@
 window.SITE = {
   /* ------------------------------------------------------------------
      Publications
+     video: YouTube id of a summary video (adds a "Video" link).
      type: "first"      first-author refereed papers
            "collab"     co-authored papers (JWST ERS collaboration)
            "whitepaper" community white papers
@@ -18,6 +19,7 @@ window.SITE = {
       venue: "Icarus",
       doi: "10.1016/j.icarus.2026.117291",
       arxiv: "2608.03435",
+      video: "Ex9r_Qzf1Dc",
       missions: ["Chandrayaan-2", "Chandrayaan-3", "Venus Express", "Akatsuki"]
     },
     {
@@ -27,6 +29,7 @@ window.SITE = {
       venue: "Journal of Geophysical Research: Planets",
       doi: "10.1029/2026JE009957",
       arxiv: "2608.15512",
+      video: "0qbrOB-qnnA",
       missions: ["Chandrayaan-2"]
     },
     {
@@ -36,6 +39,7 @@ window.SITE = {
       venue: "Monthly Notices of the Royal Astronomical Society",
       doi: "10.1093/mnras/stag554",
       arxiv: "2603.20874",
+      video: "BUyCingJDiM",
       missions: ["Akatsuki"]
     },
     {
@@ -188,15 +192,6 @@ window.SITE = {
       title: "Results from radio occultation studies using Indian Mars Orbiter Mission",
       pdf: "https://github.com/jovian-explorer/Conference-posters/blob/main/URSI_Poster_GEHU_Bhimtal_2024.pdf"
     }
-  ],
-
-  /* ------------------------------------------------------------------
-     YouTube videos. Add one entry per video.
-     id: the 11-character code after "watch?v=" in the video URL.
-     Example:
-       { id: "dQw4w9WgXcQ", title: "Radio occultation, explained", date: "2025-06", note: "Lecture, 42 min" },
-     ------------------------------------------------------------------ */
-  videos: [
   ],
 
   /* ------------------------------------------------------------------

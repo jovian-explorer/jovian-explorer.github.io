@@ -10,7 +10,11 @@
   <meta property="og:description" content="Research of Keshav Aggarwal: solar wind, interplanetary medium and lunar plasma from spacecraft radio occultation; JWST exoplanet atmospheres.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://jovian-explorer.github.io/assets/img/portrait.jpg">
-  <link rel="icon" href="favicon.ico">
+  <link rel="canonical" href="https://jovian-explorer.github.io/research.html">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <meta name="theme-color" content="#1f4f7a">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
@@ -34,7 +38,9 @@
         <a href="research.html" aria-current="page">Research</a>
         <a href="publications.html">Publications</a>
         <a href="software.html">Software</a>
-        <a href="talks.html">Talks &amp; Media</a>
+        <a href="talks.html">Talks</a>
+        <a href="videos.html">Videos</a>
+        <a href="writing.html">Writing</a>
         <a href="travel.html">Travel</a>
         <a href="photography.html">Photography</a>
         <a href="cv.html">CV</a>
@@ -53,13 +59,54 @@
       <p>Radio links between planetary spacecraft and ground stations pass through the solar corona, the interplanetary medium and planetary ionospheres. Phase, frequency and amplitude fluctuations on these links measure electron density and turbulence along the path.</p>
     </header>
 
+    <figure class="figure">
+      <div class="figure-box">
+        <svg viewBox="0 0 900 290" role="img" aria-labelledby="fig-t">
+          <title id="fig-t">Solar conjunction radio sounding geometry</title>
+          <defs>
+            <marker id="arw" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" style="fill: var(--accent)"/></marker>
+            <radialGradient id="corona"><stop offset="0" stop-color="#e3a13a" stop-opacity="0.35"/><stop offset="1" stop-color="#e3a13a" stop-opacity="0"/></radialGradient>
+          </defs>
+          <circle cx="360" cy="120" r="120" fill="url(#corona)"/>
+          <circle class="fig-sun" cx="360" cy="120" r="30"/>
+          <text class="fig-text" x="360" y="72" text-anchor="middle">Sun</text>
+          <line class="fig-faint" x1="360" y1="120" x2="820" y2="150" stroke-dasharray="4 5"/>
+          <line class="fig-accent" x1="62" y1="215" x2="812" y2="151" stroke-width="2"/>
+          <line class="fig-line" x1="360" y1="120" x2="365.9" y2="188.8" stroke-dasharray="3 3"/>
+          <text class="fig-text" x="372" y="160" font-style="italic">r</text>
+          <circle cx="365.9" cy="188.8" r="3" style="fill: var(--ink)"/>
+          <text class="fig-small" x="352" y="179" text-anchor="end">closest approach</text>
+          <g class="fig-accent" stroke-width="1.5" marker-end="url(#arw)">
+            <line x1="310" y1="211" x2="298" y2="233"/>
+            <line x1="367" y1="202" x2="369" y2="228"/>
+            <line x1="418" y1="196" x2="434" y2="217"/>
+          </g>
+          <g style="fill: var(--accent)" fill-opacity="0.35">
+            <circle cx="320" cy="192.8" r="6"/><circle cx="365" cy="188.9" r="6"/><circle cx="410" cy="185.1" r="6"/>
+          </g>
+          <text class="fig-small" x="300" y="256">solar wind carries density irregularities across the line of sight</text>
+          <path class="fig-line" d="M750.1 145.5 A70 70 0 0 0 750.3 156"/>
+          <text class="fig-text" x="733" y="155" font-style="italic">&#949;</text>
+          <circle class="fig-body" cx="820" cy="150" r="10"/>
+          <text class="fig-text" x="820" y="182" text-anchor="middle">Earth</text>
+          <text class="fig-small" x="820" y="198" text-anchor="middle">ground station</text>
+          <rect class="fig-body" x="52" y="207" width="18" height="14" rx="2"/>
+          <line class="fig-line" x1="40" y1="214" x2="52" y2="214"/><line class="fig-line" x1="70" y1="214" x2="82" y2="214"/>
+          <text class="fig-text" x="61" y="245" text-anchor="middle">Spacecraft</text>
+          <text class="fig-small" x="61" y="261" text-anchor="middle">MOM, Akatsuki</text>
+          <text class="fig-small" x="560" y="190" transform="rotate(-4.9 560 190)">radio link, S or X band</text>
+        </svg>
+      </div>
+      <figcaption>Solar conjunction geometry, not to scale. The downlink passes the Sun at heliocentric distance <i>r</i> = <i>d</i>&nbsp;sin&nbsp;<i>&epsilon;</i>, where <i>d</i> is the Sun&ndash;Earth distance and <i>&epsilon;</i> the Sun&ndash;Earth&ndash;probe angle. Density irregularities carried across the line of sight by the solar wind broaden the received Doppler spectrum; the width depends on the wind speed and the fluctuation level near <i>r</i>.</figcaption>
+    </figure>
+
     <div class="feature-list">
       <article class="feature" id="solar-wind">
         <div><span class="label">Solar wind</span><h3>Solar wind speed and coronal density from spectral broadening</h3></div>
         <div class="feature-body">
           <p>Near solar conjunction, a spacecraft signal passes close to the Sun. Density irregularities carried by the solar wind broaden the received Doppler spectrum, and the width of that spectrum scales with the wind speed and the density fluctuation level. I derive both quantities from S-band data of the Indian Mars Orbiter Mission and X-band data of Akatsuki, including the 2016 and 2022 Akatsuki conjunctions at different levels of solar activity.</p>
           <p>Conventional retrievals fix the turbulence spectral index in advance. The framework published in <em>MNRAS</em> (2026) removes this assumption, and the method in <em>Advances in Space Research</em> (2026) generalises the retrieval for a Kolmogorov spectrum.</p>
-          <p class="pub-links"><a class="chip" href="https://doi.org/10.3847/1538-4357/adb627">ApJ 2025</a><a class="chip" href="https://doi.org/10.1093/mnras/staf1305">MNRAS 2025</a><a class="chip" href="https://doi.org/10.1093/mnras/stag554">MNRAS 2026</a><a class="chip" href="https://doi.org/10.1016/j.asr.2026.03.059">ASR 2026</a></p>
+          <p class="pub-links"><a class="chip" href="https://doi.org/10.3847/1538-4357/adb627">ApJ 2025</a><a class="chip" href="https://doi.org/10.1093/mnras/staf1305">MNRAS 2025</a><a class="chip" href="https://doi.org/10.1093/mnras/stag554">MNRAS 2026</a><a class="chip" href="https://www.youtube.com/watch?v=BUyCingJDiM">Video</a><a class="chip" href="https://doi.org/10.1016/j.asr.2026.03.059">ASR 2026</a></p>
         </div>
       </article>
 
@@ -67,7 +114,7 @@
         <div><span class="label">Interplanetary medium</span><h3>Separating the interplanetary signal from planetary occultations</h3></div>
         <div class="feature-body">
           <p>Radio occultation retrievals attribute frequency fluctuations to the atmosphere or ionosphere of the target body. Part of the fluctuation arises in the interplanetary medium between Earth and the spacecraft. I measure this contribution with five datasets: two-way S-band Chandrayaan-3 data outside the lunar ionosphere, two-way S-band Chandrayaan-2 data during lunar occultation, one-way S/X-band Venus Express (VeRa) and Akatsuki data under interplanetary-only conditions, and one-way X-band Akatsuki data during solar occultation.</p>
-          <p class="pub-links"><a class="chip" href="https://doi.org/10.1016/j.icarus.2026.117291">Icarus 2026</a></p>
+          <p class="pub-links"><a class="chip" href="https://doi.org/10.1016/j.icarus.2026.117291">Icarus 2026</a><a class="chip" href="https://www.youtube.com/watch?v=Ex9r_Qzf1Dc">Video</a></p>
         </div>
       </article>
 
@@ -75,7 +122,7 @@
         <div><span class="label">Lunar plasma</span><h3>Plasma turbulence around the Moon</h3></div>
         <div class="feature-body">
           <p>Two-way coherent S-band measurements from the Chandrayaan-2 Radio Science experiment give electron density fluctuations integrated along the Earth&ndash;Moon line of sight. Comparing orbits with the Moon in the solar wind against passages through the terrestrial magnetotail separates the turbulence of the two plasma regimes.</p>
-          <p class="pub-links"><a class="chip" href="https://doi.org/10.1029/2026JE009957">JGR: Planets 2026</a></p>
+          <p class="pub-links"><a class="chip" href="https://doi.org/10.1029/2026JE009957">JGR: Planets 2026</a><a class="chip" href="https://www.youtube.com/watch?v=0qbrOB-qnnA">Video</a></p>
         </div>
       </article>
 
