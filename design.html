@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en" data-palette="prussian" data-font="source" data-layout="topbar">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Design samples | Keshav Aggarwal</title>
+  <meta name="description" content="Colour, typeface and layout options for this website.">
+  <meta name="author" content="Keshav Aggarwal">
+  <meta property="og:title" content="Design samples | Keshav Aggarwal">
+  <meta property="og:description" content="Colour, typeface and layout options for this website.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://jovian-explorer.github.io/assets/img/portrait.jpg">
+  <link rel="icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/prefs.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Public+Sans:wght@400;500;600&display=swap">
+  <style>
+    .ds-current { display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem; align-items: center; padding: 1rem 1.25rem; background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius); margin-bottom: 3rem; }
+    .ds-current dl { display: flex; flex-wrap: wrap; gap: 0.25rem 1.5rem; margin: 0 auto 0 0; }
+    .ds-current dt { font-family: var(--f-mono); font-size: var(--t-xs); color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+    .ds-current dd { margin: 0; font-weight: 600; }
+    .ds-current div.pair { display: grid; }
+    .ds-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .ds-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr)); }
+    .ds-grid-2 { grid-template-columns: repeat(auto-fill, minmax(min(100%, 26rem), 1fr)); }
+    .ds-card { padding: 0; overflow: hidden; gap: 0; }
+    .ds-card[aria-current="true"] { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+    .ds-body { padding: 1rem 1.1rem 1.1rem; display: grid; gap: 0.5rem; }
+    .ds-body h3 { font-size: var(--t-md); }
+    .ds-body p { color: var(--muted); font-size: var(--t-sm); }
+    .ds-body .btn { justify-self: start; margin-top: 0.25rem; }
+    .ds-pair { display: grid; grid-template-columns: 1fr 1fr; }
+    .ds-sample { background: var(--s-bg); color: var(--s-ink); padding: 1rem; display: grid; gap: 0.35rem; align-content: start; min-height: 9.5rem; font-family: var(--f-body); }
+    .ds-sample .e { font-family: var(--f-mono); font-size: 0.66rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--s-muted); }
+    .ds-sample .h { font-family: var(--f-display); font-weight: var(--display-weight); font-size: 0.98rem; line-height: 1.25; }
+    .ds-sample .m { font-size: 0.75rem; color: var(--s-muted); }
+    .ds-sample .a { color: var(--s-accent); text-decoration: underline; text-underline-offset: 2px; font-size: 0.75rem; }
+    .ds-sample .c { justify-self: start; font-family: var(--f-mono); font-size: 0.65rem; padding: 0.1rem 0.4rem; border-radius: 3px; background: var(--s-soft); color: var(--s-accent); }
+    .ds-swatches { display: grid; grid-template-columns: repeat(5, 1fr); border-top: 1px solid var(--rule); }
+    .ds-swatches span { height: 1.6rem; }
+    .ds-hex { display: flex; flex-wrap: wrap; gap: 0.2rem 0.75rem; font-family: var(--f-mono); font-size: 0.72rem; color: var(--muted); }
+    .ds-hex i { display: inline-block; width: 0.7rem; height: 0.7rem; border-radius: 2px; vertical-align: -0.05rem; margin-right: 0.25rem; border: 1px solid var(--rule); }
+    .ds-type { padding: 1.25rem 1.1rem; border-bottom: 1px solid var(--rule); display: grid; gap: 0.5rem; min-height: 13rem; align-content: start; background: var(--bg); }
+    .ds-type .h { font-size: 1.6rem; line-height: 1.15; letter-spacing: -0.01em; }
+    .ds-type .b { font-size: 0.95rem; line-height: 1.55; color: var(--ink); }
+    .ds-type .m { font-size: 0.75rem; color: var(--muted); }
+    .ds-wire { background: var(--bg); border-bottom: 1px solid var(--rule); padding: 1rem; height: 11rem; display: grid; gap: 6px; }
+    .ds-wire b { background: var(--rule); border-radius: 2px; display: block; }
+    .ds-wire b.acc { background: var(--accent); opacity: 0.8; }
+    .ds-wire b.img { background: color-mix(in srgb, var(--accent) 25%, var(--rule)); }
+    .w-top { grid-template-rows: 14px 1fr; }
+    .w-top .hdr { display: grid; grid-template-columns: 30% 1fr 8% 8% 8% 8%; gap: 5px; }
+    .w-top .bd { display: grid; grid-template-columns: 1fr 22%; gap: 10px; align-content: start; }
+    .w-top .bd div { display: grid; gap: 5px; align-content: start; }
+    .w-side { grid-template-columns: 26% 1fr; gap: 10px; }
+    .w-side .sb { display: grid; gap: 5px; align-content: start; border-right: 1px solid var(--rule); padding-right: 8px; }
+    .w-side .sb b.img { width: 60%; aspect-ratio: 1; border-radius: 50%; }
+    .w-side .bd { display: grid; gap: 5px; align-content: start; }
+    .w-cen { grid-template-rows: auto 1fr; justify-items: center; }
+    .w-cen .hdr { display: grid; gap: 5px; justify-items: center; width: 60%; }
+    .w-cen .bd { display: grid; gap: 5px; width: 62%; align-content: start; }
+    .w-cen .bd b.img { width: 26%; aspect-ratio: 1; justify-self: center; border-radius: 50%; }
+  </style>
+</head>
+<body data-no-preview-bar>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-name">Keshav Aggarwal</span>
+        <span class="brand-role">Space physics &amp; planetary science</span>
+      </a>
+      <div class="header-profile">
+        <img src="assets/img/portrait.jpg" alt="" width="120" height="120">
+        <div class="profile-icons"><a href="mailto:keshavagg1098@gmail.com" aria-label="Email" title="Email"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-mail"></use></svg></a><a href="https://scholar.google.com/citations?user=KO8MtmEAAAAJ" aria-label="Google Scholar" title="Google Scholar"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-scholar"></use></svg></a><a href="https://orcid.org/0000-0002-7004-8670" aria-label="ORCID" title="ORCID"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-orcid"></use></svg></a><a href="https://www.researchgate.net/profile/Keshav-Aggarwal-4" aria-label="ResearchGate" title="ResearchGate"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-researchgate"></use></svg></a><a href="https://github.com/jovian-explorer" aria-label="GitHub" title="GitHub"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-github"></use></svg></a><a href="https://www.linkedin.com/in/dev-aggarwal/" aria-label="LinkedIn" title="LinkedIn"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-linkedin"></use></svg></a><a href="https://www.youtube.com/@keshavagg1098" aria-label="YouTube" title="YouTube"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-youtube"></use></svg></a><a href="https://jovian-explorer.medium.com/" aria-label="Medium" title="Medium"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-medium"></use></svg></a></div>
+      </div>
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <a href="index.html">About</a>
+        <a href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="software.html">Software</a>
+        <a href="talks.html">Talks &amp; Media</a>
+        <a href="photography.html">Photography</a>
+        <a href="cv.html">CV</a>
+      </nav>
+      <div class="header-tools">
+        <button class="icon-btn theme-toggle" type="button" aria-label="Toggle dark mode"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-moon"></use></svg></button>
+        <button class="icon-btn nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-menu"></use></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <header class="page-head">
+      <p class="label">Design samples</p>
+      <h1>Colour, type and layout options</h1>
+      <p>Selecting an option applies it to every page of the site in this browser only. Browse the site with a combination, then name the one to keep; it becomes the default for all visitors. The current default is Prussian, Source Serif with Source Sans, and Top bar.</p>
+    </header>
+
+    <div class="ds-current" aria-live="polite">
+      <dl>
+        <div class="pair"><dt>Colour</dt><dd id="cur-palette">Prussian</dd></div>
+        <div class="pair"><dt>Type</dt><dd id="cur-font">Source</dd></div>
+        <div class="pair"><dt>Layout</dt><dd id="cur-layout">Top bar</dd></div>
+      </dl>
+      <div class="ds-actions">
+        <a class="btn" href="index.html">View site with this selection</a>
+        <button class="btn ghost" type="button" id="ds-reset">Reset to default</button>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="section-head"><h2>Colour schemes</h2><span class="label">Light and dark variants</span></div>
+      <div class="ds-grid" id="ds-palettes"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><h2>Typefaces</h2><span class="label">Display / body / data</span></div>
+      <div class="ds-grid ds-grid-2" id="ds-fonts"></div>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><h2>Layouts</h2></div>
+      <div class="ds-grid" id="ds-layouts">
+        <article class="card ds-card" data-layout-opt="topbar">
+          <div class="ds-wire w-top" aria-hidden="true">
+            <div class="hdr"><b class="acc"></b><b></b><b></b><b></b><b></b><b></b></div>
+            <div class="bd"><div><b style="height:14px;width:55%"></b><b style="height:6px"></b><b style="height:6px"></b><b style="height:6px;width:80%"></b><b style="height:6px;margin-top:8px"></b><b style="height:6px;width:70%"></b></div><b class="img" style="aspect-ratio:1"></b></div>
+          </div>
+          <div class="ds-body"><h3>Top bar</h3><p>Name and menu in a bar across the top. Wide content area; portrait beside the introduction. Default.</p><button class="btn ghost" type="button">Use this layout</button></div>
+        </article>
+        <article class="card ds-card" data-layout-opt="sidebar">
+          <div class="ds-wire w-side" aria-hidden="true">
+            <div class="sb"><b class="img"></b><b class="acc" style="height:8px;width:80%"></b><b style="height:5px;width:60%"></b><b style="height:5px;margin-top:8px"></b><b style="height:5px"></b><b style="height:5px"></b><b style="height:5px"></b></div>
+            <div class="bd"><b style="height:14px;width:50%"></b><b style="height:6px"></b><b style="height:6px"></b><b style="height:6px;width:75%"></b><b style="height:6px;margin-top:8px"></b><b style="height:6px"></b></div>
+          </div>
+          <div class="ds-body"><h3>Sidebar</h3><p>Fixed left column with portrait, profile links and menu. Common on faculty pages. Falls back to the top bar on phones.</p><button class="btn ghost" type="button">Use this layout</button></div>
+        </article>
+        <article class="card ds-card" data-layout-opt="centered">
+          <div class="ds-wire w-cen" aria-hidden="true">
+            <div class="hdr"><b class="acc" style="height:10px;width:60%"></b><b style="height:5px;width:90%"></b></div>
+            <div class="bd"><b class="img"></b><b style="height:12px;width:60%;justify-self:center"></b><b style="height:6px"></b><b style="height:6px"></b><b style="height:6px;width:80%"></b></div>
+          </div>
+          <div class="ds-body"><h3>Centred</h3><p>Single narrow column with the name and menu centred. Reads like a printed CV; suits text-heavy pages.</p><button class="btn ghost" type="button">Use this layout</button></div>
+        </article>
+      </div>
+    </section>
+
+    <script>
+    (function () {
+      var P = {
+        prussian:    { name: "Prussian",    note: "Deep blue on cool grey. Neutral and conventional for a physical sciences page.", l: ["#f8f9fa","#16202c","#536072","#1f4f7a","#e7eef5"], d: ["#0e131a","#e3e8ee","#9ba7b6","#8fb9df","#182a3c"] },
+        graphite:    { name: "Graphite",    note: "Near-monochrome with a steel-blue accent. The most restrained option.", l: ["#fafafa","#1b1c1e","#5d6064","#3d5263","#eceff1"], d: ["#121314","#e8e9ea","#a2a5a9","#aebfcc","#22282d"] },
+        heliosphere: { name: "Heliosphere", note: "Warm neutrals with a burnt-amber accent that references the Sun.", l: ["#f9f8f6","#1d1a17","#5f5750","#9a4c17","#f5ebe2"], d: ["#13110f","#ece6df","#aca298","#e3a46c","#2e2118"] },
+        moss:        { name: "Moss",        note: "Dark green accent on a green-tinted grey. Calm, less common than blue.", l: ["#f7f9f8","#16211d","#52625b","#2c5e50","#e5efeb"], d: ["#0e1412","#e2eae6","#9cada5","#8cc5b2","#172923"] },
+        ink:         { name: "Ink",         note: "White ground, near-black text, clear blue links. Highest contrast.", l: ["#ffffff","#111418","#4f5660","#0b57d0","#e8f0fd"], d: ["#0b0d10","#eceef1","#a3a9b2","#8ab4f8","#172336"] },
+        oxford:      { name: "Oxford",      note: "Burgundy accent. Traditional academic colouring.", l: ["#faf9f9","#1f1a1c","#625a5d","#7a2334","#f4e8eb"], d: ["#141112","#ede6e8","#b0a5a9","#e39aa8","#33201f"] }
+      };
+      var F = {
+        source:     { name: "Source Serif + Source Sans", note: "Serif headings, sans body. Clear at small sizes. Default.", d: "'Source Serif 4', Georgia, serif", b: "'Source Sans 3', sans-serif", w: 600 },
+        plex:       { name: "IBM Plex Sans + Plex Mono", note: "One technical sans throughout. Suits a software-heavy profile.", d: "'IBM Plex Sans', sans-serif", b: "'IBM Plex Sans', sans-serif", w: 500 },
+        newsreader: { name: "Newsreader + Public Sans", note: "Editorial serif headings with a plain sans body.", d: "'Newsreader', Georgia, serif", b: "'Public Sans', sans-serif", w: 500 },
+        garamond:   { name: "EB Garamond", note: "Classical book serif for headings and text. Formal.", d: "'EB Garamond', Garamond, serif", b: "'EB Garamond', Garamond, serif", w: 500 }
+      };
+      var L = { topbar: "Top bar", sidebar: "Sidebar", centered: "Centred" };
+      var DEF = { palette: "prussian", font: "source", layout: "topbar" };
+      var cur;
+      try { cur = JSON.parse(localStorage.getItem("ka-design") || "null"); } catch (e) { cur = null; }
+      cur = Object.assign({}, DEF, cur || {});
+
+      function sample(v) {
+        return '<div class="ds-sample" style="--s-bg:' + v[0] + ';--s-ink:' + v[1] + ';--s-muted:' + v[2] + ';--s-accent:' + v[3] + ';--s-soft:' + v[4] + '">' +
+          '<span class="e">Solar wind</span><span class="h">Solar wind speed from radio spectral broadening</span>' +
+          '<span class="m">Aggarwal, K., Choudhary, R. K., Datta, A.</span><span class="a">MNRAS 2026</span><span class="c">Akatsuki</span></div>';
+      }
+      document.getElementById("ds-palettes").innerHTML = Object.keys(P).map(function (k) {
+        var p = P[k];
+        return '<article class="card ds-card" data-palette-opt="' + k + '"><div class="ds-pair">' + sample(p.l) + sample(p.d) + '</div>' +
+          '<div class="ds-body"><h3>' + p.name + '</h3><p>' + p.note + '</p><p class="ds-hex">' +
+          ["bg", "ink", "muted", "accent"].map(function (n, i) { return '<span><i style="background:' + p.l[i === 3 ? 3 : i] + '"></i>' + p.l[i === 3 ? 3 : i] + '</span>'; }).join("") +
+          '<span><i style="background:' + p.d[3] + '"></i>' + p.d[3] + ' dark</span></p>' +
+          '<button class="btn ghost" type="button">Use this scheme</button></div></article>';
+      }).join("");
+      document.getElementById("ds-fonts").innerHTML = Object.keys(F).map(function (k) {
+        var f = F[k];
+        return '<article class="card ds-card" data-font-opt="' + k + '"><div class="ds-type">' +
+          '<span class="h" style="font-family:' + f.d + ';font-weight:' + f.w + '">Plasma turbulence in the lunar environment</span>' +
+          '<span class="b" style="font-family:' + f.b + '">Two-way coherent S-band measurements from Chandrayaan-2 give electron density fluctuations along the Earth&ndash;Moon line of sight.</span>' +
+          '<span class="m" style="font-family:\'IBM Plex Mono\', monospace">S-band 2.3 GHz &middot; X-band 8.4 GHz &middot; 2016&ndash;2022</span></div>' +
+          '<div class="ds-body"><h3>' + f.name + '</h3><p>' + f.note + '</p><button class="btn ghost" type="button">Use this typeface</button></div></article>';
+      }).join("");
+
+      function save() {
+        try {
+          if (cur.palette === DEF.palette && cur.font === DEF.font && cur.layout === DEF.layout) localStorage.removeItem("ka-design");
+          else localStorage.setItem("ka-design", JSON.stringify(cur));
+        } catch (e) {}
+        var r = document.documentElement;
+        r.setAttribute("data-palette", cur.palette);
+        r.setAttribute("data-font", cur.font);
+        r.setAttribute("data-layout", cur.layout);
+        paint();
+      }
+      function paint() {
+        document.getElementById("cur-palette").textContent = P[cur.palette].name;
+        document.getElementById("cur-font").textContent = F[cur.font].name;
+        document.getElementById("cur-layout").textContent = L[cur.layout];
+        [["palette", "data-palette-opt"], ["font", "data-font-opt"], ["layout", "data-layout-opt"]].forEach(function (x) {
+          document.querySelectorAll("[" + x[1] + "]").forEach(function (c) {
+            var on = c.getAttribute(x[1]) === cur[x[0]];
+            c.setAttribute("aria-current", on ? "true" : "false");
+            var b = c.querySelector("button");
+            b.textContent = on ? "Selected" : b.textContent.replace("Selected", "Use this " + (x[0] === "palette" ? "scheme" : x[0] === "font" ? "typeface" : "layout"));
+            b.className = on ? "btn" : "btn ghost";
+          });
+        });
+      }
+      document.querySelector("main").addEventListener("click", function (e) {
+        var b = e.target.closest(".ds-card button"); if (!b) return;
+        var c = b.closest(".ds-card");
+        if (c.hasAttribute("data-palette-opt")) cur.palette = c.getAttribute("data-palette-opt");
+        if (c.hasAttribute("data-font-opt")) cur.font = c.getAttribute("data-font-opt");
+        if (c.hasAttribute("data-layout-opt")) cur.layout = c.getAttribute("data-layout-opt");
+        save();
+      });
+      document.getElementById("ds-reset").addEventListener("click", function () { cur = Object.assign({}, DEF); save(); });
+      paint();
+    })();
+    </script>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-meta">
+        <span>&copy; <span data-year>2026</span> Keshav Aggarwal</span>
+        <a href="mailto:keshavagg1098@gmail.com">keshavagg1098@gmail.com</a>
+        <a href="design.html">Design samples</a>
+      </div>
+      <div class="footer-links"><a href="mailto:keshavagg1098@gmail.com" aria-label="Email" title="Email"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-mail"></use></svg></a><a href="https://scholar.google.com/citations?user=KO8MtmEAAAAJ" aria-label="Google Scholar" title="Google Scholar"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-scholar"></use></svg></a><a href="https://orcid.org/0000-0002-7004-8670" aria-label="ORCID" title="ORCID"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-orcid"></use></svg></a><a href="https://www.researchgate.net/profile/Keshav-Aggarwal-4" aria-label="ResearchGate" title="ResearchGate"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-researchgate"></use></svg></a><a href="https://github.com/jovian-explorer" aria-label="GitHub" title="GitHub"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-github"></use></svg></a><a href="https://www.linkedin.com/in/dev-aggarwal/" aria-label="LinkedIn" title="LinkedIn"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-linkedin"></use></svg></a><a href="https://www.youtube.com/@keshavagg1098" aria-label="YouTube" title="YouTube"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-youtube"></use></svg></a><a href="https://jovian-explorer.medium.com/" aria-label="Medium" title="Medium"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-medium"></use></svg></a></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" data-palette="prussian" data-font="source" data-layout="topbar">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Software | Keshav Aggarwal</title>
+  <meta name="description" content="Research software by Keshav Aggarwal: VEDA, COSMIC2 Explorer and HELIOS (in development), plus open-source radio occultation tools.">
+  <meta name="author" content="Keshav Aggarwal">
+  <meta property="og:title" content="Software | Keshav Aggarwal">
+  <meta property="og:description" content="Research software by Keshav Aggarwal: VEDA, COSMIC2 Explorer and HELIOS (in development), plus open-source radio occultation tools.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://jovian-explorer.github.io/assets/img/portrait.jpg">
+  <link rel="icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/prefs.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-name">Keshav Aggarwal</span>
+        <span class="brand-role">Space physics &amp; planetary science</span>
+      </a>
+      <div class="header-profile">
+        <img src="assets/img/portrait.jpg" alt="" width="120" height="120">
+        <div class="profile-icons"><a href="mailto:keshavagg1098@gmail.com" aria-label="Email" title="Email"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-mail"></use></svg></a><a href="https://scholar.google.com/citations?user=KO8MtmEAAAAJ" aria-label="Google Scholar" title="Google Scholar"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-scholar"></use></svg></a><a href="https://orcid.org/0000-0002-7004-8670" aria-label="ORCID" title="ORCID"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-orcid"></use></svg></a><a href="https://www.researchgate.net/profile/Keshav-Aggarwal-4" aria-label="ResearchGate" title="ResearchGate"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-researchgate"></use></svg></a><a href="https://github.com/jovian-explorer" aria-label="GitHub" title="GitHub"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-github"></use></svg></a><a href="https://www.linkedin.com/in/dev-aggarwal/" aria-label="LinkedIn" title="LinkedIn"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-linkedin"></use></svg></a><a href="https://www.youtube.com/@keshavagg1098" aria-label="YouTube" title="YouTube"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-youtube"></use></svg></a><a href="https://jovian-explorer.medium.com/" aria-label="Medium" title="Medium"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-medium"></use></svg></a></div>
+      </div>
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <a href="index.html">About</a>
+        <a href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="software.html" aria-current="page">Software</a>
+        <a href="talks.html">Talks &amp; Media</a>
+        <a href="photography.html">Photography</a>
+        <a href="cv.html">CV</a>
+      </nav>
+      <div class="header-tools">
+        <button class="icon-btn theme-toggle" type="button" aria-label="Toggle dark mode"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-moon"></use></svg></button>
+        <button class="icon-btn nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-menu"></use></svg></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <header class="page-head">
+      <p class="label">Software</p>
+      <h1>Software</h1>
+      <p>Research code for radio science and planetary data. Three packages are in development; released code is on <a href="https://github.com/jovian-explorer">GitHub</a>.</p>
+    </header>
+
+    <section class="section">
+      <div class="section-head"><h2>In development</h2></div>
+      <div class="grid">
+        <!-- EDIT: confirm or replace the one-line descriptions and "Scope" entries for the three packages below. -->
+        <article class="card" id="veda">
+          <div class="card-top"><h3>VEDA</h3><span class="status dev">In development</span></div>
+          <p>Processing and analysis of planetary radio science data: Doppler residuals, spectral broadening and occultation geometry in one workflow.</p>
+          <dl>
+            <dt>Scope</dt><dd>Planetary radio occultation</dd>
+            <dt>Release</dt><dd>Not yet public</dd>
+          </dl>
+        </article>
+        <article class="card" id="cosmic2-explorer">
+          <div class="card-top"><h3>COSMIC2 Explorer</h3><span class="status dev">In development</span></div>
+          <p>Search, retrieval and plotting of COSMIC-2 GNSS radio occultation profiles of the terrestrial ionosphere and neutral atmosphere.</p>
+          <dl>
+            <dt>Scope</dt><dd>GNSS radio occultation, Earth</dd>
+            <dt>Release</dt><dd>Not yet public</dd>
+          </dl>
+        </article>
+        <article class="card" id="helios">
+          <div class="card-top"><h3>HELIOS</h3><span class="status dev">In development</span></div>
+          <p>Solar wind speed and coronal electron density from spacecraft radio signals at solar conjunction.</p>
+          <dl>
+            <dt>Scope</dt><dd>Coronal radio sounding</dd>
+            <dt>Release</dt><dd>Not yet public</dd>
+          </dl>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><h2>Released code</h2><a href="https://github.com/jovian-explorer?tab=repositories">All repositories &rarr;</a></div>
+      <div class="grid grid-2">
+        <article class="card">
+          <div class="card-top"><h3>RO-SPICE</h3><span class="status live">Public</span></div>
+          <p>Derives the observation geometry of a radio occultation experiment with the NASA SPICE toolkit.</p>
+          <div class="card-foot"><span class="chip">Jupyter</span><a class="chip" href="https://github.com/jovian-explorer/RO-SPICE">GitHub</a></div>
+        </article>
+        <article class="card">
+          <div class="card-top"><h3>Akatsuki_open</h3><span class="status live">Public</span></div>
+          <p>Pre-processing pipeline for the multi-level open radio science data of JAXA&rsquo;s Akatsuki mission.</p>
+          <div class="card-foot"><span class="chip">Jupyter</span><a class="chip" href="https://github.com/jovian-explorer/Akatsuki_open">GitHub</a></div>
+        </article>
+        <article class="card">
+          <div class="card-top"><h3>Sun</h3><span class="status live">Public</span></div>
+          <p>Solar wind flow speeds from the coronal radio sounding experiment of the Indian Mars Orbiter Mission. Accompanies the ApJ 2025 paper.</p>
+          <div class="card-foot"><span class="chip">Jupyter</span><a class="chip" href="https://github.com/jovian-explorer/Sun">GitHub</a></div>
+        </article>
+        <article class="card">
+          <div class="card-top"><h3>CO&#8322; in WASP-39b</h3><span class="status live">Public</span></div>
+          <p>Code for the figures of <em>Identification of carbon dioxide in an exoplanet atmosphere</em> (Nature, 2023).</p>
+          <div class="card-foot"><span class="chip">Jupyter</span><a class="chip" href="https://github.com/jovian-explorer/Identification-of-carbon-dioxide-in-an-exoplanet-atmosphere">GitHub</a></div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-meta">
+        <span>&copy; <span data-year>2026</span> Keshav Aggarwal</span>
+        <a href="mailto:keshavagg1098@gmail.com">keshavagg1098@gmail.com</a>
+        <a href="design.html">Design samples</a>
+      </div>
+      <div class="footer-links"><a href="mailto:keshavagg1098@gmail.com" aria-label="Email" title="Email"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-mail"></use></svg></a><a href="https://scholar.google.com/citations?user=KO8MtmEAAAAJ" aria-label="Google Scholar" title="Google Scholar"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-scholar"></use></svg></a><a href="https://orcid.org/0000-0002-7004-8670" aria-label="ORCID" title="ORCID"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-orcid"></use></svg></a><a href="https://www.researchgate.net/profile/Keshav-Aggarwal-4" aria-label="ResearchGate" title="ResearchGate"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-researchgate"></use></svg></a><a href="https://github.com/jovian-explorer" aria-label="GitHub" title="GitHub"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-github"></use></svg></a><a href="https://www.linkedin.com/in/dev-aggarwal/" aria-label="LinkedIn" title="LinkedIn"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-linkedin"></use></svg></a><a href="https://www.youtube.com/@keshavagg1098" aria-label="YouTube" title="YouTube"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-youtube"></use></svg></a><a href="https://jovian-explorer.medium.com/" aria-label="Medium" title="Medium"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-medium"></use></svg></a></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/site.js"></script>
+</body>
+</html>
