@@ -10,11 +10,34 @@ Personal website of Keshav Aggarwal. Static HTML, CSS and JavaScript; no build s
 | `research.html` | Research themes and missions |
 | `publications.html` | Publications with tabs and search (rendered from `assets/js/data.js`) |
 | `software.html` | VEDA, COSMIC2 Explorer, HELIOS and released code |
-| `talks.html` | Conferences, YouTube videos, writing and outreach |
+| `talks.html` | Conference presentations and outreach |
+| `videos.html` | YouTube channel: featured player, searchable list (updated automatically) |
+| `writing.html` | Medium articles with topic filters (updated automatically) |
 | `travel.html` | India district map and world city map |
 | `photography.html` | Collections, justified photo grid, full-screen viewer |
-| `cv.html` | Education, positions, fellowships, experience, skills, contact |
+| `cv.html` | Education, positions, fellowships, experience, publications, skills, contact; PDF in `assets/cv/` |
+| `404.html` | Page shown for missing addresses |
 | `design.html` | Colour, typeface and layout samples |
+
+## Automatic YouTube and Medium lists
+
+`.github/workflows/update-feeds.yml` runs `tools/update_feeds.py` every day at 03:17 UTC (and on demand from the Actions tab). It writes `assets/js/feed-videos.js` and `assets/js/feed-articles.js`, commits only when something changed, and asks GitHub Pages to rebuild.
+
+- Without an API key it reads the channel's RSS feed (latest 15 uploads) and keeps older entries it has already seen.
+- For the full upload list with durations, add a YouTube Data API v3 key as the repository secret `YT_API_KEY` (Settings > Secrets and variables > Actions).
+- In `feed-videos.js` you can add `"topic"`, `"featured": true`, `"hidden": true` or `"note"` to any video; these survive updates.
+- Link a paper to its summary video with `video: "<id>"` on the publication in `data.js`; the paper then shows a Video link and the video shows the paper.
+
+## CV PDF
+
+`assets/cv/Keshav_Aggarwal_CV.pdf` is printed from `cv.html` (print styles are in `style.css`). After editing the CV or publications:
+
+```
+npm install playwright && npx playwright install chromium
+node tools/cv_pdf.mjs
+```
+
+A browser's own Print > Save as PDF on `cv.html` gives the same layout.
 
 ## Editing content
 
@@ -60,3 +83,7 @@ Each page's `<html>` tag sets the defaults:
 - `data-layout`: `topbar`, `sidebar`, `centered`
 
 A non-default font also needs its Google Fonts `<link>` in each page head (see `assets/js/prefs.js` for the URLs). `design.html` previews every combination in the browser without editing files.
+
+## Search engines
+
+`index.html` carries schema.org Person data (affiliation, fellowship, profile links) so search engines can connect the site with the Scholar, ORCID and other profiles. `sitemap.xml` and `robots.txt` are generated with the pages.

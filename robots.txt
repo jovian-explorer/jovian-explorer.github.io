@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /design.html
+
+Sitemap: https://jovian-explorer.github.io/sitemap.xml

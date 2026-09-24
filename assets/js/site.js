@@ -114,14 +114,74 @@
     if (p.arxiv) links.push('<a class="chip" href="https://arxiv.org/abs/' + esc(p.arxiv) + '">arXiv</a>');
     if (p.ads) links.push('<a class="chip" href="' + esc(p.ads) + '">ADS</a>');
     if (p.code) links.push('<a class="chip" href="' + esc(p.code) + '">Code</a>');
+    if (p.video) links.push('<a class="chip" href="https://www.youtube.com/watch?v=' + esc(p.video) + '">' + icon("play") + " Video</a>");
+    links.push('<button type="button" class="chip" data-bib="' + esc(bibKey(p)) + '" aria-expanded="false">BibTeX</button>');
     var tags = (p.missions || []).map(function (m) { return '<span class="chip tag">' + esc(m) + "</span>"; }).join("");
     return '<li class="pub">' +
       '<p class="pub-title"><a href="' + esc(href) + '">' + esc(p.title) + "</a></p>" +
       '<p class="pub-authors">' + authors + "</p>" +
       '<div class="pub-meta"><span class="pub-venue">' + esc(p.venue) + '</span><span class="mono muted">' + esc(p.year) + "</span>" +
       '<span class="pub-links">' + links.join("") + "</span>" + (tags ? '<span class="pub-links">' + tags + "</span>" : "") + "</div>" +
+      '<div class="bib" hidden><pre>' + esc(bibtex(p)) + '</pre><button type="button" class="btn small ghost" data-copy-bib>Copy</button></div>' +
       "</li>";
   }
+
+  /* ---------- BibTeX ---------- */
+  function bibAuthors(s) {
+    var team = "";
+    var m = s.match(/^([^:]+Team):\s*/);
+    if (m) { team = "{" + m[1] + "}"; s = s.slice(m[0].length); }
+    var others = /et al\./.test(s);
+    s = s.replace(/\(incl\.[^)]*\)/, "").replace(/,?\s*et al\./, "");
+    var names = [], re = /\s*([^,]+),\s*((?:[A-Z][a-z]?\.[\s-]*)+)(?:,|$)/g, x;
+    while ((x = re.exec(s))) names.push(x[1].trim() + ", " + x[2].trim());
+    if (team) names.unshift(team);
+    if (others) names.push("others");
+    return names.join(" and ");
+  }
+  function bibKey(p) {
+    var first = (p.authors.match(/^(?:[^:]+:\s*)?([A-Za-z\u00C0-\u017F-]+)/) || [0, "ref"])[1];
+    var word = (p.title.match(/[A-Za-z]{4,}/) || ["paper"])[0];
+    return (first + p.year + word).replace(/[^A-Za-z0-9]/g, "");
+  }
+  function bibtex(p) {
+    var f = [["author", bibAuthors(p.authors)], ["title", "{" + p.title + "}"]];
+    var type = p.type === "whitepaper" ? "misc" : "article";
+    if (type === "article") f.push(["journal", p.venue]); else f.push(["howpublished", p.venue]);
+    f.push(["year", String(p.year)]);
+    if (p.doi) f.push(["doi", p.doi]);
+    if (p.url) f.push(["url", p.url]);
+    if (p.arxiv) { f.push(["eprint", p.arxiv]); f.push(["archivePrefix", "arXiv"]); }
+    return "@" + type + "{" + bibKey(p) + ",\n" + f.map(function (kv) { return "  " + kv[0] + " = {" + kv[1] + "}"; }).join(",\n") + "\n}";
+  }
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-bib]");
+    if (b) {
+      var box = b.closest(".pub").querySelector(".bib");
+      box.hidden = !box.hidden;
+      b.setAttribute("aria-expanded", box.hidden ? "false" : "true");
+      return;
+    }
+    var c = e.target.closest("[data-copy-bib]");
+    if (c) {
+      var pre = c.parentNode.querySelector("pre");
+      var ok = function () { c.textContent = "Copied"; setTimeout(function () { c.textContent = "Copy"; }, 1500); };
+      if (navigator.clipboard) navigator.clipboard.writeText(pre.textContent).then(ok, function () { window.getSelection().selectAllChildren(pre); });
+      else window.getSelection().selectAllChildren(pre);
+    }
+  });
+  var bibAll = document.getElementById("bib-download");
+  if (bibAll && SITE.publications) {
+    bibAll.addEventListener("click", function () {
+      var text = SITE.publications.map(bibtex).join("\n\n") + "\n";
+      var a = document.createElement("a");
+      a.href = URL.createObjectURL(new Blob([text], { type: "application/x-bibtex" }));
+      a.download = "aggarwal-publications.bib";
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(function () { URL.revokeObjectURL(a.href); }, 1000);
+    });
+  }
+
   function groupedByYear(list) {
     var years = {};
     list.forEach(function (p) { (years[p.year] = years[p.year] || []).push(p); });
@@ -170,6 +230,20 @@
     selected.innerHTML = SITE.publications.filter(function (p) { return p.type === "first"; }).slice(0, n).map(pubHTML).join("");
   }
 
+  /* ---------- Compact publication list (CV) ---------- */
+  var cvPubs = document.getElementById("cv-pubs");
+  if (cvPubs && SITE.publications) {
+    var groups = [["first", "First-author papers"], ["collab", "Co-authored papers, JWST Transiting Exoplanet Community ERS Team"], ["whitepaper", "White papers"]];
+    cvPubs.innerHTML = groups.map(function (g) {
+      var list = SITE.publications.filter(function (p) { return p.type === g[0]; });
+      return '<h3 class="cv-pubs-head">' + esc(g[1]) + '</h3><ol class="cv-pub-list">' + list.map(function (p) {
+        var href = p.doi ? "https://doi.org/" + p.doi : p.url;
+        return "<li>" + esc(p.authors).replace(/Aggarwal, K\./g, "<b>Aggarwal, K.</b>") + " (" + p.year + "). " + esc(p.title) + ". <i>" + esc(p.venue) + "</i>." +
+          (p.doi ? ' <a href="' + esc(href) + '">doi:' + esc(p.doi) + "</a>" : ' <a href="' + esc(href) + '">' + esc(href.replace(/^https?:\/\//, "")) + "</a>") + "</li>";
+      }).join("") + "</ol>";
+    }).join("");
+  }
+
   /* ---------- Conferences ---------- */
   var confRoot = document.getElementById("conference-list");
   if (confRoot && SITE.conferences) {
@@ -191,31 +265,61 @@
     }
   }
 
-  /* ---------- Videos ---------- */
-  document.querySelectorAll("[data-videos]").forEach(function (el) {
-    var vids = (SITE.videos || []).slice(0, +el.getAttribute("data-limit") || 99);
-    if (!vids.length) { el.hidden = true; return; }
-    el.innerHTML = vids.map(function (v) {
-      return '<article class="video"><div class="video-frame">' +
-        '<img src="https://i.ytimg.com/vi/' + esc(v.id) + '/hqdefault.jpg" alt="" loading="lazy">' +
-        '<button type="button" data-yt="' + esc(v.id) + '" aria-label="Play: ' + esc(v.title) + '">' +
-        '<svg class="play" aria-hidden="true"><use href="' + ICONS + '#i-play"></use></svg></button></div>' +
-        '<h3><a href="https://www.youtube.com/watch?v=' + esc(v.id) + '">' + esc(v.title) + "</a></h3>" +
-        '<p class="mono">' + esc(monthYear(v.date)) + (v.note ? " · " + esc(v.note) : "") + "</p></article>";
-    }).join("");
-    el.addEventListener("click", function (e) {
-      var b = e.target.closest("[data-yt]");
-      if (!b) return;
-      var f = document.createElement("iframe");
-      f.src = "https://www.youtube-nocookie.com/embed/" + b.getAttribute("data-yt") + "?autoplay=1&rel=0";
-      f.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
-      f.allowFullscreen = true;
-      f.title = b.getAttribute("aria-label");
-      b.parentNode.replaceChildren(f);
-    });
-    var empty = document.getElementById(el.getAttribute("data-empty") || "");
-    if (empty) empty.hidden = true;
-  });
+  /* ---------- Latest video and article (home page) ---------- */
+  var V = window.VIDEOS && window.VIDEOS.videos ? window.VIDEOS.videos.filter(function (v) { return !v.hidden; }) : [];
+  var latestV = document.getElementById("latest-video");
+  if (latestV && V.length) {
+    var lv = V[0];
+    latestV.innerHTML = '<a class="mini-media" href="videos.html"><img src="https://i.ytimg.com/vi/' + esc(lv.id) + '/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"></a>' +
+      '<div><p class="label">Latest video</p><p class="mini-title"><a href="videos.html">' + esc(lv.title) + '</a></p><p class="mono muted">' + esc(monthYear(lv.date)) + "</p></div>";
+    latestV.hidden = false;
+  }
+  var A = window.ARTICLES && window.ARTICLES.items ? window.ARTICLES.items : [];
+  var latestA = document.getElementById("latest-article");
+  if (latestA && A.length) {
+    var la = A[0];
+    latestA.innerHTML = (la.image ? '<a class="mini-media" href="' + esc(la.url) + '"><img src="' + esc(la.image) + '" alt="" loading="lazy"></a>' : "") +
+      '<div><p class="label">Latest article</p><p class="mini-title"><a href="' + esc(la.url) + '">' + esc(la.title.replace(/^Title:\s*/, "")) + '</a></p><p class="mono muted">' + esc(monthYear(la.date)) + " · Medium</p></div>";
+    latestA.hidden = false;
+  }
+
+  /* ---------- Articles (writing page) ---------- */
+  var artRoot = document.getElementById("article-list");
+  if (artRoot) {
+    var tagBox = document.getElementById("article-tags");
+    var activeTag = "All";
+    var tags = {};
+    A.forEach(function (a) { (a.tags || []).forEach(function (t) { tags[t] = (tags[t] || 0) + 1; }); });
+    var common = Object.keys(tags).filter(function (t) { return tags[t] > 1; }).sort(function (x, y) { return tags[y] - tags[x]; }).slice(0, 8);
+    /* Medium excerpts often repeat the title; drop it. */
+    var cleanExcerpt = function (a) {
+      var t = a.title.replace(/^Title:\s*/, ""), e = a.excerpt.replace(/^Title:\s*/, "");
+      return e.indexOf(t) === 0 ? e.slice(t.length).replace(/^[\s:\u2014-]+/, "") : e;
+    };
+    var drawArticles = function () {
+      var list = A.filter(function (a) { return activeTag === "All" || (a.tags || []).indexOf(activeTag) > -1; });
+      artRoot.innerHTML = list.map(function (a) {
+        return '<article class="article">' +
+          (a.image ? '<a class="article-img" href="' + esc(a.url) + '" tabindex="-1" aria-hidden="true"><img src="' + esc(a.image) + '" alt="" loading="lazy"></a>' : "") +
+          '<div class="article-body"><p class="mono muted">' + esc(monthYear(a.date)) + "</p>" +
+          '<h3><a href="' + esc(a.url) + '">' + esc(a.title.replace(/^Title:\s*/, "")) + "</a></h3>" +
+          (a.excerpt ? '<p class="article-excerpt">' + esc(cleanExcerpt(a)) + "</p>" : "") +
+          '<p class="pub-links">' + (a.tags || []).slice(0, 4).map(function (t) { return '<span class="chip">' + esc(t) + "</span>"; }).join("") + "</p></div></article>";
+      }).join("");
+    };
+    if (tagBox && common.length) {
+      tagBox.innerHTML = ["All"].concat(common).map(function (t) {
+        return '<button type="button" class="filter" aria-pressed="' + (t === activeTag) + '" data-tag="' + esc(t) + '">' + esc(t) + (t === "All" ? "" : ' <span class="count">' + tags[t] + "</span>") + "</button>";
+      }).join("");
+      tagBox.addEventListener("click", function (e) {
+        var b = e.target.closest("[data-tag]"); if (!b) return;
+        activeTag = b.getAttribute("data-tag");
+        tagBox.querySelectorAll("[data-tag]").forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+        drawArticles();
+      });
+    }
+    if (A.length) { drawArticles(); var ae = document.getElementById("articles-empty"); if (ae) ae.hidden = true; }
+  }
 
   /* ---------- Generic tab groups (non-publication pages) ---------- */
   document.querySelectorAll(".tabs[data-tabs]").forEach(initTabs);

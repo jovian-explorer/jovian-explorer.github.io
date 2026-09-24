@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Publications | Keshav Aggarwal</title>
-  <meta name="description" content="Publications of Keshav Aggarwal: first-author papers on the solar wind and radio occultation, JWST exoplanet papers, and Decadal Survey white papers.">
+  <title>Videos | Keshav Aggarwal</title>
+  <meta name="description" content="Video summaries of research papers by Keshav Aggarwal, from the YouTube channel Jovian Explorer.">
   <meta name="author" content="Keshav Aggarwal">
-  <meta property="og:title" content="Publications | Keshav Aggarwal">
-  <meta property="og:description" content="Publications of Keshav Aggarwal: first-author papers on the solar wind and radio occultation, JWST exoplanet papers, and Decadal Survey white papers.">
+  <meta property="og:title" content="Videos | Keshav Aggarwal">
+  <meta property="og:description" content="Video summaries of research papers by Keshav Aggarwal, from the YouTube channel Jovian Explorer.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://jovian-explorer.github.io/assets/img/portrait.jpg">
-  <link rel="canonical" href="https://jovian-explorer.github.io/publications.html">
+  <link rel="canonical" href="https://jovian-explorer.github.io/videos.html">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="icon" href="favicon.ico" sizes="32x32">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
@@ -36,10 +36,10 @@
       <nav id="site-nav" class="site-nav" aria-label="Main">
         <a href="index.html">About</a>
         <a href="research.html">Research</a>
-        <a href="publications.html" aria-current="page">Publications</a>
+        <a href="publications.html">Publications</a>
         <a href="software.html">Software</a>
         <a href="talks.html">Talks</a>
-        <a href="videos.html">Videos</a>
+        <a href="videos.html" aria-current="page">Videos</a>
         <a href="writing.html">Writing</a>
         <a href="travel.html">Travel</a>
         <a href="photography.html">Photography</a>
@@ -54,43 +54,57 @@
 
   <main id="main">
     <header class="page-head">
-      <p class="label">Publications</p>
-      <h1>Publications</h1>
-      <p>Refereed papers and white papers, newest first. Citation counts are on <a href="https://scholar.google.com/citations?user=KO8MtmEAAAAJ">Google Scholar</a>; the complete record is on <a href="https://orcid.org/0000-0002-7004-8670">ORCID</a>.</p>
+      <p class="label">Videos</p>
+      <h1>Videos</h1>
+      <p>Short video summaries of published papers, from the YouTube channel Jovian Explorer. The list updates automatically when a new video is uploaded.</p>
     </header>
 
-    <div id="publications">
-      <div class="stats">
-        <div class="stat"><b data-count="first">6</b><span>first-author papers</span></div>
-        <div class="stat"><b data-count="collab">9</b><span>JWST ERS papers</span></div>
-        <div class="stat"><b data-count="whitepaper">3</b><span>white papers</span></div>
+    <div class="channel">
+      <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-youtube"></use></svg>
+      <div>
+        <h3 id="ch-name">Jovian Explorer</h3>
+        <p id="ch-meta">@keshavagg1098</p>
       </div>
-
-      <div class="tabs" role="tablist" aria-label="Publication type">
-        <button class="tab" role="tab" id="tab-all" aria-controls="panel-all" data-hash="all">All <span class="count" data-count="all"></span></button>
-        <button class="tab" role="tab" id="tab-first" aria-controls="panel-first" data-hash="first">First author <span class="count" data-count="first"></span></button>
-        <button class="tab" role="tab" id="tab-collab" aria-controls="panel-collab" data-hash="collab">JWST collaboration <span class="count" data-count="collab"></span></button>
-        <button class="tab" role="tab" id="tab-white" aria-controls="panel-white" data-hash="whitepapers">White papers <span class="count" data-count="whitepaper"></span></button>
+      <div class="channel-actions">
+        <a class="btn" href="https://www.youtube.com/@keshavagg1098?sub_confirmation=1">Subscribe</a>
+        <a class="btn ghost" id="ch-uploads" href="https://www.youtube.com/@keshavagg1098/videos" hidden>Play all</a>
+        <a class="btn ghost" href="https://www.youtube.com/@keshavagg1098">Channel <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-arrow"></use></svg></a>
       </div>
-
-      <div class="toolbar">
-        <label class="label" for="pub-search">Search</label>
-        <input class="search" id="pub-search" type="search" placeholder="Title, author, journal or mission" autocomplete="off">
-        <span class="result-count" id="pub-count" aria-live="polite"></span>
-        <button class="btn small ghost" type="button" id="bib-download">Download BibTeX</button>
-      </div>
-
-      <div class="tab-panel" role="tabpanel" id="panel-all" aria-labelledby="tab-all" data-pub-type="all"></div>
-      <div class="tab-panel" role="tabpanel" id="panel-first" aria-labelledby="tab-first" data-pub-type="first" hidden></div>
-      <div class="tab-panel" role="tabpanel" id="panel-collab" aria-labelledby="tab-collab" data-pub-type="collab" hidden></div>
-      <div class="tab-panel" role="tabpanel" id="panel-white" aria-labelledby="tab-white" data-pub-type="whitepaper" hidden></div>
-      <noscript><p>The publication list needs JavaScript. See <a href="https://scholar.google.com/citations?user=KO8MtmEAAAAJ">Google Scholar</a>.</p></noscript>
     </div>
 
-    <section class="section">
-      <div class="section-head"><h2>Conference presentations</h2><a href="talks.html">Talks &amp; posters &rarr;</a></div>
-      <p class="muted">Four poster presentations since 2024. Poster PDFs are in the <a href="https://github.com/jovian-explorer/Conference-posters">Conference-posters</a> repository.</p>
+    <section class="featured" id="featured" hidden>
+      <div class="video-frame" id="f-frame"></div>
+      <div class="featured-meta">
+        <p class="label" id="f-label">Latest</p>
+        <h2 id="f-title"></h2>
+        <p class="vmeta" id="f-meta"></p>
+        <p class="desc" id="f-desc"></p>
+        <p class="pub-links" id="f-paper" hidden></p>
+        <p><a id="f-link" href="https://www.youtube.com/@keshavagg1098">Watch on YouTube</a></p>
+      </div>
     </section>
+
+    <section class="section" id="video-list-section" hidden>
+      <div class="section-head"><h2>All videos</h2></div>
+      <div class="toolbar">
+        <label class="label" for="video-search">Search</label>
+        <input class="search" id="video-search" type="search" placeholder="Title or description" autocomplete="off">
+        <select class="select" id="video-sort" aria-label="Sort videos"><option value="new">Newest first</option><option value="old">Oldest first</option><option value="views">Most viewed</option></select>
+        <span class="result-count" id="video-count" aria-live="polite"></span>
+      </div>
+      <div class="filters" id="video-topics" role="group" aria-label="Topic"></div>
+      <div class="video-grid" id="video-grid"></div>
+    </section>
+
+    <p class="muted" id="videos-empty">All videos are on the <a href="https://www.youtube.com/@keshavagg1098/videos">channel page</a>.</p>
+
+    <dialog class="vplayer" id="vplayer" aria-label="Video player">
+      <div class="vp-frame"></div>
+      <div class="vp-bar">
+        <div><p class="vp-title"></p><p class="vp-meta"></p></div>
+        <div class="edit-row"><a class="vp-link" href="https://www.youtube.com/@keshavagg1098">Open on YouTube</a><button class="icon-btn" type="button" data-close aria-label="Close"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-close"></use></svg></button></div>
+      </div>
+    </dialog>
   </main>
 
   <footer class="site-footer">
@@ -104,7 +118,9 @@
     </div>
   </footer>
 
+  <script src="assets/js/feed-videos.js"></script>
   <script src="assets/js/data.js"></script>
   <script src="assets/js/site.js"></script>
+  <script src="assets/js/videos-page.js"></script>
 </body>
 </html>
