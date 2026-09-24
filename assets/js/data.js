@@ -200,11 +200,46 @@ window.SITE = {
   ],
 
   /* ------------------------------------------------------------------
-     Photographs. Put image files in assets/photos/ and list them here.
-     category: "Astrophotography" | "Travel" | "Conferences" | "Field"
-     Example:
-       { src: "assets/photos/milky-way-hanle.jpg", title: "Milky Way over Hanle", place: "Ladakh, India", date: "2024-05", category: "Astrophotography", camera: "Canon EOS R7" },
+     Travel. Drawn on travel.html.
+     districts: "State/District", spelled as in the map data. The easiest way
+                to edit this list is travel.html#edit (click districts, then
+                "Copy data" and paste the result here).
+     places:    pins on the world map (and on the India map for Indian cities).
+                lat/lon in decimal degrees. visits: { date: "YYYY-MM", note }.
+     countries: extra countries to shade that have no pinned city.
      ------------------------------------------------------------------ */
-  photos: [
-  ]
+  travel: {
+    districts: [
+      "Kerala/Thiruvananthapuram",
+      "Madhya Pradesh/Indore",
+      "Rajasthan/Jaipur",
+      "Uttar Pradesh/Meerut",
+      "Uttarakhand/Haridwar",
+      "Uttarakhand/Nainital"
+    ],
+    places: [
+      { name: "Indore", country: "India", lat: 22.7196, lon: 75.8577, visits: [{ date: "2021", note: "IIT Indore: M.Sc. and Ph.D." }] },
+      { name: "Meerut", country: "India", lat: 28.9845, lon: 77.7064, visits: [{ date: "2021", note: "B.Sc., CCS University" }] },
+      { name: "Bhimtal", country: "India", lat: 29.3440, lon: 79.5630, visits: [{ date: "2024-10", note: "6th URSI-RCRS, poster" }] },
+      { name: "Roorkee", country: "India", lat: 29.8543, lon: 77.8880, visits: [{ date: "2025-03", note: "6th Indian Planetary Science Conference, poster" }] },
+      { name: "Jaipur", country: "India", lat: 26.9124, lon: 75.7873, visits: [{ date: "2025-09", note: "ASI Symposium 003, poster" }] },
+      { name: "Sheffield", country: "United Kingdom", lat: 53.3811, lon: -1.4701, visits: [{ date: "2025-09", note: "UK Space Weather and Space Environment Meeting III, poster" }] },
+      { name: "Thiruvananthapuram", country: "India", lat: 8.5241, lon: 76.9366, visits: [{ date: "2026", note: "Student visitor, Space Physics Laboratory, VSSC" }] }
+    ],
+    countries: []
+  },
+
+  /* ------------------------------------------------------------------
+     Photo albums shown on photography.html. The photographs themselves
+     are listed in assets/js/photos.js, which tools/photos.py writes.
+     Each photo's "album" field must match an album id below.
+     ------------------------------------------------------------------ */
+  photography: {
+    kit: "Canon EOS R7",
+    albums: [
+      { id: "night-sky", title: "Night sky", description: "Deep-sky objects, the Moon and planets, and wide-field Milky Way frames." },
+      { id: "travel", title: "Travel", description: "Places visited for work and otherwise." },
+      { id: "conferences", title: "Conferences", description: "Meetings, posters and campuses." }
+    ]
+  }
 };
