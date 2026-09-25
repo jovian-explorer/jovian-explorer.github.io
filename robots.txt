@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /design.html
+Disallow: /legacy/
 
 Sitemap: https://jovian-explorer.github.io/sitemap.xml

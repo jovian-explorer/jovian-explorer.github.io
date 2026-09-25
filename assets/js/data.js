@@ -8,6 +8,7 @@ window.SITE = {
      Publications
      role: "first" (first author) | "co" (co-author)
      kind: "journal" | "proceedings" | "chapter" | "whitepaper" | "preprint"
+     status: optional, e.g. "Under review" (shown as a tag; no DOI needed)
      collab: optional collaboration name shown as a tag.
      video: YouTube id of a summary video (adds a "Video" link).
      For a book chapter use kind: "chapter", venue: book title and editors,
@@ -168,11 +169,30 @@ window.SITE = {
       arxiv: "2512.11631"
     },
     {
-      role: "co", kind: "preprint", year: 2026,
+      role: "co", kind: "chapter", year: 2026,
       title: "Probing the solar corona and the solar wind using angular broadening observations with the SKA",
       authors: "Zhang, P., Morgan, J., Oberoi, D., Strauss, D. T., Luo, Y., Kontar, E., Huang, Z., Aggarwal, K., Kumari, A., Datta, A., Morosan, D. E., Botha, G. J. J.",
-      venue: "arXiv preprint",
+      venue: "Advancing Astrophysics: Preparing for Science with the SKAO",
       arxiv: "2603.25421"
+    },
+
+    {
+      role: "co", kind: "journal", status: "Under review", year: 2026,
+      title: "Long-term GNSS loss-of-lock across the Indian equatorial ionization anomaly",
+      authors: "Choudhary, R. K., Aggarwal, K., Potdar, A.",
+      venue: "GPS Solutions"
+    },
+    {
+      role: "co", kind: "journal", status: "Under review", year: 2026,
+      title: "High-spatial and temporal 3D imaging of the ionosphere: a GAGAN-based virtual receiver approach",
+      authors: "Choudhary, R. K., Potdar, A., Aggarwal, K.",
+      venue: "Journal of Geophysical Research: Space Weather"
+    },
+    {
+      role: "co", kind: "journal", status: "Under review", year: 2026,
+      title: "Earth\u2019s magnetopause response during the Mother\u2019s Day storm based on multi-satellite data",
+      authors: "Deep, A., Datta, A., Aggarwal, K., Brawar, B.",
+      venue: "Solar Physics"
     },
 
     {
@@ -205,6 +225,9 @@ window.SITE = {
     }
   ],
 
+  /* Citation count shown on the publications page. */
+  metrics: { citations: 2248, source: "ResearchGate", url: "https://www.researchgate.net/profile/Keshav-Aggarwal-4" },
+
   /* ------------------------------------------------------------------
      Conference presentations.
      date: "YYYY-MM" (used for sorting). kind: "Talk" | "Poster"
@@ -212,8 +235,8 @@ window.SITE = {
      ------------------------------------------------------------------ */
   conferences: [
     {
-      date: "2026", dates: "2026", kind: "Talk",
-      event: "Indian Planetary Science Conference (IPSC)",
+      date: "2026-03", dates: "23\u201325 Mar 2026", kind: "Talk",
+      event: "7th Indian Planetary Science Conference (IPSC 2026)",
       place: "IIT Indore, India",
       title: "A turbulence index independent framework for deriving solar wind speed and coronal electron density from radio spectral broadening"
     },
@@ -349,7 +372,7 @@ window.SITE = {
       { name: "Jaipur", country: "India", lat: 26.9124, lon: 75.7873, visits: [{ date: "2025-09", note: "ASI Symposium 003, poster" }] },
       { name: "Roorkee", country: "India", lat: 29.8543, lon: 77.888, visits: [{ date: "2025-03", note: "6th Indian Planetary Science Conference, poster; best poster award" }, { date: "2024-10", note: "3rd Indian Space Weather Conference, talk" }] },
       { name: "Bhimtal", country: "India", lat: 29.344, lon: 79.563, visits: [{ date: "2024-10", note: "6th URSI-RCRS, poster" }] },
-      { name: "Indore", country: "India", lat: 22.7196, lon: 75.8577, visits: [{ date: "2026", note: "Indian Planetary Science Conference, talk" }, { date: "2021", note: "IIT Indore: M.Sc. and Ph.D." }] },
+      { name: "Indore", country: "India", lat: 22.7196, lon: 75.8577, visits: [{ date: "2026-03", note: "7th Indian Planetary Science Conference, talk" }, { date: "2021", note: "IIT Indore: M.Sc. and Ph.D." }] },
       { name: "Meerut", country: "India", lat: 28.9845, lon: 77.7064, visits: [{ date: "2021", note: "B.Sc., CCS University" }] },
       { name: "Mhow", country: "India", lat: 22.5524, lon: 75.7565, visits: [] },
       { name: "Ujjain", country: "India", lat: 23.1765, lon: 75.7885, visits: [] },
@@ -422,7 +445,7 @@ window.SITE = {
       { id: "kerala", section: "travel", title: "Thiruvananthapuram and Kollam", place: "Kerala", region: { states: ["Kerala"] } },
       { id: "northeast", section: "travel", title: "Guwahati, Umiam and Cherrapunji", place: "Assam and Meghalaya", region: { states: ["Assam", "Meghalaya"] } },
 
-      { id: "ipsc-2026", section: "conferences", title: "IPSC 2026", place: "IIT Indore", date: "2026" },
+      { id: "ipsc-2026", section: "conferences", title: "IPSC 2026", place: "IIT Indore", date: "2026-03" },
       { id: "isro-esa-2026", section: "conferences", title: "ISRO\u2013ESA Workshop", place: "Thiruvananthapuram", date: "2026-01" },
       { id: "variable-sun-2025", section: "conferences", title: "The Variable Sun", place: "Thiruvananthapuram", date: "2025-12" },
       { id: "asi-2025", section: "conferences", title: "ASI Symposium 003", place: "JECRC University, Jaipur", date: "2025-09" },

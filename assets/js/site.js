@@ -115,12 +115,12 @@
     if (p.ads) links.push('<a class="chip" href="' + esc(p.ads) + '">ADS</a>');
     if (p.code) links.push('<a class="chip" href="' + esc(p.code) + '">Code</a>');
     if (p.video) links.push('<a class="chip" href="https://www.youtube.com/watch?v=' + esc(p.video) + '">' + icon("play") + " Video</a>");
-    links.push('<button type="button" class="chip" data-bib="' + esc(bibKey(p)) + '" aria-expanded="false">BibTeX</button>');
-    var tags = (KIND_LABEL[p.kind] ? '<span class="chip kindtag">' + KIND_LABEL[p.kind] + "</span>" : "") +
+    if (!p.status) links.push('<button type="button" class="chip" data-bib="' + esc(bibKey(p)) + '" aria-expanded="false">BibTeX</button>');
+    var tags = (p.status ? '<span class="chip status-tag">' + esc(p.status) + "</span>" : "") + (KIND_LABEL[p.kind] ? '<span class="chip kindtag">' + KIND_LABEL[p.kind] + "</span>" : "") +
       (p.collab ? '<span class="chip kindtag">' + esc(p.collab) + "</span>" : "") +
       (p.missions || []).map(function (m) { return '<span class="chip tag">' + esc(m) + "</span>"; }).join("");
     return '<li class="pub">' +
-      '<p class="pub-title"><a href="' + esc(href) + '">' + esc(p.title) + "</a></p>" +
+      '<p class="pub-title">' + (href === "#" ? esc(p.title) : '<a href="' + esc(href) + '">' + esc(p.title) + "</a>") + "</p>" +
       '<p class="pub-authors">' + authors + "</p>" +
       '<div class="pub-meta"><span class="pub-venue">' + esc(p.venue) + (p.publisher ? ", " + esc(p.publisher) : "") + '</span><span class="mono muted">' + esc(p.year) + "</span>" +
       '<span class="pub-links">' + links.join("") + "</span>" + (tags ? '<span class="pub-links">' + tags + "</span>" : "") + "</div>" +
@@ -132,7 +132,7 @@
   var PUB_FILTERS = {
     all: function () { return true; },
     first: function (p) { return p.role === "first"; },
-    firstjournal: function (p) { return p.role === "first" && p.kind === "journal"; },
+    firstjournal: function (p) { return p.role === "first" && p.kind === "journal" && !p.status; },
     co: function (p) { return p.role === "co"; },
     proc: function (p) { return p.kind === "proceedings" || p.kind === "chapter"; }
   };
@@ -187,7 +187,7 @@
   var bibAll = document.getElementById("bib-download");
   if (bibAll && SITE.publications) {
     bibAll.addEventListener("click", function () {
-      var text = SITE.publications.map(bibtex).join("\n\n") + "\n";
+      var text = SITE.publications.filter(function (p) { return !p.status; }).map(bibtex).join("\n\n") + "\n";
       var a = document.createElement("a");
       a.href = URL.createObjectURL(new Blob([text], { type: "application/x-bibtex" }));
       a.download = "aggarwal-publications.bib";
@@ -239,9 +239,10 @@
   }
 
   var citeStat = document.getElementById("stat-citations");
-  if (citeStat && window.METRICS && window.METRICS.citations) {
-    citeStat.querySelector("b").textContent = window.METRICS.citations.toLocaleString("en-US");
-    citeStat.querySelector("span").innerHTML = 'citations, h-index ' + esc(window.METRICS.h_index) + ' (<a href="' + esc(window.METRICS.source) + '">Google Scholar</a>)';
+  var M = SITE.metrics;
+  if (citeStat && M && M.citations) {
+    citeStat.querySelector("b").textContent = M.citations.toLocaleString("en-US");
+    citeStat.querySelector("span").innerHTML = 'citations (<a href="' + esc(M.url) + '">' + esc(M.source) + "</a>)";
     citeStat.hidden = false;
   }
 
@@ -255,10 +256,11 @@
   var cvPubs = document.getElementById("cv-pubs");
   if (cvPubs && SITE.publications) {
     var groups = [
-      [function (p) { return p.role === "first" && p.kind === "journal"; }, "First-author journal papers"],
-      [function (p) { return p.role === "co" && p.kind === "journal"; }, "Co-authored journal papers"],
+      [function (p) { return p.role === "first" && p.kind === "journal" && !p.status; }, "First-author journal papers"],
+      [function (p) { return p.role === "co" && p.kind === "journal" && !p.status; }, "Co-authored journal papers"],
       [function (p) { return p.kind === "proceedings" || p.kind === "chapter"; }, "Conference proceedings and book chapters"],
-      [function (p) { return p.kind === "whitepaper" || p.kind === "preprint"; }, "White papers and preprints"]
+      [function (p) { return p.kind === "whitepaper" || p.kind === "preprint"; }, "White papers and preprints"],
+      [function (p) { return !!p.status; }, "Under review"]
     ];
     cvPubs.innerHTML = groups.map(function (g) {
       var list = SITE.publications.filter(g[0]);
