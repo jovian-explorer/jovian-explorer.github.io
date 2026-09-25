@@ -365,7 +365,6 @@ window.SITE = {
       "Madhya Pradesh/Bhopal",
       "Madhya Pradesh/Dewas",
       "Madhya Pradesh/Indore",
-      "Madhya Pradesh/Khandwa",
       "Madhya Pradesh/Ujjain",
       "Maharashtra/Mumbai City",
       "Maharashtra/Mumbai Suburban",
