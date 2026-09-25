@@ -67,7 +67,9 @@
   var indiaOutline = topojson.mesh(IN, IN.objects.states, function (a, b) { return a === b; });
   var countries = topojson.feature(WO, WO.objects.countries).features.filter(function (f) { return f.properties.name !== "Antarctica"; });
   var STATE_COUNT = IN.objects.states.geometries.length;
+  var stateTotals = {};
   units.forEach(function (f) { f.key = f.properties.state + "/" + f.properties.name; });
+  districts.forEach(function (f) { stateTotals[f.properties.state] = (stateTotals[f.properties.state] || 0) + 1; });
 
   /* ---------- Shared map scaffolding ---------- */
   function makeMap(root, opts) {
@@ -239,7 +241,7 @@
       });
       var keys = Object.keys(byState);
       dl.innerHTML = keys.length ? keys.map(function (s) {
-        return '<div class="state-group"><h4>' + esc(s) + ' <span class="count">' + byState[s].length + "</span></h4><p>" + byState[s].map(esc).join(", ") + "</p></div>";
+        return '<div class="state-group"><h4>' + esc(s) + ' <span class="count">' + byState[s].length + "</span></h4><p>" + (byState[s].length > 1 && byState[s].length === stateTotals[s] ? "All " + stateTotals[s] + " districts" : byState[s].map(esc).join(", ")) + "</p></div>";
       }).join("") : '<p class="muted">No districts marked yet.</p>';
     }
 
