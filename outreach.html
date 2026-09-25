@@ -61,7 +61,7 @@
     </header>
 
     <div class="stats">
-      <div class="stat"><b>30+</b><span>lab videos, English and Hindi</span></div>
+      <div class="stat"><b id="video-total">30+</b><span>videos, English and Hindi</span></div>
       <div class="stat"><b>3</b><span>school and college astronomy labs</span></div>
       <div class="stat"><b>4 days</b><span>100 Hours of Astronomy, 2023</span></div>
     </div>
@@ -100,7 +100,8 @@
     <section class="section">
       <div class="section-head"><h2>School astronomy labs</h2></div>
       <p class="muted" style="max-width:var(--measure)">Instructional videos, each recorded in English and Hindi, for the kits of the Astronomy and Space Innovation (ASI) Lab programme. The kits are used in the Yajur Vedshala labs in government schools of Haryana (with the Haryana School Shiksha Pariyojna Parishad), the HICASE Lab at C-ELITE, Ujjain Engineering College, and the Astronomy and Space Tinkering Lab at PM SHRI Kendriya Vidyalaya, IIT Indore.</p>
-      <div class="grid kit-grid">
+      <div id="kit-media"></div>
+      <div class="grid kit-grid" id="kit-static">
         <article class="card"><h3>Optics</h3><ul class="kit-list"><li>Optical bench</li><li>Assembling a refracting telescope</li><li>Assembling a reflecting telescope</li><li>How refracting and reflecting telescopes work</li><li>Solar viewer box</li><li>Reflector dish</li></ul></article>
         <article class="card"><h3>Virtual lab</h3><ul class="kit-list"><li>Period of solar rotation from sunspots</li><li>Mass of Jupiter from its moons</li></ul></article>
         <article class="card"><h3>Radio astronomy</h3><ul class="kit-list"><li>Tuning into FM bands</li><li>DTH dish as a radio telescope</li></ul></article>
@@ -109,6 +110,24 @@
         <article class="card"><h3>Model kits</h3><ul class="kit-list"><li>Newton&rsquo;s cradle</li><li>Solar system</li><li>The Big Bang</li><li>Binary stars</li><li>Galaxies</li></ul></article>
       </div>
     </section>
+
+
+    <section class="section" hidden>
+      <div class="section-head"><h2>Mission explainers and National Space Day</h2></div>
+      <div id="mission-media"></div>
+    </section>
+
+    <section class="section" hidden>
+      <div class="section-head"><h2>Photographs</h2></div>
+      <div class="ophotos" id="outreach-photos"></div>
+    </section>
+
+
+    <dialog class="vplayer" id="vplayer" aria-label="Video player">
+      <div class="vp-frame"></div>
+      <div class="vp-bar"><p class="vp-title"></p><button class="icon-btn" type="button" data-close aria-label="Close"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-close"></use></svg></button></div>
+    </dialog>
+    <dialog class="photo-dialog" id="photo-dialog" aria-label="Photograph"><img src="" alt=""></dialog>
   </main>
 
   <footer class="site-footer">
@@ -124,5 +143,6 @@
 
   <script src="assets/js/data.js"></script>
   <script src="assets/js/site.js"></script>
+  <script src="assets/js/outreach.js"></script>
 </body>
 </html>
