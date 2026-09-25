@@ -14,7 +14,7 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="icon" href="favicon.ico" sizes="32x32">
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-  <meta name="theme-color" content="#1f4f7a">
+  <meta name="theme-color" content="#0b0e14">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
@@ -57,17 +57,24 @@
     <header class="page-head">
       <p class="label">Outreach</p>
       <h1>Outreach</h1>
-      <p>Public astronomy events, classroom resources in English and Hindi, and instructional material for school astronomy labs, produced with fellow students at the Department of Astronomy, Astrophysics and Space Engineering, IIT Indore.</p>
+      <p>Public astronomy events, classroom material in English and Hindi, and instructional videos for school astronomy labs, produced with fellow students at the Department of Astronomy, Astrophysics and Space Engineering, IIT Indore.</p>
     </header>
 
     <div class="stats">
-      <div class="stat"><b id="video-total">30+</b><span>videos, English and Hindi</span></div>
-      <div class="stat"><b>3</b><span>school and college astronomy labs</span></div>
+      <div class="stat"><b id="stat-videos">31</b><span>videos in English and Hindi</span></div>
+      <div class="stat"><b id="stat-docs">12</b><span>classroom documents</span></div>
+      <div class="stat"><b>3</b><span>school and college labs supported</span></div>
       <div class="stat"><b>4 days</b><span>100 Hours of Astronomy, 2023</span></div>
     </div>
 
-    <section class="section">
-      <div class="section-head"><h2>Events and programmes</h2></div>
+    <div class="tabs" role="tablist" aria-label="Outreach" data-tabs>
+      <button class="tab" role="tab" id="otab-prog" aria-controls="opanel-prog" data-hash="programmes">Programmes</button>
+      <button class="tab" role="tab" id="otab-lab" aria-controls="opanel-lab" data-hash="lab-videos">Lab videos <span class="count" id="tabc-lab"></span></button>
+      <button class="tab" role="tab" id="otab-mis" aria-controls="opanel-mis" data-hash="missions">Space missions <span class="count" id="tabc-missions"></span></button>
+      <button class="tab" role="tab" id="otab-res" aria-controls="opanel-res" data-hash="resources">Classroom resources <span class="count" id="tabc-res"></span></button>
+    </div>
+
+    <div class="tab-panel" role="tabpanel" id="opanel-prog" aria-labelledby="otab-prog">
       <div class="rows">
         <div class="row"><div class="row-date">1&ndash;4 Oct 2023</div><div class="row-body">
           <p class="row-title">100 Hours of Astronomy: The Overview Effect</p>
@@ -95,39 +102,35 @@
           <p class="row-title">Club Head, Astronomy, Space Engineering and Technology (AsSET) Club</p>
         </div></div>
       </div>
-    </section>
+    </div>
 
-    <section class="section">
-      <div class="section-head"><h2>School astronomy labs</h2></div>
-      <p class="muted" style="max-width:var(--measure)">Instructional videos, each recorded in English and Hindi, for the kits of the Astronomy and Space Innovation (ASI) Lab programme. The kits are used in the Yajur Vedshala labs in government schools of Haryana (with the Haryana School Shiksha Pariyojna Parishad), the HICASE Lab at C-ELITE, Ujjain Engineering College, and the Astronomy and Space Tinkering Lab at PM SHRI Kendriya Vidyalaya, IIT Indore.</p>
-      <div id="kit-media"></div>
-      <div class="grid kit-grid" id="kit-static">
-        <article class="card"><h3>Optics</h3><ul class="kit-list"><li>Optical bench</li><li>Assembling a refracting telescope</li><li>Assembling a reflecting telescope</li><li>How refracting and reflecting telescopes work</li><li>Solar viewer box</li><li>Reflector dish</li></ul></article>
-        <article class="card"><h3>Virtual lab</h3><ul class="kit-list"><li>Period of solar rotation from sunspots</li><li>Mass of Jupiter from its moons</li></ul></article>
-        <article class="card"><h3>Radio astronomy</h3><ul class="kit-list"><li>Tuning into FM bands</li><li>DTH dish as a radio telescope</li></ul></article>
-        <article class="card"><h3>Robotics and IoT</h3><ul class="kit-list"><li>Robotics kit</li><li>IoT with the Tinker Board</li></ul></article>
-        <article class="card"><h3>ExpEYES</h3><ul class="kit-list"><li>Introduction to ExpEYES</li><li>Measuring resistance and capacitance</li></ul></article>
-        <article class="card"><h3>Model kits</h3><ul class="kit-list"><li>Newton&rsquo;s cradle</li><li>Solar system</li><li>The Big Bang</li><li>Binary stars</li><li>Galaxies</li></ul></article>
+    <div class="tab-panel" role="tabpanel" id="opanel-lab" aria-labelledby="otab-lab" hidden>
+      <p class="panel-intro">Each kit of the Astronomy and Space Innovation (ASI) Lab programme has a video walkthrough, recorded in English and Hindi. The kits are used in the Yajur Vedshala labs in government schools of Haryana (with the Haryana School Shiksha Pariyojna Parishad), the HICASE Lab at C-ELITE, Ujjain Engineering College, and the Astronomy and Space Tinkering Lab at PM SHRI Kendriya Vidyalaya, IIT Indore.</p>
+      <div class="lab-toolbar">
+        <div class="filters" id="kit-filter" role="group" aria-label="Kit"></div>
+        <div class="filters" id="lang-switch" role="group" aria-label="Preferred language">
+          <button type="button" class="filter" data-lang="English" aria-pressed="true">English</button>
+          <button type="button" class="filter" data-lang="Hindi" aria-pressed="false">&#2361;&#2367;&#2344;&#2381;&#2342;&#2368;</button>
+        </div>
       </div>
-    </section>
+      <p class="result-count" id="lab-count"></p>
+      <div class="video-grid" id="lab-grid"></div>
+    </div>
 
+    <div class="tab-panel" role="tabpanel" id="opanel-mis" aria-labelledby="otab-mis" hidden>
+      <p class="panel-intro">Explainers made for the Chandrayaan-3 landing and the Aditya-L1 launch, and the introduction used in National Space Day celebrations in schools.</p>
+      <div class="video-grid" id="mission-grid"></div>
+    </div>
 
-    <section class="section" hidden>
-      <div class="section-head"><h2>Mission explainers and National Space Day</h2></div>
-      <div id="mission-media"></div>
-    </section>
-
-    <section class="section" hidden>
-      <div class="section-head"><h2>Photographs</h2></div>
-      <div class="ophotos" id="outreach-photos"></div>
-    </section>
-
+    <div class="tab-panel" role="tabpanel" id="opanel-res" aria-labelledby="otab-res" hidden>
+      <p class="panel-intro">Printable material for schools: activities for National Space Day and quizzes on India&rsquo;s lunar and solar missions, with answer keys.</p>
+      <div class="res-groups" id="resource-list"></div>
+    </div>
 
     <dialog class="vplayer" id="vplayer" aria-label="Video player">
       <div class="vp-frame"></div>
       <div class="vp-bar"><p class="vp-title"></p><button class="icon-btn" type="button" data-close aria-label="Close"><svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-close"></use></svg></button></div>
     </dialog>
-    <dialog class="photo-dialog" id="photo-dialog" aria-label="Photograph"><img src="" alt=""></dialog>
   </main>
 
   <footer class="site-footer">

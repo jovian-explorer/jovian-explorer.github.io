@@ -225,6 +225,23 @@ window.SITE = {
     }
   ],
 
+  /* ------------------------------------------------------------------
+     Home page "Recent" list: one line per item, newest first.
+     type: Paper | Talk | Poster | Video | Milestone
+     ------------------------------------------------------------------ */
+  recent: [
+    { date: "Sep 2026", type: "Video", title: "Video summaries of three 2026 papers", where: "YouTube", href: "videos.html" },
+    { date: "2026", type: "Paper", title: "Plasma turbulence in the lunar environment across solar wind and magnetotail conditions", where: "JGR: Planets", href: "https://doi.org/10.1029/2026JE009957" },
+    { date: "2026", type: "Paper", title: "A study on the contribution of the interplanetary medium in radio occultation experiments", where: "Icarus", href: "https://doi.org/10.1016/j.icarus.2026.117291" },
+    { date: "May 2026", type: "Milestone", title: "PhD thesis submitted", where: "IIT Indore" },
+    { date: "Mar 2026", type: "Talk", title: "A turbulence index independent framework for solar wind speed and coronal density", where: "7th Indian Planetary Science Conference, IIT Indore", href: "talks.html" },
+    { date: "2026", type: "Paper", title: "A turbulence index independent framework for deriving solar wind speed and coronal electron density from radio spectral broadening", where: "MNRAS", href: "https://doi.org/10.1093/mnras/stag554" },
+    { date: "2026", type: "Paper", title: "A generalized method for estimating solar wind speeds and densities for a Kolmogorov turbulence spectrum", where: "Advances in Space Research", href: "https://doi.org/10.1016/j.asr.2026.03.059" },
+    { date: "Jan 2026", type: "Poster", title: "Solar wind speeds from Doppler broadening: MOM and Akatsuki", where: "ISRO\u2013ESA Workshop, Thiruvananthapuram", href: "talks.html" },
+    { date: "Dec 2025", type: "Poster", title: "Solar wind speeds from Doppler broadening: MOM and Akatsuki", where: "AGU Fall Meeting, New Orleans", href: "talks.html" },
+    { date: "Aug 2025", type: "Talk", title: "Studying the \u2018Smiley Sun\u2019 with Akatsuki radio occultation", where: "URSI AP-RASC 2025, Sydney", href: "talks.html" }
+  ],
+
   /* Citation count shown on the publications page. */
   metrics: { citations: 2248, source: "ResearchGate", url: "https://www.researchgate.net/profile/Keshav-Aggarwal-4" },
 
