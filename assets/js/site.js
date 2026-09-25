@@ -106,7 +106,7 @@
 
   /* ---------- Publications ---------- */
   function pubHTML(p) {
-    var href = p.doi ? "https://doi.org/" + p.doi : p.url;
+    var href = p.doi ? "https://doi.org/" + p.doi : p.url || (p.arxiv ? "https://arxiv.org/abs/" + p.arxiv : "#");
     var authors = esc(p.authors).replace(/Aggarwal, K\./g, '<span class="me">Aggarwal, K.</span>');
     var links = [];
     if (p.doi) links.push('<a class="chip" href="https://doi.org/' + esc(p.doi) + '">DOI</a>');
@@ -116,15 +116,26 @@
     if (p.code) links.push('<a class="chip" href="' + esc(p.code) + '">Code</a>');
     if (p.video) links.push('<a class="chip" href="https://www.youtube.com/watch?v=' + esc(p.video) + '">' + icon("play") + " Video</a>");
     links.push('<button type="button" class="chip" data-bib="' + esc(bibKey(p)) + '" aria-expanded="false">BibTeX</button>');
-    var tags = (p.missions || []).map(function (m) { return '<span class="chip tag">' + esc(m) + "</span>"; }).join("");
+    var tags = (KIND_LABEL[p.kind] ? '<span class="chip kindtag">' + KIND_LABEL[p.kind] + "</span>" : "") +
+      (p.collab ? '<span class="chip kindtag">' + esc(p.collab) + "</span>" : "") +
+      (p.missions || []).map(function (m) { return '<span class="chip tag">' + esc(m) + "</span>"; }).join("");
     return '<li class="pub">' +
       '<p class="pub-title"><a href="' + esc(href) + '">' + esc(p.title) + "</a></p>" +
       '<p class="pub-authors">' + authors + "</p>" +
-      '<div class="pub-meta"><span class="pub-venue">' + esc(p.venue) + '</span><span class="mono muted">' + esc(p.year) + "</span>" +
+      '<div class="pub-meta"><span class="pub-venue">' + esc(p.venue) + (p.publisher ? ", " + esc(p.publisher) : "") + '</span><span class="mono muted">' + esc(p.year) + "</span>" +
       '<span class="pub-links">' + links.join("") + "</span>" + (tags ? '<span class="pub-links">' + tags + "</span>" : "") + "</div>" +
       '<div class="bib" hidden><pre>' + esc(bibtex(p)) + '</pre><button type="button" class="btn small ghost" data-copy-bib>Copy</button></div>' +
       "</li>";
   }
+
+  var KIND_LABEL = { proceedings: "Proceedings", chapter: "Book chapter", whitepaper: "White paper", preprint: "Preprint" };
+  var PUB_FILTERS = {
+    all: function () { return true; },
+    first: function (p) { return p.role === "first"; },
+    firstjournal: function (p) { return p.role === "first" && p.kind === "journal"; },
+    co: function (p) { return p.role === "co"; },
+    proc: function (p) { return p.kind === "proceedings" || p.kind === "chapter"; }
+  };
 
   /* ---------- BibTeX ---------- */
   function bibAuthors(s) {
@@ -146,8 +157,11 @@
   }
   function bibtex(p) {
     var f = [["author", bibAuthors(p.authors)], ["title", "{" + p.title + "}"]];
-    var type = p.type === "whitepaper" ? "misc" : "article";
-    if (type === "article") f.push(["journal", p.venue]); else f.push(["howpublished", p.venue]);
+    var type = { journal: "article", proceedings: "inproceedings", chapter: "incollection" }[p.kind] || "misc";
+    if (type === "article") f.push(["journal", p.venue]);
+    else if (type === "misc") f.push(["howpublished", p.venue]);
+    else f.push(["booktitle", p.venue]);
+    if (p.publisher) f.push(["publisher", p.publisher]);
     f.push(["year", String(p.year)]);
     if (p.doi) f.push(["doi", p.doi]);
     if (p.url) f.push(["url", p.url]);
@@ -195,20 +209,20 @@
     var all = SITE.publications;
     var search = document.getElementById("pub-search");
     var countEl = document.getElementById("pub-count");
-    var panels = pubRoot.querySelectorAll("[data-pub-type]");
+    var panels = pubRoot.querySelectorAll("[data-pub-filter]");
     function counts() {
       pubRoot.querySelectorAll("[data-count]").forEach(function (el) {
         var t = el.getAttribute("data-count");
-        el.textContent = t === "all" ? all.length : all.filter(function (p) { return p.type === t; }).length;
+        el.textContent = all.filter(PUB_FILTERS[t]).length;
       });
     }
     function render() {
       var q = (search && search.value || "").trim().toLowerCase();
       var shown = 0;
       panels.forEach(function (panel) {
-        var t = panel.getAttribute("data-pub-type");
+        var t = panel.getAttribute("data-pub-filter");
         var list = all.filter(function (p) {
-          if (t !== "all" && p.type !== t) return false;
+          if (!PUB_FILTERS[t](p)) return false;
           if (!q) return true;
           return [p.title, p.authors, p.venue, p.year, (p.missions || []).join(" ")].join(" ").toLowerCase().indexOf(q) > -1;
         });
@@ -224,20 +238,33 @@
     render();
   }
 
+  var citeStat = document.getElementById("stat-citations");
+  if (citeStat && window.METRICS && window.METRICS.citations) {
+    citeStat.querySelector("b").textContent = window.METRICS.citations.toLocaleString("en-US");
+    citeStat.querySelector("span").innerHTML = 'citations, h-index ' + esc(window.METRICS.h_index) + ' (<a href="' + esc(window.METRICS.source) + '">Google Scholar</a>)';
+    citeStat.hidden = false;
+  }
+
   var selected = document.getElementById("selected-pubs");
   if (selected && SITE.publications) {
     var n = +selected.getAttribute("data-limit") || 3;
-    selected.innerHTML = SITE.publications.filter(function (p) { return p.type === "first"; }).slice(0, n).map(pubHTML).join("");
+    selected.innerHTML = SITE.publications.filter(function (p) { return p.role === "first" && p.kind === "journal"; }).slice(0, n).map(pubHTML).join("");
   }
 
   /* ---------- Compact publication list (CV) ---------- */
   var cvPubs = document.getElementById("cv-pubs");
   if (cvPubs && SITE.publications) {
-    var groups = [["first", "First-author papers"], ["collab", "Co-authored papers, JWST Transiting Exoplanet Community ERS Team"], ["whitepaper", "White papers"]];
+    var groups = [
+      [function (p) { return p.role === "first" && p.kind === "journal"; }, "First-author journal papers"],
+      [function (p) { return p.role === "co" && p.kind === "journal"; }, "Co-authored journal papers"],
+      [function (p) { return p.kind === "proceedings" || p.kind === "chapter"; }, "Conference proceedings and book chapters"],
+      [function (p) { return p.kind === "whitepaper" || p.kind === "preprint"; }, "White papers and preprints"]
+    ];
     cvPubs.innerHTML = groups.map(function (g) {
-      var list = SITE.publications.filter(function (p) { return p.type === g[0]; });
+      var list = SITE.publications.filter(g[0]);
+      if (!list.length) return "";
       return '<h3 class="cv-pubs-head">' + esc(g[1]) + '</h3><ol class="cv-pub-list">' + list.map(function (p) {
-        var href = p.doi ? "https://doi.org/" + p.doi : p.url;
+        var href = p.doi ? "https://doi.org/" + p.doi : p.url || (p.arxiv ? "https://arxiv.org/abs/" + p.arxiv : "#");
         return "<li>" + esc(p.authors).replace(/Aggarwal, K\./g, "<b>Aggarwal, K.</b>") + " (" + p.year + "). " + esc(p.title) + ". <i>" + esc(p.venue) + "</i>." +
           (p.doi ? ' <a href="' + esc(href) + '">doi:' + esc(p.doi) + "</a>" : ' <a href="' + esc(href) + '">' + esc(href.replace(/^https?:\/\//, "")) + "</a>") + "</li>";
       }).join("") + "</ol>";

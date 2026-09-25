@@ -56,21 +56,22 @@
     <header class="page-head">
       <p class="label">Publications</p>
       <h1>Publications</h1>
-      <p>Refereed papers and white papers, newest first. Citation counts are on <a href="https://scholar.google.com/citations?user=KO8MtmEAAAAJ">Google Scholar</a>; the complete record is on <a href="https://orcid.org/0000-0002-7004-8670">ORCID</a>.</p>
+      <p>Journal papers, conference proceedings, white papers and preprints, newest first. Full records are on <a href="https://scholar.google.com/citations?user=KO8MtmEAAAAJ">Google Scholar</a> and <a href="https://orcid.org/0000-0002-7004-8670">ORCID</a>.</p>
     </header>
 
     <div id="publications">
       <div class="stats">
-        <div class="stat"><b data-count="first">6</b><span>first-author papers</span></div>
-        <div class="stat"><b data-count="collab">9</b><span>JWST ERS papers</span></div>
-        <div class="stat"><b data-count="whitepaper">3</b><span>white papers</span></div>
+        <div class="stat"><b data-count="firstjournal">6</b><span>first-author journal papers</span></div>
+        <div class="stat"><b data-count="co">16</b><span>co-authored works</span></div>
+        <div class="stat"><b data-count="proc">4</b><span>proceedings and chapters</span></div>
+        <div class="stat" id="stat-citations" hidden><b></b><span></span></div>
       </div>
 
       <div class="tabs" role="tablist" aria-label="Publication type">
         <button class="tab" role="tab" id="tab-all" aria-controls="panel-all" data-hash="all">All <span class="count" data-count="all"></span></button>
         <button class="tab" role="tab" id="tab-first" aria-controls="panel-first" data-hash="first">First author <span class="count" data-count="first"></span></button>
-        <button class="tab" role="tab" id="tab-collab" aria-controls="panel-collab" data-hash="collab">JWST collaboration <span class="count" data-count="collab"></span></button>
-        <button class="tab" role="tab" id="tab-white" aria-controls="panel-white" data-hash="whitepapers">White papers <span class="count" data-count="whitepaper"></span></button>
+        <button class="tab" role="tab" id="tab-co" aria-controls="panel-co" data-hash="coauthored">Co-authored <span class="count" data-count="co"></span></button>
+        <button class="tab" role="tab" id="tab-proc" aria-controls="panel-proc" data-hash="proceedings">Proceedings &amp; book chapters <span class="count" data-count="proc"></span></button>
       </div>
 
       <div class="toolbar">
@@ -80,16 +81,16 @@
         <button class="btn small ghost" type="button" id="bib-download">Download BibTeX</button>
       </div>
 
-      <div class="tab-panel" role="tabpanel" id="panel-all" aria-labelledby="tab-all" data-pub-type="all"></div>
-      <div class="tab-panel" role="tabpanel" id="panel-first" aria-labelledby="tab-first" data-pub-type="first" hidden></div>
-      <div class="tab-panel" role="tabpanel" id="panel-collab" aria-labelledby="tab-collab" data-pub-type="collab" hidden></div>
-      <div class="tab-panel" role="tabpanel" id="panel-white" aria-labelledby="tab-white" data-pub-type="whitepaper" hidden></div>
+      <div class="tab-panel" role="tabpanel" id="panel-all" aria-labelledby="tab-all" data-pub-filter="all"></div>
+      <div class="tab-panel" role="tabpanel" id="panel-first" aria-labelledby="tab-first" data-pub-filter="first" hidden></div>
+      <div class="tab-panel" role="tabpanel" id="panel-co" aria-labelledby="tab-co" data-pub-filter="co" hidden></div>
+      <div class="tab-panel" role="tabpanel" id="panel-proc" aria-labelledby="tab-proc" data-pub-filter="proc" hidden></div>
       <noscript><p>The publication list needs JavaScript. See <a href="https://scholar.google.com/citations?user=KO8MtmEAAAAJ">Google Scholar</a>.</p></noscript>
     </div>
 
     <section class="section">
       <div class="section-head"><h2>Conference presentations</h2><a href="talks.html">Talks &amp; posters &rarr;</a></div>
-      <p class="muted">Four talks and six posters since 2023, including the Early Career Researcher Award for best poster at the 6th Indian Planetary Science Conference and an AGU Student Grant for the AGU Fall Meeting 2025. Poster PDFs are in the <a href="https://github.com/jovian-explorer/Conference-posters">Conference-posters</a> repository.</p>
+      <p class="muted">Five talks and six posters since 2023, including the Early Career Researcher Award for best poster at the 6th Indian Planetary Science Conference and an AGU Student Grant for the AGU Fall Meeting 2025. Poster PDFs are in the <a href="https://github.com/jovian-explorer/Conference-posters">Conference-posters</a> repository.</p>
     </section>
   </main>
 
@@ -104,6 +105,7 @@
     </div>
   </footer>
 
+  <script src="assets/js/feed-metrics.js"></script>
   <script src="assets/js/data.js"></script>
   <script src="assets/js/site.js"></script>
 </body>
