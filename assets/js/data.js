@@ -469,7 +469,10 @@ window.SITE = {
       { id: "ursi-aprasc-2025", section: "conferences", title: "URSI AP-RASC 2025", place: "ICC Sydney", date: "2025-08" },
       { id: "ipsc-2025", section: "conferences", title: "IPSC 2025", place: "IIT Roorkee", date: "2025-03" },
       { id: "ursi-rcrs-2024", section: "conferences", title: "URSI-RCRS 2024", place: "GEHU Bhimtal", date: "2024-10" },
-      { id: "iswc-2024", section: "conferences", title: "Indian Space Weather Conference", place: "IIT Roorkee", date: "2024-10" }
+      { id: "iswc-2024", section: "conferences", title: "Indian Space Weather Conference", place: "IIT Roorkee", date: "2024-10" },
+      { id: "al1sc-iiti-2024", section: "conferences", title: "Aditya-L1 Support Cell workshop", place: "IIT Indore", date: "2024-09" },
+      { id: "al1sc-bhu-2023", section: "conferences", title: "3rd Aditya-L1 Workshop", place: "IIT (BHU) Varanasi", date: "2023-02" },
+      { id: "ursi-rcrs-2022", section: "conferences", title: "URSI-RCRS 2022", place: "IIT Indore", date: "2022-12" }
     ]
   }
 };
