@@ -29,7 +29,7 @@
   window.addEventListener("hashchange", function () { if (location.hash === "#demo" || demo) location.reload(); });
 
   var photos = (demo ? samplePhotos() : (window.PHOTOS || []).slice()).filter(function (p) { return !p.hidden; });
-  photos.sort(function (a, b) { return (b.date || "") > (a.date || "") ? 1 : -1; });
+  photos.sort(function (a, b) { var x = a.date || "", y = b.date || ""; return x === y ? 0 : (y > x ? 1 : -1); });
   var albums = (CONF.albums || []).map(function (a) {
     var items = photos.filter(function (p) { return p.album === a.id; });
     return Object.assign({}, a, { items: items, cover: items.filter(function (p) { return p.cover; })[0] || items[0] });
