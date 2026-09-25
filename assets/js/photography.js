@@ -181,10 +181,10 @@
     var specs = [
       ["night-sky", 1.5, "Orion Nebula (M42)", "Indore", "2025-01"], ["night-sky", 1, "Waxing gibbous Moon", "Indore", "2024-12"],
       ["night-sky", 1.78, "Milky Way core", "Bhimtal", "2024-10"], ["night-sky", 0.8, "Star trails", "Bhimtal", "2024-10"],
-      ["night-sky", 1.5, "Pleiades (M45)", "Indore", "2023-11"], ["travel", 1.5, "Sheffield city centre", "Sheffield", "2025-09"],
+      ["night-sky", 1.5, "Pleiades (M45)", "Indore", "2023-11"], ["travel", 1.5, "Sydney Harbour", "Sydney", "2025-08"],
       ["travel", 0.67, "Hawa Mahal", "Jaipur", "2025-09"], ["travel", 1.78, "Naukuchiatal lake", "Bhimtal", "2024-10"],
       ["travel", 1.33, "Kovalam coast", "Thiruvananthapuram", "2026-02"], ["travel", 1.5, "Ganga canal", "Roorkee", "2025-03"],
-      ["conferences", 1.5, "Poster session", "Sheffield", "2025-09"], ["conferences", 1.33, "IIT Roorkee campus", "Roorkee", "2025-03"],
+      ["conferences", 1.5, "URSI AP-RASC, Sydney", "Sydney", "2025-08"], ["conferences", 1.33, "IIT Roorkee campus", "Roorkee", "2025-03"],
       ["conferences", 1.5, "URSI-RCRS venue", "Bhimtal", "2024-10"], ["night-sky", 1.5, "Jupiter and moons", "Indore", "2024-01"]
     ];
     return specs.map(function (s, i) {

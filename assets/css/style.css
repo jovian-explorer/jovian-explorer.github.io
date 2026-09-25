@@ -654,6 +654,21 @@ button.chip:hover, button.chip[aria-expanded="true"] { color: var(--accent); bor
 .fig-text { fill: var(--ink); font-family: var(--f-body); font-size: 13px; }
 .fig-small { fill: var(--muted); font-family: var(--f-mono); font-size: 11px; }
 
+/* ---------- Talks and posters ---------- */
+.kind { display: inline-block; font-family: var(--f-mono); font-style: normal; font-size: 0.68rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 0.05rem 0.4rem; border-radius: 3px; vertical-align: 0.1em; margin-right: 0.3rem; }
+.kind-talk { background: var(--accent); color: var(--accent-ink); }
+.kind-poster { background: var(--accent-soft); color: var(--accent); }
+.award { font-size: var(--t-sm); color: var(--ink); display: flex; gap: 0.4rem; align-items: baseline; }
+.award::before { content: ""; flex: none; width: 0.55rem; height: 0.55rem; border-radius: 50%; background: #c9922e; transform: translateY(-0.05rem); }
+.home-talks { list-style: none; margin: 0; padding: 0; display: grid; }
+.home-talks li { display: grid; grid-template-columns: 5.5rem minmax(0, 1fr); gap: 1rem; padding-block: 0.8rem; border-bottom: 1px solid var(--rule); }
+.home-talks li:first-child { border-top: 1px solid var(--rule); }
+.home-talks time { font-size: var(--t-xs); color: var(--muted); padding-top: 0.2rem; font-variant-numeric: tabular-nums; }
+.home-talks div { display: grid; gap: 0.15rem; }
+.ht-event { font-weight: 600; font-size: var(--t-sm); }
+.ht-title { font-family: var(--f-display); font-size: 1rem; line-height: 1.35; }
+.ht-place { font-size: var(--t-xs); color: var(--muted); }
+
 /* ---------- Footer ---------- */
 .site-footer { border-top: 1px solid var(--rule); }
 .footer-inner {
