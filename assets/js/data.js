@@ -175,7 +175,8 @@ window.SITE = {
       date: "2025-12", dates: "Dec 2025", kind: "Poster",
       event: "AGU Fall Meeting 2025",
       place: "New Orleans, United States",
-      title: "Estimating solar wind speeds using Doppler broadening: results from MOM and Akatsuki"
+      title: "Estimating solar wind speeds using Doppler broadening: results from MOM and Akatsuki",
+      award: "AGU Student Grant"
     },
     {
       date: "2025-12", dates: "Dec 2025", kind: "Poster",
