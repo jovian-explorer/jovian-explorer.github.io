@@ -2,7 +2,7 @@
 import html, re, urllib.request
 from urllib.parse import urljoin
 UA = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/126 Safari/537.36"}
-ROOTS = ["https://sites.google.com/iiti.ac.in/abhirupdatta/", "https://sites.google.com/iiti.ac.in/space-events/", "https://ipsc2026.iiti.ac.in/"]
+ROOTS = ["https://sites.google.com/iiti.ac.in/abhirupdatta/", "https://sites.google.com/iiti.ac.in/space-events/"]
 def get(u):
     return urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=40).read().decode("utf-8", "replace")
 def text(h):
@@ -35,5 +35,5 @@ for root in ROOTS:
         if ext: print("EXTERNAL LINKS:", ext)
         for l in re.findall(r'href="([^"]+)"', h):
             full = urljoin(u, html.unescape(l)).split("#")[0].split("?")[0]
-            if full.startswith(root) and full not in seen and full not in queue:
+            if full.startswith(root) and full not in seen and full not in queue and not re.search(r"\.(css|js|png|jpg|pdf)$", full):
                 queue.append(full)
