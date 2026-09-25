@@ -8,6 +8,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-      - run: python3 tools/lookup_sites.py > sites.txt; wc -c sites.txt
-      - uses: actions/upload-artifact@v4
-        with: { name: sites, path: sites.txt }
+      - run: python3 tools/lookup_sites.py
