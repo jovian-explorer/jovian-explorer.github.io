@@ -327,6 +327,31 @@
     }).join("");
   }
 
+  /* ---------- Home: recent list and at-a-glance numbers ---------- */
+  var recentRoot = document.getElementById("recent-list");
+  if (recentRoot && SITE.recent) {
+    recentRoot.innerHTML = SITE.recent.map(function (r) {
+      var t = esc(r.title);
+      if (r.href) t = '<a href="' + esc(r.href) + '">' + t + "</a>";
+      return '<li><time class="mono">' + esc(r.date) + '</time><div><p class="rc-title"><span class="kind kind-' + esc(r.type.toLowerCase()) + '">' + esc(r.type) + "</span> " + t + "</p>" +
+        (r.where ? '<p class="rc-where">' + esc(r.where) + "</p>" : "") + "</div></li>";
+    }).join("");
+  }
+  var glance = document.getElementById("glance");
+  if (glance) {
+    var P = SITE.publications || [], C = SITE.conferences || [], T = SITE.travel || {};
+    var cells = [
+      [P.filter(function (p) { return p.role === "first" && p.kind === "journal" && !p.status; }).length, "first-author journal papers", "publications.html#first"],
+      [P.filter(function (p) { return !p.status; }).length, "publications in total", "publications.html"],
+      [SITE.metrics && SITE.metrics.citations ? SITE.metrics.citations.toLocaleString("en-US") : "", "citations", "publications.html"],
+      [C.length, "conference talks and posters", "talks.html"],
+      [(T.districts || []).length, "districts of India visited", "travel.html"]
+    ].filter(function (c) { return c[0]; });
+    glance.innerHTML = cells.map(function (c) {
+      return '<a class="glance-cell" href="' + c[2] + '"><b>' + esc(c[0]) + "</b><span>" + esc(c[1]) + "</span></a>";
+    }).join("");
+  }
+
   /* ---------- Latest video and article (home page) ---------- */
   var V = window.VIDEOS && window.VIDEOS.videos ? window.VIDEOS.videos.filter(function (v) { return !v.hidden; }) : [];
   var latestV = document.getElementById("latest-video");
