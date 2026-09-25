@@ -333,7 +333,7 @@ window.SITE = {
                 lat/lon in decimal degrees. visits: { date: "YYYY-MM", note }.
      countries: extra countries to shade that have no pinned city.
      ------------------------------------------------------------------ */
-  travel: {
+   travel: {
     districts: [
       "Assam/Kamrup Metropolitan",
       "Chandigarh/Chandigarh",
