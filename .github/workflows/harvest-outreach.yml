@@ -8,17 +8,49 @@ permissions:
 jobs:
   harvest:
     runs-on: ubuntu-latest
-    timeout-minutes: 150
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        page: [optics, virtual-lab, radio, robotics, iot, expeyes, model-kits, asi-lab, space-day, chandrayaan-3, aditya-l1, hundred-hours]
     steps:
       - uses: actions/checkout@v5
       - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg imagemagick >/dev/null
-      - run: python3 tools/harvest_outreach.py | tee tools/harvest-log.txt
+      - run: python3 tools/harvest_outreach.py ${{ matrix.page }}
         env:
           GH_TOKEN: ${{ github.token }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: outreach-${{ matrix.page }}
+          path: assets/outreach
+          if-no-files-found: ignore
+  collect:
+    needs: harvest
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: outreach-*
+          path: assets/outreach
+          merge-multiple: true
       - run: |
+          python3 - <<'PY'
+          import json, glob
+          m = []
+          for f in sorted(glob.glob("assets/outreach/manifest-*.json")):
+              m += json.load(open(f))
+          json.dump(m, open("assets/outreach/manifest.json", "w"), indent=1, ensure_ascii=False)
+          print(len(m), "items;", sum(1 for x in m if x.get("kind") == "video"), "videos")
+          for x in m: print(x.get("page"), x.get("kind"), x.get("file"), "|", x.get("caption"), "|", x.get("duration"), x.get("mp4_bytes"))
+          PY
+          rm -f assets/outreach/manifest-*.json
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/outreach tools/harvest-log.txt
+          git add assets/outreach
           git commit -m "Outreach media harvest"
           git pull --rebase origin testing
           git push
