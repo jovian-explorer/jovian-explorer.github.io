@@ -89,6 +89,10 @@ A non-default font also needs its Google Fonts `<link>` in each page head (see `
 
 `index.html` carries schema.org Person data (affiliation, fellowship, profile links) so search engines can connect the site with the Scholar, ORCID and other profiles. `sitemap.xml` and `robots.txt` are generated with the pages.
 
+## Outreach media
+
+Outreach videos are stored as files of the GitHub release `outreach-media` (720p MP4) and listed, with thumbnails and PDFs in `assets/outreach/`, in `assets/outreach/manifest.json`. To add a video, upload the MP4 to that release and add an entry with `page`, `kind: "video"`, `file`, `caption`, `src`, `thumb` and `duration`.
+
 ## Previous version
 
 The site as it was before the redesign is kept in `legacy/` (served at `/legacy/`, excluded from search engines).
