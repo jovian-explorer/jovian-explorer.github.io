@@ -265,9 +265,12 @@ window.SITE = {
       "Meghalaya/Ri-Bhoi",
       "Punjab/Sahibzada Ajit Singh Nagar",
       "Rajasthan/Jaipur",
+      "Uttar Pradesh/Baghpat",
       "Uttar Pradesh/Ghaziabad",
       "Uttar Pradesh/Meerut",
+      "Uttar Pradesh/Muzaffarnagar",
       "Uttar Pradesh/Saharanpur",
+      "Uttar Pradesh/Shamli",
       "Uttar Pradesh/Varanasi",
       "Uttarakhand/Dehradun",
       "Uttarakhand/Haridwar",
@@ -304,7 +307,10 @@ window.SITE = {
       { name: "Bengaluru", country: "India", lat: 12.9716, lon: 77.5946, visits: [] },
       { name: "Guwahati", country: "India", lat: 26.1445, lon: 91.7362, visits: [] },
       { name: "Umiam", country: "India", lat: 25.6569, lon: 91.8826, visits: [] },
-      { name: "Cherrapunji (Sohra)", country: "India", lat: 25.2702, lon: 91.7323, visits: [] }
+      { name: "Cherrapunji (Sohra)", country: "India", lat: 25.2702, lon: 91.7323, visits: [] },
+      { name: "Muzaffarnagar", country: "India", lat: 29.4727, lon: 77.7085, visits: [] },
+      { name: "Shamli", country: "India", lat: 29.4502, lon: 77.3172, visits: [] },
+      { name: "Baghpat", country: "India", lat: 28.9448, lon: 77.2183, visits: [] }
     ],
     countries: []
   },
