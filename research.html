@@ -81,9 +81,14 @@
             <line x1="367" y1="202" x2="369" y2="228"/>
             <line x1="418" y1="196" x2="434" y2="217"/>
           </g>
-          <g style="fill: var(--accent)" fill-opacity="0.35">
-            <circle cx="320" cy="192.8" r="6"/><circle cx="365" cy="188.9" r="6"/><circle cx="410" cy="185.1" r="6"/>
+          <g style="fill: var(--accent)">
+            <circle cx="320" cy="192.8" r="6"><animateTransform attributeName="transform" type="translate" values="10 -18;-19 35" dur="4s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.5;0" dur="4s" repeatCount="indefinite"/></circle>
+            <circle cx="365" cy="188.9" r="6"><animateTransform attributeName="transform" type="translate" values="-1 -20;3 40" dur="4s" begin="-1.3s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.5;0" dur="4s" begin="-1.3s" repeatCount="indefinite"/></circle>
+            <circle cx="410" cy="185.1" r="6"><animateTransform attributeName="transform" type="translate" values="-12 -16;24 32" dur="4s" begin="-2.6s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.5;0" dur="4s" begin="-2.6s" repeatCount="indefinite"/></circle>
+            <circle cx="342" cy="190.8" r="4"><animateTransform attributeName="transform" type="translate" values="-5 -18;-9 36" dur="4s" begin="-0.6s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.4;0" dur="4s" begin="-0.6s" repeatCount="indefinite"/></circle>
+            <circle cx="388" cy="187" r="4"><animateTransform attributeName="transform" type="translate" values="-6 -18;12 36" dur="4s" begin="-2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.4;0" dur="4s" begin="-2s" repeatCount="indefinite"/></circle>
           </g>
+          <circle r="3.5" style="fill: var(--accent)"><animateMotion dur="3.2s" repeatCount="indefinite" path="M62 215 L812 151"/></circle>
           <text class="fig-small" x="300" y="256">solar wind carries density irregularities across the line of sight</text>
           <path class="fig-line" d="M750.1 145.5 A70 70 0 0 0 750.3 156"/>
           <text class="fig-text" x="733" y="155" font-style="italic">&#949;</text>
@@ -111,7 +116,26 @@
       </article>
 
       <article class="feature" id="interplanetary-medium">
-        <div><span class="label">Interplanetary medium</span><h3>Separating the interplanetary signal from planetary occultations</h3></div>
+        <div><span class="label">Interplanetary medium</span><h3>Separating the interplanetary signal from planetary occultations</h3>
+          <svg class="rfig" viewBox="0 0 320 190" role="img" aria-label="Radio link from a spacecraft behind a planet to Earth, crossing the interplanetary medium">
+            <circle class="fig-corona" cx="160" cy="-40" r="70"/><circle class="fig-sun" cx="160" cy="-40" r="34"/>
+            <text class="fig-small" x="160" y="12" text-anchor="middle">Sun</text>
+            <line class="fig-accent" x1="300" y1="70" x2="34" y2="118" stroke-width="1.6"/>
+            <g style="fill: var(--accent)">
+              <circle cx="110" cy="104" r="5"><animateTransform attributeName="transform" type="translate" values="0 -30;0 30" dur="5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.5;0" dur="5s" repeatCount="indefinite"/></circle>
+              <circle cx="150" cy="97" r="6"><animateTransform attributeName="transform" type="translate" values="0 -30;0 30" dur="5s" begin="-1.7s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.5;0" dur="5s" begin="-1.7s" repeatCount="indefinite"/></circle>
+              <circle cx="195" cy="89" r="5"><animateTransform attributeName="transform" type="translate" values="0 -30;0 30" dur="5s" begin="-3.4s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.5;0" dur="5s" begin="-3.4s" repeatCount="indefinite"/></circle>
+            </g>
+            <circle cx="262" cy="98" r="30" fill="none" style="stroke: var(--accent)" stroke-dasharray="2 3" stroke-opacity="0.7"/>
+            <circle class="fig-body" cx="262" cy="98" r="22"/>
+            <rect class="fig-body" x="296" y="64" width="10" height="8" rx="1"/>
+            <circle class="fig-body" cx="34" cy="118" r="7"/>
+            <circle r="3" style="fill: var(--accent)"><animateMotion dur="2.6s" repeatCount="indefinite" path="M300 70 L34 118"/></circle>
+            <text class="fig-small" x="34" y="142" text-anchor="middle">Earth</text>
+            <text class="fig-small" x="238" y="146" text-anchor="middle">planet, ionosphere</text>
+            <text class="fig-small" x="150" y="172" text-anchor="middle">solar wind irregularities</text>
+          </svg>
+        </div>
         <div class="feature-body">
           <p>Radio occultation retrievals attribute frequency fluctuations to the atmosphere or ionosphere of the target body. Part of the fluctuation arises in the interplanetary medium between Earth and the spacecraft. I measure this contribution with five datasets: two-way S-band Chandrayaan-3 data outside the lunar ionosphere, two-way S-band Chandrayaan-2 data during lunar occultation, one-way S/X-band Venus Express (VeRa) and Akatsuki data under interplanetary-only conditions, and one-way X-band Akatsuki data during solar occultation.</p>
           <p class="pub-links"><a class="chip" href="https://doi.org/10.1016/j.icarus.2026.117291">Icarus 2026</a><a class="chip" href="https://www.youtube.com/watch?v=Ex9r_Qzf1Dc">Video</a></p>
@@ -119,7 +143,25 @@
       </article>
 
       <article class="feature" id="lunar-plasma">
-        <div><span class="label">Lunar plasma</span><h3>Plasma turbulence around the Moon</h3></div>
+        <div><span class="label">Lunar plasma</span><h3>Plasma turbulence around the Moon</h3>
+          <svg class="rfig" viewBox="0 0 320 190" role="img" aria-label="The Moon orbiting Earth, passing from the solar wind into Earth's magnetotail">
+            <circle class="fig-corona" cx="-10" cy="95" r="60"/><circle class="fig-sun" cx="-10" cy="95" r="26"/>
+            <g class="fig-faint" stroke-width="1" stroke-dasharray="6 6">
+              <line x1="30" y1="40" x2="110" y2="40"><animate attributeName="stroke-dashoffset" values="12;0" dur="1s" repeatCount="indefinite"/></line>
+              <line x1="30" y1="95" x2="100" y2="95"><animate attributeName="stroke-dashoffset" values="12;0" dur="1s" repeatCount="indefinite"/></line>
+              <line x1="30" y1="150" x2="110" y2="150"><animate attributeName="stroke-dashoffset" values="12;0" dur="1s" repeatCount="indefinite"/></line>
+            </g>
+            <text class="fig-small" x="36" y="30">solar wind</text>
+            <path class="fig-line" d="M150 22 Q108 95 150 168" stroke-opacity="0.5"/>
+            <path d="M168 78 Q230 70 320 58 L320 132 Q230 120 168 112 Z" style="fill: var(--accent)" fill-opacity="0.12"/>
+            <path class="fig-accent" d="M168 78 Q230 70 320 58 M168 112 Q230 120 320 132" stroke-opacity="0.6"/>
+            <text class="fig-small" x="250" y="100" text-anchor="middle">magnetotail</text>
+            <circle cx="175" cy="95" r="62" fill="none" class="fig-faint" stroke-dasharray="2 4"/>
+            <circle class="fig-body" cx="175" cy="95" r="9"/>
+            <text class="fig-small" x="175" y="180" text-anchor="middle">Moon orbit</text>
+            <circle r="5" style="fill: var(--muted)"><animateMotion dur="10s" repeatCount="indefinite" path="M237 95 A62 62 0 1 1 113 95 A62 62 0 1 1 237 95"/></circle>
+          </svg>
+        </div>
         <div class="feature-body">
           <p>Two-way coherent S-band measurements from the Chandrayaan-2 Radio Science experiment give electron density fluctuations integrated along the Earth&ndash;Moon line of sight. Comparing orbits with the Moon in the solar wind against passages through the terrestrial magnetotail separates the turbulence of the two plasma regimes.</p>
           <p class="pub-links"><a class="chip" href="https://doi.org/10.1029/2026JE009957">JGR: Planets 2026</a><a class="chip" href="https://www.youtube.com/watch?v=0qbrOB-qnnA">Video</a></p>
@@ -127,18 +169,48 @@
       </article>
 
       <article class="feature" id="exoplanets">
-        <div><span class="label">Exoplanets</span><h3>Exoplanet atmospheres with JWST</h3></div>
+        <div><span class="label">Exoplanets</span><h3>Exoplanet atmospheres with JWST</h3>
+          <svg class="rfig" viewBox="0 0 320 190" role="img" aria-label="A planet transiting its star and the resulting dip in the light curve">
+            <defs><radialGradient id="star"><stop offset="0" stop-color="#f3c36b"/><stop offset="1" stop-color="#d98a2b"/></radialGradient></defs>
+            <circle cx="80" cy="80" r="50" fill="url(#star)"/>
+            <circle r="8" style="fill: var(--ink)"><animateMotion dur="6s" repeatCount="indefinite" keyTimes="0;1" path="M0 88 L160 88"/></circle>
+            <text class="fig-small" x="80" y="152" text-anchor="middle">transit</text>
+            <line class="fig-faint" x1="180" y1="130" x2="312" y2="130"/>
+            <line class="fig-faint" x1="180" y1="40" x2="180" y2="130"/>
+            <text class="fig-small" x="246" y="146" text-anchor="middle">time</text>
+            <text class="fig-small" x="174" y="36" text-anchor="end" transform="rotate(-90 174 36)" dy="0">flux</text>
+            <path class="fig-accent" d="M184 60 L220 60 L230 90 L266 90 L276 60 L310 60" stroke-width="1.6"/>
+            <circle r="3.5" style="fill: var(--accent)"><animateMotion dur="6s" repeatCount="indefinite" path="M184 60 L220 60 L230 90 L266 90 L276 60 L310 60"/></circle>
+          </svg>
+        </div>
         <div class="feature-body">
           <p>As a member of the JWST Transiting Exoplanet Community Early Release Science team, I am a co-author on the first JWST spectra of the hot Jupiter WASP-39b, which report carbon dioxide, carbon monoxide and photochemically produced sulphur dioxide, and on related studies of WASP-18b and WASP-43b.</p>
-          <p class="pub-links"><a class="chip" href="publications.html#collab">9 papers</a><a class="chip" href="https://github.com/jovian-explorer/Identification-of-carbon-dioxide-in-an-exoplanet-atmosphere">Plotting code</a></p>
+          <p class="pub-links"><a class="chip" href="publications.html#coauthored">9 papers</a><a class="chip" href="https://github.com/jovian-explorer/Identification-of-carbon-dioxide-in-an-exoplanet-atmosphere">Plotting code</a></p>
         </div>
       </article>
 
       <article class="feature" id="mission-concepts">
-        <div><span class="label">Mission concepts</span><h3>Heliophysics Decadal Survey</h3></div>
+        <div><span class="label">Mission concepts</span><h3>Heliophysics Decadal Survey</h3>
+          <svg class="rfig" viewBox="0 0 320 190" role="img" aria-label="Coronal loops above the solar limb observed from three spacecraft viewpoints">
+            <circle class="fig-sun" cx="160" cy="330" r="190"/>
+            <g class="fig-accent" stroke-width="1.8">
+              <path d="M118 142 C118 92 158 92 158 142"><animate attributeName="stroke-opacity" values="0.25;1;0.25" dur="3s" repeatCount="indefinite"/></path>
+              <path d="M140 141 C140 70 196 70 196 142"><animate attributeName="stroke-opacity" values="0.25;1;0.25" dur="3s" begin="-1s" repeatCount="indefinite"/></path>
+              <path d="M170 142 C170 100 214 100 214 144"><animate attributeName="stroke-opacity" values="0.25;1;0.25" dur="3s" begin="-2s" repeatCount="indefinite"/></path>
+            </g>
+            <g class="fig-faint" stroke-dasharray="3 4">
+              <line x1="34" y1="44" x2="160" y2="96"><animate attributeName="stroke-dashoffset" values="14;0" dur="1.2s" repeatCount="indefinite"/></line>
+              <line x1="160" y1="18" x2="166" y2="84"><animate attributeName="stroke-dashoffset" values="14;0" dur="1.2s" repeatCount="indefinite"/></line>
+              <line x1="288" y1="44" x2="172" y2="96"><animate attributeName="stroke-dashoffset" values="14;0" dur="1.2s" repeatCount="indefinite"/></line>
+            </g>
+            <rect class="fig-body" x="26" y="38" width="14" height="10" rx="1"/>
+            <rect class="fig-body" x="153" y="8" width="14" height="10" rx="1"/>
+            <rect class="fig-body" x="281" y="38" width="14" height="10" rx="1"/>
+          </svg>
+        </div>
         <div class="feature-body">
-          <p>Co-author on three white papers for the 2024&ndash;2033 Solar and Space Physics Decadal Survey, including the COMPLETE flagship concept for three-dimensional measurement of coronal magnetic energy storage and release.</p>
-          <p class="pub-links"><a class="chip" href="publications.html#whitepapers">3 white papers</a></p>
+          <p>Co-author on three white papers for the 2024&ndash;2033 Solar and Space Physics Decadal Survey, including the COMPLETE flagship concept for three-dimensional measurement of coronal magnetic energy storage and release, and second author of the UK white paper on magnetic reconnection (2025).</p>
+          <p class="pub-links"><a class="chip" href="publications.html#coauthored">White papers</a></p>
         </div>
       </article>
     </div>
@@ -159,6 +231,11 @@
         </table>
       </div>
     </section>
+    <script>
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      document.querySelectorAll("svg").forEach(function (s) { if (s.pauseAnimations) s.pauseAnimations(); });
+    }
+    </script>
   </main>
 
   <footer class="site-footer">

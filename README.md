@@ -14,14 +14,14 @@ Personal website of Keshav Aggarwal. Static HTML, CSS and JavaScript; no build s
 | `videos.html` | YouTube channel: featured player, searchable list (updated automatically) |
 | `writing.html` | Medium articles with topic filters (updated automatically) |
 | `travel.html` | India district map and world city map |
-| `photography.html` | Collections, justified photo grid, full-screen viewer |
+| `photography.html` | Sections (Night sky, Travel, Conferences) as tabs, albums with map or generated covers, album view, full-screen viewer |
 | `cv.html` | Education, positions, fellowships, experience, publications, skills, contact; PDF in `assets/cv/` |
 | `404.html` | Page shown for missing addresses |
 | `design.html` | Colour, typeface and layout samples |
 
 ## Automatic YouTube and Medium lists
 
-`.github/workflows/update-feeds.yml` runs `tools/update_feeds.py` every day at 03:17 UTC (and on demand from the Actions tab). It writes `assets/js/feed-videos.js` and `assets/js/feed-articles.js`, commits only when something changed, and asks GitHub Pages to rebuild.
+`.github/workflows/update-feeds.yml` runs `tools/update_feeds.py` every day at 03:17 UTC (and on demand from the Actions tab). It writes `assets/js/feed-videos.js`, `assets/js/feed-articles.js` and `assets/js/feed-metrics.js` (Google Scholar citations and h-index), commits only when something changed, and asks GitHub Pages to rebuild.
 
 - Without an API key it reads the channel's RSS feed (latest 15 uploads) and keeps older entries it has already seen.
 - For the full upload list with durations, add a YouTube Data API v3 key as the repository secret `YT_API_KEY` (Settings > Secrets and variables > Actions).
@@ -43,10 +43,10 @@ A browser's own Print > Save as PDF on `cv.html` gives the same layout.
 
 All lists live in `assets/js/data.js`:
 
-- **Publications**: add an object to `publications` (`type` is `first`, `collab` or `whitepaper`).
+- **Publications**: add an object to `publications` with `role` (`first` or `co`) and `kind` (`journal`, `proceedings`, `chapter`, `whitepaper`, `preprint`). A book chapter uses `kind: "chapter"`, the book title as `venue` and a `publisher`.
 - **Conferences**: add to `conferences`.
 - **Videos**: add `{ id, title, date, note }` to `videos`. `id` is the 11-character code after `watch?v=`.
-- **Albums**: `photography.albums` (id, title, description) and `photography.kit`.
+- **Albums**: `photography.sections` and `photography.albums` (id, section, title, place, date, `region` for the cover map) and `photography.kit`. Photos in `photos.js` name their album with `album: "<id>"`.
 
 ## Travel maps
 

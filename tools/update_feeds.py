@@ -31,6 +31,8 @@ MEDIUM_FEED = os.environ.get("MEDIUM_FEED", "https://jovian-explorer.medium.com/
 ROOT = Path(__file__).resolve().parent.parent
 VIDEO_JS = ROOT / "assets/js/feed-videos.js"
 ARTICLE_JS = ROOT / "assets/js/feed-articles.js"
+METRICS_JS = ROOT / "assets/js/feed-metrics.js"
+SCHOLAR = os.environ.get("SCHOLAR_URL", "https://scholar.google.com/citations?user=KO8MtmEAAAAJ&hl=en")
 UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
 KEEP = ("topic", "featured", "hidden", "note")
 NS = {
@@ -288,6 +290,31 @@ def update_articles():
     return True
 
 
+# ---------------------------------------------------------------- Scholar
+
+def update_metrics():
+    old = read_js(METRICS_JS, "METRICS") or {}
+    try:
+        page = get(SCHOLAR)
+    except Exception as e:
+        log("Scholar failed:", e)
+        return False
+    nums = re.findall(r'class="gsc_rsb_std">(\d+)</td>', page)
+    if len(nums) < 6:
+        log("Scholar: citation table not found; leaving feed-metrics.js unchanged")
+        return False
+    new = {"source": SCHOLAR.split("&")[0], "citations": int(nums[0]), "h_index": int(nums[2]), "i10_index": int(nums[4])}
+    if all(old.get(k) == v for k, v in new.items()):
+        log("Scholar: no changes")
+        return False
+    new["updated"] = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    METRICS_JS.write_text(METRICS_HEADER + "window.METRICS = " + json.dumps(new, indent=2) + ";\n")
+    log(f"Scholar: {new}")
+    return True
+
+
+METRICS_HEADER = """/* Google Scholar citation metrics, refreshed by tools/update_feeds.py (GitHub Actions, daily). */
+"""
 VIDEO_HEADER = """/* YouTube videos, refreshed by tools/update_feeds.py (GitHub Actions, daily).
    Per-video fields you may add by hand and that are kept on refresh:
      "topic": "Lecture"      groups videos into filter buttons
@@ -299,5 +326,5 @@ ARTICLE_HEADER = """/* Medium articles, refreshed by tools/update_feeds.py (GitH
 """
 
 if __name__ == "__main__":
-    changed = [update_videos(), update_articles()]
+    changed = [update_videos(), update_articles(), update_metrics()]
     sys.exit(0)
