@@ -243,6 +243,7 @@ window.SITE = {
      ------------------------------------------------------------------ */
   travel: {
     districts: [
+      "Assam/Kamrup Metropolitan",
       "Chandigarh/Chandigarh",
       "Delhi/New Delhi",
       "Goa/North Goa",
@@ -260,6 +261,8 @@ window.SITE = {
       "Maharashtra/Mumbai Suburban",
       "Maharashtra/Pune",
       "Maharashtra/Raigad",
+      "Meghalaya/East Khasi Hills",
+      "Meghalaya/Ri-Bhoi",
       "Punjab/Sahibzada Ajit Singh Nagar",
       "Rajasthan/Jaipur",
       "Uttar Pradesh/Ghaziabad",
@@ -298,7 +301,10 @@ window.SITE = {
       { name: "Goa", country: "India", lat: 15.4909, lon: 73.8278, visits: [] },
       { name: "Mumbai", country: "India", lat: 19.076, lon: 72.8777, visits: [] },
       { name: "Panvel", country: "India", lat: 18.9894, lon: 73.1175, visits: [] },
-      { name: "Bengaluru", country: "India", lat: 12.9716, lon: 77.5946, visits: [] }
+      { name: "Bengaluru", country: "India", lat: 12.9716, lon: 77.5946, visits: [] },
+      { name: "Guwahati", country: "India", lat: 26.1445, lon: 91.7362, visits: [] },
+      { name: "Umiam", country: "India", lat: 25.6569, lon: 91.8826, visits: [] },
+      { name: "Cherrapunji (Sohra)", country: "India", lat: 25.2702, lon: 91.7323, visits: [] }
     ],
     countries: []
   },
