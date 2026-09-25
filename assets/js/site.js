@@ -284,7 +284,7 @@
       statsEl.innerHTML =
         '<div class="stat"><b>' + talks + "</b><span>talks</span></div>" +
         '<div class="stat"><b>' + (CONF.length - talks) + "</b><span>posters</span></div>" +
-        (awards ? '<div class="stat"><b>' + awards + "</b><span>" + (awards === 1 ? "award" : "awards") + "</span></div>" : "");
+        (awards ? '<div class="stat"><b>' + awards + "</b><span>" + (awards === 1 ? "award or grant" : "awards and grants") + "</span></div>" : "");
     }
   }
   var homeTalks = document.getElementById("home-talks");
