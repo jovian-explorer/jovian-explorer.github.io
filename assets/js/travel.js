@@ -203,6 +203,9 @@
       });
   }
 
+  /* Indian places are shown as districts on the India map, so only cities abroad get pins. */
+  function abroad() { return state.places.filter(function (p) { return p.country !== "India"; }); }
+
   /* ---------- Render everything from current state ---------- */
   function renderAll() {
     var visitedCountries = new Set(state.countries);
@@ -212,11 +215,10 @@
 
     if (india) {
       india.dist.classed("visited", function (f) { return visited.has(f.key); });
-      drawPins(india, state.places.filter(function (p) { return p.country === "India"; }));
     }
     if (world) {
       world.ctry.classed("visited", function (f) { return visitedCountries.has(f.properties.name); });
-      drawPins(world, state.places);
+      drawPins(world, abroad());
     }
 
     var stats = document.getElementById("travel-stats");
@@ -225,7 +227,7 @@
         '<div class="stat"><b>' + visited.size + '</b><span>of ' + districts.length + ' districts</span></div>' +
         '<div class="stat"><b>' + statesTouched.size + '</b><span>of ' + STATE_COUNT + ' states and UTs</span></div>' +
         '<div class="stat"><b>' + visitedCountries.size + '</b><span>' + (visitedCountries.size === 1 ? "country" : "countries") + '</span></div>' +
-        '<div class="stat"><b>' + state.places.length + '</b><span>cities pinned</span></div>';
+        '<div class="stat"><b>' + abroad().length + '</b><span>' + (abroad().length === 1 ? "city" : "cities") + ' abroad</span></div>';
     }
 
     var dl = document.getElementById("district-list");
@@ -243,7 +245,7 @@
 
     var pl = document.getElementById("place-list");
     if (pl) {
-      var sorted = state.places.slice().sort(function (a, b) { return lastVisit(b) > lastVisit(a) ? 1 : -1; });
+      var sorted = abroad().sort(function (a, b) { return lastVisit(b) > lastVisit(a) ? 1 : -1; });
       pl.innerHTML = sorted.map(function (p) {
         var visits = (p.visits || []).slice().sort(function (a, b) { return (b.date || "") > (a.date || "") ? 1 : -1; });
         return '<tr id="place-' + slug(p.name) + '"><td><button type="button" class="linklike" data-focus="' + esc(p.name) + '">' + esc(p.name) + "</button></td><td>" + esc(p.country) + "</td><td>" +

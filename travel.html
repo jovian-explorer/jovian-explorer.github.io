@@ -56,7 +56,7 @@
     <header class="page-head">
       <p class="label">Travel</p>
       <h1>Travel</h1>
-      <p>Districts of India and cities abroad visited for research, conferences and otherwise. Drag to pan; zoom with the buttons, a pinch, or Ctrl + scroll; point at a district or pin for details.</p>
+      <p>Districts of India and cities abroad visited for research, conferences and otherwise. Visited Indian districts are shaded on the India map; cities outside India are pinned on the world map. Drag to pan; zoom with the buttons, a pinch, or Ctrl + scroll; point at a district or pin for details.</p>
     </header>
 
     <div class="stats" id="travel-stats"></div>
@@ -88,7 +88,7 @@
           <div class="map-wrap" id="india-map">
             <svg class="map" role="img" aria-label="Map of India with visited districts shaded"></svg>
             <div class="map-controls"><button type="button" data-zoom="in" aria-label="Zoom in">+</button><button type="button" data-zoom="out" aria-label="Zoom out">&minus;</button><button type="button" data-zoom="reset" aria-label="Reset view">&#8634;</button></div>
-            <div class="map-legend"><span><i style="background:var(--map-visit)"></i>Visited district</span><span><i class="dot"></i>City</span></div>
+            <div class="map-legend"><span><i style="background:var(--map-visit)"></i>Visited district</span></div>
             <div class="map-tip" hidden></div>
           </div>
           <p class="map-note">District and state boundaries from <a href="https://www.npmjs.com/package/vardhan-maps">vardhan-maps</a>, derived from &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a> (ODbL) and aligned to the Government of India depiction; approximate, not an official map. Lambert conformal conic projection, standard parallels 12&deg;28&prime;&nbsp;N and 35&deg;10&prime;&nbsp;N.</p>
@@ -127,7 +127,7 @@
       <p class="map-note">Country boundaries from Natural Earth (public domain) via world-atlas; India as on the India map. Equal Earth projection.</p>
 
       <section class="section">
-        <div class="section-head"><h2>Cities</h2></div>
+        <div class="section-head"><h2>Cities abroad</h2></div>
         <div class="table-wrap">
           <table class="place-table">
             <thead><tr><th>City</th><th>Country</th><th>Visits</th></tr></thead>

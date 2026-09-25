@@ -252,10 +252,14 @@ window.SITE = {
       "Himachal Pradesh/Shimla",
       "Jammu and Kashmir/Jammu",
       "Jammu and Kashmir/Reasi",
+      "Karnataka/Bengaluru Urban",
       "Kerala/Thiruvananthapuram",
       "Madhya Pradesh/Indore",
       "Madhya Pradesh/Ujjain",
+      "Maharashtra/Mumbai City",
+      "Maharashtra/Mumbai Suburban",
       "Maharashtra/Pune",
+      "Maharashtra/Raigad",
       "Punjab/Sahibzada Ajit Singh Nagar",
       "Rajasthan/Jaipur",
       "Uttar Pradesh/Ghaziabad",
@@ -291,7 +295,10 @@ window.SITE = {
       { name: "Varanasi", country: "India", lat: 25.3176, lon: 82.9739, visits: [] },
       { name: "Sarnath", country: "India", lat: 25.3811, lon: 83.0214, visits: [] },
       { name: "Pune", country: "India", lat: 18.5204, lon: 73.8567, visits: [] },
-      { name: "Goa", country: "India", lat: 15.4909, lon: 73.8278, visits: [] }
+      { name: "Goa", country: "India", lat: 15.4909, lon: 73.8278, visits: [] },
+      { name: "Mumbai", country: "India", lat: 19.076, lon: 72.8777, visits: [] },
+      { name: "Panvel", country: "India", lat: 18.9894, lon: 73.1175, visits: [] },
+      { name: "Bengaluru", country: "India", lat: 12.9716, lon: 77.5946, visits: [] }
     ],
     countries: []
   },
