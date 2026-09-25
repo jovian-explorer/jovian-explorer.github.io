@@ -83,7 +83,7 @@
     </div>
 
     <div class="tab-panel" role="tabpanel" id="panel-india" aria-labelledby="tab-india">
-      <div class="map-layout">
+      <div class="map-single">
         <div>
           <div class="map-wrap" id="india-map">
             <svg class="map" role="img" aria-label="Map of India with visited districts shaded"></svg>
@@ -93,10 +93,6 @@
           </div>
           <p class="map-note">District and state boundaries from <a href="https://www.npmjs.com/package/vardhan-maps">vardhan-maps</a>, derived from &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a> (ODbL) and aligned to the Government of India depiction; approximate, not an official map. Lambert conformal conic projection, standard parallels 12&deg;28&prime;&nbsp;N and 35&deg;10&prime;&nbsp;N.</p>
         </div>
-        <aside>
-          <h3 class="side-head">Visited districts</h3>
-          <div class="state-groups" id="district-list"></div>
-        </aside>
       </div>
     </div>
 
@@ -125,16 +121,6 @@
         </form>
       </div>
       <p class="map-note">Country boundaries from Natural Earth (public domain) via world-atlas; India as on the India map. Equal Earth projection.</p>
-
-      <section class="section">
-        <div class="section-head"><h2>Cities abroad</h2></div>
-        <div class="table-wrap">
-          <table class="place-table">
-            <thead><tr><th>City</th><th>Country</th><th>Visits</th></tr></thead>
-            <tbody id="place-list"></tbody>
-          </table>
-        </div>
-      </section>
     </div>
   </main>
 
