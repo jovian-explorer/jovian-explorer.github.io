@@ -333,7 +333,7 @@ window.SITE = {
                 lat/lon in decimal degrees. visits: { date: "YYYY-MM", note }.
      countries: extra countries to shade that have no pinned city.
      ------------------------------------------------------------------ */
-  travel: {
+   travel: {
     districts: [
       "Assam/Kamrup Metropolitan",
       "Chandigarh/Chandigarh",
@@ -362,6 +362,8 @@ window.SITE = {
       "Karnataka/Bengaluru Urban",
       "Kerala/Kollam",
       "Kerala/Thiruvananthapuram",
+      "Madhya Pradesh/Bhopal",
+      "Madhya Pradesh/Dewas",
       "Madhya Pradesh/Indore",
       "Madhya Pradesh/Ujjain",
       "Maharashtra/Mumbai City",
@@ -372,6 +374,7 @@ window.SITE = {
       "Meghalaya/Ri-Bhoi",
       "Punjab/Sahibzada Ajit Singh Nagar",
       "Rajasthan/Jaipur",
+      "Rajasthan/Sri Ganganagar",
       "Uttar Pradesh/Baghpat",
       "Uttar Pradesh/Ghaziabad",
       "Uttar Pradesh/Meerut",
