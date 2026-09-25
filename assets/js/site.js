@@ -245,24 +245,57 @@
   }
 
   /* ---------- Conferences ---------- */
+  var CONF = (SITE.conferences || []).slice().sort(function (a, b) {
+    return a.date === b.date ? (a.kind === "Talk" ? -1 : 1) : (a.date < b.date ? 1 : -1);
+  });
+  function confRow(c) {
+    return '<div class="row" data-kind="' + esc(c.kind) + '"><div class="row-date">' + esc(c.dates || monthYear(c.date)) + '</div><div class="row-body">' +
+      '<p class="row-title">' + esc(c.event) + "</p>" +
+      '<p class="row-sub">' + esc(c.place) + "</p>" +
+      '<p><span class="kind kind-' + esc(c.kind.toLowerCase()) + '">' + esc(c.kind) + "</span> <em>" + esc(c.title) + "</em></p>" +
+      (c.award ? '<p class="award">' + esc(c.award) + "</p>" : "") +
+      (c.pdf ? '<p class="pub-links"><a class="chip" href="' + esc(c.pdf) + '">' + icon("pdf") + " " + esc(c.kind) + " PDF</a></p>" : "") +
+      "</div></div>";
+  }
   var confRoot = document.getElementById("conference-list");
-  if (confRoot && SITE.conferences) {
-    confRoot.innerHTML = SITE.conferences.slice().sort(function (a, b) { return a.date < b.date ? 1 : -1; }).map(function (c) {
-      return '<div class="row"><div class="row-date">' + esc(c.dates || monthYear(c.date)) + '</div><div class="row-body">' +
-        '<p class="row-title">' + esc(c.event) + "</p>" +
-        '<p class="row-sub">' + esc(c.place) + "</p>" +
-        "<p>" + esc(c.kind) + ": <em>" + esc(c.title) + "</em></p>" +
-        (c.pdf ? '<p class="pub-links"><a class="chip" href="' + esc(c.pdf) + '">' + icon("pdf") + " " + esc(c.kind) + " PDF</a></p>" : "") +
-        "</div></div>";
-    }).join("");
-    var placesEl = document.getElementById("conference-stats");
-    if (placesEl) {
-      var countries = {};
-      SITE.conferences.forEach(function (c) { countries[c.place.split(",").pop().trim()] = 1; });
-      placesEl.innerHTML =
-        '<div class="stat"><b>' + SITE.conferences.length + "</b><span>presentations</span></div>" +
-        '<div class="stat"><b>' + Object.keys(countries).length + "</b><span>countries</span></div>";
+  if (confRoot && CONF.length) {
+    var confFilter = document.getElementById("conference-filter");
+    var confKind = "All";
+    var drawConf = function () {
+      confRoot.innerHTML = CONF.filter(function (c) { return confKind === "All" || c.kind === confKind; }).map(confRow).join("");
+    };
+    if (confFilter) {
+      var nTalk = CONF.filter(function (c) { return c.kind === "Talk"; }).length;
+      confFilter.innerHTML = [["All", CONF.length], ["Talk", nTalk], ["Poster", CONF.length - nTalk]].map(function (k) {
+        return '<button type="button" class="filter" data-kind="' + k[0] + '" aria-pressed="' + (k[0] === confKind) + '">' + (k[0] === "All" ? "All" : k[0] + "s") + ' <span class="count">' + k[1] + "</span></button>";
+      }).join("");
+      confFilter.addEventListener("click", function (e) {
+        var b = e.target.closest("[data-kind]"); if (!b) return;
+        confKind = b.getAttribute("data-kind");
+        confFilter.querySelectorAll("[data-kind]").forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+        drawConf();
+      });
     }
+    drawConf();
+    var statsEl = document.getElementById("conference-stats");
+    if (statsEl) {
+      var talks = CONF.filter(function (c) { return c.kind === "Talk"; }).length;
+      var awards = CONF.filter(function (c) { return c.award; }).length;
+      statsEl.innerHTML =
+        '<div class="stat"><b>' + talks + "</b><span>talks</span></div>" +
+        '<div class="stat"><b>' + (CONF.length - talks) + "</b><span>posters</span></div>" +
+        (awards ? '<div class="stat"><b>' + awards + "</b><span>" + (awards === 1 ? "award" : "awards") + "</span></div>" : "");
+    }
+  }
+  var homeTalks = document.getElementById("home-talks");
+  if (homeTalks && CONF.length) {
+    homeTalks.innerHTML = CONF.slice(0, +homeTalks.getAttribute("data-limit") || 5).map(function (c) {
+      return '<li><time class="mono">' + esc(monthYear(c.date)) + "</time><div>" +
+        '<p class="ht-event"><span class="kind kind-' + esc(c.kind.toLowerCase()) + '">' + esc(c.kind) + "</span> " + esc(c.event) + "</p>" +
+        '<p class="ht-title">' + esc(c.title) + "</p>" +
+        '<p class="ht-place">' + esc(c.place) + "</p>" +
+        (c.award ? '<p class="award">' + esc(c.award) + "</p>" : "") + "</div></li>";
+    }).join("");
   }
 
   /* ---------- Latest video and article (home page) ---------- */
