@@ -1,0 +1,24 @@
+name: One-off outreach media harvest
+on:
+  push:
+    branches: [testing]
+    paths: [tools/harvest_outreach.py, .github/workflows/harvest-outreach.yml]
+permissions:
+  contents: write
+jobs:
+  harvest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v5
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg imagemagick >/dev/null
+      - run: python3 tools/harvest_outreach.py | tee tools/harvest-log.txt
+        env:
+          GH_TOKEN: ${{ github.token }}
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/outreach tools/harvest-log.txt
+          git commit -m "Outreach media harvest"
+          git pull --rebase origin testing
+          git push
