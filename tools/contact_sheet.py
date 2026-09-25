@@ -11,7 +11,9 @@ each photo) and an index.csv mapping numbers to full paths.
 
 Output goes to a "contact_sheets" folder next to where you run it.
 Options: --out DIR, --per-sheet N (default 48), --every K (use every Kth
-photo of a folder, to thin out long bursts).
+photo of a folder), --include TEXT... (only subfolders whose path contains
+one of these), --dedupe N (drop a photo that looks like the one before it;
+larger N drops more, 0 keeps all), --thumb PX, --cols N.
 """
 import argparse
 import csv
@@ -27,7 +29,7 @@ except ImportError:
     pass
 
 EXTS = {".jpg", ".jpeg", ".png", ".webp", ".heic", ".heif", ".tif", ".tiff"}
-THUMB, PAD, LABEL, COLS = 260, 12, 34, 8
+PAD, LABEL = 10, 40
 
 
 def taken(img, path):
@@ -39,6 +41,12 @@ def taken(img, path):
     except Exception:
         pass
     return datetime.fromtimestamp(path.stat().st_mtime).strftime("%Y-%m-%d")
+
+
+def dhash(im):
+    g = im.convert("L").resize((9, 8))
+    px = g.tobytes()
+    return sum(1 << i for i in range(64) if px[(i // 8) * 9 + i % 8] > px[(i // 8) * 9 + i % 8 + 1])
 
 
 def font(size):
@@ -56,12 +64,32 @@ def main():
     ap.add_argument("--out", default="contact_sheets")
     ap.add_argument("--per-sheet", type=int, default=48)
     ap.add_argument("--every", type=int, default=1)
+    ap.add_argument("--include", nargs="*", default=[])
+    ap.add_argument("--dedupe", type=int, default=0)
+    ap.add_argument("--thumb", type=int, default=260)
+    ap.add_argument("--cols", type=int, default=8)
     a = ap.parse_args()
+    THUMB, COLS = a.thumb, a.cols
+    inc = [t.lower() for t in a.include]
     out = Path(a.out); out.mkdir(exist_ok=True)
-    f_small, f_head = font(13), font(22)
+    f_small, f_num, f_head = font(13), font(18), font(22)
     rows, n = [], 0
     for fi, folder in enumerate(a.folders, 1):
-        files = sorted(p for p in Path(folder).rglob("*") if p.suffix.lower() in EXTS and p.stat().st_size > 30_000)[:: a.every]
+        files = sorted(p for p in Path(folder).rglob("*") if p.suffix.lower() in EXTS and p.stat().st_size > 30_000
+                       and (not inc or any(t in str(p.relative_to(folder)).lower() for t in inc)))[:: a.every]
+        if a.dedupe:
+            kept, last = [], None
+            for p in files:
+                try:
+                    with Image.open(p) as im:
+                        im.draft("RGB", (64, 64))
+                        h = dhash(ImageOps.exif_transpose(im))
+                except Exception:
+                    continue
+                if last is None or bin(h ^ last).count("1") > a.dedupe:
+                    kept.append(p)
+                last = h
+            files = kept
         print(f"{folder}: {len(files)} photos")
         for s in range(0, len(files), a.per_sheet):
             chunk = files[s:s + a.per_sheet]
@@ -84,10 +112,10 @@ def main():
                 x = PAD + (k % COLS) * (THUMB + PAD)
                 y = 50 + (k // COLS) * (THUMB + LABEL + PAD)
                 sheet.paste(im, (x + (THUMB - im.width) // 2, y + (THUMB - im.height) // 2))
-                d.rectangle([x, y + THUMB + 2, x + 44, y + THUMB + 18], fill=(31, 79, 122))
-                d.text((x + 4, y + THUMB + 3), str(n), fill="white", font=f_small)
-                d.text((x + 50, y + THUMB + 3), date, fill=(60, 60, 60), font=f_small)
-                d.text((x, y + THUMB + 19), p.name[:34], fill=(90, 90, 90), font=f_small)
+                d.rectangle([x, y + THUMB + 2, x + 54, y + THUMB + 24], fill=(31, 79, 122))
+                d.text((x + 4, y + THUMB + 3), str(n), fill="white", font=f_num)
+                d.text((x + 60, y + THUMB + 6), date, fill=(60, 60, 60), font=f_small)
+                d.text((x, y + THUMB + 25), p.parent.name[:30], fill=(90, 90, 90), font=f_small)
                 rows.append([n, fi, str(p), date, f"{size[0]}x{size[1]}"])
             name = out / f"folder{fi}_sheet{s // a.per_sheet + 1:02d}.jpg"
             sheet.save(name, quality=80)
