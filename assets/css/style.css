@@ -207,7 +207,7 @@ p { margin: 0; }
 .nav-toggle { display: none; }
 .header-profile { display: none; }
 
-@media (max-width: 1100px) {
+@media (max-width: 1180px) {
   .nav-toggle { display: inline-grid; }
   .header-inner { flex-wrap: wrap; }
   .site-nav {
@@ -333,6 +333,7 @@ main > * + .section { margin-top: 3.5rem; }
 }
 a.chip:hover { color: var(--accent); border-color: var(--accent); }
 .chip.tag { background: var(--accent-soft); border-color: transparent; color: var(--accent); }
+.chip.status-tag { background: #fbf3e4; border-color: #e7cf9f; color: #7a5410; }
 .chip.kindtag { background: var(--surface); border-style: dashed; color: var(--ink); }
 .pub-note { font-size: var(--t-sm); color: var(--muted); }
 .empty { color: var(--muted); padding-block: 1.5rem; }
@@ -709,14 +710,14 @@ button.chip:hover, button.chip[aria-expanded="true"] { color: var(--accent); bor
 :root[data-layout="centered"] .hero .hero-media { order: -1; width: 150px; }
 :root[data-layout="centered"] .hero .profile-links { justify-content: center; }
 :root[data-layout="centered"] .hero .prose { margin-inline: auto; text-align: left; }
-@media (max-width: 1100px) {
+@media (max-width: 1180px) {
   :root[data-layout="centered"] .header-inner { flex-direction: row; flex-wrap: wrap; }
   :root[data-layout="centered"] .brand { margin-right: auto; align-items: flex-start; text-align: left; }
   :root[data-layout="centered"] .header-tools { position: static; }
 }
 
 /* Sidebar: fixed profile column on the left */
-@media (min-width: 1101px) {
+@media (min-width: 1181px) {
   :root[data-layout="sidebar"] body {
     display: grid;
     grid-template-columns: 17rem minmax(0, 1fr);
@@ -812,3 +813,11 @@ button.chip:hover, button.chip[aria-expanded="true"] { color: var(--accent); bor
 .cv-event { fill: var(--accent); }
 .cv-year { font-family: var(--f-display); font-size: 120px; font-weight: 600; fill: var(--accent-ink); opacity: 0.9; letter-spacing: -0.02em; }
 .cv-place { font-family: var(--f-mono); font-size: 17px; fill: var(--accent-ink); opacity: 0.75; letter-spacing: 0.04em; text-transform: uppercase; }
+
+/* ---------- Home: honours strip ---------- */
+.honours { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: var(--radius); overflow: hidden; margin-bottom: 3rem; }
+.honour { background: var(--surface); padding: 1rem 1.2rem; display: grid; gap: 0.2rem; align-content: start; }
+.honour strong { font-family: var(--f-display); font-weight: var(--display-weight); font-size: var(--t-md); line-height: 1.3; }
+.honour span:last-child { font-size: var(--t-sm); color: var(--muted); }
+.kit-list { margin: 0; padding-left: 1.1rem; color: var(--muted); font-size: var(--t-sm); display: grid; gap: 0.2rem; }
+.kit-grid { margin-top: 0.5rem; }

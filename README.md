@@ -10,7 +10,8 @@ Personal website of Keshav Aggarwal. Static HTML, CSS and JavaScript; no build s
 | `research.html` | Research themes and missions |
 | `publications.html` | Publications with tabs and search (rendered from `assets/js/data.js`) |
 | `software.html` | VEDA, COSMIC2 Explorer, HELIOS and released code |
-| `talks.html` | Conference presentations and outreach |
+| `talks.html` | Conference talks and posters |
+| `outreach.html` | Public events, National Space Day kit, mission explainers, school astronomy lab videos |
 | `videos.html` | YouTube channel: featured player, searchable list (updated automatically) |
 | `writing.html` | Medium articles with topic filters (updated automatically) |
 | `travel.html` | India district map and world city map |
@@ -87,3 +88,7 @@ A non-default font also needs its Google Fonts `<link>` in each page head (see `
 ## Search engines
 
 `index.html` carries schema.org Person data (affiliation, fellowship, profile links) so search engines can connect the site with the Scholar, ORCID and other profiles. `sitemap.xml` and `robots.txt` are generated with the pages.
+
+## Previous version
+
+The site as it was before the redesign is kept in `legacy/` (served at `/legacy/`, excluded from search engines).
