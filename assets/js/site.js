@@ -301,24 +301,40 @@
   }
 
   /* ---------- Compact publication list (CV) ---------- */
-  var cvPubs = document.getElementById("cv-pubs");
-  if (cvPubs && SITE.publications) {
-    var groups = [
-      [function (p) { return p.role === "first" && p.kind === "journal" && !p.status; }, "First-author journal papers"],
-      [function (p) { return p.role === "co" && p.kind === "journal" && !p.status; }, "Co-authored journal papers"],
-      [function (p) { return p.kind === "proceedings" || p.kind === "chapter"; }, "Conference proceedings and book chapters"],
-      [function (p) { return p.kind === "whitepaper" || p.kind === "preprint"; }, "White papers and preprints"],
-      [function (p) { return !!p.status; }, "Under review"]
+  /* ---------- CV (layout of the LaTeX CV) ---------- */
+  var cvx = document.getElementById("cvx");
+  if (cvx) {
+    var bold = function (t) { return esc(t).replace(/Aggarwal, K\./g, "<b>Aggarwal, K.</b>"); };
+    var cvPubItem = function (p) {
+      var link = p.doi ? '<a href="https://doi.org/' + esc(p.doi) + '">' + esc(p.doi) + "</a>" : p.arxiv ? '<a href="https://arxiv.org/abs/' + esc(p.arxiv) + '">arXiv:' + esc(p.arxiv) + "</a>" : p.url ? '<a href="' + esc(p.url) + '">' + esc(p.url.replace(/^https?:\/\//, "")) + "</a>" : "";
+      return "<li>" + bold(p.authors) + ", <i>" + esc(p.title) + "</i>, <b>" + esc(p.venue) + "</b>" + (p.year ? ", " + esc(p.year) : "") +
+        (p.status ? ' <span class="cvx-status">(' + esc(p.status) + ")</span>" : "") + (link ? ", " + link : "") + ".</li>";
+    };
+    var PUBS = SITE.publications || [];
+    var pubList = document.getElementById("cvx-pubs");
+    var WORKSHOPS = [
+      { date: "2023-02", html: "<b>ISRO&ndash;ARIES Aditya-L1 Support Cell Workshop</b>, IIT (BHU) Varanasi" },
+      { date: "2022-03", html: "<b>Spring 2022: ERS Post-Launch Data Challenge for JWST</b>, Baltimore, MD, USA, and Heidelberg, Germany" }
     ];
-    cvPubs.innerHTML = groups.map(function (g) {
-      var list = SITE.publications.filter(g[0]);
-      if (!list.length) return "";
-      return '<h3 class="cv-pubs-head">' + esc(g[1]) + '</h3><ol class="cv-pub-list">' + list.map(function (p) {
-        var href = p.doi ? "https://doi.org/" + p.doi : p.url || (p.arxiv ? "https://arxiv.org/abs/" + p.arxiv : "#");
-        return "<li>" + esc(p.authors).replace(/Aggarwal, K\./g, "<b>Aggarwal, K.</b>") + " (" + p.year + "). " + esc(p.title) + ". <i>" + esc(p.venue) + "</i>." +
-          (p.doi ? ' <a href="' + esc(href) + '">doi:' + esc(p.doi) + "</a>" : ' <a href="' + esc(href) + '">' + esc(href.replace(/^https?:\/\//, "")) + "</a>") + "</li>";
-      }).join("") + "</ol>";
+    var talks = (SITE.conferences || []).map(function (c) {
+      return { date: c.date, html: "&ldquo;<i>" + esc(c.title) + "</i>&rdquo; at <b>" + esc(c.event) + (c.place ? ", " + esc(c.place) : "") + "</b> <span class=\"cvx-kind\">(" + esc(c.kind) + ")</span>" };
+    }).concat(WORKSHOPS).sort(function (a, b) { return a.date < b.date ? 1 : a.date > b.date ? -1 : 0; });
+    document.getElementById("cvx-talks").innerHTML = talks.map(function (t) {
+      return "<tr><th>" + esc(monthYear(t.date)) + "</th><td>" + t.html + "</td></tr>";
     }).join("");
+    var drawCv = function (mode) {
+      cvx.setAttribute("data-mode", mode);
+      var list = mode === "short" ? PUBS.filter(function (p) { return p.role === "first"; }) : PUBS;
+      pubList.innerHTML = list.map(cvPubItem).join("");
+      document.getElementById("cvx-pub-h").textContent = mode === "short" ? "First-Author Publications" : "Publication List";
+      cvx.querySelectorAll("[data-cv]").forEach(function (b) { if (b.tagName === "BUTTON") b.setAttribute("aria-pressed", b.getAttribute("data-cv") === mode ? "true" : "false"); });
+    };
+    cvx.addEventListener("click", function (e) {
+      var b = e.target.closest("button[data-cv]"); if (!b) return;
+      var m = b.getAttribute("data-cv"); drawCv(m);
+      history.replaceState(null, "", m === "short" ? "#short" : location.pathname);
+    });
+    drawCv(location.hash === "#short" ? "short" : "long");
   }
 
   /* ---------- Conferences ---------- */

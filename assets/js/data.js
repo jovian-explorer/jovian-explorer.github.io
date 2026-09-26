@@ -259,6 +259,12 @@ window.SITE = {
       title: "A turbulence index independent framework for deriving solar wind speed and coronal electron density from radio spectral broadening"
     },
     {
+      date: "2026-02", dates: "Feb 2026", kind: "Talk",
+      event: "National Space Science Symposium (NSSS 2026)",
+      place: "Umiam, Shillong, India",
+      title: "Estimating solar wind velocities using spacecraft radio signals"
+    },
+    {
       date: "2026-01", dates: "Jan 2026", kind: "Poster",
       event: "ISRO\u2013ESA Workshop",
       place: "Thiruvananthapuram, India",
@@ -316,6 +322,12 @@ window.SITE = {
       event: "2nd Indian Space Weather Conference",
       place: "Physical Research Laboratory, Ahmedabad, India",
       title: "Unveiling space weather and planetary atmosphere dynamics through Aditya-L1 and DISHA data integration"
+    },
+    {
+      date: "2023-11", dates: "1 Nov 2023", kind: "Talk",
+      event: "International Conference on Integration of Computational Intelligent Systems (ICICIS 2023)",
+      place: "Pune, India",
+      title: "Monitoring infrastructure faults with YOLOv5, assisting safety inspectors"
     },
     {
       date: "2023-09", dates: "Sep 2023", kind: "Talk",
