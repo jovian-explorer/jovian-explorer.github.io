@@ -851,6 +851,26 @@ dialog.photo-dialog img { max-height: 88vh; width: auto; }
 .kind-video { background: var(--ink); color: var(--bg); }
 .kind-paper { background: transparent; color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
 .kind-milestone { background: #c9922e; color: #fff; }
+.kind-article { background: var(--accent-soft); color: var(--accent); }
+.contact { margin-top: 3rem; padding-top: 2.5rem; border-top: 1px solid var(--rule); }
+.contact-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 1.5rem 3rem; align-items: start; }
+.contact-info { display: grid; gap: 0.8rem; max-width: 30rem; }
+.contact-email { display: flex; flex-wrap: wrap; gap: 0.6rem; align-items: center; font-family: var(--f-mono); font-size: var(--t-sm); }
+.contact-info .small { font-size: var(--t-xs); }
+.contact-form { display: grid; gap: 0.9rem; }
+.contact-form .cf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; }
+.contact-form label { display: grid; gap: 0.3rem; font-size: var(--t-xs); color: var(--muted); font-family: var(--f-mono); letter-spacing: 0.03em; }
+.contact-form input, .contact-form select, .contact-form textarea {
+  font: inherit; font-family: var(--f-body); font-size: var(--t-sm); letter-spacing: 0; color: var(--ink);
+  background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius); padding: 0.5rem 0.65rem; width: 100%;
+}
+.contact-form textarea { resize: vertical; min-height: 8rem; }
+.contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; border-color: transparent; }
+.contact-form .btn { justify-self: start; }
+@media (max-width: 720px) {
+  .contact-grid, .contact-form .cf-row { grid-template-columns: 1fr; }
+}
+@media print { .contact { display: none; } }
 .glance { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: var(--radius); overflow: hidden; }
 .glance-cell { background: var(--surface); padding: 0.9rem 1rem; display: grid; gap: 0.1rem; text-decoration: none; color: var(--ink); }
 .glance-cell:hover { background: var(--accent-soft); }

@@ -27,6 +27,54 @@
     return p[1] ? MONTHS[+p[1] - 1] + " " + p[0] : p[0];
   }
 
+  /* ---------- Feeds ----------
+     assets/js/feed-*.js are refreshed daily by tools/update_feeds.py.
+     Works on ORCID that are not in data.js are added to the publication and
+     talk lists; recent papers, videos and articles join the home page list;
+     the larger of the Scholar and data.js citation counts is shown. */
+  var AUTO_RECENT = [];
+  (function mergeFeeds() {
+    function norm(t) { return String(t || "").toLowerCase().replace(/<[^>]+>/g, "").replace(/[^a-z0-9]+/g, ""); }
+    var PUBTYPE = { "journal-article": "journal", "book-chapter": "chapter", "conference-paper": "proceedings", "preprint": "preprint", "working-paper": "preprint", "report": "whitepaper" };
+    var TALK = { "conference-poster": "Poster", "conference-abstract": "Talk", "conference-presentation": "Talk", "lecture-speech": "Talk", "conference-output": "Talk" };
+    var pubs = SITE.publications = SITE.publications || [];
+    var confs = SITE.conferences = SITE.conferences || [];
+    var seen = {};
+    pubs.forEach(function (p) {
+      if (p.doi) seen[p.doi.toLowerCase()] = 1;
+      if (p.arxiv) seen[p.arxiv] = 1;
+      seen[norm(p.title)] = 1;
+    });
+    confs.forEach(function (c) { seen["talk:" + norm(c.title)] = 1; });
+    var added = 0;
+    ((window.WORKS || {}).items || []).forEach(function (w) {
+      var arx = w.arxiv || ((w.doi || "").match(/^10\.48550\/arxiv\.(.+)$/) || [])[1];
+      var ym = w.year ? w.year + (w.month ? "-" + ("0" + w.month).slice(-2) : "") : "";
+      if (PUBTYPE[w.type]) {
+        if ((w.doi && seen[w.doi]) || (arx && seen[arx]) || seen[norm(w.title)]) return;
+        seen[norm(w.title)] = 1;
+        var p = { role: /^Aggarwal,/.test(w.authors || "") ? "first" : "co", kind: PUBTYPE[w.type], year: w.year || "",
+          title: w.title, authors: w.authors || "", venue: w.venue || "", doi: w.doi, arxiv: arx, url: w.url };
+        pubs.push(p); added++;
+        AUTO_RECENT.push({ key: ym, date: monthYear(ym), type: "Paper", title: w.title, where: w.venue, href: w.doi ? "https://doi.org/" + w.doi : w.url });
+      } else if (TALK[w.type] && ym && !seen["talk:" + norm(w.title)]) {
+        confs.push({ date: ym, dates: monthYear(ym), kind: TALK[w.type], event: w.venue || "Conference", place: "", title: w.title });
+        AUTO_RECENT.push({ key: ym, date: monthYear(ym), type: TALK[w.type], title: w.title, where: w.venue, href: "talks.html" });
+      }
+    });
+    if (added) pubs.sort(function (a, b) { return (+b.year || 0) - (+a.year || 0); });
+    ((window.VIDEOS || {}).videos || []).forEach(function (v) {
+      if (v.id && v.date && !v.hidden) AUTO_RECENT.push({ key: v.date.slice(0, 7), date: monthYear(v.date.slice(0, 7)), type: "Video", title: v.title, where: "YouTube", href: "https://www.youtube.com/watch?v=" + v.id });
+    });
+    ((window.ARTICLES || {}).items || []).forEach(function (a) {
+      if (a.date) AUTO_RECENT.push({ key: a.date.slice(0, 7), date: monthYear(a.date.slice(0, 7)), type: "Article", title: a.title, where: "Medium", href: a.url || a.link });
+    });
+    var M = window.METRICS;
+    if (M && M.citations && (!SITE.metrics || !SITE.metrics.citations || M.citations > SITE.metrics.citations)) {
+      SITE.metrics = { citations: M.citations, source: "Google Scholar", url: M.source };
+    }
+  })();
+
   /* ---------- Mobile menu ---------- */
   var toggle = document.querySelector(".nav-toggle");
   var nav = document.getElementById("site-nav");
@@ -327,10 +375,50 @@
     }).join("");
   }
 
+  /* ---------- Contact ---------- */
+  var cform = document.getElementById("contact-form");
+  if (cform) {
+    cform.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var f = cform.elements;
+      var body = f.message.value.trim() + "\n\n" + f.name.value.trim() + "\n" + f.from.value.trim();
+      location.href = "mailto:" + cform.getAttribute("data-email") +
+        "?subject=" + encodeURIComponent(f.topic.value + " (from website)") + "&body=" + encodeURIComponent(body);
+    });
+  }
+  var copyBtn = document.getElementById("copy-email");
+  if (copyBtn && navigator.clipboard) {
+    copyBtn.addEventListener("click", function () {
+      navigator.clipboard.writeText(copyBtn.getAttribute("data-email")).then(function () {
+        copyBtn.textContent = "Copied";
+        setTimeout(function () { copyBtn.textContent = "Copy address"; }, 1600);
+      });
+    });
+  } else if (copyBtn) copyBtn.hidden = true;
+
   /* ---------- Home: recent list and at-a-glance numbers ---------- */
   var recentRoot = document.getElementById("recent-list");
   if (recentRoot && SITE.recent) {
-    recentRoot.innerHTML = SITE.recent.map(function (r) {
+    /* Hand-written entries in data.js plus feed items from the last twelve months, newest first. */
+    var recentKey = function (d) {
+      var m = String(d).match(/(?:([A-Z][a-z]{2}) )?(\d{4})/);
+      return m ? m[2] + "-" + (m[1] ? ("0" + (MONTHS.indexOf(m[1]) + 1)).slice(-2) : "00") : "";
+    };
+    var now = new Date(), cutoff = (now.getFullYear() - 1) + "-" + ("0" + (now.getMonth() + 1)).slice(-2);
+    var have = {}, latest = {};
+    var RECENT = SITE.recent.map(function (r) {
+      var k = recentKey(r.date);
+      have[r.title.toLowerCase()] = 1;
+      if (!latest[r.type] || k > latest[r.type]) latest[r.type] = k;
+      return Object.assign({ key: k }, r);
+    });
+    /* A feed item is added only when it is newer than the latest hand-written entry of its type. */
+    AUTO_RECENT.forEach(function (r) {
+      var t = String(r.title).toLowerCase();
+      if (r.key >= cutoff && r.key > (latest[r.type] || "") && !have[t]) { have[t] = 1; RECENT.push(r); }
+    });
+    RECENT.sort(function (a, b) { return a.key === b.key ? 0 : (a.key < b.key ? 1 : -1); });
+    recentRoot.innerHTML = RECENT.slice(0, 10).map(function (r) {
       var t = esc(r.title);
       if (r.href) t = '<a href="' + esc(r.href) + '">' + t + "</a>";
       return '<li><time class="mono">' + esc(r.date) + '</time><div><p class="rc-title"><span class="kind kind-' + esc(r.type.toLowerCase()) + '">' + esc(r.type) + "</span> " + t + "</p>" +
