@@ -344,10 +344,10 @@ def crossref_meta(doi):
         fam = a.get("family") or a.get("name") or ""
         ini = " ".join(x[0] + "." for x in re.split(r"[\s.-]+", a.get("given", "")) if x)
         names.append(f"{fam}, {ini}".strip(", "))
-    out = {"authors": ", ".join(names[:12]) + (", et al." if len(names) > 12 else "")}
+    out = {"authors": ", ".join(names[:12]) + (", et al." if len(names) > 12 else ""), "dated": "online"}
     if m.get("container-title"):
         out["venue"] = m["container-title"][0]
-    parts = (m.get("published") or m.get("issued") or {}).get("date-parts", [[None]])[0]
+    parts = (m.get("published-online") or m.get("published") or m.get("issued") or {}).get("date-parts", [[None]])[0]
     if parts and parts[0]:
         out["year"] = int(parts[0])
         if len(parts) > 1:
@@ -389,13 +389,15 @@ def update_works():
         if url and not doi:
             item["url"] = url
         prev = cache.get(doi or title, {})
-        if doi and "authors" not in prev:
+        if doi and prev.get("dated") != "online":
             prev = {**prev, **crossref_meta(doi)}
+        if prev.get("dated"):
+            item["dated"] = prev["dated"]
         for k in ("authors", "venue"):  # Crossref values win
             if prev.get(k):
                 item[k] = prev[k]
-        for k in ("year", "month"):  # ORCID values win
-            if prev.get(k) and not item.get(k):
+        for k in ("year", "month"):  # first online date (Crossref) wins
+            if prev.get(k):
                 item[k] = prev[k]
         items.append(item)
     items.sort(key=lambda w: (w.get("year", 0), w.get("month", 0)), reverse=True)
