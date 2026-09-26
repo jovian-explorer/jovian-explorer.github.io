@@ -183,9 +183,12 @@ p { margin: 0; }
   align-items: center;
   gap: 1.5rem;
 }
-.brand { display: flex; flex-direction: column; text-decoration: none; color: var(--ink); line-height: 1.2; margin-right: auto; }
+.brand { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; color: var(--ink); line-height: 1.2; margin-right: auto; }
+.brand-mark { height: 2.4rem; width: auto; flex: none; overflow: visible; }
+.brand-word { font-family: var(--f-body); font-weight: 400; font-size: 1.3rem; letter-spacing: 0.005em; white-space: nowrap; }
+.brand-print { flex-direction: column; }
 .brand-name { font-family: var(--f-display); font-weight: var(--display-weight); font-size: 1.125rem; letter-spacing: -0.01em; }
-.brand-role { font-size: var(--t-xs); color: var(--muted); }
+.brand-role { display: block; font-size: var(--t-xs); color: var(--muted); }
 .site-nav { display: flex; gap: 0.25rem 1.1rem; flex-wrap: wrap; }
 .site-nav a {
   color: var(--muted);
@@ -712,7 +715,7 @@ button.chip:hover, button.chip[aria-expanded="true"] { color: var(--accent); bor
 :root[data-layout="centered"] .hero .prose { margin-inline: auto; text-align: left; }
 @media (max-width: 1180px) {
   :root[data-layout="centered"] .header-inner { flex-direction: row; flex-wrap: wrap; }
-  :root[data-layout="centered"] .brand { margin-right: auto; align-items: flex-start; text-align: left; }
+  :root[data-layout="centered"] .brand { margin-right: auto; align-items: center; text-align: left; }
   :root[data-layout="centered"] .header-tools { position: static; }
 }
 
@@ -774,6 +777,8 @@ button.chip:hover, button.chip[aria-expanded="true"] { color: var(--accent); bor
   .site-header { position: static; border: 0; backdrop-filter: none; background: none; }
   .site-nav, .header-tools, .header-profile, .skip-link, .site-footer, .preview-bar, .no-print { display: none !important; }
   .header-inner, main { padding: 0; max-width: none; }
+  .brand-mark, .brand-word { display: none; }
+  .brand-print.print-only { display: flex; }
   .brand-name { font-size: 18pt; }
   main { padding-block: 0.5rem 0; }
   .page-head { padding-bottom: 0.6rem; margin-bottom: 1rem; }
