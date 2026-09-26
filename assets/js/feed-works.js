@@ -13,6 +13,7 @@ window.WORKS = {
       "year": 2026,
       "month": 12,
       "doi": "10.1016/j.icarus.2026.117291",
+      "dated": "online",
       "authors": "Aggarwal, K., Choudhary, R. K., Datta, A., Banerjee, S., Manikantan, R., Sharma, A., Imamura, T."
     },
     {
@@ -20,8 +21,9 @@ window.WORKS = {
       "type": "journal-article",
       "venue": "Journal of Geophysical Research: Planets",
       "year": 2026,
-      "month": 9,
+      "month": 8,
       "doi": "10.1029/2026je009957",
+      "dated": "online",
       "authors": "Aggarwal, K., Choudhary, R. K., Datta, A., Sharma, A."
     },
     {
@@ -30,6 +32,7 @@ window.WORKS = {
       "venue": "Advances in Space Research",
       "year": 2026,
       "doi": "10.1016/j.asr.2026.03.059",
+      "dated": "online",
       "authors": "Aggarwal, K., Choudhary, R. K., Datta, A., Roopa, M. V., Imamura, T., Ando, H.",
       "month": 5
     },
@@ -38,8 +41,9 @@ window.WORKS = {
       "type": "journal-article",
       "venue": "Monthly Notices of the Royal Astronomical Society",
       "year": 2026,
-      "month": 4,
+      "month": 3,
       "doi": "10.1093/mnras/stag554",
+      "dated": "online",
       "authors": "Aggarwal, K., Choudhary, R. K., Datta, A., Banerjee, S., Imamura, T., Ando, H."
     },
     {
@@ -56,6 +60,7 @@ window.WORKS = {
       "year": 2025,
       "month": 8,
       "doi": "10.1093/mnras/staf1305",
+      "dated": "online",
       "authors": "Aggarwal, K., Choudhary, R. K., Datta, A., Imamura, T."
     },
     {
@@ -63,8 +68,9 @@ window.WORKS = {
       "type": "journal-article",
       "venue": "The Astrophysical Journal",
       "year": 2025,
-      "month": 4,
+      "month": 3,
       "doi": "10.3847/1538-4357/adb627",
+      "dated": "online",
       "authors": "Aggarwal, K., Choudhary, R. K., Datta, A., V., R. M., Dai, B. K."
     },
     {
@@ -80,6 +86,7 @@ window.WORKS = {
       "venue": "Nature Astronomy",
       "year": 2024,
       "doi": "10.1038/s41550-024-02292-x",
+      "dated": "online",
       "authors": "Carter, A. L., May, E. M., Espinoza, N., Welbanks, L., Ahrer, E., Alderson, L., Brahm, R., Feinstein, A. D., Grant, D., Line, M., Morello, G., O’Steen, R., et al.",
       "month": 7
     },
@@ -90,6 +97,7 @@ window.WORKS = {
       "year": 2024,
       "month": 1,
       "doi": "10.1038/s41586-024-07040-9",
+      "dated": "online",
       "authors": "Powell, D., Feinstein, A. D., Lee, E. K. H., Zhang, M., Tsai, S. M., Taylor, J., Kirk, J., Bell, T., Barstow, J. K., Gao, P., Bean, J. L., Blecic, J., et al."
     },
     {
@@ -105,6 +113,7 @@ window.WORKS = {
       "venue": "2023 International Conference on Integration of Computational Intelligent System (ICICIS)",
       "year": 2023,
       "doi": "10.1109/icicis56802.2023.10430270",
+      "dated": "online",
       "authors": "Shekhar, K. S., Tanti, H. A., Datta, A., Aggarwal, K.",
       "month": 11
     },
@@ -153,6 +162,7 @@ window.WORKS = {
       "year": 2023,
       "month": 4,
       "doi": "10.1038/s41586-023-05902-2",
+      "dated": "online",
       "authors": "Tsai, S. M., Lee, E. K. H., Powell, D., Gao, P., Zhang, X., Moses, J., Hébrard, E., Venot, O., Parmentier, V., Jordan, S., Hu, R., Alam, M. K., et al."
     },
     {
@@ -160,9 +170,10 @@ window.WORKS = {
       "type": "journal-article",
       "venue": "Nature",
       "year": 2023,
-      "month": 2,
+      "month": 1,
       "doi": "10.1038/s41586-022-05677-y",
       "arxiv": "2211.10487",
+      "dated": "online",
       "authors": "Rustamkulov, Z., Sing, D. K., Mukherjee, S., May, E. M., Kirk, J., Schlawin, E., Line, M. R., Piaulet, C., Carter, A. L., Batalha, N. E., Goyal, J. M., López-Morales, M., et al."
     },
     {
@@ -171,6 +182,7 @@ window.WORKS = {
       "venue": "Nature",
       "year": 2023,
       "doi": "10.1038/s41586-022-05591-3",
+      "dated": "online",
       "authors": "Alderson, L., Wakeford, H. R., Alam, M. K., Batalha, N. E., Lothringer, J. D., Adams Redai, J., Barat, S., Brande, J., Damiano, M., Daylan, T., Espinoza, N., Flagg, L., et al.",
       "month": 1
     },
@@ -191,6 +203,7 @@ window.WORKS = {
       "month": 9,
       "doi": "10.1038/s41586-022-05269-w",
       "arxiv": "2208.11692",
+      "dated": "online",
       "authors": "JWST Transiting Exoplanet Community Early Release Science Team, Ahrer, E. M., Alderson, L., Batalha, N. M., Batalha, N. E., Bean, J. L., Beatty, T. G., Bell, T. J., Benneke, B., Berta-Thompson, Z. K., Carter, A. L., Crossfield, I. J. M., et al."
     }
   ],
