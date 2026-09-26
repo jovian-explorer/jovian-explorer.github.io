@@ -405,6 +405,13 @@
       return m ? m[2] + "-" + (m[1] ? ("0" + (MONTHS.indexOf(m[1]) + 1)).slice(-2) : "00") : "";
     };
     var now = new Date(), cutoff = (now.getFullYear() - 1) + "-" + ("0" + (now.getMonth() + 1)).slice(-2);
+    /* Month of first online publication from the ORCID/Crossref feed, for entries dated by year only. */
+    var WM = {};
+    ((window.WORKS || {}).items || []).forEach(function (w) { if (w.doi && w.month) WM[w.doi] = w.year + "-" + ("0" + w.month).slice(-2); });
+    SITE.recent.forEach(function (r) {
+      var d = /^\d{4}$/.test(r.date) && r.href && (r.href.match(/doi\.org\/(.+)$/) || [])[1];
+      if (d && WM[d.toLowerCase()]) r.date = monthYear(WM[d.toLowerCase()]);
+    });
     var have = {}, latest = {};
     var RECENT = SITE.recent.map(function (r) {
       var k = recentKey(r.date);
