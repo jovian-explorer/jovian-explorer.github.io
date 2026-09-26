@@ -112,12 +112,41 @@
         </section>
       </div>
     </div>
+
+    <section class="section contact" id="contact" aria-labelledby="contact-h">
+      <div class="section-head"><h2 id="contact-h">Contact</h2></div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p>Questions about the research, data or software, invitations to speak, collaboration and outreach requests: write by email or use the form.</p>
+          <p class="contact-email"><a href="mailto:keshavagg1098@gmail.com">keshavagg1098@gmail.com</a> <button type="button" class="btn small ghost" id="copy-email" data-email="keshavagg1098@gmail.com">Copy address</button></p>
+          <p class="muted small">The form opens your email application with the message filled in; nothing is sent through this site.</p>
+        </div>
+        <form class="contact-form" id="contact-form" data-email="keshavagg1098@gmail.com">
+          <div class="cf-row">
+            <label>Name<input name="name" type="text" autocomplete="name" required></label>
+            <label>Your email<input name="from" type="email" autocomplete="email" required></label>
+          </div>
+          <label>Subject
+            <select name="topic">
+              <option>Research question</option>
+              <option>Collaboration</option>
+              <option>Talk or seminar invitation</option>
+              <option>Outreach</option>
+              <option>Other</option>
+            </select>
+          </label>
+          <label>Message<textarea name="message" rows="6" required></textarea></label>
+          <button type="submit" class="btn">Write email</button>
+        </form>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-meta">
         <span>&copy; <span data-year>2026</span> Keshav Aggarwal</span>
+        <a href="index.html#contact">Contact</a>
         <a href="mailto:keshavagg1098@gmail.com">keshavagg1098@gmail.com</a>
         <a href="design.html">Design samples</a>
       </div>
@@ -125,6 +154,10 @@
     </div>
   </footer>
 
+  <script src="assets/js/feed-works.js"></script>
+  <script src="assets/js/feed-metrics.js"></script>
+  <script src="assets/js/feed-videos.js"></script>
+  <script src="assets/js/feed-articles.js"></script>
   <script src="assets/js/data.js"></script>
   <script src="assets/js/site.js"></script>
 </body>
