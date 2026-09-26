@@ -344,10 +344,14 @@ def crossref_meta(doi):
         fam = a.get("family") or a.get("name") or ""
         ini = " ".join(x[0] + "." for x in re.split(r"[\s.-]+", a.get("given", "")) if x)
         names.append(f"{fam}, {ini}".strip(", "))
-    out = {"authors": ", ".join(names[:12]) + (", et al." if len(names) > 12 else ""), "dated": "online"}
+    out = {"authors": ", ".join(names[:12]) + (", et al." if len(names) > 12 else ""), "dated": "earliest"}
     if m.get("container-title"):
         out["venue"] = m["container-title"][0]
-    parts = (m.get("published-online") or m.get("published") or m.get("issued") or {}).get("date-parts", [[None]])[0]
+    # Earliest of the online, print, issue and DOI-registration dates: articles
+    # in press carry a later issue date than the day they appeared.
+    dates = [tuple((m.get(k) or {}).get("date-parts", [[None]])[0]) for k in ("published-online", "published-print", "issued", "created")]
+    dates = [d for d in dates if d and d[0]]
+    parts = min(dates, key=lambda d: (d + (12, 31))[:3]) if dates else None
     if parts and parts[0]:
         out["year"] = int(parts[0])
         if len(parts) > 1:
@@ -389,7 +393,7 @@ def update_works():
         if url and not doi:
             item["url"] = url
         prev = cache.get(doi or title, {})
-        if doi and prev.get("dated") != "online":
+        if doi and prev.get("dated") != "earliest":
             prev = {**prev, **crossref_meta(doi)}
         if prev.get("dated"):
             item["dated"] = prev["dated"]
