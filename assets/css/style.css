@@ -890,3 +890,40 @@ dialog.photo-dialog img { max-height: 88vh; width: auto; }
 .res-list a { display: inline-flex; gap: 0.45rem; align-items: center; color: var(--ink); text-decoration: none; }
 .res-list a:hover { color: var(--accent); text-decoration: underline; }
 .res-list .mono { font-size: 0.72rem; white-space: nowrap; }
+
+/* ---------- CV: layout of the LaTeX CV (long_cv.tex / short_cv.tex) ---------- */
+.cvx { max-width: 52rem; margin: 0 auto; font-family: var(--f-display); color: var(--ink); }
+.cvx-bar { display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem; align-items: center; justify-content: space-between; margin-bottom: 2rem; }
+.cvx-dl { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0; }
+.cvx-name { text-align: center; font-size: 2.6rem; font-weight: 400; letter-spacing: 0.01em; margin: 0 0 1.4rem; }
+.cvx-sec { margin-top: 1.1rem; }
+.cvx-sec h2 { font-family: var(--f-display); font-size: 1.35rem; font-weight: 400; font-variant: small-caps; letter-spacing: 0.02em; border-bottom: 1px solid var(--ink); padding-bottom: 0.1rem; margin: 0 0 0.45rem; }
+.cvx table { border-collapse: collapse; width: 100%; font-size: 0.95rem; line-height: 1.4; }
+.cvx th, .cvx td { border: 0; font-family: inherit; font-size: inherit; letter-spacing: normal; text-transform: none; color: inherit; }
+.cvx th { text-align: right; vertical-align: top; font-weight: 400; white-space: nowrap; padding: 0.18rem 0.8rem 0.18rem 0; width: 1%; }
+.cvx td { vertical-align: top; padding: 0.18rem 0 0.18rem 0.8rem; }
+.cvx .bar th { font-variant: small-caps; letter-spacing: 0.02em; border-right: 1px solid var(--ink); }
+.cvx-pd th { font-variant: small-caps; letter-spacing: 0.03em; }
+.cvx small { font-size: 0.85em; color: var(--muted); }
+.cvx a:not(.btn) { color: var(--accent); text-decoration: none; }
+.cvx a:not(.btn):hover { text-decoration: underline; }
+.cvx-kind, .cvx-status { color: var(--muted); font-size: 0.9em; }
+.cvx-status { color: var(--accent); }
+.cvx-pubs { margin: 0; padding-left: 1.6rem; font-size: 0.93rem; line-height: 1.45; display: grid; gap: 0.3rem; }
+.cvx[data-mode="short"] [data-cv="long"]:not(button) { display: none; }
+@media (max-width: 640px) {
+  .cvx-name { font-size: 2rem; }
+  .cvx table, .cvx tbody, .cvx tr, .cvx th, .cvx td { display: block; width: auto; }
+  .cvx th { text-align: left; padding: 0.4rem 0 0; border: 0 !important; color: var(--muted); }
+  .cvx td { padding: 0 0 0.2rem; }
+}
+@media print {
+  .cvx { max-width: none; font-size: 10pt; color: #000; }
+  .cvx a:not(.btn) { color: #003399; }
+  .cvx-sec { break-inside: auto; }
+  .cvx tr, .cvx-pubs li { break-inside: avoid; }
+  .cvx-sec h2 { break-after: avoid; border-color: #000; }
+  .cvx .bar th { border-color: #000; }
+  .cvx small, .cvx-kind { color: #333; }
+  body:has(.cvx) .site-header { display: none; }
+}
