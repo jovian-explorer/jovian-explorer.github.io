@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
-"""Refresh the YouTube video list and the Medium article list.
+"""Refresh videos, articles, citations and the ORCID works list.
 
-Writes assets/js/feed-videos.js (window.VIDEOS) and
-assets/js/feed-articles.js (window.ARTICLES). Runs daily in GitHub Actions
+Writes assets/js/feed-videos.js (window.VIDEOS), assets/js/feed-articles.js
+(window.ARTICLES), assets/js/feed-metrics.js (window.METRICS) and
+assets/js/feed-works.js (window.WORKS: papers, chapters, preprints, talks and
+posters listed on ORCID, with authors from Crossref). Runs daily in GitHub Actions
 (.github/workflows/update-feeds.yml) and can be run by hand:
 
     python3 tools/update_feeds.py
@@ -32,6 +34,8 @@ ROOT = Path(__file__).resolve().parent.parent
 VIDEO_JS = ROOT / "assets/js/feed-videos.js"
 ARTICLE_JS = ROOT / "assets/js/feed-articles.js"
 METRICS_JS = ROOT / "assets/js/feed-metrics.js"
+WORKS_JS = ROOT / "assets/js/feed-works.js"
+ORCID = os.environ.get("ORCID_ID", "0000-0002-7004-8670")
 SCHOLAR = os.environ.get("SCHOLAR_URL", "https://scholar.google.com/citations?user=KO8MtmEAAAAJ&hl=en")
 UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
 KEEP = ("topic", "featured", "hidden", "note")
@@ -313,6 +317,108 @@ def update_metrics():
     return True
 
 
+# ---------------------------------------------------------------- ORCID
+
+def get_json(url):
+    req = urllib.request.Request(url, headers={"User-Agent": "jovian-explorer.github.io feed updater", "Accept": "application/json"})
+    with urllib.request.urlopen(req, timeout=30) as r:
+        return json.loads(r.read().decode("utf-8", "replace"))
+
+
+def val(o, *keys):
+    for k in keys:
+        if not isinstance(o, dict):
+            return ""
+        o = o.get(k)
+    return o if isinstance(o, str) else ""
+
+
+def crossref_meta(doi):
+    try:
+        m = get_json("https://api.crossref.org/works/" + urllib.parse.quote(doi))["message"]
+    except Exception as e:
+        log("  Crossref failed for", doi, e)
+        return {}
+    names = []
+    for a in m.get("author", []):
+        fam = a.get("family") or a.get("name") or ""
+        ini = " ".join(x[0] + "." for x in re.split(r"[\s.-]+", a.get("given", "")) if x)
+        names.append(f"{fam}, {ini}".strip(", "))
+    out = {"authors": ", ".join(names[:12]) + (", et al." if len(names) > 12 else "")}
+    if m.get("container-title"):
+        out["venue"] = m["container-title"][0]
+    parts = (m.get("published") or m.get("issued") or {}).get("date-parts", [[None]])[0]
+    if parts and parts[0]:
+        out["year"] = int(parts[0])
+        if len(parts) > 1:
+            out["month"] = int(parts[1])
+    return out
+
+
+def update_works():
+    old = read_js(WORKS_JS, "WORKS") or {}
+    cache = {w.get("doi") or w.get("title"): w for w in old.get("items", [])}
+    try:
+        data = get_json(f"https://pub.orcid.org/v3.0/{ORCID}/works")
+    except Exception as e:
+        log("ORCID failed:", e)
+        return False
+    items = []
+    for g in data.get("group", []):
+        w = (g.get("work-summary") or [{}])[0]
+        title = val(w, "title", "title", "value").strip()
+        if not title:
+            continue
+        ids = {}
+        for x in (w.get("external-ids") or {}).get("external-id", []):
+            ids.setdefault(x.get("external-id-type", ""), (x.get("external-id-value") or "").strip())
+        doi = ids.get("doi", "").lower().replace("https://doi.org/", "")
+        arxiv = ids.get("arxiv", "").replace("arXiv:", "")
+        date = w.get("publication-date") or {}
+        item = {"title": title, "type": w.get("type", ""), "venue": val(w, "journal-title", "value")}
+        y, mth = val(date, "year", "value"), val(date, "month", "value")
+        if y:
+            item["year"] = int(y)
+        if mth:
+            item["month"] = int(mth)
+        if doi:
+            item["doi"] = doi
+        if arxiv:
+            item["arxiv"] = arxiv
+        url = val(w, "url", "value")
+        if url and not doi:
+            item["url"] = url
+        prev = cache.get(doi or title, {})
+        if doi and "authors" not in prev:
+            prev = {**prev, **crossref_meta(doi)}
+        for k in ("authors", "venue"):  # Crossref values win
+            if prev.get(k):
+                item[k] = prev[k]
+        for k in ("year", "month"):  # ORCID values win
+            if prev.get(k) and not item.get(k):
+                item[k] = prev[k]
+        items.append(item)
+    items.sort(key=lambda w: (w.get("year", 0), w.get("month", 0)), reverse=True)
+    new = {"orcid": ORCID, "items": items}
+    if old.get("items") == items:
+        log(f"ORCID: no changes ({len(items)} works)")
+        return False
+    new["updated"] = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    WORKS_JS.write_text(WORKS_HEADER + "window.WORKS = " + json.dumps(new, indent=2, ensure_ascii=False) + ";\n")
+    log(f"ORCID: wrote {len(items)} works")
+    for w in items[:15]:
+        log(f"  {w.get('year', '')}  {w['type']}  {w['title'][:90]}")
+    return True
+
+
+WORKS_HEADER = """/* Works listed on ORCID, refreshed by tools/update_feeds.py (GitHub Actions, daily).
+   The site adds any paper whose DOI, arXiv id or title is not already in
+   assets/js/data.js to the publications list and the home page, and any
+   conference poster or talk to the talks list. Add a work to ORCID and it
+   appears here the next day. */
+"""
+
+
 METRICS_HEADER = """/* Google Scholar citation metrics, refreshed by tools/update_feeds.py (GitHub Actions, daily). */
 """
 VIDEO_HEADER = """/* YouTube videos, refreshed by tools/update_feeds.py (GitHub Actions, daily).
@@ -326,5 +432,5 @@ ARTICLE_HEADER = """/* Medium articles, refreshed by tools/update_feeds.py (GitH
 """
 
 if __name__ == "__main__":
-    changed = [update_videos(), update_articles(), update_metrics()]
+    changed = [update_videos(), update_articles(), update_metrics(), update_works()]
     sys.exit(0)
