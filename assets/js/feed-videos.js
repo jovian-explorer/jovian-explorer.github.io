@@ -9,7 +9,7 @@ window.VIDEOS = {
     "id": "UCCXaTGdT28P09_WMwT2Z-8Q",
     "handle": "keshavagg1098",
     "title": "Jovian Explorer",
-    "subscribers": ""
+    "subscribers": "3"
   },
   "videos": [
     {
@@ -17,7 +17,7 @@ window.VIDEOS = {
       "title": "A turbulence index independent framework for deriving solar wind speed and coronal electron density",
       "date": "2026-09-23",
       "description": "We present a turbulence index independent framework for simultaneously deriving solar wind velocity and coronal electron density in the near-Sun region using the spectral broadening of spacecraft radio signals. The…",
-      "views": 8
+      "views": 9
     },
     {
       "id": "Ex9r_Qzf1Dc",
@@ -34,5 +34,5 @@ window.VIDEOS = {
       "views": 4
     }
   ],
-  "updated": "2026-09-24"
+  "updated": "2026-09-26"
 };
