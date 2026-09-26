@@ -324,6 +324,8 @@
     }).join("");
     var drawCv = function (mode) {
       cvx.setAttribute("data-mode", mode);
+      var pdf = document.getElementById("cvx-pdf");
+      if (pdf) pdf.href = mode === "short" ? "assets/cv/Keshav_Aggarwal_CV_short.pdf" : "assets/cv/Keshav_Aggarwal_CV.pdf";
       var list = mode === "short" ? PUBS.filter(function (p) { return p.role === "first"; }) : PUBS;
       pubList.innerHTML = list.map(cvPubItem).join("");
       document.getElementById("cvx-pub-h").textContent = mode === "short" ? "First-Author Publications" : "Publication List";
