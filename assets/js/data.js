@@ -100,7 +100,8 @@ window.SITE = {
       title: "Photochemically produced SO₂ in the atmosphere of WASP-39b",
       authors: "Tsai, S., Lee, E., Powell, D., Gao, P., Zhang, X., Moses, J., et al. (incl. Aggarwal, K.)",
       venue: "Nature",
-      doi: "10.1038/s41586-023-05902-2"
+      doi: "10.1038/s41586-023-05902-2",
+      arxiv: "2211.10490"
     },
     {
       role: "co", kind: "journal", collab: "JWST ERS", year: 2023,
