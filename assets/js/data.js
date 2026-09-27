@@ -163,13 +163,6 @@ window.SITE = {
     },
 
     {
-      role: "co", kind: "whitepaper", year: 2025,
-      title: "UK white paper on magnetic reconnection",
-      authors: "Russell, A. J. B., Aggarwal, K., Rueda, J. A. A., Allanson, O., Baker, D., Bate, W., et al.",
-      venue: "arXiv preprint",
-      arxiv: "2512.11631"
-    },
-    {
       role: "co", kind: "chapter", year: 2026,
       title: "Probing the solar corona and the solar wind using angular broadening observations with the SKA",
       authors: "Zhang, P., Morgan, J., Oberoi, D., Strauss, D. T., Luo, Y., Kontar, E., Huang, Z., Aggarwal, K., Kumari, A., Datta, A., Morosan, D. E., Botha, G. J. J.",
@@ -251,6 +244,10 @@ window.SITE = {
      date: "YYYY-MM" (used for sorting). kind: "Talk" | "Poster"
      award: optional prize text. pdf: optional link to slides or poster.
      ------------------------------------------------------------------ */
+  /* ORCID works that are not publications of Keshav Aggarwal (kept off the site by the daily feed).
+     arXiv 2512.11631: UK white paper on magnetic reconnection, listed as a signatory, not an author. */
+  excludeWorks: ["10.48550/arxiv.2512.11631", "2512.11631"],
+
   /* Conferences, workshops and schools attended without a presentation. */
   schools: [
     { date: "2023-08", event: "Strange New Worlds conference", by: "Indian Institute of Science Education and Research (IISER), Pune" },

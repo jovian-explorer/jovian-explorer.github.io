@@ -47,7 +47,10 @@
     });
     confs.forEach(function (c) { seen["talk:" + norm(c.title)] = 1; });
     var added = 0;
+    var EXCLUDE = {};
+    (SITE.excludeWorks || []).forEach(function (x) { EXCLUDE[String(x).toLowerCase()] = 1; });
     ((window.WORKS || {}).items || []).forEach(function (w) {
+      if (EXCLUDE[(w.doi || "").toLowerCase()] || EXCLUDE[(w.arxiv || "").toLowerCase()]) return;
       var arx = w.arxiv || ((w.doi || "").match(/^10\.48550\/arxiv\.(.+)$/) || [])[1];
       var ym = w.year ? w.year + (w.month ? "-" + ("0" + w.month).slice(-2) : "") : "";
       if (PUBTYPE[w.type]) {
