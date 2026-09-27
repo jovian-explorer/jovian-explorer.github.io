@@ -160,6 +160,7 @@
     if (p.doi) links.push('<a class="chip" href="https://doi.org/' + esc(p.doi) + '">DOI</a>');
     else if (p.url) links.push('<a class="chip" href="' + esc(p.url) + '">Link</a>');
     if (p.arxiv) links.push('<a class="chip" href="https://arxiv.org/abs/' + esc(p.arxiv) + '">arXiv</a>');
+    links.push('<a class="chip" href="https://scholar.google.com/scholar?q=' + encodeURIComponent('"' + p.title + '"') + '">Google Scholar</a>');
     if (p.ads) links.push('<a class="chip" href="' + esc(p.ads) + '">ADS</a>');
     if (p.code) links.push('<a class="chip" href="' + esc(p.code) + '">Code</a>');
     if (p.video) links.push('<a class="chip" href="https://www.youtube.com/watch?v=' + esc(p.video) + '">' + icon("play") + " Video</a>");
