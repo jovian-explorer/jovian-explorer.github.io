@@ -62,17 +62,20 @@
 
     <div id="publications">
       <div class="stats">
-        <div class="stat"><b data-count="firstjournal">6</b><span>first-author journal papers</span></div>
-        <div class="stat"><b data-count="co">16</b><span>co-authored works</span></div>
-        <div class="stat"><b data-count="proc">4</b><span>proceedings and chapters</span></div>
+        <div class="stat"><b data-count="fj"></b><span>first-author journal papers</span></div>
+        <div class="stat"><b data-count="fp"></b><span>first-author proceedings</span></div>
+        <div class="stat"><b data-count="co"></b><span>co-authored works</span></div>
         <div class="stat" id="stat-citations" hidden><b></b><span></span></div>
       </div>
 
-      <div class="tabs" role="tablist" aria-label="Publication type">
+      <div class="tabs pub-tabs" role="tablist" aria-label="Publication type">
         <button class="tab" role="tab" id="tab-all" aria-controls="panel-all" data-hash="all">All <span class="count" data-count="all"></span></button>
-        <button class="tab" role="tab" id="tab-first" aria-controls="panel-first" data-hash="first">First author <span class="count" data-count="first"></span></button>
-        <button class="tab" role="tab" id="tab-co" aria-controls="panel-co" data-hash="coauthored">Co-authored <span class="count" data-count="co"></span></button>
-        <button class="tab" role="tab" id="tab-proc" aria-controls="panel-proc" data-hash="proceedings">Proceedings &amp; book chapters <span class="count" data-count="proc"></span></button>
+        <button class="tab" role="tab" id="tab-fj" aria-controls="panel-fj" data-hash="first-journal">First-author journal papers <span class="count" data-count="fj"></span></button>
+        <button class="tab" role="tab" id="tab-fp" aria-controls="panel-fp" data-hash="first-proceedings">First-author proceedings <span class="count" data-count="fp"></span></button>
+        <button class="tab" role="tab" id="tab-cj" aria-controls="panel-cj" data-hash="coauthored-journal">Co-authored journal papers <span class="count" data-count="cj"></span></button>
+        <button class="tab" role="tab" id="tab-cp" aria-controls="panel-cp" data-hash="coauthored-proceedings">Co-authored proceedings &amp; book chapters <span class="count" data-count="cp"></span></button>
+        <button class="tab" role="tab" id="tab-wp" aria-controls="panel-wp" data-hash="white-papers">White papers <span class="count" data-count="wp"></span></button>
+        <button class="tab" role="tab" id="tab-ur" aria-controls="panel-ur" data-hash="under-review">Under review <span class="count" data-count="ur"></span></button>
       </div>
 
       <div class="toolbar">
@@ -83,9 +86,12 @@
       </div>
 
       <div class="tab-panel" role="tabpanel" id="panel-all" aria-labelledby="tab-all" data-pub-filter="all"></div>
-      <div class="tab-panel" role="tabpanel" id="panel-first" aria-labelledby="tab-first" data-pub-filter="first" hidden></div>
-      <div class="tab-panel" role="tabpanel" id="panel-co" aria-labelledby="tab-co" data-pub-filter="co" hidden></div>
-      <div class="tab-panel" role="tabpanel" id="panel-proc" aria-labelledby="tab-proc" data-pub-filter="proc" hidden></div>
+      <div class="tab-panel" role="tabpanel" id="panel-fj" aria-labelledby="tab-fj" data-pub-filter="fj" hidden></div>
+      <div class="tab-panel" role="tabpanel" id="panel-fp" aria-labelledby="tab-fp" data-pub-filter="fp" hidden></div>
+      <div class="tab-panel" role="tabpanel" id="panel-cj" aria-labelledby="tab-cj" data-pub-filter="cj" hidden></div>
+      <div class="tab-panel" role="tabpanel" id="panel-cp" aria-labelledby="tab-cp" data-pub-filter="cp" hidden></div>
+      <div class="tab-panel" role="tabpanel" id="panel-wp" aria-labelledby="tab-wp" data-pub-filter="wp" hidden></div>
+      <div class="tab-panel" role="tabpanel" id="panel-ur" aria-labelledby="tab-ur" data-pub-filter="ur" hidden></div>
       <noscript><p>The publication list needs JavaScript. See <a href="https://scholar.google.com/citations?user=KO8MtmEAAAAJ">Google Scholar</a>.</p></noscript>
     </div>
   </main>

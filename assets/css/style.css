@@ -930,3 +930,8 @@ dialog.photo-dialog img { max-height: 88vh; width: auto; }
   .cvx small, .cvx-kind { color: #333; }
   body:has(.cvx) .site-header { display: none; }
 }
+
+.pub-tabs { flex-wrap: wrap; }
+.pub-section + .pub-section { margin-top: 2.5rem; }
+.pub-section-h { font-size: var(--t-lg, 1.25rem); padding-bottom: 0.4rem; border-bottom: 1px solid var(--rule); margin-bottom: 0.6rem; }
+.pub-section-h .count { font-family: var(--f-mono); font-size: 0.8rem; color: var(--faint); font-weight: 400; }
