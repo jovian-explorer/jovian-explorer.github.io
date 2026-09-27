@@ -177,13 +177,23 @@
   }
 
   var KIND_LABEL = { proceedings: "Proceedings", chapter: "Book chapter", whitepaper: "White paper", preprint: "Preprint" };
+  var isProc = function (p) { return p.kind === "proceedings" || p.kind === "chapter"; };
   var PUB_FILTERS = {
     all: function () { return true; },
+    fj: function (p) { return p.role === "first" && p.kind === "journal" && !p.status; },
+    fp: function (p) { return p.role === "first" && isProc(p) && !p.status; },
+    cj: function (p) { return p.role === "co" && p.kind === "journal" && !p.status; },
+    cp: function (p) { return p.role === "co" && isProc(p) && !p.status; },
+    wp: function (p) { return (p.kind === "whitepaper" || p.kind === "preprint") && !p.status; },
+    ur: function (p) { return !!p.status; },
+    co: function (p) { return p.role === "co" && !p.status; },
     first: function (p) { return p.role === "first"; },
     firstjournal: function (p) { return p.role === "first" && p.kind === "journal" && !p.status; },
-    co: function (p) { return p.role === "co"; },
-    proc: function (p) { return p.kind === "proceedings" || p.kind === "chapter"; }
+    proc: isProc
   };
+  /* Sections of the "All" tab, in reading order. */
+  var PUB_SECTIONS = [["fj", "First-author journal papers"], ["fp", "First-author conference proceedings"], ["cj", "Co-authored journal papers"],
+    ["cp", "Co-authored proceedings and book chapters"], ["wp", "White papers and preprints"], ["ur", "Under review"]];
 
   /* ---------- BibTeX ---------- */
   function bibAuthors(s) {
@@ -275,7 +285,12 @@
           return [p.title, p.authors, p.venue, p.year, (p.missions || []).join(" ")].join(" ").toLowerCase().indexOf(q) > -1;
         });
         if (!panel.hidden) shown = list.length;
-        panel.innerHTML = list.length ? groupedByYear(list) : '<p class="empty">No publications match this search.</p>';
+        if (t === "all" && list.length) {
+          panel.innerHTML = PUB_SECTIONS.map(function (sec) {
+            var sub = list.filter(PUB_FILTERS[sec[0]]);
+            return sub.length ? '<section class="pub-section"><h2 class="pub-section-h">' + esc(sec[1]) + ' <span class="count">' + sub.length + '</span></h2><ul class="pub-list">' + sub.map(pubHTML).join("") + "</ul></section>" : "";
+          }).join("");
+        } else panel.innerHTML = list.length ? groupedByYear(list) : '<p class="empty">No publications match this search.</p>';
       });
       if (countEl) countEl.textContent = shown + (shown === 1 ? " entry" : " entries");
     }
@@ -312,10 +327,9 @@
     };
     var PUBS = SITE.publications || [];
     var pubList = document.getElementById("cvx-pubs");
-    var WORKSHOPS = [
-      { date: "2023-02", html: "<b>ISRO&ndash;ARIES Aditya-L1 Support Cell Workshop</b>, IIT (BHU) Varanasi" },
-      { date: "2022-03", html: "<b>Spring 2022: ERS Post-Launch Data Challenge for JWST</b>, Baltimore, MD, USA, and Heidelberg, Germany" }
-    ];
+    var WORKSHOPS = (SITE.schools || []).map(function (w) {
+      return { date: w.date, html: "<b>" + esc(w.event) + "</b>, " + esc(w.by) };
+    });
     var talks = (SITE.conferences || []).map(function (c) {
       return { date: c.date, html: "&ldquo;<i>" + esc(c.title) + "</i>&rdquo; at <b>" + esc(c.event) + (c.place ? ", " + esc(c.place) : "") + "</b> <span class=\"cvx-kind\">(" + esc(c.kind) + ")</span>" };
     }).concat(WORKSHOPS).sort(function (a, b) { return a.date < b.date ? 1 : a.date > b.date ? -1 : 0; });
@@ -393,6 +407,19 @@
     }).join("");
   }
 
+  var schoolRoot = document.getElementById("school-list");
+  if (schoolRoot && SITE.schools) {
+    schoolRoot.innerHTML = SITE.schools.map(function (w) {
+      return '<div class="row"><div class="row-date">' + esc(monthYear(w.date)) + '</div><div class="row-body"><p class="row-title">' + esc(w.event) + '</p><p class="row-sub">' + esc(w.by) + "</p></div></div>";
+    }).join("");
+  }
+  var covRoot = document.getElementById("coverage-list");
+  if (covRoot && SITE.coverage) {
+    covRoot.innerHTML = SITE.coverage.map(function (c) {
+      return '<div class="row"><div class="row-date">' + esc(monthYear(c.date)) + '</div><div class="row-body"><p class="row-title"><a href="' + esc(c.url) + '">' + esc(c.title) + '</a></p><p class="row-sub">' + esc(c.where) + "</p></div></div>";
+    }).join("");
+  }
+
   /* ---------- Contact ---------- */
   var cform = document.getElementById("contact-form");
   if (cform) {
@@ -454,7 +481,7 @@
   if (glance) {
     var P = SITE.publications || [], C = SITE.conferences || [], T = SITE.travel || {};
     var cells = [
-      [P.filter(function (p) { return p.role === "first" && p.kind === "journal" && !p.status; }).length, "first-author journal papers", "publications.html#first"],
+      [P.filter(function (p) { return p.role === "first" && p.kind === "journal" && !p.status; }).length, "first-author journal papers", "publications.html#first-journal"],
       [P.filter(function (p) { return !p.status; }).length, "publications in total", "publications.html"],
       [SITE.metrics && SITE.metrics.citations ? SITE.metrics.citations.toLocaleString("en-US") : "", "citations", "publications.html"],
       [C.length, "conference talks and posters", "talks.html"],

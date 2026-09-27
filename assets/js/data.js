@@ -251,6 +251,22 @@ window.SITE = {
      date: "YYYY-MM" (used for sorting). kind: "Talk" | "Poster"
      award: optional prize text. pdf: optional link to slides or poster.
      ------------------------------------------------------------------ */
+  /* Conferences, workshops and schools attended without a presentation. */
+  schools: [
+    { date: "2023-08", event: "Strange New Worlds conference", by: "Indian Institute of Science Education and Research (IISER), Pune" },
+    { date: "2023-02", event: "ISRO\u2013ARIES Aditya-L1 Support Cell Workshop 3", by: "Indian Institute of Technology (BHU), Varanasi" },
+    { date: "2022-07", event: "IIA Summer School 2022", by: "Indian Institute of Astrophysics (IIA), Bengaluru" },
+    { date: "2022-06", event: "Introductory Summer School in Astronomy and Astrophysics 2022", by: "Inter-University Centre for Astronomy and Astrophysics (IUCAA), Pune" },
+    { date: "2022-03", event: "Spring 2022: ERS Post-Launch Data Challenge for JWST", by: "Space Telescope Science Institute, Baltimore, and Heidelberg" }
+  ],
+
+  /* Articles by others about this work. */
+  coverage: [
+    { date: "2026-02", title: "Probing the solar wind with spacecraft radio occultation signals: chasing a unified method to probe the Sun", where: "EGU Blogs, Solar-Terrestrial Sciences division", url: "https://blogs.egu.eu/divisions/st/2026/02/01/probing-the-solar-wind-with-spacecraft-radio-occultation-signals-chasing-a-unified-method-to-probe-the-sun/" },
+    { date: "2025-02", title: "Summary of arXiv:2502.09512 (solar wind flow speeds from the Mars Orbiter Mission)", where: "The Science Archive", url: "https://thesciencearchive.org/2502-09512v1/" },
+    { date: "2025", title: "New breakthrough on solar wind unveiled by India\u2019s Mars Orbiter Mission (MOM)", where: "New Wave Particle", url: "https://newwaveparticle.com/new-breakthrough-on-solar-wind-unveiled-by-indias-mars-orbiter-mission-mom/" }
+  ],
+
   conferences: [
     {
       date: "2026-03", dates: "23\u201325 Mar 2026", kind: "Talk",
@@ -324,16 +340,28 @@ window.SITE = {
       title: "Unveiling space weather and planetary atmosphere dynamics through Aditya-L1 and DISHA data integration"
     },
     {
-      date: "2023-11", dates: "1 Nov 2023", kind: "Talk",
-      event: "International Conference on Integration of Computational Intelligent Systems (ICICIS 2023)",
-      place: "Pune, India",
-      title: "Monitoring infrastructure faults with YOLOv5, assisting safety inspectors"
-    },
-    {
       date: "2023-09", dates: "Sep 2023", kind: "Talk",
       event: "Venus Science Conference",
       place: "Physical Research Laboratory, Ahmedabad, India",
       title: "Retrieving sulphuric acid profiles of the Venus atmosphere from Akatsuki radio occultation data"
+    },
+    {
+      date: "2021-09", dates: "Sep 2021", kind: "Talk",
+      event: "Uncover Possibilities programme, Space Advancement and Research Cell",
+      place: "India",
+      title: "HR diagrams of star clusters"
+    },
+    {
+      date: "2021-08", dates: "Aug 2021", kind: "Talk",
+      event: "Uncover Possibilities programme, Space Advancement and Research Cell",
+      place: "India",
+      title: "The Gaia telescope and the use of its data"
+    },
+    {
+      date: "2021-02", dates: "Feb 2021", kind: "Talk",
+      event: "Nakshatra, Astronomy Club, IIT Indore",
+      place: "Indore, India",
+      title: "Life in the Solar System, and exoplanets"
     }
   ],
 
