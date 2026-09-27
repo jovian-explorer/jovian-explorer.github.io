@@ -935,3 +935,16 @@ dialog.photo-dialog img { max-height: 88vh; width: auto; }
 .pub-section + .pub-section { margin-top: 2.5rem; }
 .pub-section-h { font-size: var(--t-lg, 1.25rem); padding-bottom: 0.4rem; border-bottom: 1px solid var(--rule); margin-bottom: 0.6rem; }
 .pub-section-h .count { font-family: var(--f-mono); font-size: 0.8rem; color: var(--faint); font-weight: 400; }
+
+.event-media { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 0.9rem; align-items: flex-start; }
+.event-media img { display: block; max-height: 13rem; width: auto; max-width: 100%; border-radius: var(--radius); border: 1px solid var(--rule); }
+.astro-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 13rem), 1fr)); gap: 1rem; }
+.astro-item { margin: 0; }
+.astro-item img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; background: #000; border-radius: var(--radius); }
+.astro-item figcaption { font-size: var(--t-xs); color: var(--muted); margin-top: 0.35rem; }
+
+/* Publication rows: highlight the entry under the pointer. */
+.pub-list .pub { transition: background-color 0.15s ease, box-shadow 0.15s ease; border-radius: var(--radius); margin-inline: -0.75rem; padding-inline: 0.75rem; }
+.pub-list .pub:hover, .pub-list .pub:focus-within { background: var(--accent-soft); box-shadow: inset 3px 0 0 var(--accent); }
+.pub-list .pub:hover .pub-title a { color: var(--accent); }
+@media (hover: none) { .pub-list .pub:hover { background: none; box-shadow: none; } }
