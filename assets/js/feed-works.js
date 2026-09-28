@@ -74,13 +74,6 @@ window.WORKS = {
       "authors": "Aggarwal, K., Choudhary, R. K., Datta, A., V., R. M., Dai, B. K."
     },
     {
-      "title": "UK White Paper on Magnetic Reconnection",
-      "type": "other",
-      "venue": "Arxiv",
-      "year": 2025,
-      "doi": "10.48550/arxiv.2512.11631"
-    },
-    {
       "title": "A benchmark JWST near-infrared spectrum for the exoplanet WASP-39 b",
       "type": "journal-article",
       "venue": "Nature Astronomy",
@@ -207,5 +200,5 @@ window.WORKS = {
       "authors": "JWST Transiting Exoplanet Community Early Release Science Team, Ahrer, E. M., Alderson, L., Batalha, N. M., Batalha, N. E., Bean, J. L., Beatty, T. G., Bell, T. J., Benneke, B., Berta-Thompson, Z. K., Carter, A. L., Crossfield, I. J. M., et al."
     }
   ],
-  "updated": "2026-09-26"
+  "updated": "2026-09-28"
 };
