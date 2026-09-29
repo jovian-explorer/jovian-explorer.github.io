@@ -151,8 +151,15 @@
         n.focus(); select(n, true);
       });
     });
-    var start = tabs.filter(function (t) { return t.dataset.hash && "#" + t.dataset.hash === location.hash; })[0] || tabs[0];
+    function fromHash() { return tabs.filter(function (t) { return t.dataset.hash && "#" + t.dataset.hash === location.hash; })[0]; }
+    var start = fromHash() || tabs[0];
     if (start) select(start, false);
+    window.addEventListener("hashchange", function () {
+      var t = fromHash();
+      if (!t) return;
+      select(t, false);
+      container.scrollIntoView({ block: "start" });
+    });
   }
 
   /* ---------- Publications ---------- */
@@ -420,13 +427,17 @@
   var covRoot = document.getElementById("coverage-list");
   if (covRoot && SITE.coverage) {
     covRoot.innerHTML = SITE.coverage.map(function (c) {
-      return '<div class="row"><div class="row-date">' + esc(monthYear(c.date)) + '</div><div class="row-body"><p class="row-title"><a href="' + esc(c.url) + '">' + esc(c.title) + '</a></p><p class="row-sub">' + esc(c.where) + "</p></div></div>";
+      return '<a class="honour cov-item" href="' + esc(c.url) + '"><span class="label">' + esc(c.where) + " &middot; " + esc(monthYear(c.date)) + '</span><strong>' + esc(c.title) + '</strong><span class="cov-read">Read article <svg class="icon" aria-hidden="true"><use href="assets/img/icons.svg#i-arrow"></use></svg></span></a>';
     }).join("");
   }
 
   /* ---------- Contact ---------- */
   var cform = document.getElementById("contact-form");
   if (cform) {
+    var qTopic = new URLSearchParams(location.search).get("topic");
+    if (qTopic) {
+      Array.prototype.forEach.call(cform.elements.topic.options, function (o) { if (o.value === qTopic) o.selected = true; });
+    }
     cform.addEventListener("submit", function (e) {
       e.preventDefault();
       var f = cform.elements;
