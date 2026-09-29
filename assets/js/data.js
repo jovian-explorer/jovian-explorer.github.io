@@ -259,8 +259,8 @@ window.SITE = {
 
   /* Articles by others about this work. */
   coverage: [
-    { date: "2026-02", title: "Probing the solar wind with spacecraft radio occultation signals: chasing a unified method to probe the Sun", where: "EGU Blogs, Solar-Terrestrial Sciences division", url: "https://blogs.egu.eu/divisions/st/2026/02/01/probing-the-solar-wind-with-spacecraft-radio-occultation-signals-chasing-a-unified-method-to-probe-the-sun/" },
-    { date: "2025-02", title: "Summary of arXiv:2502.09512 (solar wind flow speeds from the Mars Orbiter Mission)", where: "The Science Archive", url: "https://thesciencearchive.org/2502-09512v1/" },
+    { date: "2026-02", title: "Probing the solar wind with spacecraft radio occultation signals: chasing a unified method to probe the Sun", where: "EGU Blogs", url: "https://blogs.egu.eu/divisions/st/2026/02/01/probing-the-solar-wind-with-spacecraft-radio-occultation-signals-chasing-a-unified-method-to-probe-the-sun/" },
+    { date: "2025-02", title: "Insights into solar wind flow speeds from India\u2019s Mars Orbiter Mission", where: "The Science Archive", url: "https://thesciencearchive.org/2502-09512v1/" },
     { date: "2025", title: "New breakthrough on solar wind unveiled by India\u2019s Mars Orbiter Mission (MOM)", where: "New Wave Particle", url: "https://newwaveparticle.com/new-breakthrough-on-solar-wind-unveiled-by-indias-mars-orbiter-mission-mom/" }
   ],
 
