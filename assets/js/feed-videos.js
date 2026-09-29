@@ -24,7 +24,7 @@ window.VIDEOS = {
       "title": "A study on the contribution of the interplanetary medium in radio occultation experiments",
       "date": "2026-09-23",
       "description": "Irregularities in electron density within the interplanetary medium (IPM) can cause fluctuations in the Doppler frequency of spacecraft radio signals. The amplitude of these fluctuations depends on factors such as the…",
-      "views": 3
+      "views": 4
     },
     {
       "id": "0qbrOB-qnnA",
@@ -34,5 +34,5 @@ window.VIDEOS = {
       "views": 4
     }
   ],
-  "updated": "2026-09-28"
+  "updated": "2026-09-29"
 };
