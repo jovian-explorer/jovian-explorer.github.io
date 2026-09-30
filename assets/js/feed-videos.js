@@ -17,7 +17,7 @@ window.VIDEOS = {
       "title": "A turbulence index independent framework for deriving solar wind speed and coronal electron density",
       "date": "2026-09-23",
       "description": "We present a turbulence index independent framework for simultaneously deriving solar wind velocity and coronal electron density in the near-Sun region using the spectral broadening of spacecraft radio signals. The…",
-      "views": 13
+      "views": 14
     },
     {
       "id": "Ex9r_Qzf1Dc",
@@ -31,8 +31,8 @@ window.VIDEOS = {
       "title": "Plasma Turbulence in Lunar Environment During Magnetotail Passage: Observations from Chandrayaan-2",
       "date": "2026-09-23",
       "description": "As the Moon orbits Earth, it moves through different space plasma environments. For most of the month it is exposed to the solar wind, while for several days it passes through Earth's magnetotail, a region of disturbed…",
-      "views": 4
+      "views": 6
     }
   ],
-  "updated": "2026-09-29"
+  "updated": "2026-09-30"
 };
