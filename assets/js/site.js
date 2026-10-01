@@ -189,14 +189,19 @@
       "</li>";
   }
 
-  /* SCImago quartile of a published journal paper, from feed-quartiles.js. */
+  /* SCImago quartile of a published journal paper, from SITE.journalQuartiles. */
   var QJ = {};
   (function () {
-    var J = (window.QUARTILES || {}).journals || {};
-    Object.keys(J).forEach(function (v) { QJ[normVenue(v)] = J[v].quartile; });
+    var J = SITE.journalQuartiles || {};
+    Object.keys(J).forEach(function (v) { QJ[normVenue(v)] = J[v]; });
   })();
   function normVenue(s) { return String(s || "").toLowerCase().replace(/&/g, " and ").replace(/^the\s+/, "").replace(/[^a-z0-9]+/g, ""); }
   function quartileOf(p) { return p.kind === "journal" && !p.status ? QJ[normVenue(p.venue)] || "" : ""; }
+  function quartileCounts(P) {
+    var qn = {};
+    P.forEach(function (p) { var q = quartileOf(p); if (q) qn[q] = (qn[q] || 0) + 1; });
+    return qn;
+  }
 
   var KIND_LABEL = { proceedings: "Proceedings", chapter: "Book chapter", whitepaper: "White paper", preprint: "Preprint" };
   var isProc = function (p) { return p.kind === "proceedings" || p.kind === "chapter"; };
@@ -325,14 +330,12 @@
 
   var qStat = document.getElementById("stat-quartiles");
   if (qStat && SITE.publications) {
-    var qn = {};
-    SITE.publications.forEach(function (p) { var q = quartileOf(p); if (q) qn[q] = (qn[q] || 0) + 1; });
+    var qn = quartileCounts(SITE.publications);
     var qs = ["Q1", "Q2", "Q3", "Q4"].filter(function (q) { return qn[q]; });
     if (qs.length) {
-      var Q = window.QUARTILES;
       qStat.innerHTML = '<span class="label">Journal papers by quartile</span>' + qs.map(function (q) {
         return '<span class="chip quartile-tag q' + q.charAt(1) + '">' + q + " <b>" + qn[q] + "</b></span>";
-      }).join("") + '<span class="muted">(<a href="' + esc(Q.url) + '">SCImago</a> SJR best quartile' + (Q.updated ? ", updated " + esc(Q.updated) : "") + ")</span>";
+      }).join("") + '<span class="muted">(<a href="https://www.scimagojr.com/">SCImago</a> SJR best quartile)</span>';
       qStat.hidden = false;
     }
   }
@@ -517,15 +520,22 @@
         (r.where ? '<p class="rc-where">' + esc(r.where) + "</p>" : "") + "</div></li>";
     }).join("");
   }
+  /* "12 Q1 journal papers", with any Q2-Q4 counts after it. */
+  function quartileCell(P) {
+    var qn = quartileCounts(P);
+    var rest = ["Q2", "Q3", "Q4"].filter(function (q) { return qn[q]; }).map(function (q) { return q + ": " + qn[q]; });
+    return [qn.Q1 || 0, "Q1 journal papers" + (rest.length ? " (" + rest.join(", ") + ")" : ""), "publications.html"];
+  }
+
   var glance = document.getElementById("glance");
   if (glance) {
-    var P = SITE.publications || [], C = SITE.conferences || [], T = SITE.travel || {};
+    var P = SITE.publications || [], C = SITE.conferences || [];
     var cells = [
       [P.filter(function (p) { return p.role === "first" && p.kind === "journal" && !p.status; }).length, "first-author journal papers", "publications.html#first-journal"],
       [P.filter(function (p) { return !p.status; }).length, "publications in total", "publications.html"],
       [SITE.metrics && SITE.metrics.citations ? SITE.metrics.citations.toLocaleString("en-US") : "", "citations", "publications.html"],
       [C.length, "conference talks and posters", "talks.html"],
-      [(T.districts || []).length, "districts of India visited", "travel.html"]
+      quartileCell(P)
     ].filter(function (c) { return c[0]; });
     glance.innerHTML = cells.map(function (c) {
       return '<a class="glance-cell" href="' + c[2] + '"><b>' + esc(c[0]) + "</b><span>" + esc(c[1]) + "</span></a>";

@@ -9,7 +9,7 @@ then run from the repository root:
     python3 tools/photos.py
 
 For each image the script writes
-    assets/photos/web/<name>.jpg     2400 px on the long side
+    assets/photos/web/<name>.jpg     2000 px on the long side
     assets/photos/thumbs/<name>.jpg   800 px on the long side
 with all metadata (including GPS) stripped, and updates assets/js/photos.js
 with size, date and camera settings read from EXIF. Titles, places,
@@ -80,7 +80,7 @@ def save(img, path, long_side):
     im = img.copy()
     im.thumbnail((long_side, long_side), Image.LANCZOS)
     path.parent.mkdir(parents=True, exist_ok=True)
-    im.save(path, "JPEG", quality=85 if long_side > 1000 else 80, optimize=True, progressive=True)
+    im.save(path, "JPEG", quality=82 if long_side > 1000 else 80, optimize=True, progressive=True)
 
 
 def main():
@@ -99,10 +99,10 @@ def main():
             exif, date = exif_info(img)
             img = ImageOps.exif_transpose(img).convert("RGB")
             if not (ROOT / src).exists() or (ROOT / src).stat().st_mtime < f.stat().st_mtime:
-                save(img, ROOT / src, 2400)
+                save(img, ROOT / src, 2000)
                 save(img, ROOT / thumb, 800)
             w, h = img.size
-            scale = min(1, 2400 / max(w, h))
+            scale = min(1, 2000 / max(w, h))
             w, h = round(w * scale), round(h * scale)
         old = existing.get(src, {})
         album = rel.parts[0] if len(rel.parts) > 1 else old.get("album", "")
