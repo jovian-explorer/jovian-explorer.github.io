@@ -1,12 +1,10 @@
 #!/usr/bin/env python3
-"""Refresh videos, articles, citations, journal quartiles and the ORCID works list.
+"""Refresh videos, articles, citations and the ORCID works list.
 
 Writes assets/js/feed-videos.js (window.VIDEOS), assets/js/feed-articles.js
 (window.ARTICLES), assets/js/feed-metrics.js (window.METRICS) and
 assets/js/feed-works.js (window.WORKS: papers, chapters, preprints, talks and
-posters listed on ORCID, with authors from Crossref) and
-assets/js/feed-quartiles.js (window.QUARTILES: the SCImago SJR best quartile
-of every journal on the publications list). Runs daily in GitHub Actions
+posters listed on ORCID, with authors from Crossref). Runs daily in GitHub Actions
 (.github/workflows/update-feeds.yml) and can be run by hand:
 
     python3 tools/update_feeds.py
@@ -19,9 +17,7 @@ Standard library only. Sources, in order of completeness:
 Fields added by hand to a video in feed-videos.js (topic, featured, hidden,
 note) are kept on every run.
 """
-import csv
 import html
-import io
 import json
 import os
 import re
@@ -39,9 +35,6 @@ VIDEO_JS = ROOT / "assets/js/feed-videos.js"
 ARTICLE_JS = ROOT / "assets/js/feed-articles.js"
 METRICS_JS = ROOT / "assets/js/feed-metrics.js"
 WORKS_JS = ROOT / "assets/js/feed-works.js"
-QUARTILES_JS = ROOT / "assets/js/feed-quartiles.js"
-DATA_JS = ROOT / "assets/js/data.js"
-SJR_CSV = os.environ.get("SJR_CSV", "https://www.scimagojr.com/journalrank.php?out=xls")
 ORCID = os.environ.get("ORCID_ID", "0000-0002-7004-8670")
 SCHOLAR = os.environ.get("SCHOLAR_URL", "https://scholar.google.com/citations?user=KO8MtmEAAAAJ&hl=en")
 UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
@@ -424,103 +417,11 @@ def update_works():
     return True
 
 
-# ---------------------------------------------------------------- SCImago quartiles
-
-def norm_journal(s):
-    s = html.unescape(s or "").lower().replace("&", " and ")
-    s = re.sub(r"^the\s+", "", s)
-    return re.sub(r"[^a-z0-9]+", "", s)
-
-
-def journal_list():
-    """Journal venues (with DOIs) from data.js and the ORCID works feed."""
-    out = {}
-    src = DATA_JS.read_text()
-    for block in re.findall(r"\{[^{}]*kind:\s*\"journal\"[^{}]*\}", src):
-        if re.search(r"status:\s*\"", block):
-            continue
-        v = re.search(r'venue:\s*"([^"]+)"', block)
-        d = re.search(r'doi:\s*"([^"]+)"', block)
-        if v:
-            out.setdefault(v.group(1), set()).update([d.group(1).lower()] if d else [])
-    for w in (read_js(WORKS_JS, "WORKS") or {}).get("items", []):
-        if w.get("type") == "journal-article" and w.get("venue"):
-            out.setdefault(w["venue"], set()).update([w["doi"]] if w.get("doi") else [])
-    return out
-
-
-def crossref_issns(doi):
-    try:
-        m = get_json("https://api.crossref.org/works/" + urllib.parse.quote(doi))["message"]
-    except Exception as e:
-        log("  Crossref failed for", doi, e)
-        return []
-    return [x.replace("-", "").upper() for x in m.get("ISSN", [])]
-
-
-def update_quartiles():
-    old = read_js(QUARTILES_JS, "QUARTILES") or {}
-    old_j = old.get("journals", {})
-    try:
-        req = urllib.request.Request(SJR_CSV, headers={"User-Agent": UA})
-        with urllib.request.urlopen(req, timeout=120) as r:
-            text = r.read().decode("utf-8-sig", "replace")
-    except Exception as e:
-        log("SCImago failed:", e)
-        return False
-    rows = list(csv.DictReader(io.StringIO(text), delimiter=";"))
-    if not rows or "SJR Best Quartile" not in rows[0]:
-        log("SCImago: unexpected CSV; leaving feed-quartiles.js unchanged")
-        return False
-    by_issn, by_title = {}, {}
-    for r in rows:
-        q = (r.get("SJR Best Quartile") or "").strip()
-        if not re.fullmatch(r"Q[1-4]", q):
-            continue
-        rec = {"q": q, "sjr": (r.get("SJR") or "").replace(",", "."), "title": r.get("Title", "")}
-        for i in re.findall(r"[0-9Xx]{8}", r.get("Issn") or ""):
-            by_issn.setdefault(i.upper(), rec)
-        by_title.setdefault(norm_journal(r.get("Title")), rec)
-    journals = {}
-    for venue, dois in sorted(journal_list().items()):
-        prev = old_j.get(venue, {})
-        issns = prev.get("issn") or []
-        if not issns:
-            for d in sorted(x for x in dois if not x.startswith("10.48550/")):
-                issns = crossref_issns(d)
-                if issns:
-                    break
-        rec = next((by_issn[i] for i in issns if i in by_issn), None) or by_title.get(norm_journal(venue))
-        if rec:
-            journals[venue] = {"quartile": rec["q"], "sjr": rec["sjr"], "scimago_title": rec["title"], "issn": issns}
-        else:
-            log(f"  SCImago: no quartile for {venue}")
-    year = re.search(r"year=(\d{4})", SJR_CSV)
-    new = {"source": "SCImago Journal Rank (SJR best quartile)", "url": "https://www.scimagojr.com/", "journals": journals}
-    if year:
-        new["year"] = int(year.group(1))
-    if old.get("journals") == journals:
-        log(f"SCImago: no changes ({len(journals)} journals)")
-        return False
-    new["updated"] = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-    QUARTILES_JS.write_text(QUARTILES_HEADER + "window.QUARTILES = " + json.dumps(new, indent=2, ensure_ascii=False) + ";\n")
-    log(f"SCImago: wrote quartiles for {len(journals)} journals")
-    for v, j in journals.items():
-        log(f"  {j['quartile']}  {v}")
-    return True
-
-
 WORKS_HEADER = """/* Works listed on ORCID, refreshed by tools/update_feeds.py (GitHub Actions, daily).
    The site adds any paper whose DOI, arXiv id or title is not already in
    assets/js/data.js to the publications list and the home page, and any
    conference poster or talk to the talks list. Add a work to ORCID and it
    appears here the next day. */
-"""
-
-
-QUARTILES_HEADER = """/* Journal quartiles from SCImago (SJR best quartile, the ranking the Excitation
-   browser extension shows), refreshed by tools/update_feeds.py (GitHub Actions,
-   daily). The publications page counts journal papers per quartile from this. */
 """
 
 
@@ -537,5 +438,5 @@ ARTICLE_HEADER = """/* Medium articles, refreshed by tools/update_feeds.py (GitH
 """
 
 if __name__ == "__main__":
-    changed = [update_videos(), update_articles(), update_metrics(), update_works(), update_quartiles()]
+    changed = [update_videos(), update_articles(), update_metrics(), update_works()]
     sys.exit(0)
