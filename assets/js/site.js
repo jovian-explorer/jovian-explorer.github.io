@@ -197,16 +197,22 @@
   })();
   function normVenue(s) { return String(s || "").toLowerCase().replace(/&/g, " and ").replace(/^the\s+/, "").replace(/[^a-z0-9]+/g, ""); }
   function quartileOf(p) { return p.kind === "journal" && !p.status ? QJ[normVenue(p.venue)] || "" : ""; }
-  var QUARTILES = ["Q1", "Q2", "Q3", "Q4"];
-  /* Q1-Q4 counts: the Google Scholar profile's, as ExCITATION shows them, when the
-     monthly feed has them; otherwise the published journal papers listed here. */
+  var QUARTILES = ["Q1", "Q2", "Q3", "Q4", "NA"];
+  /* Q1-Q4 and NA counts: the Google Scholar profile's, as ExCITATION shows them, when the
+     monthly feed has them; otherwise the published papers listed here from the same
+     last 10 years, with NA for anything outside a ranked journal. */
   function quartileCounts(P) {
     var S = (window.QUARTILES || {}).scholar;
     if (S && S.counts) return S.counts;
-    var qn = {};
-    P.forEach(function (p) { var q = quartileOf(p); if (q) qn[q] = (qn[q] || 0) + 1; });
+    var qn = {}, since = new Date().getFullYear() - 10;
+    P.forEach(function (p) {
+      if (p.status || +p.year < since) return;
+      var q = quartileOf(p) || "NA";
+      qn[q] = (qn[q] || 0) + 1;
+    });
     return qn;
   }
+  function qClass(q) { return q === "NA" ? "qna" : "q" + q.charAt(1); }
 
   var KIND_LABEL = { proceedings: "Proceedings", chapter: "Book chapter", whitepaper: "White paper", preprint: "Preprint" };
   var isProc = function (p) { return p.kind === "proceedings" || p.kind === "chapter"; };
@@ -338,7 +344,7 @@
     var qn = quartileCounts(SITE.publications);
     if (Object.keys(qn).length) {
       qStat.innerHTML = '<span class="label">' + esc(quartileCaption()) + "</span>" + QUARTILES.map(function (q) {
-        return '<span class="chip quartile-tag q' + q.charAt(1) + (qn[q] ? "" : " zero") + '">' + q + " <b>" + (qn[q] || 0) + "</b></span>";
+        return '<span class="chip quartile-tag ' + qClass(q) + (qn[q] ? "" : " zero") + '">' + q + " <b>" + (qn[q] || 0) + "</b></span>";
       }).join("") + '<span class="muted">(<a href="https://excitation.tech/">ExCITATION</a>, SJR quartiles)</span>';
       qStat.hidden = false;
     }
@@ -526,16 +532,16 @@
   }
   function quartileCaption() {
     var S = (window.QUARTILES || {}).scholar;
-    return S && S.counts ? "papers by journal quartile on Google Scholar since " + S.since + " (ExCITATION)" : "journal papers by quartile (ExCITATION)";
+    return S && S.counts ? "papers by journal quartile on Google Scholar since " + S.since + " (ExCITATION)" : "papers since " + (new Date().getFullYear() - 10) + " by journal quartile (ExCITATION)";
   }
 
-  /* Journal papers per quartile: four columns and a bar showing the split. */
+  /* Papers per quartile (Q1-Q4, NA): five columns and a bar showing the split. */
   function quartileTile(P) {
     var qn = quartileCounts(P), total = 0;
     QUARTILES.forEach(function (q) { total += qn[q] || 0; });
     if (!total) return "";
-    var cls = function (q) { return "q" + q.charAt(1); };
-    return '<a class="glance-cell glance-q" href="publications.html" aria-label="Journal papers by SCImago quartile: ' +
+    var cls = qClass;
+    return '<a class="glance-cell glance-q" href="publications.html" aria-label="Papers by SCImago journal quartile: ' +
       QUARTILES.map(function (q) { return q + " " + (qn[q] || 0); }).join(", ") + '">' +
       '<div class="gq-grid">' + QUARTILES.map(function (q) {
         return '<div class="gq ' + cls(q) + (qn[q] ? "" : " zero") + '"><b>' + (qn[q] || 0) + '</b><span class="gq-tag">' + q + "</span></div>";
