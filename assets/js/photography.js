@@ -2,7 +2,7 @@
    Sections and albums: SITE.photography in data.js.
    Photographs: window.PHOTOS in assets/js/photos.js (tools/photos.py).
    Albums without photographs get a generated cover: a map of the region
-   with visited districts shaded, a star field, or a conference card.
+   with visited districts shaded, or a conference card.
    photography.html#demo fills albums with generated sample tiles. */
 (function () {
   "use strict";
@@ -71,23 +71,6 @@
       }).join("") +
       feats.map(function (f) { return '<path class="cv-outline" d="' + p2(f) + '"/>'; }).join("") + "</svg>";
   }
-  function skyCover(a) {
-    var r = rnd(hash(a.id)), s = [];
-    for (var i = 0; i < 140; i++) {
-      var big = r() > 0.95;
-      s.push('<circle cx="' + (r() * 400).toFixed(1) + '" cy="' + (r() * 300).toFixed(1) + '" r="' + (big ? 1.6 + r() : 0.4 + r() * 0.8).toFixed(2) + '" fill="#fff" fill-opacity="' + (0.35 + r() * 0.6).toFixed(2) + '"/>');
-    }
-    var id = "g-" + a.id, extra = "";
-    if (a.id === "wide-field") extra = '<ellipse cx="200" cy="160" rx="260" ry="46" transform="rotate(-24 200 160)" fill="url(#' + id + ')"/>';
-    if (a.id === "moon-planets") extra = '<circle cx="280" cy="110" r="56" fill="url(#' + id + ')"/><circle cx="96" cy="210" r="7" fill="#e9c58b"/>';
-    if (a.id === "deep-sky") extra = '<ellipse cx="200" cy="150" rx="90" ry="54" fill="url(#' + id + ')"/>';
-    var grad = a.id === "moon-planets"
-      ? '<radialGradient id="' + id + '" cx="0.4" cy="0.4"><stop offset="0" stop-color="#f2efe6"/><stop offset="1" stop-color="#a9a597"/></radialGradient>'
-      : a.id === "deep-sky"
-        ? '<radialGradient id="' + id + '"><stop offset="0" stop-color="#e58aa8" stop-opacity="0.55"/><stop offset="0.5" stop-color="#7b8fe0" stop-opacity="0.25"/><stop offset="1" stop-color="#7b8fe0" stop-opacity="0"/></radialGradient>'
-        : '<radialGradient id="' + id + '"><stop offset="0" stop-color="#c9d4ff" stop-opacity="0.35"/><stop offset="1" stop-color="#c9d4ff" stop-opacity="0"/></radialGradient>';
-    return '<svg viewBox="0 0 400 300" aria-hidden="true"><defs>' + grad + '</defs><rect width="400" height="300" fill="#0b1020"/>' + extra + s.join("") + "</svg>";
-  }
   function eventCover(a) {
     var year = String(a.date || "").slice(0, 4);
     return '<svg viewBox="0 0 400 300" aria-hidden="true"><rect width="400" height="300" class="cv-event"/>' +
@@ -97,7 +80,6 @@
   function coverHTML(a) {
     if (a.cover) return '<img src="' + esc(a.cover.thumb || a.cover.src) + '" alt="" loading="lazy">';
     if (a.region) return regionCover(a.region);
-    if (a.section === "night-sky") return skyCover(a);
     return eventCover(a);
   }
 
@@ -266,9 +248,6 @@
   /* ---------- Sample tiles for #demo ---------- */
   function samplePhotos() {
     var specs = [
-      ["deep-sky", 1.5, "Orion Nebula (M42)", "Indore", "2025-01"], ["deep-sky", 1.5, "Pleiades (M45)", "Indore", "2023-11"],
-      ["moon-planets", 1, "Waxing gibbous Moon", "Indore", "2024-12"], ["moon-planets", 1.33, "Jupiter and moons", "Indore", "2024-01"],
-      ["wide-field", 1.78, "Milky Way core", "Bhimtal", "2024-10"], ["wide-field", 0.8, "Star trails", "Manali", "2024-05"],
       ["sydney", 1.5, "Harbour at dusk", "Sydney", "2025-08"], ["sydney", 0.67, "Opera House", "Sydney", "2025-08"],
       ["goa", 1.78, "Baga beach", "Goa", "2023-12"], ["goa", 0.75, "Dudhsagar Falls", "Goa", "2023-12"],
       ["northeast", 1.5, "Nohkalikai Falls", "Cherrapunji", "2024-06"], ["himachal", 1.5, "Mall Road", "Shimla", "2022-05"],
@@ -283,17 +262,12 @@
   function sampleImage(w, h, album, seed, label) {
     var c = document.createElement("canvas"); c.width = w; c.height = h;
     var x = c.getContext("2d"), r = rnd(seed * 7919 + 17);
-    var night = ["deep-sky", "moon-planets", "wide-field"].indexOf(album) > -1;
-    var pal = night ? ["#070b16", "#1a2340"] : ["#6f8fa6", "#d8c9a8"];
+    var pal = ["#6f8fa6", "#d8c9a8"];
     var gr = x.createLinearGradient(0, 0, 0, h); gr.addColorStop(0, pal[0]); gr.addColorStop(1, pal[1]);
     x.fillStyle = gr; x.fillRect(0, 0, w, h);
-    if (night) {
-      for (var i = 0; i < 700; i++) { x.fillStyle = "rgba(255,255,255," + (r() * 0.8 + 0.1) + ")"; x.beginPath(); x.arc(r() * w, r() * h, r() < 0.97 ? r() * 1.2 : r() * 2.6, 0, 7); x.fill(); }
-    } else {
-      x.fillStyle = "rgba(20,24,30,0.35)"; x.beginPath(); x.moveTo(0, h);
-      for (var j = 0; j <= 10; j++) x.lineTo(j * w / 10, h * (0.55 + r() * 0.25));
-      x.lineTo(w, h); x.fill();
-    }
+    x.fillStyle = "rgba(20,24,30,0.35)"; x.beginPath(); x.moveTo(0, h);
+    for (var j = 0; j <= 10; j++) x.lineTo(j * w / 10, h * (0.55 + r() * 0.25));
+    x.lineTo(w, h); x.fill();
     x.fillStyle = "rgba(255,255,255,0.85)"; x.font = "600 " + Math.round(w / 28) + "px system-ui, sans-serif";
     x.fillText("SAMPLE", w * 0.05, h * 0.12 + 10);
     x.font = Math.round(w / 34) + "px system-ui, sans-serif";
