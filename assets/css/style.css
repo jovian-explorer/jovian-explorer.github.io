@@ -60,11 +60,11 @@
   --d-rule: #322a2d; --d-accent: #e39aa8; --d-accent-ink: #141112; --d-accent-soft: #33201f;
 }
 
-/* Journal quartile colours: green Q1, yellow Q2, orange Q3, red Q4 (as in ExCITATION). */
-:root { --q1: #2e8b57; --q2: #c9a227; --q3: #d9822b; --q4: #c0392b; }
+/* Journal quartile colours: green Q1, yellow Q2, orange Q3, red Q4, grey NA (as in ExCITATION). */
+:root { --q1: #2e8b57; --q2: #c9a227; --q3: #d9822b; --q4: #c0392b; --qna: #8a8f98; }
 
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) { --q1: #5cc08a; --q2: #e3c25a; --q3: #eea35e; --q4: #e57366; }
+  :root:not([data-theme="light"]) { --q1: #5cc08a; --q2: #e3c25a; --q3: #eea35e; --q4: #e57366; --qna: #9aa0a8; }
   :root:not([data-theme="light"]) {
     --bg: var(--d-bg); --surface: var(--d-surface); --ink: var(--d-ink); --muted: var(--d-muted);
     --faint: var(--d-faint); --rule: var(--d-rule); --accent: var(--d-accent);
@@ -72,7 +72,7 @@
     color-scheme: dark;
   }
 }
-:root[data-theme="dark"] { --q1: #5cc08a; --q2: #e3c25a; --q3: #eea35e; --q4: #e57366; }
+:root[data-theme="dark"] { --q1: #5cc08a; --q2: #e3c25a; --q3: #eea35e; --q4: #e57366; --qna: #9aa0a8; }
 :root[data-theme="dark"] {
   --bg: var(--d-bg); --surface: var(--d-surface); --ink: var(--d-ink); --muted: var(--d-muted);
   --faint: var(--d-faint); --rule: var(--d-rule); --accent: var(--d-accent);
@@ -893,7 +893,7 @@ dialog.photo-dialog img { max-height: 88vh; width: auto; }
 .glance-cell b { font-family: var(--f-display); font-weight: var(--display-weight); font-size: var(--t-xl); line-height: 1.1; font-variant-numeric: tabular-nums; }
 .glance-cell span { font-size: var(--t-xs); color: var(--muted); }
 .glance-q { gap: 0.6rem; }
-.gq-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+.gq-grid { display: grid; grid-template-columns: repeat(5, 1fr); }
 .gq { display: grid; justify-items: start; gap: 0.3rem; padding-inline: 0.9rem; border-left: 1px solid var(--rule); }
 .gq:first-child { padding-left: 0; border-left: 0; }
 .gq b { color: var(--ink); }
@@ -902,8 +902,8 @@ dialog.photo-dialog img { max-height: 88vh; width: auto; }
 .glance-q .gq.zero .gq-tag { color: var(--qc); background: transparent; box-shadow: inset 0 0 0 1px var(--qc); }
 .gq-bar { display: flex; height: 6px; border-radius: 999px; overflow: hidden; background: var(--rule); }
 .gq-bar i { background: var(--qc); }
-.q1 { --qc: var(--q1); } .q2 { --qc: var(--q2); } .q3 { --qc: var(--q3); } .q4 { --qc: var(--q4); }
-@media (max-width: 420px) { .gq { padding-inline: 0.55rem; } }
+.q1 { --qc: var(--q1); } .q2 { --qc: var(--q2); } .q3 { --qc: var(--q3); } .q4 { --qc: var(--q4); } .qna { --qc: var(--qna); }
+@media (max-width: 420px) { .gq { padding-inline: 0.4rem; } .glance-q .gq-tag { padding-inline: 0.35rem; } }
 .glance-cell:last-child:nth-child(odd) { grid-column: 1 / -1; }
 .ch-mark { width: 3.5rem; height: 3.5rem; border-radius: 50%; }
 .panel-intro { color: var(--muted); max-width: var(--measure); margin-bottom: 1.5rem; }
