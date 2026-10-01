@@ -236,7 +236,8 @@ window.SITE = {
     { date: "Aug 2025", type: "Talk", title: "Studying the \u2018Smiley Sun\u2019 with Akatsuki radio occultation", where: "URSI AP-RASC 2025, Sydney", href: "talks.html" }
   ],
 
-  /* Citation count shown on the publications page. */
+  /* Citation count, used only until assets/js/feed-metrics.js (Google
+     Scholar, refreshed daily by GitHub Actions) has a number. */
   metrics: { citations: 2248, source: "ResearchGate", url: "https://www.researchgate.net/profile/Keshav-Aggarwal-4" },
 
   /* ------------------------------------------------------------------
@@ -391,12 +392,16 @@ window.SITE = {
       "Goa/Kushavati",
       "Goa/North Goa",
       "Goa/South Goa",
+      "Haryana/Ambala",
       "Haryana/Gurugram",
       "Haryana/Panchkula",
+      "Haryana/Yamunanagar",
       "Himachal Pradesh/Kullu",
       "Himachal Pradesh/Shimla",
       "Jammu and Kashmir/Jammu",
       "Jammu and Kashmir/Reasi",
+      "Karnataka/Bengaluru North",
+      "Karnataka/Bengaluru South",
       "Karnataka/Bengaluru Urban",
       "Kerala/Kollam",
       "Kerala/Thiruvananthapuram",
@@ -442,6 +447,8 @@ window.SITE = {
       { name: "Chandigarh", country: "India", lat: 30.7333, lon: 76.7794, visits: [] },
       { name: "Mohali", country: "India", lat: 30.7046, lon: 76.7179, visits: [] },
       { name: "Panchkula", country: "India", lat: 30.6942, lon: 76.8606, visits: [] },
+      { name: "Ambala", country: "India", lat: 30.3782, lon: 76.7767, visits: [] },
+      { name: "Yamunanagar", country: "India", lat: 30.129, lon: 77.2674, visits: [] },
       { name: "Shimla", country: "India", lat: 31.1048, lon: 77.1734, visits: [] },
       { name: "Manali", country: "India", lat: 32.2432, lon: 77.1892, visits: [] },
       { name: "Jammu", country: "India", lat: 32.7266, lon: 74.857, visits: [] },
