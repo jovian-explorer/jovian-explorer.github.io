@@ -334,7 +334,7 @@
     var qn = quartileCounts(SITE.publications);
     if (Object.keys(qn).length) {
       qStat.innerHTML = '<span class="label">Journal papers by quartile</span>' + QUARTILES.map(function (q) {
-        return '<span class="chip quartile-tag q' + q.charAt(1) + '">' + q + " <b>" + (qn[q] || 0) + "</b></span>";
+        return '<span class="chip quartile-tag q' + q.charAt(1) + (qn[q] ? "" : " zero") + '">' + q + " <b>" + (qn[q] || 0) + "</b></span>";
       }).join("") + '<span class="muted">(<a href="https://www.scimagojr.com/">SCImago</a> SJR best quartile)</span>';
       qStat.hidden = false;
     }
@@ -520,11 +520,21 @@
         (r.where ? '<p class="rc-where">' + esc(r.where) + "</p>" : "") + "</div></li>";
     }).join("");
   }
-  /* Journal papers per SCImago quartile, Q1 to Q4 (zeros included). */
-  function quartileCell(P) {
-    var qn = quartileCounts(P);
-    var html = QUARTILES.map(function (q) { return '<i class="gq"><small>' + q + "</small>" + (qn[q] || 0) + "</i>"; }).join("");
-    return [html, "journal papers by quartile (SCImago)", "publications.html", true];
+  /* Journal papers per SCImago quartile: four columns and a bar showing the split. */
+  function quartileTile(P) {
+    var qn = quartileCounts(P), total = 0;
+    QUARTILES.forEach(function (q) { total += qn[q] || 0; });
+    if (!total) return "";
+    var cls = function (q) { return "q" + q.charAt(1); };
+    return '<a class="glance-cell glance-q" href="publications.html" aria-label="Journal papers by SCImago quartile: ' +
+      QUARTILES.map(function (q) { return q + " " + (qn[q] || 0); }).join(", ") + '">' +
+      '<div class="gq-grid">' + QUARTILES.map(function (q) {
+        return '<div class="gq ' + cls(q) + (qn[q] ? "" : " zero") + '"><b>' + (qn[q] || 0) + '</b><span class="gq-tag">' + q + "</span></div>";
+      }).join("") + "</div>" +
+      '<div class="gq-bar" aria-hidden="true">' + QUARTILES.filter(function (q) { return qn[q]; }).map(function (q) {
+        return '<i class="' + cls(q) + '" style="flex:' + qn[q] + '"></i>';
+      }).join("") + "</div>" +
+      "<span>journal papers by SCImago quartile</span></a>";
   }
 
   var glance = document.getElementById("glance");
@@ -534,12 +544,11 @@
       [P.filter(function (p) { return p.role === "first" && p.kind === "journal" && !p.status; }).length, "first-author journal papers", "publications.html#first-journal"],
       [P.filter(function (p) { return !p.status; }).length, "publications in total", "publications.html"],
       [SITE.metrics && SITE.metrics.citations ? SITE.metrics.citations.toLocaleString("en-US") : "", "citations", "publications.html"],
-      [C.length, "conference talks and posters", "talks.html"],
-      quartileCell(P)
+      [C.length, "conference talks and posters", "talks.html"]
     ].filter(function (c) { return c[0]; });
     glance.innerHTML = cells.map(function (c) {
-      return '<a class="glance-cell" href="' + c[2] + '"><b' + (c[3] ? ' class="gq-row">' + c[0] : ">" + esc(c[0])) + "</b><span>" + esc(c[1]) + "</span></a>";
-    }).join("");
+      return '<a class="glance-cell" href="' + c[2] + '"><b>' + esc(c[0]) + "</b><span>" + esc(c[1]) + "</span></a>";
+    }).join("") + quartileTile(P);
   }
 
   /* ---------- Latest video and article (home page) ---------- */
