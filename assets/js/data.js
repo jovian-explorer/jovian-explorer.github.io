@@ -482,6 +482,7 @@ window.SITE = {
      tools/photos.py); each photo's "album" must match an album id here.
      region: { states: [...] } or { country: "..." } draws the album's
      cover map until a photograph is marked "cover": true.
+     trip: a conference album's photographs also appear in that travel album.
      ------------------------------------------------------------------ */
   photography: {
     kit: "Canon EOS R7",
@@ -506,17 +507,17 @@ window.SITE = {
       { id: "kerala", section: "travel", title: "Thiruvananthapuram and Kollam", place: "Kerala", region: { states: ["Kerala"] } },
       { id: "northeast", section: "travel", title: "Guwahati, Umiam and Cherrapunji", place: "Assam and Meghalaya", region: { states: ["Assam", "Meghalaya"] } },
 
-      { id: "ipsc-2026", section: "conferences", title: "IPSC 2026", place: "IIT Indore", date: "2026-03" },
-      { id: "isro-esa-2026", section: "conferences", title: "ISRO\u2013ESA Workshop", place: "Thiruvananthapuram", date: "2026-01" },
-      { id: "variable-sun-2025", section: "conferences", title: "The Variable Sun", place: "Thiruvananthapuram", date: "2025-12" },
-      { id: "asi-2025", section: "conferences", title: "ASI Symposium 003", place: "JECRC University, Jaipur", date: "2025-09" },
-      { id: "ursi-aprasc-2025", section: "conferences", title: "URSI AP-RASC 2025", place: "ICC Sydney", date: "2025-08" },
-      { id: "ipsc-2025", section: "conferences", title: "IPSC 2025", place: "IIT Roorkee", date: "2025-03" },
-      { id: "ursi-rcrs-2024", section: "conferences", title: "URSI-RCRS 2024", place: "GEHU Bhimtal", date: "2024-10" },
-      { id: "iswc-2024", section: "conferences", title: "Indian Space Weather Conference", place: "IIT Roorkee", date: "2024-10" },
-      { id: "al1sc-iiti-2024", section: "conferences", title: "Aditya-L1 Support Cell workshop", place: "IIT Indore", date: "2024-09" },
-      { id: "al1sc-bhu-2023", section: "conferences", title: "3rd Aditya-L1 Workshop", place: "IIT (BHU) Varanasi", date: "2023-02" },
-      { id: "ursi-rcrs-2022", section: "conferences", title: "URSI-RCRS 2022", place: "IIT Indore", date: "2022-12" }
+      { id: "ipsc-2026", section: "conferences", title: "IPSC 2026", place: "IIT Indore", date: "2026-03", trip: "madhya-pradesh" },
+      { id: "isro-esa-2026", section: "conferences", title: "ISRO\u2013ESA Workshop", place: "Thiruvananthapuram", date: "2026-01", trip: "kerala" },
+      { id: "variable-sun-2025", section: "conferences", title: "The Variable Sun", place: "Thiruvananthapuram", date: "2025-12", trip: "kerala" },
+      { id: "asi-2025", section: "conferences", title: "ASI Symposium 003", place: "JECRC University, Jaipur", date: "2025-09", trip: "jaipur" },
+      { id: "ursi-aprasc-2025", section: "conferences", title: "URSI AP-RASC 2025", place: "ICC Sydney", date: "2025-08", trip: "sydney" },
+      { id: "ipsc-2025", section: "conferences", title: "IPSC 2025", place: "IIT Roorkee", date: "2025-03", trip: "uttarakhand" },
+      { id: "ursi-rcrs-2024", section: "conferences", title: "URSI-RCRS 2024", place: "GEHU Bhimtal", date: "2024-10", trip: "uttarakhand" },
+      { id: "iswc-2024", section: "conferences", title: "Indian Space Weather Conference", place: "IIT Roorkee", date: "2024-10", trip: "uttarakhand" },
+      { id: "al1sc-iiti-2024", section: "conferences", title: "Aditya-L1 Support Cell workshop", place: "IIT Indore", date: "2024-09", trip: "madhya-pradesh" },
+      { id: "al1sc-bhu-2023", section: "conferences", title: "3rd Aditya-L1 Workshop", place: "IIT (BHU) Varanasi", date: "2023-02", trip: "varanasi" },
+      { id: "ursi-rcrs-2022", section: "conferences", title: "URSI-RCRS 2022", place: "IIT Indore", date: "2022-12", trip: "madhya-pradesh" }
     ]
   }
 };

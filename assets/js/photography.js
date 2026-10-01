@@ -30,9 +30,13 @@
 
   var photos = (demo ? samplePhotos() : (window.PHOTOS || []).slice()).filter(function (p) { return !p.hidden; });
   photos.sort(function (a, b) { var x = a.date || "", y = b.date || ""; return x === y ? 0 : (y > x ? 1 : -1); });
+  /* A travel album also shows the photographs of conference albums whose trip names it. */
+  var TRIP = {};
+  (CONF.albums || []).forEach(function (a) { if (a.trip) TRIP[a.id] = a.trip; });
   var albums = (CONF.albums || []).map(function (a) {
-    var items = photos.filter(function (p) { return p.album === a.id; });
-    return Object.assign({}, a, { items: items, cover: items.filter(function (p) { return p.cover; })[0] || items[0] });
+    var own = photos.filter(function (p) { return p.album === a.id; });
+    var items = photos.filter(function (p) { return p.album === a.id || TRIP[p.album] === a.id; });
+    return Object.assign({}, a, { items: items, cover: own.filter(function (p) { return p.cover; })[0] || own[0] || items[0] });
   });
   var sections = (CONF.sections || []).filter(function (s) { return albums.some(function (a) { return a.section === s.id; }); });
   var demoBar = document.getElementById("demo-note");
