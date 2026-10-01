@@ -1,8 +1,9 @@
-name: Update feeds (videos, articles, citations, ORCID works)
+name: Update feeds (videos, articles, citations, ORCID works, journal quartiles)
 
 # Refreshes assets/js/feed-videos.js (YouTube), assets/js/feed-articles.js
 # (Medium), assets/js/feed-metrics.js (Google Scholar citations) and
-# assets/js/feed-works.js (ORCID papers, talks and posters) with
+# assets/js/feed-works.js (ORCID papers, talks and posters) and
+# assets/js/feed-quartiles.js (SCImago journal quartiles) with
 # tools/update_feeds.py and commits them when they change.
 # Optional repository secret YT_API_KEY (YouTube Data API v3) gives the full
 # upload list with durations; without it the channel pages and RSS are used.
@@ -43,14 +44,14 @@ jobs:
       - name: Commit changes
         id: commit
         run: |
-          if git diff --quiet -- assets/js/feed-videos.js assets/js/feed-articles.js assets/js/feed-metrics.js assets/js/feed-works.js; then
+          if git diff --quiet -- assets/js/feed-videos.js assets/js/feed-articles.js assets/js/feed-metrics.js assets/js/feed-works.js assets/js/feed-quartiles.js; then
             echo "No changes."
             echo "changed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/js/feed-videos.js assets/js/feed-articles.js assets/js/feed-metrics.js assets/js/feed-works.js
+          git add assets/js/feed-videos.js assets/js/feed-articles.js assets/js/feed-metrics.js assets/js/feed-works.js assets/js/feed-quartiles.js
           git commit -m "Update feeds"
           git push
           echo "changed=true" >> "$GITHUB_OUTPUT"
