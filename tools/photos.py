@@ -2,7 +2,7 @@
 """Prepare photographs for the website.
 
 Put full-size JPEG/PNG/TIFF files in assets/photos/originals/ (sub-folders
-become album ids, e.g. originals/night-sky/m42.jpg -> album "night-sky"),
+become album ids, e.g. originals/sydney/opera.jpg -> album "sydney"),
 then run from the repository root:
 
     pip install pillow

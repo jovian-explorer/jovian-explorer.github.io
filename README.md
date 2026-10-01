@@ -15,7 +15,7 @@ Personal website of Keshav Aggarwal. Static HTML, CSS and JavaScript; no build s
 | `videos.html` | YouTube channel: featured player, searchable list (updated automatically) |
 | `writing.html` | Medium articles with topic filters (updated automatically) |
 | `travel.html` | India district map and world city map |
-| `photography.html` | Sections (Night sky, Travel, Conferences) as tabs, albums with map or generated covers, album view, full-screen viewer |
+| `photography.html` | Sections (Travel, Conferences) as tabs, albums with map or generated covers, album view, full-screen viewer |
 | `cv.html` | Education, positions, fellowships, experience, publications, skills, contact; PDF in `assets/cv/` |
 | `404.html` | Page shown for missing addresses |
 | `design.html` | Colour, typeface and layout samples |

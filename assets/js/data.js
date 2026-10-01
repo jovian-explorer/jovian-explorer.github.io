@@ -486,15 +486,10 @@ window.SITE = {
   photography: {
     kit: "Canon EOS R7",
     sections: [
-      { id: "night-sky", title: "Night sky", description: "Astrophotography: deep-sky objects, the Moon and planets, and wide-field frames." },
       { id: "travel", title: "Travel", description: "Places across India and abroad, grouped by region." },
       { id: "conferences", title: "Conferences", description: "Meetings, talks and poster sessions." }
     ],
     albums: [
-      { id: "deep-sky", section: "night-sky", title: "Deep-sky objects", description: "Nebulae, clusters and galaxies." },
-      { id: "moon-planets", section: "night-sky", title: "Moon and planets", description: "Lunar phases and planetary close-ups." },
-      { id: "wide-field", section: "night-sky", title: "Milky Way and wide field", description: "Wide-angle night-sky landscapes." },
-
       { id: "sydney", section: "travel", title: "Sydney", place: "New South Wales, Australia", region: { country: "Australia", point: [151.2093, -33.8688] } },
       { id: "himachal", section: "travel", title: "Shimla and Manali", place: "Himachal Pradesh", region: { states: ["Himachal Pradesh"] } },
       { id: "jammu-kashmir", section: "travel", title: "Jammu and Vaishno Devi", place: "Jammu and Kashmir", region: { states: ["Jammu and Kashmir"] } },
