@@ -343,7 +343,7 @@
   if (qStat && SITE.publications) {
     var qn = quartileCounts(SITE.publications);
     if (Object.keys(qn).length) {
-      qStat.innerHTML = '<span class="label">' + esc(quartileCaption()) + "</span>" + QUARTILES.map(function (q) {
+      qStat.innerHTML = QUARTILES.map(function (q) {
         return '<span class="chip quartile-tag ' + qClass(q) + (qn[q] ? "" : " zero") + '">' + q + " <b>" + (qn[q] || 0) + "</b></span>";
       }).join("") + '<span class="muted">(<a href="https://excitation.tech/">ExCITATION</a>, SJR quartiles)</span>';
       qStat.hidden = false;
@@ -530,10 +530,6 @@
         (r.where ? '<p class="rc-where">' + esc(r.where) + "</p>" : "") + "</div></li>";
     }).join("");
   }
-  function quartileCaption() {
-    var S = (window.QUARTILES || {}).scholar;
-    return S && S.counts ? "papers by journal quartile on Google Scholar since " + S.since + " (ExCITATION)" : "papers since " + (new Date().getFullYear() - 10) + " by journal quartile (ExCITATION)";
-  }
 
   /* Papers per quartile (Q1-Q4, NA): five columns and a bar showing the split. */
   function quartileTile(P) {
@@ -548,8 +544,7 @@
       }).join("") + "</div>" +
       '<div class="gq-bar" aria-hidden="true">' + QUARTILES.filter(function (q) { return qn[q]; }).map(function (q) {
         return '<i class="' + cls(q) + '" style="flex:' + qn[q] + '"></i>';
-      }).join("") + "</div>" +
-      "<span>" + quartileCaption() + "</span></a>";
+      }).join("") + "</div></a>";
   }
 
   var glance = document.getElementById("glance");
