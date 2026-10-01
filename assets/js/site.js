@@ -73,7 +73,8 @@
       if (a.date) AUTO_RECENT.push({ key: a.date.slice(0, 7), date: monthYear(a.date.slice(0, 7)), type: "Article", title: a.title, where: "Medium", href: a.url || a.link });
     });
     var M = window.METRICS;
-    if (M && M.citations && (!SITE.metrics || !SITE.metrics.citations || M.citations > SITE.metrics.citations)) {
+    // The daily Google Scholar count always wins; SITE.metrics is only a fallback.
+    if (M && M.citations) {
       SITE.metrics = { citations: M.citations, source: "Google Scholar", url: M.source };
     }
   })();
@@ -175,7 +176,8 @@
     if (p.code) links.push('<a class="chip" href="' + esc(p.code) + '">Code</a>');
     if (p.video) links.push('<a class="chip" href="https://www.youtube.com/watch?v=' + esc(p.video) + '">' + icon("play") + " Video</a>");
     if (!p.status) links.push('<button type="button" class="chip" data-bib="' + esc(bibKey(p)) + '" aria-expanded="false">BibTeX</button>');
-    var tags = (p.status ? '<span class="chip status-tag">' + esc(p.status) + "</span>" : "") + (KIND_LABEL[p.kind] ? '<span class="chip kindtag">' + KIND_LABEL[p.kind] + "</span>" : "") +
+    var q = quartileOf(p);
+    var tags = (q ? '<span class="chip quartile-tag q' + q.charAt(1) + '" title="SCImago SJR best quartile">' + q + "</span>" : "") + (p.status ? '<span class="chip status-tag">' + esc(p.status) + "</span>" : "") + (KIND_LABEL[p.kind] ? '<span class="chip kindtag">' + KIND_LABEL[p.kind] + "</span>" : "") +
       (p.collab ? '<span class="chip kindtag">' + esc(p.collab) + "</span>" : "") +
       (p.missions || []).map(function (m) { return '<span class="chip tag">' + esc(m) + "</span>"; }).join("");
     return '<li class="pub">' +
@@ -186,6 +188,15 @@
       '<div class="bib" hidden><pre>' + esc(bibtex(p)) + '</pre><button type="button" class="btn small ghost" data-copy-bib>Copy</button></div>' +
       "</li>";
   }
+
+  /* SCImago quartile of a published journal paper, from feed-quartiles.js. */
+  var QJ = {};
+  (function () {
+    var J = (window.QUARTILES || {}).journals || {};
+    Object.keys(J).forEach(function (v) { QJ[normVenue(v)] = J[v].quartile; });
+  })();
+  function normVenue(s) { return String(s || "").toLowerCase().replace(/&/g, " and ").replace(/^the\s+/, "").replace(/[^a-z0-9]+/g, ""); }
+  function quartileOf(p) { return p.kind === "journal" && !p.status ? QJ[normVenue(p.venue)] || "" : ""; }
 
   var KIND_LABEL = { proceedings: "Proceedings", chapter: "Book chapter", whitepaper: "White paper", preprint: "Preprint" };
   var isProc = function (p) { return p.kind === "proceedings" || p.kind === "chapter"; };
@@ -310,6 +321,20 @@
     if (tabsEl) { tabsEl.addEventListener("tabchange", render); initTabs(tabsEl); }
     if (search) search.addEventListener("input", render);
     render();
+  }
+
+  var qStat = document.getElementById("stat-quartiles");
+  if (qStat && SITE.publications) {
+    var qn = {};
+    SITE.publications.forEach(function (p) { var q = quartileOf(p); if (q) qn[q] = (qn[q] || 0) + 1; });
+    var qs = ["Q1", "Q2", "Q3", "Q4"].filter(function (q) { return qn[q]; });
+    if (qs.length) {
+      var Q = window.QUARTILES;
+      qStat.innerHTML = '<span class="label">Journal papers by quartile</span>' + qs.map(function (q) {
+        return '<span class="chip quartile-tag q' + q.charAt(1) + '">' + q + " <b>" + qn[q] + "</b></span>";
+      }).join("") + '<span class="muted">(<a href="' + esc(Q.url) + '">SCImago</a> SJR best quartile' + (Q.updated ? ", updated " + esc(Q.updated) : "") + ")</span>";
+      qStat.hidden = false;
+    }
   }
 
   var citeStat = document.getElementById("stat-citations");
