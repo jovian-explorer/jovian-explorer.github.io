@@ -22,7 +22,7 @@ Personal website of Keshav Aggarwal. Static HTML, CSS and JavaScript; no build s
 
 ## Automatic YouTube and Medium lists
 
-`.github/workflows/update-feeds.yml` runs `tools/update_feeds.py` every day at 03:17 UTC (and on demand from the Actions tab). It writes `assets/js/feed-videos.js`, `assets/js/feed-articles.js`, `assets/js/feed-metrics.js` (Google Scholar citations and h-index) and `assets/js/feed-works.js` (works on ORCID 0000-0002-7004-8670, with authors from Crossref), commits only when something changed, and asks GitHub Pages to rebuild.
+`.github/workflows/update-feeds.yml` runs `tools/update_feeds.py` every day at 03:17 UTC (and on demand from the Actions tab). It writes `assets/js/feed-videos.js`, `assets/js/feed-articles.js`, `assets/js/feed-metrics.js` (Google Scholar citations and h-index) , `assets/js/feed-works.js` (works on ORCID 0000-0002-7004-8670, with authors from Crossref) and `assets/js/feed-quartiles.js` (SCImago SJR best quartile of each journal, counted as Q1/Q2/... on the publications page), commits only when something changed, and asks GitHub Pages to rebuild.
 
 - A paper on ORCID whose DOI, arXiv id or title is not in `data.js` is added to Publications and, if dated in the last twelve months, to the home page Recent list. ORCID conference posters and talks are added to Talks. To stop a preprint showing twice, give the published entry in `data.js` its `arxiv` id.
 - New videos and Medium articles join the Recent list when they are newer than the latest hand-written entry of the same type.
