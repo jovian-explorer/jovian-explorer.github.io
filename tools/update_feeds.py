@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
-"""Refresh videos, articles, citations and the ORCID works list.
+"""Refresh videos, articles, citations, journal quartiles and the ORCID works list.
 
 Writes assets/js/feed-videos.js (window.VIDEOS), assets/js/feed-articles.js
 (window.ARTICLES), assets/js/feed-metrics.js (window.METRICS) and
 assets/js/feed-works.js (window.WORKS: papers, chapters, preprints, talks and
-posters listed on ORCID, with authors from Crossref). Runs daily in GitHub Actions
+posters listed on ORCID, with authors from Crossref) and
+assets/js/feed-quartiles.js (window.QUARTILES: the SJR quartile of each journal
+from the ExCITATION extension's own database, and the Q1-Q4 counts of the
+Google Scholar profile as ExCITATION shows them). Runs monthly in GitHub Actions
 (.github/workflows/update-feeds.yml) and can be run by hand:
 
     python3 tools/update_feeds.py
@@ -17,13 +20,17 @@ Standard library only. Sources, in order of completeness:
 Fields added by hand to a video in feed-videos.js (topic, featured, hidden,
 note) are kept on every run.
 """
+import ast
 import html
+import io
 import json
 import os
 import re
 import sys
 import urllib.parse
+import unicodedata
 import urllib.request
+import zipfile
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 from pathlib import Path
@@ -35,6 +42,13 @@ VIDEO_JS = ROOT / "assets/js/feed-videos.js"
 ARTICLE_JS = ROOT / "assets/js/feed-articles.js"
 METRICS_JS = ROOT / "assets/js/feed-metrics.js"
 WORKS_JS = ROOT / "assets/js/feed-works.js"
+QUARTILES_JS = ROOT / "assets/js/feed-quartiles.js"
+DATA_JS = ROOT / "assets/js/data.js"
+# ExCITATION (Chrome extension aolbomhlimkdakklifkocohcgpmojdia) ships its journal
+# rankings inside the extension; the Chrome Web Store serves the package.
+EXCITATION_CRX = ("https://clients2.google.com/service/update2/crx?response=redirect&prodversion=130.0"
+                  "&acceptformat=crx2,crx3&x=id%3Daolbomhlimkdakklifkocohcgpmojdia%26uc")
+EXCITATION_YEARS = 10  # ExCITATION counts a Scholar profile's last 10 years
 ORCID = os.environ.get("ORCID_ID", "0000-0002-7004-8670")
 SCHOLAR = os.environ.get("SCHOLAR_URL", "https://scholar.google.com/citations?user=KO8MtmEAAAAJ&hl=en")
 UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
@@ -417,26 +431,153 @@ def update_works():
     return True
 
 
-WORKS_HEADER = """/* Works listed on ORCID, refreshed by tools/update_feeds.py (GitHub Actions, daily).
+# ---------------------------------------------------------------- ExCITATION quartiles
+
+def simplify_name(s):
+    """ExCITATION's simplifyName(), which it uses to match journal names."""
+    s = unicodedata.normalize("NFKD", s or "")
+    s = re.sub(r"\sand\s|&amp;", "", s)
+    s = re.sub(r"[\u0300-\u036f]", "", s)
+    s = re.sub(r", The$", "", s).lower()
+    s = re.sub(r"^the ", "", s)
+    s = re.sub(r"[^a-z]+$", "", s)
+    return re.sub(r"[^a-z0-9]", "", s)
+
+
+def excitation_db():
+    """{simplified journal name: quartile} from the ExCITATION extension package."""
+    req = urllib.request.Request(EXCITATION_CRX, headers={"User-Agent": UA})
+    with urllib.request.urlopen(req, timeout=120) as r:
+        crx = r.read()
+    zf = zipfile.ZipFile(io.BytesIO(crx[crx.find(b"PK\x03\x04"):]))
+    js = zf.read("content/index.js").decode("utf-8")
+    version = json.loads(zf.read("manifest.json")).get("version", "")
+    data = re.search(r"rankingsDataVersion:\"([^\"]+)\"", js)
+    i = js.find('{"ISSN":')
+    start = js.rfind("JSON.parse('", 0, i) + len("JSON.parse('")
+    end = start
+    while True:  # end of the single-quoted JS string
+        end = js.index("'", end)
+        if js[end - 1] != "\\" or js[end - 2] == "\\":
+            break
+        end += 1
+    rows = json.loads(ast.literal_eval("'" + js[start:end] + "'"))
+    names, dup = {}, set()
+    for row in rows:  # a name shared by two journals is ambiguous, as in ExCITATION
+        for n in [row.get("Title")] + (row.get("Synonyms") or []):
+            k = simplify_name(n)
+            if k:
+                if k in names and names[k] is not row:
+                    dup.add(k)
+                names[k] = row
+    db = {k: r.get("Quartile", "") for k, r in names.items() if k not in dup and r.get("Quartile")}
+    return db, version, data.group(1) if data else ""
+
+
+def journal_venues():
+    """Journal names used on the site: data.js and the ORCID works feed."""
+    src = DATA_JS.read_text()
+    venues = set()
+    for block in re.findall(r"\{[^{}]*kind:\s*\"journal\"[^{}]*\}", src):
+        v = re.search(r'venue:\s*"([^"]+)"', block)
+        if v:
+            venues.add(v.group(1))
+    for w in (read_js(WORKS_JS, "WORKS") or {}).get("items", []):
+        if w.get("type") == "journal-article" and w.get("venue"):
+            venues.add(w["venue"])
+    return sorted(venues)
+
+
+def scholar_venue(s):
+    """'Icarus 437, 116412, 2026' -> 'Icarus' (drop volume, pages, article id and year)."""
+    s = html.unescape(re.sub(r"<.*?>", "", s)).strip()
+    return re.split(r"\s+\d|,\s*[^,]*\d", s, maxsplit=1)[0].strip(" ,.")
+
+
+def scholar_counts(db):
+    """Q1-Q4 and NA over the Scholar profile's last EXCITATION_YEARS years, like ExCITATION."""
+    rows, start = [], 0
+    while True:
+        found = re.findall(r'<tr class="gsc_a_tr"[^>]*>(.*?)</tr>', get(SCHOLAR + f"&cstart={start}&pagesize=100"), re.S)
+        rows += found
+        if len(found) < 100 or start >= 900:
+            break
+        start += 100
+    if not rows:
+        raise RuntimeError("no publications on the Scholar page")
+    since = datetime.now(timezone.utc).year - EXCITATION_YEARS
+    counts = {"Q1": 0, "Q2": 0, "Q3": 0, "Q4": 0, "NA": 0}
+    for r in rows:
+        y = re.search(r'gsc_a_h gsc_a_hc gs_ibl"[^>]*>(\d{4})<', r)
+        if not y or int(y.group(1)) < since:
+            continue
+        gray = re.findall(r'<div class="gs_gray"[^>]*>(.*?)</div>', r, re.S)
+        q = db.get(simplify_name(scholar_venue(gray[-1]))) if gray else None
+        counts[q if q in counts else "NA"] += 1
+    return counts, since, len(rows)
+
+
+def update_quartiles():
+    old = read_js(QUARTILES_JS, "QUARTILES") or {}
+    try:
+        db, version, data = excitation_db()
+    except Exception as e:
+        log("ExCITATION failed:", e)
+        return False
+    log(f"ExCITATION {version}: {len(db)} journals with a quartile ({data})")
+    journals = {}
+    for v in journal_venues():
+        q = db.get(simplify_name(v))
+        if q:
+            journals[v] = q
+        else:
+            log(f"  ExCITATION: no quartile for {v}")
+    new = {"source": f"ExCITATION {version}".strip(), "rankings": data, "journals": journals}
+    try:
+        counts, since, n = scholar_counts(db)
+        new["scholar"] = {"counts": counts, "since": since, "works": n}
+        log(f"Scholar profile ({n} works, since {since}): {counts}")
+    except Exception as e:
+        log("Scholar profile for quartiles failed:", e)
+        if old.get("scholar"):
+            new["scholar"] = old["scholar"]
+    if {k: v for k, v in old.items() if k != "updated"} == new:
+        log("ExCITATION: no changes")
+        return False
+    new["updated"] = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    QUARTILES_JS.write_text(QUARTILES_HEADER + "window.QUARTILES = " + json.dumps(new, indent=2, ensure_ascii=False) + ";\n")
+    for v, q in journals.items():
+        log(f"  {q}  {v}")
+    return True
+
+
+WORKS_HEADER = """/* Works listed on ORCID, refreshed by tools/update_feeds.py (GitHub Actions, monthly).
    The site adds any paper whose DOI, arXiv id or title is not already in
    assets/js/data.js to the publications list and the home page, and any
    conference poster or talk to the talks list. Add a work to ORCID and it
-   appears here the next day. */
+   appears here after the next monthly run (or a manual run from the Actions tab). */
 """
 
 
-METRICS_HEADER = """/* Google Scholar citation metrics, refreshed by tools/update_feeds.py (GitHub Actions, daily). */
+QUARTILES_HEADER = """/* Journal quartiles from the ExCITATION extension's database (SJR), refreshed by
+   tools/update_feeds.py (GitHub Actions, monthly). journals: quartile of each
+   journal on the site. scholar: Q1-Q4 counts of the Google Scholar profile over
+   the last 10 years, as ExCITATION shows them on the profile. */
 """
-VIDEO_HEADER = """/* YouTube videos, refreshed by tools/update_feeds.py (GitHub Actions, daily).
+
+
+METRICS_HEADER = """/* Google Scholar citation metrics, refreshed by tools/update_feeds.py (GitHub Actions, monthly). */
+"""
+VIDEO_HEADER = """/* YouTube videos, refreshed by tools/update_feeds.py (GitHub Actions, monthly).
    Per-video fields you may add by hand and that are kept on refresh:
      "topic": "Lecture"      groups videos into filter buttons
      "featured": true        shows the video in the large player
      "hidden": true          leaves it off the site
      "note": "..."           extra line under the title */
 """
-ARTICLE_HEADER = """/* Medium articles, refreshed by tools/update_feeds.py (GitHub Actions, daily). */
+ARTICLE_HEADER = """/* Medium articles, refreshed by tools/update_feeds.py (GitHub Actions, monthly). */
 """
 
 if __name__ == "__main__":
-    changed = [update_videos(), update_articles(), update_metrics(), update_works()]
+    changed = [update_videos(), update_articles(), update_metrics(), update_works(), update_quartiles()]
     sys.exit(0)

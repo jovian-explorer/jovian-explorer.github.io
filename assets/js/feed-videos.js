@@ -1,4 +1,4 @@
-/* YouTube videos, refreshed by tools/update_feeds.py (GitHub Actions, daily).
+/* YouTube videos, refreshed by tools/update_feeds.py (GitHub Actions, monthly).
    Per-video fields you may add by hand and that are kept on refresh:
      "topic": "Lecture"      groups videos into filter buttons
      "featured": true        shows the video in the large player
