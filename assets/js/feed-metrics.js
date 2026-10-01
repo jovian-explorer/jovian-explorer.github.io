@@ -1,4 +1,4 @@
-/* Google Scholar citation metrics, refreshed by tools/update_feeds.py (GitHub Actions, daily). */
+/* Google Scholar citation metrics, refreshed by tools/update_feeds.py (GitHub Actions, monthly). */
 window.METRICS = {
   "source": "https://scholar.google.com/citations?user=KO8MtmEAAAAJ",
   "citations": 2078,

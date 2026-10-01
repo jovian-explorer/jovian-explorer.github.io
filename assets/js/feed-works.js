@@ -1,8 +1,8 @@
-/* Works listed on ORCID, refreshed by tools/update_feeds.py (GitHub Actions, daily).
+/* Works listed on ORCID, refreshed by tools/update_feeds.py (GitHub Actions, monthly).
    The site adds any paper whose DOI, arXiv id or title is not already in
    assets/js/data.js to the publications list and the home page, and any
    conference poster or talk to the talks list. Add a work to ORCID and it
-   appears here the next day. */
+   appears here after the next monthly run (or a manual run from the Actions tab). */
 window.WORKS = {
   "orcid": "0000-0002-7004-8670",
   "items": [

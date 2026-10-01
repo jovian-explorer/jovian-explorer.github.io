@@ -1,5 +1,5 @@
 /* Videos page. Data: window.VIDEOS from assets/js/feed-videos.js, which the
-   "Update video and article lists" GitHub Action refreshes daily.
+   "Update video and article lists" GitHub Action refreshes monthly.
    Players load only when a video is played (youtube-nocookie.com). */
 (function () {
   "use strict";
