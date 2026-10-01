@@ -337,6 +337,11 @@ main > * + .section { margin-top: 3.5rem; }
 a.chip:hover { color: var(--accent); border-color: var(--accent); }
 .chip.tag { background: var(--accent-soft); border-color: transparent; color: var(--accent); }
 .chip.status-tag { background: #fbf3e4; border-color: #e7cf9f; color: #7a5410; }
+.chip.quartile-tag { font-weight: 600; border-color: var(--accent); color: var(--accent); }
+.chip.quartile-tag.q1 { background: var(--accent); color: var(--bg, #fff); }
+.chip.quartile-tag b { font-weight: 700; margin-left: 0.15em; }
+.quartiles { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem 0.6rem; margin: -1rem 0 2rem; font-size: var(--t-xs); }
+.quartiles .label { margin: 0; }
 .chip.kindtag { background: var(--surface); border-style: dashed; color: var(--ink); }
 .pub-note { font-size: var(--t-sm); color: var(--muted); }
 .empty { color: var(--muted); padding-block: 1.5rem; }
