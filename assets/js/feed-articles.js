@@ -1,4 +1,4 @@
-/* Medium articles, refreshed by tools/update_feeds.py (GitHub Actions, daily). */
+/* Medium articles, refreshed by tools/update_feeds.py (GitHub Actions, monthly). */
 window.ARTICLES = {
   "source": "https://jovian-explorer.medium.com/feed",
   "items": [

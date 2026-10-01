@@ -237,7 +237,7 @@ window.SITE = {
   ],
 
   /* Citation count, used only until assets/js/feed-metrics.js (Google
-     Scholar, refreshed daily by GitHub Actions) has a number. */
+     Scholar, refreshed monthly by GitHub Actions) has a number. */
   metrics: { citations: 2248, source: "ResearchGate", url: "https://www.researchgate.net/profile/Keshav-Aggarwal-4" },
 
   /* ------------------------------------------------------------------
@@ -245,28 +245,10 @@ window.SITE = {
      date: "YYYY-MM" (used for sorting). kind: "Talk" | "Poster"
      award: optional prize text. pdf: optional link to slides or poster.
      ------------------------------------------------------------------ */
-  /* ORCID works that are not publications of Keshav Aggarwal (kept off the site by the daily feed).
+  /* ORCID works that are not publications of Keshav Aggarwal (kept off the site by the monthly feed).
      arXiv 2512.11631: UK white paper on magnetic reconnection, listed as a signatory, not an author. */
   excludeWorks: ["10.48550/arxiv.2512.11631", "2512.11631"],
 
-  /* SCImago SJR best quartile of each journal (what the Excitation extension
-     shows). The publications page counts published journal papers per
-     quartile and badges each one; papers added later (here or on ORCID) are
-     counted automatically. A journal not listed gets no badge: add it here.
-     Quartiles change once a year, when SCImago publishes new rankings. */
-  journalQuartiles: {
-    "Nature": "Q1",
-    "Nature Astronomy": "Q1",
-    "The Astrophysical Journal": "Q1",
-    "The Astrophysical Journal Letters": "Q1",
-    "Monthly Notices of the Royal Astronomical Society": "Q1",
-    "Icarus": "Q1",
-    "Journal of Geophysical Research: Planets": "Q1",
-    "Journal of Geophysical Research: Space Physics": "Q1",
-    "Astronomy and Astrophysics": "Q1",
-    "Solar Physics": "Q2",
-    "Advances in Space Research": "Q1"
-  },
 
   /* Conferences, workshops and schools attended without a presentation. */
   schools: [
