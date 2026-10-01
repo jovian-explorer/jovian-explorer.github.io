@@ -887,6 +887,9 @@ dialog.photo-dialog img { max-height: 88vh; width: auto; }
 .glance-cell:hover { background: var(--accent-soft); }
 .glance-cell b { font-family: var(--f-display); font-weight: var(--display-weight); font-size: var(--t-xl); line-height: 1.1; font-variant-numeric: tabular-nums; }
 .glance-cell span { font-size: var(--t-xs); color: var(--muted); }
+.glance-cell b.gq-row { display: flex; flex-wrap: wrap; gap: 0.2rem 1.4rem; }
+.gq { font-style: normal; display: inline-flex; align-items: baseline; gap: 0.35rem; }
+.gq small { font-family: var(--f-mono); font-size: var(--t-xs); color: var(--muted); }
 .glance-cell:last-child:nth-child(odd) { grid-column: 1 / -1; }
 .ch-mark { width: 3.5rem; height: 3.5rem; border-radius: 50%; }
 .panel-intro { color: var(--muted); max-width: var(--measure); margin-bottom: 1.5rem; }
