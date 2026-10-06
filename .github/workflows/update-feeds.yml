@@ -49,8 +49,8 @@ jobs:
             echo "changed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "jovian_explorer"
+          git config user.email "keshavaggarwal2310@gmail.com"
           git add assets/js/feed-videos.js assets/js/feed-articles.js assets/js/feed-metrics.js assets/js/feed-works.js assets/js/feed-quartiles.js
           git commit -m "Update feeds"
           git push
