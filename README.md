@@ -9,7 +9,7 @@ Personal website of Keshav Aggarwal. Static HTML, CSS and JavaScript; no build s
 | `index.html` | Bio, profile links, recent papers, research interests, news |
 | `research.html` | Research themes and missions |
 | `publications.html` | Publications with tabs and search (rendered from `assets/js/data.js`) |
-| `software.html` | VEDA, COSMIC2 Explorer, HELIOS and released code |
+| `software.html` | VEDA, HELIOS-L1, COSMIC-2 Explorer and released code |
 | `talks.html` | Conference talks and posters |
 | `outreach.html` | Public events, National Space Day kit, mission explainers, school astronomy lab videos |
 | `videos.html` | YouTube channel: featured player, searchable list (updated automatically) |
