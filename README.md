@@ -7,12 +7,12 @@ Personal website of Keshav Aggarwal. Static HTML, CSS and JavaScript; no build s
 | File | Content |
 |---|---|
 | `index.html` | Bio, profile links, recent papers, research interests, news |
-| `research.html` | Research themes and missions |
+| `research.html` | Research themes, talks and presentations (paper presentation videos with the matching talks), missions |
 | `publications.html` | Publications with tabs and search (rendered from `assets/js/data.js`) |
 | `software.html` | VEDA, HELIOS-L1, COSMIC-2 Explorer and released code |
-| `talks.html` | Conference talks and posters |
-| `outreach.html` | Public events, National Space Day kit, mission explainers, school astronomy lab videos |
-| `videos.html` | YouTube channel: featured player, searchable list (updated automatically) |
+| `talks.html` | Paper presentation videos, conference talks and posters |
+| `outreach.html` | YouTube channel, public events, National Space Day kit, mission explainers, school astronomy lab videos |
+| `videos.html` | YouTube channel (part of Outreach, linked from `outreach.html`): featured player, searchable list (updated automatically) |
 | `writing.html` | Medium articles with topic filters (updated automatically) |
 | `travel.html` | India district map and world city map |
 | `photography.html` | Sections (Travel, Conferences) as tabs, albums with map or generated covers, album view, full-screen viewer |
@@ -32,7 +32,7 @@ Personal website of Keshav Aggarwal. Static HTML, CSS and JavaScript; no build s
 - Without an API key it reads the channel's RSS feed (latest 15 uploads) and keeps older entries it has already seen.
 - For the full upload list with durations, add a YouTube Data API v3 key as the repository secret `YT_API_KEY` (Settings > Secrets and variables > Actions).
 - In `feed-videos.js` you can add `"topic"`, `"featured": true`, `"hidden": true` or `"note"` to any video; these survive updates.
-- Link a paper to its summary video with `video: "<id>"` on the publication in `data.js`; the paper then shows a Video link and the video shows the paper.
+- Link a paper to its presentation video with `video: "<id>"` on the publication in `data.js`; the paper then shows a Video link, the video shows the paper, and the pair appears under Talks and presentations on `research.html` and `talks.html`. Add the same `video` to a conference entry to show that talk with it.
 
 ## CV PDF
 

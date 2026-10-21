@@ -224,7 +224,7 @@ window.SITE = {
      type: Paper | Talk | Poster | Video | Milestone
      ------------------------------------------------------------------ */
   recent: [
-    { date: "Sep 2026", type: "Video", title: "Video summaries of three 2026 papers", where: "YouTube", href: "videos.html" },
+    { date: "Sep 2026", type: "Video", title: "Video presentations of three 2026 papers", where: "YouTube", href: "research.html#talks-presentations" },
     { date: "2026", type: "Paper", title: "Plasma turbulence in the lunar environment across solar wind and magnetotail conditions", where: "JGR: Planets", href: "https://doi.org/10.1029/2026JE009957" },
     { date: "2026", type: "Paper", title: "A study on the contribution of the interplanetary medium in radio occultation experiments", where: "Icarus", href: "https://doi.org/10.1016/j.icarus.2026.117291" },
     { date: "May 2026", type: "Milestone", title: "PhD thesis submitted", where: "IIT Indore" },
@@ -244,6 +244,8 @@ window.SITE = {
      Conference presentations.
      date: "YYYY-MM" (used for sorting). kind: "Talk" | "Poster"
      award: optional prize text. pdf: optional link to slides or poster.
+     video: optional YouTube id of a recorded presentation of the same work
+     (adds a "Video" link; a paper with the same video shows the talk).
      ------------------------------------------------------------------ */
   /* ORCID works that are not publications of Keshav Aggarwal (kept off the site by the monthly feed).
      arXiv 2512.11631: UK white paper on magnetic reconnection, listed as a signatory, not an author. */
@@ -271,7 +273,8 @@ window.SITE = {
       date: "2026-03", dates: "23\u201325 Mar 2026", kind: "Talk",
       event: "7th Indian Planetary Science Conference (IPSC 2026)",
       place: "IIT Indore, India",
-      title: "A turbulence index independent framework for deriving solar wind speed and coronal electron density from radio spectral broadening"
+      title: "A turbulence index independent framework for deriving solar wind speed and coronal electron density from radio spectral broadening",
+      video: "BUyCingJDiM"
     },
     {
       date: "2026-02", dates: "Feb 2026", kind: "Talk",
