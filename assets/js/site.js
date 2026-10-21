@@ -412,8 +412,7 @@
       '<p class="row-sub">' + esc(c.place) + "</p>" +
       '<p><span class="kind kind-' + esc(c.kind.toLowerCase()) + '">' + esc(c.kind) + "</span> <em>" + esc(c.title) + "</em></p>" +
       (c.award ? '<p class="award">' + esc(c.award) + "</p>" : "") +
-      ((c.pdf || c.video) ? '<p class="pub-links">' + (c.pdf ? '<a class="chip" href="' + esc(c.pdf) + '">' + icon("pdf") + " " + esc(c.kind) + " PDF</a>" : "") +
-        (c.video ? '<a class="chip" href="https://www.youtube.com/watch?v=' + esc(c.video) + '">' + icon("play") + " Video</a>" : "") + "</p>" : "") +
+      (c.pdf ? '<p class="pub-links"><a class="chip" href="' + esc(c.pdf) + '">' + icon("pdf") + " " + esc(c.kind) + " PDF</a></p>" : "") +
       "</div></div>";
   }
   var confRoot = document.getElementById("conference-list");
@@ -446,29 +445,6 @@
         (awards ? '<div class="stat"><b>' + awards + "</b><span>" + (awards === 1 ? "award or grant" : "awards and grants") + "</span></div>" : "");
     }
   }
-  /* ---------- Talks and presentations (research.html, talks.html) ----------
-     One card per paper with a presentation video (publications[].video),
-     with the paper and any conference talk on the same work (conferences[].video). */
-  var presRoot = document.getElementById("presentation-videos");
-  if (presRoot) {
-    var VID = {};
-    ((window.VIDEOS || {}).videos || []).forEach(function (v) { if (v.id) VID[v.id] = v; });
-    var SHORTV = { "Monthly Notices of the Royal Astronomical Society": "MNRAS", "Journal of Geophysical Research: Planets": "JGR: Planets", "Advances in Space Research": "ASR", "The Astrophysical Journal": "ApJ" };
-    presRoot.innerHTML = (SITE.publications || []).filter(function (p) { return p.video && !(VID[p.video] || {}).hidden; }).map(function (p) {
-      var v = VID[p.video] || {};
-      var url = "https://www.youtube.com/watch?v=" + esc(p.video);
-      var talks = CONF.filter(function (c) { return c.video === p.video; });
-      var chips = '<a class="chip" href="' + (p.doi ? "https://doi.org/" + esc(p.doi) : esc(p.url || "publications.html")) + '">Paper: ' + esc(SHORTV[p.venue] || p.venue) + " " + esc(p.year) + "</a>" +
-        talks.map(function (c) { return '<a class="chip" href="talks.html">' + esc(c.kind) + ": " + esc(c.event.replace(/^.*\(([^)]+)\)\s*$/, "$1")) + "</a>"; }).join("");
-      return '<article class="vcard"><a class="vthumb" href="' + url + '" aria-label="Watch on YouTube: ' + esc(v.title || p.title) + '">' +
-        '<img src="https://i.ytimg.com/vi/' + esc(p.video) + '/mqdefault.jpg" alt="" loading="lazy" width="320" height="180">' +
-        (v.duration ? '<span class="vdur">' + esc(v.duration) + "</span>" : "") +
-        '<svg class="play" aria-hidden="true"><use href="assets/img/icons.svg#i-play"></use></svg></a>' +
-        '<h3><a href="' + url + '">' + esc(v.title || p.title) + "</a></h3>" +
-        (v.date ? '<p class="vmeta">Video &middot; ' + esc(monthYear(v.date.slice(0, 7))) + "</p>" : "") +
-        '<p class="pub-links">' + chips + "</p></article>";
-    }).join("");
-  }
   var homeTalks = document.getElementById("home-talks");
   if (homeTalks && CONF.length) {
     homeTalks.innerHTML = CONF.slice(0, +homeTalks.getAttribute("data-limit") || 5).map(function (c) {
@@ -476,8 +452,7 @@
         '<p class="ht-event"><span class="kind kind-' + esc(c.kind.toLowerCase()) + '">' + esc(c.kind) + "</span> " + esc(c.event) + "</p>" +
         '<p class="ht-title">' + esc(c.title) + "</p>" +
         '<p class="ht-place">' + esc(c.place) + "</p>" +
-        (c.award ? '<p class="award">' + esc(c.award) + "</p>" : "") +
-        (c.video ? '<p class="pub-links"><a class="chip" href="https://www.youtube.com/watch?v=' + esc(c.video) + '">' + icon("play") + " Video</a></p>" : "") + "</div></li>";
+        (c.award ? '<p class="award">' + esc(c.award) + "</p>" : "") + "</div></li>";
     }).join("");
   }
 
