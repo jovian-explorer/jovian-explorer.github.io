@@ -42,7 +42,7 @@ window.VIDEOS = {
     {
       "id": "ld5bzg6wAJ0",
       "title": "Why Is the Sky Blue? Rayleigh Scattering, the Violet Puzzle, Red Sunsets and White Clouds",
-      "views": 0,
+      "views": 1,
       "duration": "5:15",
       "date": "2026-10-22",
       "description": "Air scatters violet light even more strongly than blue light, so why is the clear sky blue? This video follows sunlight into the atmosphere, into our eyes, and into sunsets and clouds. Rayleigh's law (1871) says that…"
@@ -58,7 +58,7 @@ window.VIDEOS = {
     {
       "id": "GdDopiDbrJI",
       "title": "The Solar Wind Explained: From Parker's 1958 Prediction to Parker Solar Probe",
-      "views": 16,
+      "views": 22,
       "duration": "5:37",
       "date": "2026-10-22",
       "description": "The corona, the outer atmosphere of the Sun, is so hot that it cannot stay in static balance, and therefore it expands into space as the solar wind. This video follows the wind from the comet tails that Biermann studied…"
@@ -66,7 +66,7 @@ window.VIDEOS = {
     {
       "id": "8pDhCpbolKk",
       "title": "The 1859 Carrington Solar Storm That Made Telegraph Wires Spark",
-      "views": 30,
+      "views": 124,
       "short": true,
       "date": "2026-10-22",
       "description": "On {1|the first of} September 1859, Richard Carrington saw two patches of white light flare up in a group of sunspots, and on the next day a great magnetic storm reached Earth. The only measured size of this storm comes…"
@@ -74,7 +74,7 @@ window.VIDEOS = {
     {
       "id": "uD0uU1NagTE",
       "title": "Why Is the Sky Blue and Not Violet? Rayleigh Scattering Explained",
-      "views": 87,
+      "views": 105,
       "short": true,
       "date": "2026-10-22",
       "description": "Air scatters short wavelengths far more strongly than long ones. By Rayleigh's law (1871) the scattered intensity goes as 1/λ⁴, so violet light at 380 nm is scattered about 11.5 times more strongly than red light at 700…"
@@ -82,7 +82,7 @@ window.VIDEOS = {
     {
       "id": "Q99fYApJA2c",
       "title": "Aditya-L1 Explained: ISRO's Sun Mission, Its Halo Orbit and Seven Instruments",
-      "views": 11,
+      "views": 14,
       "duration": "7:33",
       "date": "2026-10-21",
       "description": "Aditya-L1, the first space-based Indian mission to study the Sun, built by the Indian Space Research Organisation (ISRO), has circled the Sun-Earth Lagrange point L1, about 1.5 million km from Earth, since January 2024.…"
@@ -90,7 +90,7 @@ window.VIDEOS = {
     {
       "id": "4_xi2q-n_Oc",
       "title": "Why India, the US and China Are All Heading to the Moon's South Pole",
-      "views": 1321,
+      "views": 1327,
       "short": true,
       "date": "2026-10-21",
       "description": "The Moon's axis tilts only 1.5 degrees, so the floors of some deep craters near its poles never see the Sun and stay below about -173 °C (100 K). In 2018, scientists used NASA's Moon Mineralogy Mapper (M3) on India's…"
@@ -98,7 +98,7 @@ window.VIDEOS = {
     {
       "id": "2dY2fqf0oMU",
       "title": "What Makes an Aurora Glow, and How It Reached Ladakh in May 2024",
-      "views": 101,
+      "views": 126,
       "short": true,
       "date": "2026-10-21",
       "description": "An aurora is light from the upper atmosphere. Electrons energised in the magnetosphere stream down along magnetic field lines and hit oxygen and nitrogen, and the excited atoms give off light, much as the gas in a neon…"
@@ -106,7 +106,7 @@ window.VIDEOS = {
     {
       "id": "nghPcSoQEXA",
       "title": "What Is the Solar Wind? Parker's 1958 Prediction and the Mariner 2 Discovery",
-      "views": 1050,
+      "views": 1161,
       "short": true,
       "date": "2026-10-21",
       "description": "The outer atmosphere of the Sun, the corona, is so hot that gravity cannot hold it in place, and therefore it expands into space as a continuous flow of gas, the solar wind. In 1958, Eugene Parker showed that a corona…"
@@ -154,7 +154,7 @@ window.VIDEOS = {
     {
       "id": "NxWNsUxg5q8",
       "title": "We Can Watch Earth Breathe: The Keeling Curve of Carbon Dioxide",
-      "views": 343,
+      "views": 367,
       "short": true,
       "date": "2026-10-20",
       "description": "Charles David Keeling of the Scripps Institution of Oceanography began to measure carbon dioxide at Mauna Loa Observatory, Hawaii, in March 1958, and the National Oceanic and Atmospheric Administration (NOAA) and…"
