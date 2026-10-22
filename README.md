@@ -21,14 +21,14 @@ Personal website of Keshav Aggarwal. Static HTML, CSS and JavaScript; no build s
 
 ## Automatic YouTube and Medium lists
 
-`.github/workflows/update-feeds.yml` runs `tools/update_feeds.py` on the 1st of every month at 03:17 UTC (and on demand from the Actions tab). It writes `assets/js/feed-videos.js`, `assets/js/feed-articles.js`, `assets/js/feed-metrics.js` (Google Scholar citations and h-index; this number always replaces the fallback in `data.js`), `assets/js/feed-works.js` (works on ORCID 0000-0002-7004-8670, with authors from Crossref) and `assets/js/feed-quartiles.js` (SJR quartiles from the ExCITATION extension's own journal database, and the Q1–Q4 counts of the Google Scholar profile over the last 10 years as ExCITATION shows them), commits only when something changed, and asks GitHub Pages to rebuild.
+`.github/workflows/update-feeds.yml` runs `tools/update_feeds.py` after every change to the site, every Monday at 05:37 UTC, on the 1st of every month (and on demand from the Actions tab). It writes `assets/js/feed-videos.js`, `assets/js/feed-articles.js`, `assets/js/feed-metrics.js` (Google Scholar citations and h-index; this number always replaces the fallback in `data.js`), `assets/js/feed-works.js` (works on ORCID 0000-0002-7004-8670, with authors from Crossref) and `assets/js/feed-quartiles.js` (SJR quartiles from the ExCITATION extension's own journal database, and the Q1–Q4 counts of the Google Scholar profile over the last 10 years as ExCITATION shows them), commits only when something changed, and asks GitHub Pages to rebuild.
 
 - A paper on ORCID whose DOI, arXiv id or title is not in `data.js` is added to Publications and, if dated in the last twelve months, to the home page Recent list. ORCID conference posters and talks are added to Talks. To stop a preprint showing twice, give the published entry in `data.js` its `arxiv` id.
 - New videos and Medium articles join the Recent list when they are newer than the latest hand-written entry of the same type.
 - The citation count shown is the larger of the Scholar value and `metrics.citations` in `data.js`.
 - Conferences not on ORCID are added by hand to `conferences` in `data.js`.
 
-- Without an API key it reads the channel's RSS feed (latest 15 uploads) and keeps older entries it has already seen.
+- Without an API key it reads the channel's Videos and Shorts tabs (and each new video's page for its date and description), falling back to the RSS feed, and keeps older entries it has already seen.
 - For the full upload list with durations, add a YouTube Data API v3 key as the repository secret `YT_API_KEY` (Settings > Secrets and variables > Actions).
 - The channel's public playlists are read from its Playlists tab (`@jovian_explorer/playlists`) and shown on the Videos tab of `media.html`.
 - In `feed-videos.js` you can add `"topic"`, `"featured": true`, `"hidden": true` or `"note"` to any video; these survive updates.

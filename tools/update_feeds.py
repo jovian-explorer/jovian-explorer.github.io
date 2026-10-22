@@ -16,7 +16,9 @@ Standard library only. Sources, in order of completeness:
   1. YouTube Data API v3, if the YT_API_KEY environment variable is set
      (full upload list with durations and view counts).
   2. The channel's uploads playlist page (up to about 100 videos).
-  3. The channel RSS feed (latest 15 videos, with dates and view counts).
+  3. The channel's Videos and Shorts tabs, with each new video's own page for
+     its date and description (works where 2 and 4 are refused).
+  4. The channel RSS feed (latest 15 videos, with dates and view counts).
 The channel's public playlists (title, id, number of videos) are read from its
 Playlists tab, or from the API when YT_API_KEY is set, and shown on media.html.
 Fields added by hand to a video in feed-videos.js (topic, featured, hidden,
@@ -34,7 +36,7 @@ import unicodedata
 import urllib.request
 import zipfile
 import xml.etree.ElementTree as ET
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 HANDLE = os.environ.get("YT_HANDLE", "jovian_explorer")
@@ -206,6 +208,93 @@ def playlists_from_api(cid, key):
             for p in d.get("items", [])]
 
 
+def _text(o):
+    if not isinstance(o, dict):
+        return ""
+    return o.get("simpleText") or o.get("content") or "".join(x.get("text", "") for x in o.get("runs", []))
+
+
+def _views(s):
+    m = re.search(r"([\d.,]+)\s*([KMB]?)\s*views?", s or "")
+    if not m:
+        return 0 if re.search(r"No views", s or "") else None
+    n = float(m.group(1).replace(",", ""))
+    return int(n * {"": 1, "K": 1e3, "M": 1e6, "B": 1e9}[m.group(2)])
+
+
+def _ago(s):
+    """'3 weeks ago' -> approximate YYYY-MM-DD."""
+    m = re.search(r"(\d+)\s+(second|minute|hour|day|week|month|year)s?\s+ago", s or "")
+    if not m:
+        return ""
+    days = int(m.group(1)) * {"second": 0, "minute": 0, "hour": 0, "day": 1, "week": 7, "month": 30, "year": 365}[m.group(2)]
+    return (datetime.now(timezone.utc) - timedelta(days=days)).strftime("%Y-%m-%d")
+
+
+def from_channel_tabs():
+    """Videos and Shorts tabs of the channel page (the latest 30 or so of each)."""
+    out = {}
+    for tab in ("videos", "shorts"):
+        try:
+            page = get(f"https://www.youtube.com/@{HANDLE}/{tab}")
+        except Exception as e:
+            log(f"  {tab} tab failed:", e)
+            continue
+        m = re.search(r"var ytInitialData\s*=\s*(\{.*?\});\s*</script>", page, re.S)
+        if not m:
+            log(f"  {tab} tab: ytInitialData not found")
+            continue
+        data = json.loads(m.group(1))
+        n0 = len(out)
+        for r in walk(data, "videoRenderer"):
+            vid = r.get("videoId")
+            if vid:
+                out.setdefault(vid, {}).update({"id": vid, "title": _text(r.get("title")),
+                    "ago": _text(r.get("publishedTimeText")), "views": _views(_text(r.get("viewCountText"))),
+                    "duration": _text(r.get("lengthText")), "description": excerpt(_text(r.get("descriptionSnippet")))})
+        for r in walk(data, "lockupViewModel"):
+            if "VIDEO" not in r.get("contentType", "") or not r.get("contentId"):
+                continue
+            meta = (r.get("metadata") or {}).get("lockupMetadataViewModel") or {}
+            blob = json.dumps(r)
+            ago = re.search(r'"content":\s*"([^"]*\bago)"', blob)
+            dur = re.search(r'"text":\s*"(\d+(?::\d{2}){1,2})"', blob)
+            out.setdefault(r["contentId"], {}).update({"id": r["contentId"], "title": _text(meta.get("title")),
+                "ago": ago.group(1) if ago else "", "views": _views(blob), "duration": dur.group(1) if dur else ""})
+        for r in list(walk(data, "shortsLockupViewModel")) + list(walk(data, "reelItemRenderer")):
+            blob = json.dumps(r)
+            vid = r.get("videoId") or (re.search(r'"videoId":\s*"([\w-]{11})"', blob) or [None, None])[1]
+            if not vid:
+                continue
+            title = _text(r.get("headline")) or _text((r.get("overlayMetadata") or {}).get("primaryText"))
+            views = _text(r.get("viewCountText")) or _text((r.get("overlayMetadata") or {}).get("secondaryText"))
+            v = out.setdefault(vid, {"id": vid})
+            v.update({k: x for k, x in {"title": title, "views": _views(views)}.items() if x not in (None, "")})
+            v["short"] = True
+        log(f"  {tab} tab: {len(out) - n0} videos")
+    return list(out.values())
+
+
+def watch_details(vid):
+    """Exact publication date, description, duration and views from the video's page."""
+    page = get(f"https://www.youtube.com/watch?v={vid}")
+    d = {}
+    m = re.search(r'"publishDate":"(\d{4}-\d{2}-\d{2})', page) or re.search(r'itemprop="(?:datePublished|uploadDate)" content="(\d{4}-\d{2}-\d{2})', page)
+    if m:
+        d["date"] = m.group(1)
+    m = re.search(r'"shortDescription":("(?:[^"\\]|\\.)*")', page)
+    if m:
+        d["description"] = excerpt(json.loads(m.group(1)))
+    m = re.search(r'"lengthSeconds":"(\d+)"', page)
+    if m:
+        t = int(m.group(1))
+        d["duration"] = f"{t // 3600}:{t % 3600 // 60:02d}:{t % 60:02d}" if t >= 3600 else f"{t // 60}:{t % 60:02d}"
+    m = re.search(r'"viewCount":"(\d+)"', page)
+    if m:
+        d["views"] = int(m.group(1))
+    return d
+
+
 def iso_duration(s):
     m = re.match(r"P(?:(\d+)D)?T?(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?", s or "")
     if not m:
@@ -268,6 +357,24 @@ def update_videos():
             log(f"  playlist page: {len(pl)} videos")
         except Exception as e:
             log("  playlist page failed:", e)
+    if not complete:
+        # The uploads playlist and RSS feed are often refused to cloud runners;
+        # the channel's own Videos and Shorts tabs are not.
+        try:
+            known = {v["id"]: v for v in old.get("videos", [])}
+            tabs = from_channel_tabs()
+            for v in tabs:
+                ago = v.pop("ago", "")
+                if not known.get(v["id"], {}).get("date") and not fresh.get(v["id"], {}).get("date"):
+                    try:
+                        v.update({k: x for k, x in watch_details(v["id"]).items() if x not in (None, "")})
+                    except Exception as e:
+                        log(f"  watch page {v['id']} failed:", e)
+                    if not v.get("date") and ago:
+                        v["date"] = _ago(ago)
+                fresh.setdefault(v["id"], {}).update({k: x for k, x in v.items() if x not in (None, "")})
+        except Exception as e:
+            log("  channel tabs failed:", e)
     try:
         rss = from_rss(cid)
         for v in rss:

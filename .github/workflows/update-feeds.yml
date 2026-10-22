@@ -8,15 +8,17 @@ name: Update feeds (videos, articles, citations, ORCID works, journal quartiles)
 # Optional repository secret YT_API_KEY (YouTube Data API v3) gives the full
 # upload list with durations; without it the channel pages and RSS are used.
 
+# Runs with every change to the website, every Monday (an hour before the
+# profile README's weekly refresh, which reads these files), and on the 1st of
+# each month. Its own "Update feeds" commits use GITHUB_TOKEN and so do not
+# start it again.
 on:
   schedule:
     - cron: "17 3 1 * *"  # 03:17 UTC on the 1st of each month
+    - cron: "37 5 * * 1"  # 05:37 UTC every Monday
   workflow_dispatch:
   push:
     branches: [main]
-    paths:
-      - tools/update_feeds.py
-      - .github/workflows/update-feeds.yml
 
 permissions:
   contents: write
@@ -53,7 +55,8 @@ jobs:
           git config user.email "keshavaggarwal2310@gmail.com"
           git add assets/js/feed-videos.js assets/js/feed-articles.js assets/js/feed-metrics.js assets/js/feed-works.js assets/js/feed-quartiles.js
           git commit -m "Update feeds"
-          git push
+          # The site may have changed while the feeds were fetched.
+          for i in 1 2 3; do git pull --rebase -q origin "${GITHUB_REF_NAME}" && git push && break; sleep 5; done
           echo "changed=true" >> "$GITHUB_OUTPUT"
 
       - name: Rebuild GitHub Pages
