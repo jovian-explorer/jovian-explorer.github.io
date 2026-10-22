@@ -152,7 +152,11 @@
         n.focus(); select(n, true);
       });
     });
-    function fromHash() { return tabs.filter(function (t) { return t.dataset.hash && "#" + t.dataset.hash === location.hash; })[0]; }
+    /* data-alias: older addresses of a tab, space-separated. */
+    function fromHash() {
+      var h = location.hash.slice(1);
+      return tabs.filter(function (t) { return h && (t.dataset.hash === h || (t.dataset.alias || "").split(" ").indexOf(h) > -1); })[0];
+    }
     var start = fromHash() || tabs[0];
     if (start) select(start, false);
     window.addEventListener("hashchange", function () {
@@ -225,6 +229,8 @@
     wp: function (p) { return (p.kind === "whitepaper" || p.kind === "preprint") && !p.status; },
     ur: function (p) { return !!p.status; },
     co: function (p) { return p.role === "co" && !p.status; },
+    firstauthor: function (p) { return PUB_FILTERS.fj(p) || PUB_FILTERS.fp(p); },
+    coauthored: function (p) { return PUB_FILTERS.cj(p) || PUB_FILTERS.cp(p) || PUB_FILTERS.wp(p); },
     first: function (p) { return p.role === "first"; },
     firstjournal: function (p) { return p.role === "first" && p.kind === "journal" && !p.status; },
     proc: isProc
@@ -232,6 +238,8 @@
   /* Sections of the "All" tab, in reading order. */
   var PUB_SECTIONS = [["fj", "First-author journal papers"], ["fp", "First-author conference proceedings"], ["cj", "Co-authored journal papers"],
     ["cp", "Co-authored proceedings and book chapters"], ["wp", "White papers and preprints"], ["ur", "Under review"]];
+  /* Sections shown in each publications tab. */
+  var TAB_SECTIONS = { all: ["fj", "fp", "cj", "cp", "wp", "ur"], firstauthor: ["fj", "fp"], coauthored: ["cj", "cp", "wp"], ur: ["ur"] };
 
   /* ---------- BibTeX ---------- */
   function bibAuthors(s) {
@@ -292,14 +300,6 @@
     });
   }
 
-  function groupedByYear(list) {
-    var years = {};
-    list.forEach(function (p) { (years[p.year] = years[p.year] || []).push(p); });
-    return Object.keys(years).sort(function (a, b) { return b - a; }).map(function (y) {
-      return '<section class="year-group"><h3>' + y + '</h3><ul class="pub-list">' + years[y].map(pubHTML).join("") + "</ul></section>";
-    }).join("");
-  }
-
   var pubRoot = document.getElementById("publications");
   if (pubRoot && SITE.publications) {
     var all = SITE.publications;
@@ -323,12 +323,12 @@
           return [p.title, p.authors, p.venue, p.year, (p.missions || []).join(" ")].join(" ").toLowerCase().indexOf(q) > -1;
         });
         if (!panel.hidden) shown = list.length;
-        if (t === "all" && list.length) {
-          panel.innerHTML = PUB_SECTIONS.map(function (sec) {
-            var sub = list.filter(PUB_FILTERS[sec[0]]);
-            return sub.length ? '<section class="pub-section"><h2 class="pub-section-h">' + esc(sec[1]) + ' <span class="count">' + sub.length + '</span></h2><ul class="pub-list">' + sub.map(pubHTML).join("") + "</ul></section>" : "";
-          }).join("");
-        } else panel.innerHTML = list.length ? groupedByYear(list) : '<p class="empty">No publications match this search.</p>';
+        var secs = PUB_SECTIONS.filter(function (sec) { return TAB_SECTIONS[t].indexOf(sec[0]) > -1; });
+        panel.innerHTML = list.length ? secs.map(function (sec) {
+          var sub = list.filter(PUB_FILTERS[sec[0]]);
+          var head = secs.length > 1 ? '<h2 class="pub-section-h">' + esc(sec[1]) + ' <span class="count">' + sub.length + "</span></h2>" : "";
+          return sub.length ? '<section class="pub-section">' + head + '<ul class="pub-list">' + sub.map(pubHTML).join("") + "</ul></section>" : "";
+        }).join("") : '<p class="empty">No publications match this search.</p>';
       });
       if (countEl) countEl.textContent = shown + (shown === 1 ? " entry" : " entries");
     }
@@ -350,12 +350,15 @@
     }
   }
 
-  var citeStat = document.getElementById("stat-citations");
-  var M = SITE.metrics;
-  if (citeStat && M && M.citations) {
-    citeStat.querySelector("b").textContent = M.citations.toLocaleString("en-US");
-    citeStat.querySelector("span").innerHTML = 'citations (<a href="' + esc(M.url) + '">' + esc(M.source) + "</a>)";
-    citeStat.hidden = false;
+  /* Citation metrics (publications page): Scholar citations, h-index and i10-index. */
+  var citeStats = document.getElementById("cite-stats");
+  var M = SITE.metrics, GM = window.METRICS || {};
+  if (citeStats && M && M.citations) {
+    var src = ' (<a href="' + esc(M.url) + '">' + esc(M.source) + "</a>)";
+    citeStats.innerHTML = [[M.citations.toLocaleString("en-US"), "citations" + src],
+      [GM.h_index, "h-index"], [GM.i10_index, "i10-index"]].filter(function (c) { return c[0]; }).map(function (c) {
+      return '<div class="stat"><b>' + esc(c[0]) + "</b><span>" + c[1] + "</span></div>";
+    }).join("");
   }
 
   var selected = document.getElementById("selected-pubs");
@@ -435,15 +438,6 @@
       });
     }
     drawConf();
-    var statsEl = document.getElementById("conference-stats");
-    if (statsEl) {
-      var talks = CONF.filter(function (c) { return c.kind === "Talk"; }).length;
-      var awards = CONF.filter(function (c) { return c.award; }).length;
-      statsEl.innerHTML =
-        '<div class="stat"><b>' + talks + "</b><span>talks</span></div>" +
-        '<div class="stat"><b>' + (CONF.length - talks) + "</b><span>posters</span></div>" +
-        (awards ? '<div class="stat"><b>' + awards + "</b><span>" + (awards === 1 ? "award or grant" : "awards and grants") + "</span></div>" : "");
-    }
   }
   var homeTalks = document.getElementById("home-talks");
   if (homeTalks && CONF.length) {
@@ -551,7 +545,7 @@
   if (glance) {
     var P = SITE.publications || [], C = SITE.conferences || [];
     var cells = [
-      [P.filter(function (p) { return p.role === "first" && p.kind === "journal" && !p.status; }).length, "first-author journal papers", "publications.html#first-journal"],
+      [P.filter(function (p) { return p.role === "first" && p.kind === "journal" && !p.status; }).length, "first-author journal papers", "publications.html#first-author"],
       [P.filter(function (p) { return !p.status; }).length, "publications in total", "publications.html"],
       [SITE.metrics && SITE.metrics.citations ? SITE.metrics.citations.toLocaleString("en-US") : "", "citations", "publications.html"],
       [C.length, "conference talks and posters", "talks.html"]
