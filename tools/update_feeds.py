@@ -277,8 +277,7 @@ def update_videos():
         log("  RSS failed:", e)
 
     if not fresh:
-        log("YouTube: nothing fetched; leaving feed-videos.js unchanged")
-        return False
+        log("YouTube: no videos fetched; keeping the current list")
 
     playlists = None
     if key:
@@ -297,7 +296,7 @@ def update_videos():
 
     previous = {v["id"]: v for v in old.get("videos", [])}
     merged = []
-    ids = list(fresh) + ([] if complete else [i for i in previous if i not in fresh])
+    ids = list(fresh) + ([] if complete and fresh else [i for i in previous if i not in fresh])
     for vid in ids:
         v = dict(previous.get(vid, {}))
         v.update({k: x for k, x in fresh.get(vid, {}).items() if x not in (None, "")})
