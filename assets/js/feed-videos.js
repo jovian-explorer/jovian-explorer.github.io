@@ -9,7 +9,34 @@ window.VIDEOS = {
     "id": "UCCXaTGdT28P09_WMwT2Z-8Q",
     "handle": "jovian_explorer",
     "title": "Jovian Explorer",
-    "subscribers": "3"
+    "subscribers": "15",
+    "playlists": [
+      {
+        "id": "PLLMY_ehOSl00",
+        "title": "Space Race 2.0",
+        "count": 2
+      },
+      {
+        "id": "PLbwTHJam1hZ8",
+        "title": "Surviving Space",
+        "count": 4
+      },
+      {
+        "id": "PLId4H9D2tDYU",
+        "title": "Science",
+        "count": 4
+      },
+      {
+        "id": "PLeDUJ_o66ZlY",
+        "title": "Astronomy",
+        "count": 6
+      },
+      {
+        "id": "PLGZDzv6-DDT4",
+        "title": "My Research",
+        "count": 3
+      }
+    ]
   },
   "videos": [
     {
@@ -34,5 +61,5 @@ window.VIDEOS = {
       "views": 6
     }
   ],
-  "updated": "2026-09-30"
+  "updated": "2026-10-22"
 };
