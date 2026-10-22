@@ -7,6 +7,14 @@ window.WORKS = {
   "orcid": "0000-0002-7004-8670",
   "items": [
     {
+      "title": "India-station-map: v1.0.0",
+      "type": "software",
+      "venue": "",
+      "year": 2026,
+      "month": 10,
+      "doi": "10.5281/zenodo.23331688"
+    },
+    {
       "title": "A study on the contribution of the interplanetary medium in radio occultation experiments",
       "type": "journal-article",
       "venue": "Icarus",
@@ -27,6 +35,14 @@ window.WORKS = {
       "authors": "Aggarwal, K., Choudhary, R. K., Datta, A., Sharma, A."
     },
     {
+      "title": "Dataset for Plasma Turbulence in the Lunar Environment Across Solar Wind and Magnetotail Conditions: Observations from Chandrayaan-2 Radio Science experiment",
+      "type": "data-set",
+      "venue": "",
+      "year": 2026,
+      "month": 7,
+      "doi": "10.5281/zenodo.21194924"
+    },
+    {
       "title": "A turbulence index independent framework for deriving solar wind speed and coronal electron density from radio spectral broadening",
       "type": "journal-article",
       "venue": "Monthly Notices of the Royal Astronomical Society",
@@ -35,16 +51,6 @@ window.WORKS = {
       "doi": "10.1093/mnras/stag554",
       "dated": "earliest",
       "authors": "Aggarwal, K., Choudhary, R. K., Datta, A., Banerjee, S., Imamura, T., Ando, H."
-    },
-    {
-      "title": "A generalized method for estimating solar wind speeds and densities using spectral broadening for a Kolmogorov turbulence spectrum",
-      "type": "journal-article",
-      "venue": "Advances in Space Research",
-      "year": 2026,
-      "doi": "10.1016/j.asr.2026.03.059",
-      "dated": "earliest",
-      "authors": "Aggarwal, K., Choudhary, R. K., Datta, A., Roopa, M. V., Imamura, T., Ando, H.",
-      "month": 3
     },
     {
       "title": "Probing the solar corona and the solar wind using angular broadening observations with the SKA",
@@ -149,14 +155,12 @@ window.WORKS = {
       "doi": "10.48550/arxiv.2301.08192"
     },
     {
-      "title": "Photochemically produced SO2 in the atmosphere of WASP-39b",
-      "type": "journal-article",
-      "venue": "Nature",
+      "title": "jovian-explorer/Sun: sun",
+      "type": "software",
+      "venue": "",
       "year": 2023,
       "month": 4,
-      "doi": "10.1038/s41586-023-05902-2",
-      "dated": "earliest",
-      "authors": "Tsai, S. M., Lee, E. K. H., Powell, D., Gao, P., Zhang, X., Moses, J., Hébrard, E., Venot, O., Parmentier, V., Jordan, S., Hu, R., Alam, M. K., et al."
+      "doi": "10.5281/zenodo.7834734"
     },
     {
       "title": "Early Release Science of the exoplanet WASP-39b with JWST NIRSpec PRISM",
@@ -198,7 +202,31 @@ window.WORKS = {
       "arxiv": "2208.11692",
       "dated": "earliest",
       "authors": "JWST Transiting Exoplanet Community Early Release Science Team, Ahrer, E. M., Alderson, L., Batalha, N. M., Batalha, N. E., Bean, J. L., Beatty, T. G., Bell, T. J., Benneke, B., Berta-Thompson, Z. K., Carter, A. L., Crossfield, I. J. M., et al."
+    },
+    {
+      "title": "COSMIC-2 Explorer: High-Resolution Radio Occultation Processing, Visualisation, and Atmospheric Profiling System",
+      "type": "software",
+      "venue": "",
+      "doi": "10.5281/zenodo.23329842"
+    },
+    {
+      "title": "HELIOS-L1: Heliophysical Exploration, Lagrange-1 Interplanetary Observation & Space-weather Suite",
+      "type": "software",
+      "venue": "",
+      "doi": "10.5281/zenodo.23322368"
+    },
+    {
+      "title": "VEDA: Visualization, Exploration, and Data Analysis - A Multi-Mission Planetary Science Data Laboratory",
+      "type": "software",
+      "venue": "",
+      "doi": "10.5281/zenodo.23215292"
+    },
+    {
+      "title": "jovian-explorer/india-station-map: First version.",
+      "type": "software",
+      "venue": "",
+      "doi": "10.5281/zenodo.23331689"
     }
   ],
-  "updated": "2026-09-28"
+  "updated": "2026-10-22"
 };

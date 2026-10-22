@@ -18,5 +18,16 @@ window.QUARTILES = {
     "The Astrophysical Journal": "Q1",
     "The Astrophysical Journal Letters": "Q1"
   },
-  "updated": "2026-10-01"
+  "scholar": {
+    "counts": {
+      "Q1": 16,
+      "Q2": 0,
+      "Q3": 0,
+      "Q4": 0,
+      "NA": 6
+    },
+    "since": 2016,
+    "works": 22
+  },
+  "updated": "2026-10-22"
 };
