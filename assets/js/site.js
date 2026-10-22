@@ -406,9 +406,12 @@
   }
 
   /* ---------- Conferences ---------- */
-  var CONF = (SITE.conferences || []).slice().sort(function (a, b) {
+  var CONF_ALL = (SITE.conferences || []).slice().sort(function (a, b) {
     return a.date === b.date ? (a.kind === "Talk" ? -1 : 1) : (a.date < b.date ? 1 : -1);
   });
+  /* Talks for student programmes (student: true) are listed apart from conference presentations. */
+  var CONF = CONF_ALL.filter(function (c) { return !c.student; });
+  var STUDENT_TALKS = CONF_ALL.filter(function (c) { return c.student; });
   function confRow(c) {
     return '<div class="row" data-kind="' + esc(c.kind) + '"><div class="row-date">' + esc(c.dates || monthYear(c.date)) + '</div><div class="row-body">' +
       '<p class="row-title">' + esc(c.event) + "</p>" +
@@ -438,6 +441,11 @@
       });
     }
     drawConf();
+  }
+  var studentRoot = document.getElementById("student-talks");
+  if (studentRoot && STUDENT_TALKS.length) {
+    studentRoot.innerHTML = STUDENT_TALKS.map(confRow).join("");
+    studentRoot.closest("section").hidden = false;
   }
   var homeTalks = document.getElementById("home-talks");
   if (homeTalks && CONF.length) {
@@ -543,7 +551,7 @@
 
   var glance = document.getElementById("glance");
   if (glance) {
-    var P = SITE.publications || [], C = SITE.conferences || [];
+    var P = SITE.publications || [], C = (SITE.conferences || []).filter(function (c) { return !c.student; });
     var cells = [
       [P.filter(function (p) { return p.role === "first" && p.kind === "journal" && !p.status; }).length, "first-author journal papers", "publications.html#first-author"],
       [P.filter(function (p) { return !p.status; }).length, "publications in total", "publications.html"],

@@ -348,19 +348,22 @@ window.SITE = {
       date: "2021-09", dates: "Sep 2021", kind: "Talk",
       event: "Uncover Possibilities programme, Space Advancement and Research Cell",
       place: "India",
-      title: "HR diagrams of star clusters"
+      title: "HR diagrams of star clusters",
+      student: true
     },
     {
       date: "2021-08", dates: "Aug 2021", kind: "Talk",
       event: "Uncover Possibilities programme, Space Advancement and Research Cell",
       place: "India",
-      title: "The Gaia telescope and the use of its data"
+      title: "The Gaia telescope and the use of its data",
+      student: true
     },
     {
       date: "2021-02", dates: "Feb 2021", kind: "Talk",
       event: "Nakshatra, Astronomy Club, IIT Indore",
       place: "Indore, India",
-      title: "Life in the Solar System, and exoplanets"
+      title: "Life in the Solar System, and exoplanets",
+      student: true
     }
   ],
 
