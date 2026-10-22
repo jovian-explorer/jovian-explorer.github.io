@@ -12,7 +12,7 @@ Personal website of Keshav Aggarwal. Static HTML, CSS and JavaScript; no build s
 | `software.html` | VEDA, HELIOS-L1, COSMIC-2 Explorer and released code |
 | `talks.html` | Conference talks and posters |
 | `outreach.html` | Public events, National Space Day kit, mission explainers, school astronomy lab videos |
-| `media.html` | Videos and writing as tabs: YouTube channel with featured player and searchable list, Medium articles with topic filters (both updated automatically) |
+| `media.html` | Videos and writing as tabs: the YouTube channel and its research videos, Medium articles with topic filters (both updated automatically) |
 | `photography.html` | Photos and travel: album sections (Travel, Conferences), Night sky, all photographs, and the travel maps (India districts, world cities) as tabs; album view, full-screen viewer |
 | `cv.html` | Education, positions, fellowships, experience, publications, skills, contact; PDF in `assets/cv/` |
 | `404.html` | Page shown for missing addresses |
@@ -30,7 +30,7 @@ Personal website of Keshav Aggarwal. Static HTML, CSS and JavaScript; no build s
 
 - Without an API key it reads the channel's Videos and Shorts tabs (and each new video's page for its date and description), falling back to the RSS feed, and keeps older entries it has already seen.
 - For the full upload list with durations, add a YouTube Data API v3 key as the repository secret `YT_API_KEY` (Settings > Secrets and variables > Actions).
-- The channel's public playlists are read from its Playlists tab (`@jovian_explorer/playlists`) and shown on the Videos tab of `media.html`.
+- The Videos tab of `media.html` and the home page Recent list show only research videos: those linked to a paper with `video: "<id>"` in `data.js`. The channel's other videos and Shorts are fetched but not listed.
 - In `feed-videos.js` you can add `"topic"`, `"featured": true`, `"hidden": true` or `"note"` to any video; these survive updates.
 - Link a paper to its summary video with `video: "<id>"` on the publication in `data.js`; the paper then shows a Video link and the video shows the paper.
 

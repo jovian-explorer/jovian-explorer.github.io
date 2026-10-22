@@ -66,8 +66,11 @@
       }
     });
     if (added) pubs.sort(function (a, b) { return (+b.year || 0) - (+a.year || 0); });
+    /* Only research videos (summaries of papers) join the home page list. */
+    var paperVideos = {};
+    pubs.forEach(function (p) { if (p.video) paperVideos[p.video] = 1; });
     ((window.VIDEOS || {}).videos || []).forEach(function (v) {
-      if (v.id && v.date && !v.hidden) AUTO_RECENT.push({ key: v.date.slice(0, 7), date: monthYear(v.date.slice(0, 7)), type: "Video", title: v.title, where: "YouTube", href: "https://www.youtube.com/watch?v=" + v.id });
+      if (v.id && v.date && !v.hidden && paperVideos[v.id]) AUTO_RECENT.push({ key: v.date.slice(0, 7), date: monthYear(v.date.slice(0, 7)), type: "Video", title: v.title, where: "YouTube", href: "https://www.youtube.com/watch?v=" + v.id });
     });
     ((window.ARTICLES || {}).items || []).forEach(function (a) {
       if (a.date) AUTO_RECENT.push({ key: a.date.slice(0, 7), date: monthYear(a.date.slice(0, 7)), type: "Article", title: a.title, where: "Medium", href: a.url || a.link });

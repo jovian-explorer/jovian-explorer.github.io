@@ -58,7 +58,7 @@
   <main id="main">
     <header class="page-head">
       <h1>Videos and writing</h1>
-      <p>Videos from my YouTube channel Jovian Explorer and articles on Medium, on astronomy, space missions, general science and my own research. Both lists update automatically when something new is published.</p>
+      <p>Video summaries of my papers from the YouTube channel Jovian Explorer, and articles on Medium. Both lists update automatically.</p>
     </header>
 
     <div class="tabs" role="tablist" aria-label="Media" data-tabs>
@@ -67,14 +67,13 @@
     </div>
 
     <div class="tab-panel" role="tabpanel" id="panel-videos" aria-labelledby="tab-videos">
-      <p class="panel-intro">Videos on astronomy, general science and my own research, made from public data, with the source of each fact listed in the video description. Each topic has a short video and a full-length one.</p>
+      <p class="panel-intro">Video summaries of my papers. More videos on astronomy and science are on the channel.</p>
 
       <div class="channel">
         <img class="ch-mark" src="assets/img/brand-mark.svg" alt="" width="56" height="56">
         <div>
           <h2 id="ch-name">Jovian Explorer</h2>
           <p id="ch-meta">@jovian_explorer</p>
-          <p class="pub-links ch-playlists" id="ch-playlists" hidden></p>
         </div>
         <div class="channel-actions">
           <a class="btn" href="https://www.youtube.com/@jovian_explorer?sub_confirmation=1">Subscribe</a>
@@ -82,27 +81,8 @@
         </div>
       </div>
 
-      <section class="featured" id="featured" hidden>
-        <div class="video-frame" id="f-frame"></div>
-        <div class="featured-meta">
-          <p class="label" id="f-label">Latest</p>
-          <h2 id="f-title"></h2>
-          <p class="vmeta" id="f-meta"></p>
-          <p class="desc" id="f-desc"></p>
-          <p class="pub-links" id="f-paper" hidden></p>
-          <p><a id="f-link" href="https://www.youtube.com/@jovian_explorer">Watch on YouTube</a></p>
-        </div>
-      </section>
-
       <section class="section" id="video-list-section" hidden>
-        <div class="section-head"><h2>All videos</h2></div>
-        <div class="toolbar">
-          <label class="label" for="video-search">Search</label>
-          <input class="search" id="video-search" type="search" placeholder="Title or description" autocomplete="off">
-          <select class="select" id="video-sort" aria-label="Sort videos"><option value="new">Newest first</option><option value="old">Oldest first</option><option value="views">Most viewed</option></select>
-          <span class="result-count" id="video-count" aria-live="polite"></span>
-        </div>
-        <div class="filters" id="video-topics" role="group" aria-label="Topic"></div>
+        <div class="section-head"><h2>Research videos</h2><span class="result-count" id="video-count"></span></div>
         <div class="video-grid" id="video-grid"></div>
       </section>
 
