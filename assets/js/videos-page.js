@@ -5,7 +5,7 @@
   "use strict";
   var DATA = window.VIDEOS || { channel: {}, videos: [] };
   var CH = DATA.channel || {};
-  var HANDLE = CH.handle || "keshavagg1098";
+  var HANDLE = CH.handle || "jovian_explorer";
   var MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
   var ICONS = "assets/img/icons.svg";
 
@@ -60,6 +60,16 @@
   if (chMeta) {
     var subs = CH.subscribers ? (/subscriber/i.test(CH.subscribers) ? CH.subscribers : CH.subscribers + " subscribers") : "";
     chMeta.textContent = ["@" + HANDLE, videos.length ? videos.length + (videos.length === 1 ? " video" : " videos") : "", subs].filter(Boolean).join(" · ");
+  }
+  /* Playlists from the channel's Playlists tab (tools/update_feeds.py). */
+  var plBox = document.getElementById("ch-playlists");
+  var PL = (CH.playlists || []).filter(function (p) { return p.id && p.title; });
+  if (plBox && PL.length) {
+    plBox.innerHTML = '<span class="label">Playlists</span>' + PL.map(function (p) {
+      return '<a class="chip" href="https://www.youtube.com/playlist?list=' + encodeURIComponent(p.id) + '">' + esc(p.title) +
+        (p.count ? ' <span class="count">' + p.count + "</span>" : "") + "</a>";
+    }).join("");
+    plBox.hidden = false;
   }
   var uploads = document.getElementById("ch-uploads");
   if (uploads && CH.id) { uploads.href = "https://www.youtube.com/playlist?list=UU" + CH.id.slice(2); uploads.hidden = false; }

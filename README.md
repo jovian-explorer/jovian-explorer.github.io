@@ -30,6 +30,7 @@ Personal website of Keshav Aggarwal. Static HTML, CSS and JavaScript; no build s
 
 - Without an API key it reads the channel's RSS feed (latest 15 uploads) and keeps older entries it has already seen.
 - For the full upload list with durations, add a YouTube Data API v3 key as the repository secret `YT_API_KEY` (Settings > Secrets and variables > Actions).
+- The channel's public playlists are read from its Playlists tab (`@jovian_explorer/playlists`) and shown on the Videos tab of `media.html`.
 - In `feed-videos.js` you can add `"topic"`, `"featured": true`, `"hidden": true` or `"note"` to any video; these survive updates.
 - Link a paper to its summary video with `video: "<id>"` on the publication in `data.js`; the paper then shows a Video link and the video shows the paper.
 

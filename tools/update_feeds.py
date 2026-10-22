@@ -17,6 +17,8 @@ Standard library only. Sources, in order of completeness:
      (full upload list with durations and view counts).
   2. The channel's uploads playlist page (up to about 100 videos).
   3. The channel RSS feed (latest 15 videos, with dates and view counts).
+The channel's public playlists (title, id, number of videos) are read from its
+Playlists tab, or from the API when YT_API_KEY is set, and shown on media.html.
 Fields added by hand to a video in feed-videos.js (topic, featured, hidden,
 note) are kept on every run.
 """
@@ -35,7 +37,7 @@ import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 from pathlib import Path
 
-HANDLE = os.environ.get("YT_HANDLE", "keshavagg1098")
+HANDLE = os.environ.get("YT_HANDLE", "jovian_explorer")
 MEDIUM_FEED = os.environ.get("MEDIUM_FEED", "https://jovian-explorer.medium.com/feed")
 ROOT = Path(__file__).resolve().parent.parent
 VIDEO_JS = ROOT / "assets/js/feed-videos.js"
@@ -168,6 +170,42 @@ def from_playlist_page(cid):
     return [v for v in out if v["id"]]
 
 
+def from_playlists_tab():
+    """Public playlists of the channel, as listed on its Playlists tab."""
+    page = get(f"https://www.youtube.com/@{HANDLE}/playlists")
+    m = re.search(r"var ytInitialData\s*=\s*(\{.*?\});\s*</script>", page, re.S)
+    if not m:
+        raise ValueError("ytInitialData not found")
+    data = json.loads(m.group(1))
+    out = {}
+    # Current layout: lockupViewModel items with contentType LOCKUP_CONTENT_TYPE_PLAYLIST.
+    for r in walk(data, "lockupViewModel"):
+        pid = r.get("contentId", "")
+        if not pid.startswith("PL"):
+            continue
+        meta = (r.get("metadata") or {}).get("lockupMetadataViewModel") or {}
+        title = (meta.get("title") or {}).get("content", "")
+        n = re.search(r'"text":\s*"(\d+) videos?"', json.dumps(r))
+        out[pid] = {"id": pid, "title": title, "count": int(n.group(1)) if n else None}
+    # Older layout: gridPlaylistRenderer.
+    for r in walk(data, "gridPlaylistRenderer"):
+        pid = r.get("playlistId", "")
+        if not pid.startswith("PL") or pid in out:
+            continue
+        t = r.get("title", {})
+        title = t.get("simpleText") or "".join(x.get("text", "") for x in t.get("runs", []))
+        n = re.search(r"(\d+)", (r.get("videoCountShortText") or {}).get("simpleText", ""))
+        out[pid] = {"id": pid, "title": title, "count": int(n.group(1)) if n else None}
+    return [p for p in out.values() if p["title"]]
+
+
+def playlists_from_api(cid, key):
+    q = urllib.parse.urlencode({"part": "snippet,contentDetails", "channelId": cid, "maxResults": 50, "key": key})
+    d = json.loads(get("https://www.googleapis.com/youtube/v3/playlists?" + q))
+    return [{"id": p["id"], "title": p["snippet"]["title"], "count": p.get("contentDetails", {}).get("itemCount")}
+            for p in d.get("items", [])]
+
+
 def iso_duration(s):
     m = re.match(r"P(?:(\d+)D)?T?(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?", s or "")
     if not m:
@@ -242,6 +280,21 @@ def update_videos():
         log("YouTube: nothing fetched; leaving feed-videos.js unchanged")
         return False
 
+    playlists = None
+    if key:
+        try:
+            playlists = playlists_from_api(cid, key)
+        except Exception as e:
+            log("  playlists (API) failed:", e)
+    if playlists is None:
+        try:
+            playlists = from_playlists_tab()
+        except Exception as e:
+            log("  playlists tab failed:", e)
+    if playlists is None:  # keep the last known list
+        playlists = old.get("channel", {}).get("playlists", [])
+    log(f"  playlists: {len(playlists)}")
+
     previous = {v["id"]: v for v in old.get("videos", [])}
     merged = []
     ids = list(fresh) + ([] if complete else [i for i in previous if i not in fresh])
@@ -254,7 +307,7 @@ def update_videos():
         merged.append(v)
     merged.sort(key=lambda v: v.get("date", ""), reverse=True)
 
-    new = {"channel": {"id": cid, "handle": HANDLE, "title": title, "subscribers": subs}, "videos": merged}
+    new = {"channel": {"id": cid, "handle": HANDLE, "title": title, "subscribers": subs, "playlists": playlists}, "videos": merged}
     if json.dumps({**new, "updated": ""}, sort_keys=True) == json.dumps({**old, "updated": ""}, sort_keys=True):
         log("YouTube: no changes")
         return False

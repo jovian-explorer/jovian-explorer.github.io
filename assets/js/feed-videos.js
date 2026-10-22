@@ -7,7 +7,7 @@
 window.VIDEOS = {
   "channel": {
     "id": "UCCXaTGdT28P09_WMwT2Z-8Q",
-    "handle": "keshavagg1098",
+    "handle": "jovian_explorer",
     "title": "Jovian Explorer",
     "subscribers": "3"
   },

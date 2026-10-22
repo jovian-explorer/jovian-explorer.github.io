@@ -408,6 +408,8 @@ td.num { font-variant-numeric: tabular-nums; font-family: var(--f-mono); font-si
 .channel .icon { width: 2rem; height: 2rem; color: var(--accent); }
 .channel h2 { font-size: var(--t-md); }
 .channel p { color: var(--muted); font-size: var(--t-sm); }
+.ch-playlists { margin-top: 0.5rem; align-items: center; }
+.ch-playlists .label { margin: 0 0.25rem 0 0; }
 @media (max-width: 600px) { .channel { grid-template-columns: 1fr; } }
 .btn {
   display: inline-flex; align-items: center; gap: 0.45rem;
