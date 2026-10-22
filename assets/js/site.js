@@ -561,25 +561,9 @@
     }).join("") + quartileTile(P);
   }
 
-  /* ---------- Latest video and article (home page) ---------- */
-  var V = window.VIDEOS && window.VIDEOS.videos ? window.VIDEOS.videos.filter(function (v) { return !v.hidden; }) : [];
-  var latestV = document.getElementById("latest-video");
-  if (latestV && V.length) {
-    var lv = V[0];
-    latestV.innerHTML = '<a class="mini-media" href="videos.html"><img src="https://i.ytimg.com/vi/' + esc(lv.id) + '/mqdefault.jpg" alt="" loading="lazy" width="320" height="180"></a>' +
-      '<div><p class="label">Latest video</p><p class="mini-title"><a href="videos.html">' + esc(lv.title) + '</a></p><p class="mono muted">' + esc(monthYear(lv.date)) + "</p></div>";
-    latestV.hidden = false;
-  }
   var A = window.ARTICLES && window.ARTICLES.items ? window.ARTICLES.items : [];
-  var latestA = document.getElementById("latest-article");
-  if (latestA && A.length) {
-    var la = A[0];
-    latestA.innerHTML = (la.image ? '<a class="mini-media" href="' + esc(la.url) + '"><img src="' + esc(la.image) + '" alt="" loading="lazy"></a>' : "") +
-      '<div><p class="label">Latest article</p><p class="mini-title"><a href="' + esc(la.url) + '">' + esc(la.title.replace(/^Title:\s*/, "")) + '</a></p><p class="mono muted">' + esc(monthYear(la.date)) + " · Medium</p></div>";
-    latestA.hidden = false;
-  }
 
-  /* ---------- Articles (writing page) ---------- */
+  /* ---------- Articles (Writing tab of media.html) ---------- */
   var artRoot = document.getElementById("article-list");
   if (artRoot) {
     var tagBox = document.getElementById("article-tags");

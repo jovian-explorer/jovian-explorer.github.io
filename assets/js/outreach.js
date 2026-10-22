@@ -4,6 +4,8 @@
    English and Hindi versions of a video are paired. */
 (function () {
   "use strict";
+  /* Astrophotography moved to the Night sky tab of photography.html. */
+  if (location.hash === "#astrophotography") { location.replace("photography.html#night-sky"); return; }
   if (!document.getElementById("lab-grid") || !window.fetch) return;
 
   var KITS = [

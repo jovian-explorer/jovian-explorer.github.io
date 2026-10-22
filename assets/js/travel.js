@@ -1,6 +1,6 @@
-/* Travel page: India district map and world city map.
+/* Travel maps (Travel maps tab of photography.html): India district map and world city map.
    Data: SITE.travel in data.js. Boundaries: assets/data/india.js, world.js.
-   Edit mode: open travel.html#edit. Changes stay in this browser until copied
+   Edit mode: open photography.html#edit. Changes stay in this browser until copied
    into data.js with the "Copy data" button. */
 (function () {
   "use strict";
@@ -375,7 +375,8 @@
       }
       if (act === "exit") {
         ss(EDIT_KEY, null);
-        location.href = location.pathname;
+        history.replaceState(null, "", location.pathname + "#maps");
+        location.reload();
       }
     });
   }

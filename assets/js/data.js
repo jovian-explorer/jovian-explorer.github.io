@@ -224,7 +224,7 @@ window.SITE = {
      type: Paper | Talk | Poster | Video | Milestone
      ------------------------------------------------------------------ */
   recent: [
-    { date: "Sep 2026", type: "Video", title: "Video summaries of three 2026 papers", where: "YouTube", href: "videos.html" },
+    { date: "Sep 2026", type: "Video", title: "Video summaries of three 2026 papers", where: "YouTube", href: "media.html" },
     { date: "2026", type: "Paper", title: "Plasma turbulence in the lunar environment across solar wind and magnetotail conditions", where: "JGR: Planets", href: "https://doi.org/10.1029/2026JE009957" },
     { date: "2026", type: "Paper", title: "A study on the contribution of the interplanetary medium in radio occultation experiments", where: "Icarus", href: "https://doi.org/10.1016/j.icarus.2026.117291" },
     { date: "May 2026", type: "Milestone", title: "PhD thesis submitted", where: "IIT Indore" },
@@ -290,7 +290,7 @@ window.SITE = {
       event: "AGU Fall Meeting 2025",
       place: "New Orleans, United States",
       title: "Estimating solar wind speeds using Doppler broadening: results from MOM and Akatsuki",
-      award: "AGU Student Grant"
+      award: "AGU Student Travel Grant"
     },
     {
       date: "2025-12", dates: "Dec 2025", kind: "Poster",
@@ -365,9 +365,9 @@ window.SITE = {
   ],
 
   /* ------------------------------------------------------------------
-     Travel. Drawn on travel.html.
+     Travel. Drawn on the Travel maps tab of photography.html.
      districts: "State/District", spelled as in the map data. The easiest way
-                to edit this list is travel.html#edit (click districts, then
+                to edit this list is photography.html#edit (click districts, then
                 "Copy data" and paste the result here).
      places:    pins on the world map (and on the India map for Indian cities).
                 lat/lon in decimal degrees. visits: { date: "YYYY-MM", note }.
@@ -518,6 +518,43 @@ window.SITE = {
       { id: "al1sc-iiti-2024", section: "conferences", title: "Aditya-L1 Support Cell workshop", place: "IIT Indore", date: "2024-09", trip: "madhya-pradesh" },
       { id: "al1sc-bhu-2023", section: "conferences", title: "3rd Aditya-L1 Workshop", place: "IIT (BHU) Varanasi", date: "2023-02", trip: "varanasi" },
       { id: "ursi-rcrs-2022", section: "conferences", title: "URSI-RCRS 2022", place: "IIT Indore", date: "2022-12", trip: "madhya-pradesh" }
-    ]
+    ],
+    /* Night sky: photographs from the astrophotography section of the Space
+       Events website, taken at IIT Indore. Shown as their own tab. */
+    nightSky: {
+      title: "Night sky",
+      description: "Night-sky, solar and lunar photographs from the astrophotography section of the Space Events website, taken at IIT Indore. Watermarked images: \u00a9 Pranjal Chaturvedi.",
+      place: "IIT Indore",
+      photos: [
+        { src: "assets/outreach/photos/astro-02.jpg", thumb: "assets/outreach/photos/thumbs/astro-02.jpg", width: 1260, height: 1080, title: "The Sun" },
+        { src: "assets/outreach/photos/astro-03.jpg", thumb: "assets/outreach/photos/thumbs/astro-03.jpg", width: 1177, height: 1200, title: "The Moon" },
+        { src: "assets/outreach/photos/astro-04.jpg", thumb: "assets/outreach/photos/thumbs/astro-04.jpg", width: 1505, height: 1537, title: "Full Moon" },
+        { src: "assets/outreach/photos/astro-05.jpg", thumb: "assets/outreach/photos/thumbs/astro-05.jpg", width: 1600, height: 1600, title: "Vega (Summer Triangle)" },
+        { src: "assets/outreach/photos/astro-06.jpg", thumb: "assets/outreach/photos/thumbs/astro-06.jpg", width: 1600, height: 1600, title: "Deneb (Summer Triangle)" },
+        { src: "assets/outreach/photos/astro-07.jpg", thumb: "assets/outreach/photos/thumbs/astro-07.jpg", width: 1600, height: 1600, title: "Altair (Summer Triangle)" },
+        { src: "assets/outreach/photos/astro-08.jpg", thumb: "assets/outreach/photos/thumbs/astro-08.jpg", width: 1600, height: 1200, title: "Planets" },
+        { src: "assets/outreach/photos/astro-09.jpg", thumb: "assets/outreach/photos/thumbs/astro-09.jpg", width: 1600, height: 1600, title: "Jupiter and its moons" },
+        { src: "assets/outreach/photos/astro-10.jpg", thumb: "assets/outreach/photos/thumbs/astro-10.jpg", width: 1600, height: 1600, title: "Planets" },
+        { src: "assets/outreach/photos/astro-11.jpg", thumb: "assets/outreach/photos/thumbs/astro-11.jpg", width: 1600, height: 1600, title: "Ursa Major" },
+        { src: "assets/outreach/photos/astro-12.jpg", thumb: "assets/outreach/photos/thumbs/astro-12.jpg", width: 1600, height: 1034, title: "Orion" },
+        { src: "assets/outreach/photos/astro-13.jpg", thumb: "assets/outreach/photos/thumbs/astro-13.jpg", width: 1600, height: 1600, title: "Orion constellation" },
+        { src: "assets/outreach/photos/astro-14.jpg", thumb: "assets/outreach/photos/thumbs/astro-14.jpg", width: 1600, height: 1545, title: "Orion, with Sirius and the Pleiades" },
+        { src: "assets/outreach/photos/astro-15.jpg", thumb: "assets/outreach/photos/thumbs/astro-15.jpg", width: 1600, height: 1161, title: "Orion, with Sirius" },
+        { src: "assets/outreach/photos/astro-16.jpg", thumb: "assets/outreach/photos/thumbs/astro-16.jpg", width: 1600, height: 1600, title: "Night sky over IIT Indore" },
+        { src: "assets/outreach/photos/astro-17.jpg", thumb: "assets/outreach/photos/thumbs/astro-17.jpg", width: 1600, height: 1439, title: "Pleiades cluster with Venus" },
+        { src: "assets/outreach/photos/astro-18.jpg", thumb: "assets/outreach/photos/thumbs/astro-18.jpg", width: 1600, height: 1069, title: "Transit of the ISS over IIT Indore" },
+        { src: "assets/outreach/photos/astro-19.jpg", thumb: "assets/outreach/photos/thumbs/astro-19.jpg", width: 1600, height: 907, title: "Moon with Aldebaran, the Pleiades and Venus" },
+        { src: "assets/outreach/photos/eclipse-02.jpg", thumb: "assets/outreach/photos/thumbs/eclipse-02.jpg", width: 1600, height: 1200, title: "Solar eclipse" },
+        { src: "assets/outreach/photos/eclipse-03.jpg", thumb: "assets/outreach/photos/thumbs/eclipse-03.jpg", width: 1600, height: 1200, title: "Solar eclipse" },
+        { src: "assets/outreach/photos/eclipse-04.jpg", thumb: "assets/outreach/photos/thumbs/eclipse-04.jpg", width: 1600, height: 1200, title: "Solar eclipse" },
+        { src: "assets/outreach/photos/eclipse-05.jpg", thumb: "assets/outreach/photos/thumbs/eclipse-05.jpg", width: 1600, height: 1200, title: "Solar eclipse" },
+        { src: "assets/outreach/photos/eclipse-06.jpg", thumb: "assets/outreach/photos/thumbs/eclipse-06.jpg", width: 1600, height: 1200, title: "Solar eclipse" },
+        { src: "assets/outreach/photos/moon-02.jpg", thumb: "assets/outreach/photos/thumbs/moon-02.jpg", width: 1600, height: 1067, title: "Crescent Moon" },
+        { src: "assets/outreach/photos/moon-03.jpg", thumb: "assets/outreach/photos/thumbs/moon-03.jpg", width: 1537, height: 1537, title: "Full Moon" },
+        { src: "assets/outreach/photos/moon-04.jpg", thumb: "assets/outreach/photos/thumbs/moon-04.jpg", width: 1600, height: 1600, title: "Gibbous Moon" },
+        { src: "assets/outreach/photos/moon-05.jpg", thumb: "assets/outreach/photos/thumbs/moon-05.jpg", width: 1600, height: 1600, title: "Lunar eclipse" },
+        { src: "assets/outreach/photos/moon-06.jpg", thumb: "assets/outreach/photos/thumbs/moon-06.jpg", width: 1548, height: 1600, title: "Lunar eclipse" }
+      ]
+    }
   }
 };

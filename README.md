@@ -12,13 +12,12 @@ Personal website of Keshav Aggarwal. Static HTML, CSS and JavaScript; no build s
 | `software.html` | VEDA, HELIOS-L1, COSMIC-2 Explorer and released code |
 | `talks.html` | Conference talks and posters |
 | `outreach.html` | Public events, National Space Day kit, mission explainers, school astronomy lab videos |
-| `videos.html` | YouTube channel: featured player, searchable list (updated automatically) |
-| `writing.html` | Medium articles with topic filters (updated automatically) |
-| `travel.html` | India district map and world city map |
-| `photography.html` | Sections (Travel, Conferences) as tabs, albums with map or generated covers, album view, full-screen viewer |
+| `media.html` | Videos and writing as tabs: YouTube channel with featured player and searchable list, Medium articles with topic filters (both updated automatically) |
+| `photography.html` | Photos and travel: album sections (Travel, Conferences), Night sky, all photographs, and the travel maps (India districts, world cities) as tabs; album view, full-screen viewer |
 | `cv.html` | Education, positions, fellowships, experience, publications, skills, contact; PDF in `assets/cv/` |
 | `404.html` | Page shown for missing addresses |
-| `design.html` | Colour, typeface and layout samples |
+| `design.html` | Colour, typeface and layout samples (not linked from the menu) |
+| `videos.html`, `writing.html`, `travel.html` | Redirects to the new pages, for old links |
 
 ## Automatic YouTube and Medium lists
 
@@ -53,10 +52,11 @@ All lists live in `assets/js/data.js`:
 - **Conferences**: add to `conferences`.
 - **Videos**: add `{ id, title, date, note }` to `videos`. `id` is the 11-character code after `watch?v=`.
 - **Albums**: `photography.sections` and `photography.albums` (id, section, title, place, date, `region` for the cover map) and `photography.kit`. Photos in `photos.js` name their album with `album: "<id>"`.
+- **Night sky**: `photography.nightSky.photos` (`src`, `thumb`, `width`, `height`, `title`); the images are in `assets/outreach/photos/`.
 
 ## Travel maps
 
-Open `travel.html#edit` (for example `https://jovian-explorer.github.io/travel.html#edit`):
+Open `photography.html#edit` (for example `https://jovian-explorer.github.io/photography.html#edit`); the maps are on its Travel maps tab:
 
 - India tab: click districts to mark or unmark them, or type a district name in the search box.
 - World tab: click a location to add a city pin; click a pin to edit or delete it.

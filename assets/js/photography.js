@@ -1,5 +1,6 @@
-/* Photography page: sections (tabs) > albums > photographs.
-   Sections and albums: SITE.photography in data.js.
+/* Photos and travel page: sections (tabs) > albums > photographs, plus a
+   Night sky tab and the travel maps (drawn by travel.js) as the last tab.
+   Sections, albums and night-sky photographs: SITE.photography in data.js.
    Photographs: window.PHOTOS in assets/js/photos.js (tools/photos.py).
    Albums without photographs get a generated cover: a map of the region
    with visited districts shaded, or a conference card.
@@ -39,6 +40,11 @@
     return Object.assign({}, a, { items: items, cover: own.filter(function (p) { return p.cover; })[0] || own[0] || items[0] });
   });
   var sections = (CONF.sections || []).filter(function (s) { return albums.some(function (a) { return a.section === s.id; }); });
+  var NIGHT = CONF.nightSky || {};
+  var night = (NIGHT.photos || []).map(function (p) { return Object.assign({ place: NIGHT.place }, p); });
+  var mapsPanel = document.getElementById("ppanel-maps");
+  /* Hashes that belong to the maps tab (travel.js: map tabs, edit mode, pins). */
+  var MAP_HASH = /^(maps|india|world|edit|place-.+)$/;
   var demoBar = document.getElementById("demo-note");
   if (demoBar) demoBar.hidden = !demo;
   var kit = document.getElementById("photo-kit");
@@ -90,18 +96,24 @@
   /* ---------- Tabs and album grids ---------- */
   var secRoot = document.getElementById("photo-sections");
   var tabs = sections.map(function (s) { return { id: s.id, title: s.title }; });
-  if (photos.length) tabs.push({ id: "all", title: "All photographs" });
+  if (night.length) tabs.push({ id: "night-sky", title: NIGHT.title || "Night sky", n: night.length });
+  if (photos.length) tabs.push({ id: "all", title: "All photographs", n: photos.length });
+  if (mapsPanel) tabs.push({ id: "maps", title: "Travel maps" });
   tabsRoot.innerHTML = tabs.map(function (t) {
-    var n = t.id === "all" ? photos.length : albums.filter(function (a) { return a.section === t.id; }).length;
+    var n = "n" in t ? t.n : albums.filter(function (a) { return a.section === t.id; }).length;
     return '<button class="tab" role="tab" id="ptab-' + t.id + '" aria-controls="ppanel-' + t.id + '" data-hash="' + t.id + '">' + esc(t.title) +
-      ' <span class="count">' + n + "</span></button>";
+      (n ? ' <span class="count">' + n + "</span>" : "") + "</button>";
   }).join("");
   secRoot.innerHTML = sections.map(function (s) {
     var list = albums.filter(function (a) { return a.section === s.id; });
     return '<div class="tab-panel" role="tabpanel" id="ppanel-' + s.id + '" aria-labelledby="ptab-' + s.id + '" hidden>' +
       '<p class="section-desc">' + esc(s.description || "") + "</p>" +
       '<div class="albums">' + list.map(albumCard).join("") + "</div></div>";
-  }).join("") + (photos.length ? '<div class="tab-panel" role="tabpanel" id="ppanel-all" aria-labelledby="ptab-all" hidden><div class="jgrid" id="all-grid"></div></div>' : "");
+  }).join("") +
+    (night.length ? '<div class="tab-panel" role="tabpanel" id="ppanel-night-sky" aria-labelledby="ptab-night-sky" hidden>' +
+      '<p class="section-desc">' + esc(NIGHT.description || "") + '</p><div class="jgrid" id="night-grid"></div></div>' : "") +
+    (photos.length ? '<div class="tab-panel" role="tabpanel" id="ppanel-all" aria-labelledby="ptab-all" hidden><div class="jgrid" id="all-grid"></div></div>' : "");
+  if (mapsPanel) secRoot.appendChild(mapsPanel);
 
   function albumCard(a) {
     var n = a.items.length;
@@ -126,6 +138,7 @@
       document.getElementById(t.getAttribute("aria-controls")).hidden = !on;
     });
     if (id === "all") layout(document.getElementById("all-grid"), photos);
+    if (id === "night-sky") layout(document.getElementById("night-grid"), night);
     if (push) history.replaceState(null, "", "#" + id);
   }
   tabEls.forEach(function (t, i) {
@@ -245,9 +258,14 @@
   });
 
   /* ---------- Start ---------- */
-  var start = location.hash.replace("#", "");
-  if (albums.some(function (a) { return a.id === start && a.items.length; })) openAlbum(start, false);
-  else showTab(tabs.some(function (t) { return t.id === start; }) ? start : (tabs[0] || {}).id, false);
+  function route() {
+    var start = location.hash.replace("#", "");
+    if (albums.some(function (a) { return a.id === start && a.items.length; })) openAlbum(start, false);
+    else if (mapsPanel && MAP_HASH.test(start)) showTab("maps", false);
+    else showTab(tabs.some(function (t) { return t.id === start; }) ? start : (tabs[0] || {}).id, false);
+  }
+  route();
+  if (!demo) window.addEventListener("hashchange", route);
 
   /* ---------- Sample tiles for #demo ---------- */
   function samplePhotos() {
