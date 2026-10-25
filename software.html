@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Software | Keshav Aggarwal</title>
-  <meta name="description" content="Research software by Keshav Aggarwal: VEDA (public, v0.2.0), HELIOS-L1 (public, v0.1.0) and COSMIC-2 Explorer (public, v0.1.0), plus radio occultation tools and India Station Map.">
+  <meta name="description" content="Research software by Keshav Aggarwal: VEDA (public, v0.2.0), HELIOS-L1 (public, v0.1.0), COSMIC-2 Explorer (public, v0.1.0) and occulta (public, v0.1.0), plus radio occultation tools and India Station Map.">
   <meta name="author" content="Keshav Aggarwal">
   <meta property="og:title" content="Software | Keshav Aggarwal">
-  <meta property="og:description" content="Research software by Keshav Aggarwal: VEDA (public, v0.2.0), HELIOS-L1 (public, v0.1.0) and COSMIC-2 Explorer (public, v0.1.0), plus radio occultation tools and India Station Map.">
+  <meta property="og:description" content="Research software by Keshav Aggarwal: VEDA (public, v0.2.0), HELIOS-L1 (public, v0.1.0), COSMIC-2 Explorer (public, v0.1.0) and occulta (public, v0.1.0), plus radio occultation tools and India Station Map.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://jovian-explorer.github.io/assets/img/portrait.jpg">
   <link rel="canonical" href="https://jovian-explorer.github.io/software.html">
@@ -58,7 +58,7 @@
   <main id="main">
     <header class="page-head">
       <h1>Software</h1>
-      <p>Research code for radio science and planetary data. VEDA (version 0.2.0), HELIOS-L1 and COSMIC-2 Explorer (version 0.1.0) are public. Feedback on all three is welcome. Released code is on <a href="https://github.com/jovian-explorer">GitHub</a>.</p>
+      <p>Research code for radio science, planetary data and exoplanet searches. VEDA (version 0.2.0), HELIOS-L1, COSMIC-2 Explorer and occulta (version 0.1.0) are public. Feedback on all four is welcome. Released code is on <a href="https://github.com/jovian-explorer">GitHub</a>.</p>
     </header>
 
     <section class="section">
@@ -96,6 +96,17 @@
             <dt>License</dt><dd>MIT</dd>
           </dl>
           <div class="card-foot"><span class="chip">Python</span><a class="chip" href="https://github.com/jovian-explorer/COSMIC2-Explorer">GitHub</a><a class="chip" href="https://github.com/jovian-explorer/COSMIC2-Explorer/releases">Download</a></div>
+        </article>
+        <article class="card" id="occulta">
+          <div class="card-top"><h3>occulta</h3><span class="status live">Public &middot; v0.1.0</span></div>
+          <p>Python package for a blind search of TESS, K2 and Kepler photometry for transiting planets and eclipsing binaries that no catalogue lists. It searches every light curve, vets each candidate as a planet and then as an eclipsing binary, assigns the eclipses to their star with difference images of the TESS pixels, and compares eclipse timing with Gaia orbits. The user chooses planet hunting, binary hunting, or both.</p>
+          <dl>
+            <dt>Scope</dt><dd>Exoplanets, eclipsing binaries, TESS, K2, Kepler</dd>
+            <dt>Platforms</dt><dd>Windows, macOS, Linux</dd>
+            <dt>Install</dt><dd><code>pip install git+https://github.com/jovian-explorer/occulta</code></dd>
+            <dt>License</dt><dd>MIT</dd>
+          </dl>
+          <div class="card-foot"><span class="chip">Python</span><a class="chip" href="https://github.com/jovian-explorer/occulta">GitHub</a></div>
         </article>
       </div>
     </section>
