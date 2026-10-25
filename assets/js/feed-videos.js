@@ -269,7 +269,7 @@ window.VIDEOS = {
     {
       "id": "0zGsS7I3bZM",
       "title": "Chandrayaan-3: The First Landing Near the Moon's South Pole",
-      "views": 27,
+      "views": 29,
       "short": true
     },
     {
@@ -281,7 +281,7 @@ window.VIDEOS = {
     {
       "id": "QjBZKseyzc8",
       "title": "Starlink 2022: How a Minor Geomagnetic Storm Brought Down 38 New Satellites",
-      "views": 349,
+      "views": 352,
       "short": true
     },
     {
