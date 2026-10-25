@@ -47,7 +47,7 @@ window.VIDEOS = {
     {
       "id": "ld5bzg6wAJ0",
       "title": "Why Is the Sky Blue? Rayleigh Scattering, the Violet Puzzle, Red Sunsets and White Clouds",
-      "views": 7,
+      "views": 6,
       "duration": "5:15",
       "date": "2026-10-22",
       "description": "Air scatters violet light even more strongly than blue light, so why is the clear sky blue? This video follows sunlight into the atmosphere, into our eyes, and into sunsets and clouds. Rayleigh's law (1871) says that…"
@@ -63,7 +63,7 @@ window.VIDEOS = {
     {
       "id": "GdDopiDbrJI",
       "title": "The Solar Wind Explained: From Parker's 1958 Prediction to Parker Solar Probe",
-      "views": 65,
+      "views": 66,
       "duration": "5:37",
       "date": "2026-10-22",
       "description": "The corona, the outer atmosphere of the Sun, is so hot that it cannot stay in static balance, and therefore it expands into space as the solar wind. This video follows the wind from the comet tails that Biermann studied…"
@@ -269,25 +269,25 @@ window.VIDEOS = {
     {
       "id": "0zGsS7I3bZM",
       "title": "Chandrayaan-3: The First Landing Near the Moon's South Pole",
-      "views": 34,
+      "views": 36,
       "short": true
     },
     {
       "id": "KwZq0PvVKlY",
       "title": "Did NASA Invent Tang, Teflon and Velcro? Only One of Four Came From NASA",
-      "views": 31,
+      "views": 33,
       "short": true
     },
     {
       "id": "QjBZKseyzc8",
       "title": "Starlink 2022: How a Minor Geomagnetic Storm Brought Down 38 New Satellites",
-      "views": 368,
+      "views": 376,
       "short": true
     },
     {
       "id": "JFnlUjiNSEI",
       "title": "Mangalyaan: How India Reached Mars Orbit on Its First Attempt",
-      "views": 77,
+      "views": 72,
       "short": true
     },
     {
@@ -311,7 +311,7 @@ window.VIDEOS = {
     {
       "id": "r12QmoFJa7U",
       "title": "Your Phone Camera Sensor Came From NASA's JPL, Not From the CCD",
-      "views": 476,
+      "views": 477,
       "short": true
     },
     {
