@@ -29,12 +29,12 @@ window.VIDEOS = {
       {
         "id": "PLId4H9D2tDYU",
         "title": "Science",
-        "count": 14
+        "count": 18
       },
       {
         "id": "PLeDUJ_o66ZlY",
         "title": "Astronomy",
-        "count": 35
+        "count": 42
       },
       {
         "id": "PLGZDzv6-DDT4",
@@ -45,9 +45,57 @@ window.VIDEOS = {
   },
   "videos": [
     {
+      "id": "U3fgxDJr9Y8",
+      "title": "How Fiber Optics Work: Kao, Corning, Erbium Amplifiers and the Internet Under the Sea",
+      "views": 0,
+      "duration": "5:53",
+      "date": "2026-10-26",
+      "description": "How can a flash of light cross an ocean inside a thread of glass? In this video, we follow how that became possible, from a water jet in Geneva in 1841 to the amplifiers in today's cables, using primary sources: the…"
+    },
+    {
+      "id": "PVn0zrqevXw",
+      "title": "Space Debris Removal Explained: Magnets, Robot Arms, Drag Sails and the 5-Year Rule",
+      "views": 1,
+      "duration": "5:45",
+      "date": "2026-10-26",
+      "description": "How do you remove a dead satellite or a spent rocket stage from orbit, when nobody on board can steer it? ESA's model counts about 68,450 objects larger than 10 cm around Earth, only about 11,300 of them working…"
+    },
+    {
+      "id": "pBWUljYZmoA",
+      "title": "Neutron Stars Explained: Pulsars, Magnetars and the 2017 Merger That Could Have Made Gold",
+      "views": 1,
+      "duration": "5:36",
+      "date": "2026-10-26",
+      "description": "What would a teaspoon of a neutron star weigh? NASA's answer is a billion tons, on Earth. In this video, we look at what a neutron star is, how pulsars were found in 1967, how fast and how magnetic these stars can be,…"
+    },
+    {
+      "id": "dSnEQB_aPgw",
+      "title": "Sunita Williams and Starliner Explained: Why a Short Test Flight Became 286 Days in Orbit",
+      "views": 0,
+      "duration": "5:57",
+      "date": "2026-10-26",
+      "description": "How does a test flight planned for eight to fourteen days turn into 286 days in space? In this video, we follow the Starliner Crew Flight Test of Suni Williams and Butch Wilmore, using NASA's own pages and its…"
+    },
+    {
+      "id": "xrxb8CyRvBA",
+      "title": "Chandrayaan-3 Explained: What Vikram and Pragyan Measured Near the Moon's South Pole",
+      "views": 2,
+      "duration": "5:26",
+      "date": "2026-10-26",
+      "description": "How hot is the soil of the Moon near its south polar region, and how fast does the temperature change as you go down? In August 2023, India's Chandrayaan-3 measured it on the spot. In this video, we follow what the…"
+    },
+    {
+      "id": "AqME5XyTg8A",
+      "title": "Who Invented the Internet? ARPANET, TCP/IP and the Web Born at CERN Explained",
+      "views": 0,
+      "duration": "5:45",
+      "date": "2026-10-26",
+      "description": "Who invented the internet? The question mixes up two different inventions. The internet is a network of networks, and the World Wide Web is a service that runs on it. In this video, we separate the two, using primary…"
+    },
+    {
       "id": "rFQRjldeSFY",
       "title": "Artemis II Explained: The Record Moon Flyby and the Race to the South Pole",
-      "views": 0,
+      "views": 2,
       "duration": "5:45",
       "date": "2026-10-26",
       "description": "How did four astronauts travel farther from Earth than any humans before them, without landing on the Moon? Artemis II launched on 1 April 2026 on NASA's Space Launch System from Launch Pad 39B, with Reid Wiseman,…"
@@ -61,9 +109,49 @@ window.VIDEOS = {
       "description": "How big can a black hole get, and how do astronomers weigh something that gives off no light of its own? In this video, we line up black holes from a few solar masses to tens of billions, and we turn each mass into the…"
     },
     {
+      "id": "2DENsGlyOhQ",
+      "title": "Fiber Optic Cables: How Light Carries the Internet Through Glass",
+      "views": 4,
+      "short": true,
+      "date": "2026-10-26",
+      "description": "Light stays inside a glass fibre because it reflects off the wall, much like light that follows a stream of water. The first fibres kept only 1 percent of the light after 20 metres. In 1966, Charles Kao and George…"
+    },
+    {
+      "id": "PFyABhqXUWU",
+      "title": "Neutron Star: One Teaspoon Would Weigh a Billion Tons",
+      "views": 13,
+      "short": true,
+      "date": "2026-10-26",
+      "description": "NASA says that, on Earth, one teaspoon of neutron star matter would weigh a billion tons. A neutron star is the collapsed core of a massive star: NASA describes an ultra-dense sphere only about 12 miles (20 kilometres)…"
+    },
+    {
+      "id": "Y-mbCgHtNyc",
+      "title": "Sunita Williams: A One-Week Test Flight Became 286 Days in Space",
+      "views": 6,
+      "short": true,
+      "date": "2026-10-26",
+      "description": "Suni Williams and Butch Wilmore launched on Boeing's Starliner on 5 June 2024 for a Crew Flight Test that NASA planned for eight to fourteen days. Some of Starliner's thrusters did not perform as expected and its helium…"
+    },
+    {
+      "id": "qNTSwyanQQ0",
+      "title": "Chandrayaan-3: Moon Soil Drops 80 Degrees in 10 Centimetres",
+      "views": 16,
+      "short": true,
+      "date": "2026-10-26",
+      "description": "On 23 August 2023, India's Chandrayaan-3 lander Vikram touched down near the Moon's south polar region. Its probe ChaSTE, with ten temperature sensors, measured the first such temperature profile of the lunar topsoil…"
+    },
+    {
+      "id": "vMYt-UaMcrk",
+      "title": "Who Invented the Internet? The Web Began at CERN, a Physics Lab",
+      "views": 8,
+      "short": true,
+      "date": "2026-10-26",
+      "description": "The internet and the World Wide Web are not the same thing. The internet is the network: ARPANET installation began in September 1969, and the goal of the transition plan in IETF RFC 801 was a complete switch to the…"
+    },
+    {
       "id": "6J04YNY5fo0",
       "title": "Space Debris Removal: Astronauts Did It by Hand in 1984. Robots Are Next",
-      "views": 144,
+      "views": 267,
       "short": true,
       "date": "2026-10-26",
       "description": "In November 1984, two astronauts on jetpacks caught two satellites stranded in the wrong orbits, and the Space Shuttle Discovery carried them home. Today, the job of removing dead satellites and rocket stages falls to…"
@@ -71,7 +159,7 @@ window.VIDEOS = {
     {
       "id": "cdd-YIOC7r8",
       "title": "Artemis II: How Four Astronauts Flew Farther From Earth Than Anyone Before",
-      "views": 5,
+      "views": 10,
       "short": true,
       "date": "2026-10-26",
       "description": "On 6 April 2026, the four Artemis II astronauts, Reid Wiseman, Victor Glover, Christina Koch and Jeremy Hansen of the Canadian Space Agency, passed the distance record that Apollo 13 had set in 1970. At their farthest,…"
@@ -79,7 +167,7 @@ window.VIDEOS = {
     {
       "id": "uhRKPwFeHwI",
       "title": "Black Hole Size Comparison: Cygnus X-1, Sagittarius A*, M87* and TON 618",
-      "views": 92,
+      "views": 120,
       "short": true,
       "date": "2026-10-26",
       "description": "How big is a black hole? The size of its event horizon grows in step with its mass, by about 3 km of radius for every solar mass (our arithmetic from R = 2GM/c²). Squeezed into a black hole, the Sun would be about 6 km…"
@@ -87,7 +175,7 @@ window.VIDEOS = {
     {
       "id": "E-nwuvewmdY",
       "title": "Solar Storms and the Internet: What Would Happen to Power Grids and Undersea Cables?",
-      "views": 0,
+      "views": 4,
       "duration": "5:37",
       "date": "2026-10-25",
       "description": "What would a severe solar storm do to our power grids, and could it really cut the undersea cables that carry the internet? In this video, we follow the current from the Sun to the ground. A coronal mass ejection shakes…"
@@ -95,7 +183,7 @@ window.VIDEOS = {
     {
       "id": "lZwc4q8Acro",
       "title": "Chandrayaan-3 Explained: Vikram, Pragyan and 14 Days Near the Moon's South Pole",
-      "views": 1,
+      "views": 2,
       "duration": "5:36",
       "date": "2026-10-25",
       "description": "On 23 August 2023, ISRO's Chandrayaan-3 lander, Vikram, touched down near the south polar region at about 69.37 degrees south, roughly 625 km from the pole by our arithmetic (mean lunar radius 1737.4 km), and ISRO…"
@@ -111,7 +199,7 @@ window.VIDEOS = {
     {
       "id": "a0L3X7iErOU",
       "title": "Solar Storm vs Power Grid: How the Sun Blacked Out Québec in 1989",
-      "views": 146,
+      "views": 173,
       "short": true,
       "date": "2026-10-25",
       "description": "On 13 March 1989, a storm from the Sun shook Earth's magnetic field, and the changing field drove currents through Hydro-Québec's long power lines. Protective equipment tripped one unit after another, the network lost…"
@@ -119,7 +207,7 @@ window.VIDEOS = {
     {
       "id": "0zGsS7I3bZM",
       "title": "Chandrayaan-3: The First Landing Near the Moon's South Pole",
-      "views": 517,
+      "views": 530,
       "short": true,
       "date": "2026-10-25",
       "description": "On 23 August 2023, ISRO's Vikram lander touched down near the lunar south polar region, at about 69.37 degrees south. ISRO states that this made India the fourth nation to soft-land on the Moon and the first to land…"
@@ -135,7 +223,7 @@ window.VIDEOS = {
     {
       "id": "Axm2vgJM--w",
       "title": "Mangalyaan (Mars Orbiter Mission) Explained: India's First Journey to Mars, 2013 to 2022",
-      "views": 11,
+      "views": 16,
       "duration": "6:16",
       "date": "2026-10-24",
       "description": "Reaching another planet asks a spacecraft to leave Earth, cross hundreds of millions of kilometres on its own, and then brake hard enough at the right moment to be captured. India's Mars Orbiter Mission, often called…"
@@ -151,7 +239,7 @@ window.VIDEOS = {
     {
       "id": "QjBZKseyzc8",
       "title": "Starlink 2022: How a Minor Geomagnetic Storm Brought Down 38 New Satellites",
-      "views": 763,
+      "views": 769,
       "short": true,
       "date": "2026-10-24",
       "description": "On 3 February 2022, SpaceX launched 49 Starlink satellites into a low orbit with its lowest point at about 210 km, and 38 of them were lost within days. Two geomagnetic storms, set off by coronal mass ejections from the…"
@@ -159,7 +247,7 @@ window.VIDEOS = {
     {
       "id": "JFnlUjiNSEI",
       "title": "Mangalyaan: How India Reached Mars Orbit on Its First Attempt",
-      "views": 216,
+      "views": 235,
       "short": true,
       "date": "2026-10-24",
       "description": "India's Mars Orbiter Mission, often called Mangalyaan, was launched on 5 November 2013 by PSLV-C25 from Sriharikota and entered orbit around Mars on 24 September 2014. According to ISRO, India became the first country…"
@@ -175,7 +263,7 @@ window.VIDEOS = {
     {
       "id": "q9Szgq4mMXM",
       "title": "Moon South Pole Explained: Water Ice, Chandrayaan-3, Artemis IV and Chang'e-7",
-      "views": 9,
+      "views": 13,
       "duration": "5:38",
       "date": "2026-10-22",
       "description": "India, the United States and China are all aiming at the Moon's south pole, because of water ice in craters that never see the Sun. This video explains why the 1.5 degree tilt of the Moon's axis keeps crater floors…"
@@ -239,7 +327,7 @@ window.VIDEOS = {
     {
       "id": "mxlyuRvLPt0",
       "title": "Leonid Meteor Shower 2026: When and Where to Watch from India",
-      "views": 7,
+      "views": 9,
       "duration": "5:58",
       "date": "2026-10-20",
       "description": "Every November, Earth passes through the dust released by Comet 55P/Tempel-Tuttle, and these grains enter the atmosphere at about 71 km/s as the Leonid meteors. This video describes the comet (nucleus about 3.6 km…"
@@ -271,7 +359,7 @@ window.VIDEOS = {
     {
       "id": "-ZB1jYqksuk",
       "title": "Leonid Meteor Shower 2026: Comet Dust Hitting Our Sky at 71 km/s",
-      "views": 141,
+      "views": 142,
       "short": true,
       "date": "2026-10-20",
       "description": "The Leonid meteor shower returns every November, when Earth passes through the dust released by Comet 55P/Tempel-Tuttle, and these grains enter the atmosphere at about 71 km/s, which makes the Leonids some of the…"
@@ -311,7 +399,7 @@ window.VIDEOS = {
     {
       "id": "MeRZcWfs1EQ",
       "title": "The Indian Monsoon Explained: Sea Breeze or Moving Tropical Rain Belt (ITCZ)?",
-      "views": 3,
+      "views": 4,
       "duration": "6:16"
     },
     {
@@ -347,7 +435,7 @@ window.VIDEOS = {
     {
       "id": "txNkhfqiEKs",
       "title": "Exoplanet Transits Explained: How Kepler and TESS Find Planets Around Other Stars",
-      "views": 10,
+      "views": 11,
       "duration": "5:28"
     },
     {
@@ -383,7 +471,7 @@ window.VIDEOS = {
     {
       "id": "goOri81wAc0",
       "title": "Why the Monsoon Reaches Kerala Around 1 June: The Moving Tropical Rain Belt",
-      "views": 453,
+      "views": 454,
       "short": true
     },
     {
