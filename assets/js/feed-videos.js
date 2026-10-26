@@ -9,7 +9,7 @@ window.VIDEOS = {
     "id": "UCCXaTGdT28P09_WMwT2Z-8Q",
     "handle": "jovian_explorer",
     "title": "Jovian Explorer",
-    "subscribers": "24",
+    "subscribers": "25",
     "playlists": [
       {
         "id": "PLHJPB7Vucp8k",
@@ -44,6 +44,126 @@ window.VIDEOS = {
     ]
   },
   "videos": [
+    {
+      "id": "rFQRjldeSFY",
+      "title": "Artemis II Explained: The Record Moon Flyby and the Race to the South Pole",
+      "views": 0,
+      "duration": "5:45",
+      "date": "2026-10-26",
+      "description": "How did four astronauts travel farther from Earth than any humans before them, without landing on the Moon? Artemis II launched on 1 April 2026 on NASA's Space Launch System from Launch Pad 39B, with Reid Wiseman,…"
+    },
+    {
+      "id": "MkeuZJB4rB4",
+      "title": "Black Hole Size Comparison: How Big Is TON 618, and How Do We Know?",
+      "views": 0,
+      "duration": "5:26",
+      "date": "2026-10-26",
+      "description": "How big can a black hole get, and how do astronomers weigh something that gives off no light of its own? In this video, we line up black holes from a few solar masses to tens of billions, and we turn each mass into the…"
+    },
+    {
+      "id": "6J04YNY5fo0",
+      "title": "Space Debris Removal: Astronauts Did It by Hand in 1984. Robots Are Next",
+      "views": 144,
+      "short": true,
+      "date": "2026-10-26",
+      "description": "In November 1984, two astronauts on jetpacks caught two satellites stranded in the wrong orbits, and the Space Shuttle Discovery carried them home. Today, the job of removing dead satellites and rocket stages falls to…"
+    },
+    {
+      "id": "cdd-YIOC7r8",
+      "title": "Artemis II: How Four Astronauts Flew Farther From Earth Than Anyone Before",
+      "views": 5,
+      "short": true,
+      "date": "2026-10-26",
+      "description": "On 6 April 2026, the four Artemis II astronauts, Reid Wiseman, Victor Glover, Christina Koch and Jeremy Hansen of the Canadian Space Agency, passed the distance record that Apollo 13 had set in 1970. At their farthest,…"
+    },
+    {
+      "id": "uhRKPwFeHwI",
+      "title": "Black Hole Size Comparison: Cygnus X-1, Sagittarius A*, M87* and TON 618",
+      "views": 92,
+      "short": true,
+      "date": "2026-10-26",
+      "description": "How big is a black hole? The size of its event horizon grows in step with its mass, by about 3 km of radius for every solar mass (our arithmetic from R = 2GM/c²). Squeezed into a black hole, the Sun would be about 6 km…"
+    },
+    {
+      "id": "E-nwuvewmdY",
+      "title": "Solar Storms and the Internet: What Would Happen to Power Grids and Undersea Cables?",
+      "views": 0,
+      "duration": "5:37",
+      "date": "2026-10-25",
+      "description": "What would a severe solar storm do to our power grids, and could it really cut the undersea cables that carry the internet? In this video, we follow the current from the Sun to the ground. A coronal mass ejection shakes…"
+    },
+    {
+      "id": "lZwc4q8Acro",
+      "title": "Chandrayaan-3 Explained: Vikram, Pragyan and 14 Days Near the Moon's South Pole",
+      "views": 1,
+      "duration": "5:36",
+      "date": "2026-10-25",
+      "description": "On 23 August 2023, ISRO's Chandrayaan-3 lander, Vikram, touched down near the south polar region at about 69.37 degrees south, roughly 625 km from the pole by our arithmetic (mean lunar radius 1737.4 km), and ISRO…"
+    },
+    {
+      "id": "RbFhBYpE9JY",
+      "title": "Starlink and the Geomagnetic Storm of February 2022: Why 38 Satellites Were Lost",
+      "views": 11,
+      "duration": "5:46",
+      "date": "2026-10-25",
+      "description": "How can a storm that most people on the ground never noticed bring down 38 new satellites? On 3 February 2022 a Falcon 9 launched 49 Starlink satellites into a low orbit near 210 km, from which they raise themselves to…"
+    },
+    {
+      "id": "a0L3X7iErOU",
+      "title": "Solar Storm vs Power Grid: How the Sun Blacked Out Québec in 1989",
+      "views": 146,
+      "short": true,
+      "date": "2026-10-25",
+      "description": "On 13 March 1989, a storm from the Sun shook Earth's magnetic field, and the changing field drove currents through Hydro-Québec's long power lines. Protective equipment tripped one unit after another, the network lost…"
+    },
+    {
+      "id": "0zGsS7I3bZM",
+      "title": "Chandrayaan-3: The First Landing Near the Moon's South Pole",
+      "views": 517,
+      "short": true,
+      "date": "2026-10-25",
+      "description": "On 23 August 2023, ISRO's Vikram lander touched down near the lunar south polar region, at about 69.37 degrees south. ISRO states that this made India the fourth nation to soft-land on the Moon and the first to land…"
+    },
+    {
+      "id": "x3uxmcOns88",
+      "title": "NASA Spinoff Myths Explained: Tang, Teflon, Velcro and the Real Story of Memory Foam",
+      "views": 2,
+      "duration": "5:29",
+      "date": "2026-10-24",
+      "description": "NASA has profiled more than 2,000 spinoffs, commercial products that use NASA technology or expertise, since 1976, yet the three items most often called NASA inventions are not among them. In this video, we trace Tang,…"
+    },
+    {
+      "id": "Axm2vgJM--w",
+      "title": "Mangalyaan (Mars Orbiter Mission) Explained: India's First Journey to Mars, 2013 to 2022",
+      "views": 11,
+      "duration": "6:16",
+      "date": "2026-10-24",
+      "description": "Reaching another planet asks a spacecraft to leave Earth, cross hundreds of millions of kilometres on its own, and then brake hard enough at the right moment to be captured. India's Mars Orbiter Mission, often called…"
+    },
+    {
+      "id": "KwZq0PvVKlY",
+      "title": "Did NASA Invent Tang, Teflon and Velcro? Only One of Four Came From NASA",
+      "views": 57,
+      "short": true,
+      "date": "2026-10-24",
+      "description": "Tang, Teflon and Velcro are often called NASA inventions, but NASA's own Spinoff office says that none of the three came from NASA. General Foods developed Tang in 1957, the DuPont chemist Roy Plunkett found the polymer…"
+    },
+    {
+      "id": "QjBZKseyzc8",
+      "title": "Starlink 2022: How a Minor Geomagnetic Storm Brought Down 38 New Satellites",
+      "views": 763,
+      "short": true,
+      "date": "2026-10-24",
+      "description": "On 3 February 2022, SpaceX launched 49 Starlink satellites into a low orbit with its lowest point at about 210 km, and 38 of them were lost within days. Two geomagnetic storms, set off by coronal mass ejections from the…"
+    },
+    {
+      "id": "JFnlUjiNSEI",
+      "title": "Mangalyaan: How India Reached Mars Orbit on Its First Attempt",
+      "views": 216,
+      "short": true,
+      "date": "2026-10-24",
+      "description": "India's Mars Orbiter Mission, often called Mangalyaan, was launched on 5 November 2013 by PSLV-C25 from Sriharikota and entered orbit around Mars on 24 September 2014. According to ISRO, India became the first country…"
+    },
     {
       "id": "ld5bzg6wAJ0",
       "title": "Why Is the Sky Blue? Rayleigh Scattering, the Violet Puzzle, Red Sunsets and White Clouds",
@@ -159,7 +279,7 @@ window.VIDEOS = {
     {
       "id": "NxWNsUxg5q8",
       "title": "We Can Watch Earth Breathe: The Keeling Curve of Carbon Dioxide",
-      "views": 401,
+      "views": 402,
       "short": true,
       "date": "2026-10-20",
       "description": "Charles David Keeling of the Scripps Institution of Oceanography began to measure carbon dioxide at Mauna Loa Observatory, Hawaii, in March 1958, and the National Oceanic and Atmospheric Administration (NOAA) and…"
@@ -189,48 +309,6 @@ window.VIDEOS = {
       "duration": "2:36"
     },
     {
-      "id": "rFQRjldeSFY",
-      "title": "Artemis II Explained: The Record Moon Flyby and the Race to the South Pole",
-      "views": 0,
-      "duration": "5:45"
-    },
-    {
-      "id": "MkeuZJB4rB4",
-      "title": "Black Hole Size Comparison: How Big Is TON 618, and How Do We Know?",
-      "views": 0,
-      "duration": "5:26"
-    },
-    {
-      "id": "E-nwuvewmdY",
-      "title": "Solar Storms and the Internet: What Would Happen to Power Grids and Undersea Cables?",
-      "views": 0,
-      "duration": "5:37"
-    },
-    {
-      "id": "lZwc4q8Acro",
-      "title": "Chandrayaan-3 Explained: Vikram, Pragyan and 14 Days Near the Moon's South Pole",
-      "views": 1,
-      "duration": "5:36"
-    },
-    {
-      "id": "RbFhBYpE9JY",
-      "title": "Starlink and the Geomagnetic Storm of February 2022: Why 38 Satellites Were Lost",
-      "views": 10,
-      "duration": "5:46"
-    },
-    {
-      "id": "x3uxmcOns88",
-      "title": "NASA Spinoff Myths Explained: Tang, Teflon, Velcro and the Real Story of Memory Foam",
-      "views": 2,
-      "duration": "5:29"
-    },
-    {
-      "id": "Axm2vgJM--w",
-      "title": "Mangalyaan (Mars Orbiter Mission) Explained: India's First Journey to Mars, 2013 to 2022",
-      "views": 11,
-      "duration": "6:16"
-    },
-    {
       "id": "MeRZcWfs1EQ",
       "title": "The Indian Monsoon Explained: Sea Breeze or Moving Tropical Rain Belt (ITCZ)?",
       "views": 3,
@@ -251,7 +329,7 @@ window.VIDEOS = {
     {
       "id": "q2iit9eri_c",
       "title": "Where Did Your Phone Camera Come From? The CMOS Sensor From NASA's JPL",
-      "views": 1,
+      "views": 3,
       "duration": "5:45"
     },
     {
@@ -291,54 +369,6 @@ window.VIDEOS = {
       "duration": "5:49"
     },
     {
-      "id": "6J04YNY5fo0",
-      "title": "Space Debris Removal: Astronauts Did It by Hand in 1984. Robots Are Next",
-      "views": 28,
-      "short": true
-    },
-    {
-      "id": "cdd-YIOC7r8",
-      "title": "Artemis II: How Four Astronauts Flew Farther From Earth Than Anyone Before",
-      "views": 4,
-      "short": true
-    },
-    {
-      "id": "uhRKPwFeHwI",
-      "title": "Black Hole Size Comparison: Cygnus X-1, Sagittarius A*, M87* and TON 618",
-      "views": 57,
-      "short": true
-    },
-    {
-      "id": "a0L3X7iErOU",
-      "title": "Solar Storm vs Power Grid: How the Sun Blacked Out Québec in 1989",
-      "views": 88,
-      "short": true
-    },
-    {
-      "id": "0zGsS7I3bZM",
-      "title": "Chandrayaan-3: The First Landing Near the Moon's South Pole",
-      "views": 496,
-      "short": true
-    },
-    {
-      "id": "KwZq0PvVKlY",
-      "title": "Did NASA Invent Tang, Teflon and Velcro? Only One of Four Came From NASA",
-      "views": 57,
-      "short": true
-    },
-    {
-      "id": "QjBZKseyzc8",
-      "title": "Starlink 2022: How a Minor Geomagnetic Storm Brought Down 38 New Satellites",
-      "views": 754,
-      "short": true
-    },
-    {
-      "id": "JFnlUjiNSEI",
-      "title": "Mangalyaan: How India Reached Mars Orbit on Its First Attempt",
-      "views": 208,
-      "short": true
-    },
-    {
       "id": "KxLsf0jEe-4",
       "title": "Parker Solar Probe: The Fastest Human-Made Object, at 192 km/s",
       "views": 5,
@@ -359,7 +389,7 @@ window.VIDEOS = {
     {
       "id": "r12QmoFJa7U",
       "title": "Your Phone Camera Sensor Came From NASA's JPL, Not From the CCD",
-      "views": 484,
+      "views": 487,
       "short": true
     },
     {
