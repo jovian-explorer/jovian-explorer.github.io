@@ -34,7 +34,7 @@ window.VIDEOS = {
       {
         "id": "PLeDUJ_o66ZlY",
         "title": "Astronomy",
-        "count": 27
+        "count": 35
       },
       {
         "id": "PLGZDzv6-DDT4",
@@ -47,7 +47,7 @@ window.VIDEOS = {
     {
       "id": "ld5bzg6wAJ0",
       "title": "Why Is the Sky Blue? Rayleigh Scattering, the Violet Puzzle, Red Sunsets and White Clouds",
-      "views": 6,
+      "views": 7,
       "duration": "5:15",
       "date": "2026-10-22",
       "description": "Air scatters violet light even more strongly than blue light, so why is the clear sky blue? This video follows sunlight into the atmosphere, into our eyes, and into sunsets and clouds. Rayleigh's law (1871) says that…"
@@ -63,7 +63,7 @@ window.VIDEOS = {
     {
       "id": "GdDopiDbrJI",
       "title": "The Solar Wind Explained: From Parker's 1958 Prediction to Parker Solar Probe",
-      "views": 66,
+      "views": 69,
       "duration": "5:37",
       "date": "2026-10-22",
       "description": "The corona, the outer atmosphere of the Sun, is so hot that it cannot stay in static balance, and therefore it expands into space as the solar wind. This video follows the wind from the comet tails that Biermann studied…"
@@ -87,7 +87,7 @@ window.VIDEOS = {
     {
       "id": "Q99fYApJA2c",
       "title": "Aditya-L1 Explained: ISRO's Sun Mission, Its Halo Orbit and Seven Instruments",
-      "views": 78,
+      "views": 81,
       "duration": "7:33",
       "date": "2026-10-21",
       "description": "Aditya-L1, the first space-based Indian mission to study the Sun, built by the Indian Space Research Organisation (ISRO), has circled the Sun-Earth Lagrange point L1, about 1.5 million km from Earth, since January 2024.…"
@@ -135,7 +135,7 @@ window.VIDEOS = {
     {
       "id": "0B_O3z3b9vs",
       "title": "The Keeling Curve Explained: Carbon Dioxide at Mauna Loa Since 1958",
-      "views": 8,
+      "views": 9,
       "duration": "5:27",
       "date": "2026-10-20",
       "description": "Charles David Keeling of the Scripps Institution of Oceanography began to measure carbon dioxide at Mauna Loa Observatory, Hawaii, in March 1958, and the record shows two things: the seasonal breathing of the planet and…"
@@ -151,7 +151,7 @@ window.VIDEOS = {
     {
       "id": "-ZB1jYqksuk",
       "title": "Leonid Meteor Shower 2026: Comet Dust Hitting Our Sky at 71 km/s",
-      "views": 139,
+      "views": 141,
       "short": true,
       "date": "2026-10-20",
       "description": "The Leonid meteor shower returns every November, when Earth passes through the dust released by Comet 55P/Tempel-Tuttle, and these grains enter the atmosphere at about 71 km/s, which makes the Leonids some of the…"
@@ -159,7 +159,7 @@ window.VIDEOS = {
     {
       "id": "NxWNsUxg5q8",
       "title": "We Can Watch Earth Breathe: The Keeling Curve of Carbon Dioxide",
-      "views": 400,
+      "views": 401,
       "short": true,
       "date": "2026-10-20",
       "description": "Charles David Keeling of the Scripps Institution of Oceanography began to measure carbon dioxide at Mauna Loa Observatory, Hawaii, in March 1958, and the National Oceanic and Atmospheric Administration (NOAA) and…"
@@ -189,27 +189,51 @@ window.VIDEOS = {
       "duration": "2:36"
     },
     {
+      "id": "rFQRjldeSFY",
+      "title": "Artemis II Explained: The Record Moon Flyby and the Race to the South Pole",
+      "views": 0,
+      "duration": "5:45"
+    },
+    {
+      "id": "MkeuZJB4rB4",
+      "title": "Black Hole Size Comparison: How Big Is TON 618, and How Do We Know?",
+      "views": 0,
+      "duration": "5:26"
+    },
+    {
+      "id": "E-nwuvewmdY",
+      "title": "Solar Storms and the Internet: What Would Happen to Power Grids and Undersea Cables?",
+      "views": 0,
+      "duration": "5:37"
+    },
+    {
+      "id": "lZwc4q8Acro",
+      "title": "Chandrayaan-3 Explained: Vikram, Pragyan and 14 Days Near the Moon's South Pole",
+      "views": 1,
+      "duration": "5:36"
+    },
+    {
       "id": "RbFhBYpE9JY",
       "title": "Starlink and the Geomagnetic Storm of February 2022: Why 38 Satellites Were Lost",
-      "views": 7,
+      "views": 10,
       "duration": "5:46"
     },
     {
       "id": "x3uxmcOns88",
       "title": "NASA Spinoff Myths Explained: Tang, Teflon, Velcro and the Real Story of Memory Foam",
-      "views": 0,
+      "views": 2,
       "duration": "5:29"
     },
     {
       "id": "Axm2vgJM--w",
       "title": "Mangalyaan (Mars Orbiter Mission) Explained: India's First Journey to Mars, 2013 to 2022",
-      "views": 6,
+      "views": 11,
       "duration": "6:16"
     },
     {
       "id": "MeRZcWfs1EQ",
       "title": "The Indian Monsoon Explained: Sea Breeze or Moving Tropical Rain Belt (ITCZ)?",
-      "views": 2,
+      "views": 3,
       "duration": "6:16"
     },
     {
@@ -239,7 +263,7 @@ window.VIDEOS = {
     {
       "id": "jGcOUCJbDy0",
       "title": "Kessler Syndrome Explained: Space Debris, Satellite Collisions and the Rules to Limit Them",
-      "views": 6,
+      "views": 7,
       "duration": "6:54"
     },
     {
@@ -251,13 +275,13 @@ window.VIDEOS = {
     {
       "id": "D5s1jYEszwc",
       "title": "Gaganyaan Explained: How ISRO Tests the Escape System, Parachutes and Crew",
-      "views": 5,
+      "views": 8,
       "duration": "5:59"
     },
     {
       "id": "UCbJHFcEj3M",
       "title": "What If the 1859 Carrington Solar Storm Hit Today? Grids, Satellites and GPS",
-      "views": 0,
+      "views": 1,
       "duration": "6:37"
     },
     {
@@ -267,51 +291,75 @@ window.VIDEOS = {
       "duration": "5:49"
     },
     {
+      "id": "6J04YNY5fo0",
+      "title": "Space Debris Removal: Astronauts Did It by Hand in 1984. Robots Are Next",
+      "views": 28,
+      "short": true
+    },
+    {
+      "id": "cdd-YIOC7r8",
+      "title": "Artemis II: How Four Astronauts Flew Farther From Earth Than Anyone Before",
+      "views": 4,
+      "short": true
+    },
+    {
+      "id": "uhRKPwFeHwI",
+      "title": "Black Hole Size Comparison: Cygnus X-1, Sagittarius A*, M87* and TON 618",
+      "views": 57,
+      "short": true
+    },
+    {
+      "id": "a0L3X7iErOU",
+      "title": "Solar Storm vs Power Grid: How the Sun Blacked Out Québec in 1989",
+      "views": 88,
+      "short": true
+    },
+    {
       "id": "0zGsS7I3bZM",
       "title": "Chandrayaan-3: The First Landing Near the Moon's South Pole",
-      "views": 36,
+      "views": 496,
       "short": true
     },
     {
       "id": "KwZq0PvVKlY",
       "title": "Did NASA Invent Tang, Teflon and Velcro? Only One of Four Came From NASA",
-      "views": 33,
+      "views": 57,
       "short": true
     },
     {
       "id": "QjBZKseyzc8",
       "title": "Starlink 2022: How a Minor Geomagnetic Storm Brought Down 38 New Satellites",
-      "views": 376,
+      "views": 754,
       "short": true
     },
     {
       "id": "JFnlUjiNSEI",
       "title": "Mangalyaan: How India Reached Mars Orbit on Its First Attempt",
-      "views": 72,
+      "views": 208,
       "short": true
     },
     {
       "id": "KxLsf0jEe-4",
       "title": "Parker Solar Probe: The Fastest Human-Made Object, at 192 km/s",
-      "views": 3,
+      "views": 5,
       "short": true
     },
     {
       "id": "0HiwITcOFY4",
       "title": "Why GPS Satellite Clocks Are Set Slow Before Launch: Einstein's Relativity",
-      "views": 285,
+      "views": 287,
       "short": true
     },
     {
       "id": "goOri81wAc0",
       "title": "Why the Monsoon Reaches Kerala Around 1 June: The Moving Tropical Rain Belt",
-      "views": 439,
+      "views": 453,
       "short": true
     },
     {
       "id": "r12QmoFJa7U",
       "title": "Your Phone Camera Sensor Came From NASA's JPL, Not From the CCD",
-      "views": 477,
+      "views": 484,
       "short": true
     },
     {
@@ -345,5 +393,5 @@ window.VIDEOS = {
       "short": true
     }
   ],
-  "updated": "2026-10-25"
+  "updated": "2026-10-26"
 };
