@@ -9,7 +9,7 @@ window.VIDEOS = {
     "id": "UCCXaTGdT28P09_WMwT2Z-8Q",
     "handle": "jovian_explorer",
     "title": "Jovian Explorer",
-    "subscribers": "25",
+    "subscribers": "26",
     "playlists": [
       {
         "id": "PLHJPB7Vucp8k",
@@ -34,7 +34,7 @@ window.VIDEOS = {
       {
         "id": "PLeDUJ_o66ZlY",
         "title": "Astronomy",
-        "count": 42
+        "count": 44
       },
       {
         "id": "PLGZDzv6-DDT4",
@@ -47,7 +47,7 @@ window.VIDEOS = {
     {
       "id": "U3fgxDJr9Y8",
       "title": "How Fiber Optics Work: Kao, Corning, Erbium Amplifiers and the Internet Under the Sea",
-      "views": 0,
+      "views": 2,
       "duration": "5:53",
       "date": "2026-10-26",
       "description": "How can a flash of light cross an ocean inside a thread of glass? In this video, we follow how that became possible, from a water jet in Geneva in 1841 to the amplifiers in today's cables, using primary sources: the…"
@@ -55,7 +55,7 @@ window.VIDEOS = {
     {
       "id": "PVn0zrqevXw",
       "title": "Space Debris Removal Explained: Magnets, Robot Arms, Drag Sails and the 5-Year Rule",
-      "views": 1,
+      "views": 2,
       "duration": "5:45",
       "date": "2026-10-26",
       "description": "How do you remove a dead satellite or a spent rocket stage from orbit, when nobody on board can steer it? ESA's model counts about 68,450 objects larger than 10 cm around Earth, only about 11,300 of them working…"
@@ -95,7 +95,7 @@ window.VIDEOS = {
     {
       "id": "rFQRjldeSFY",
       "title": "Artemis II Explained: The Record Moon Flyby and the Race to the South Pole",
-      "views": 2,
+      "views": 6,
       "duration": "5:45",
       "date": "2026-10-26",
       "description": "How did four astronauts travel farther from Earth than any humans before them, without landing on the Moon? Artemis II launched on 1 April 2026 on NASA's Space Launch System from Launch Pad 39B, with Reid Wiseman,…"
@@ -103,7 +103,7 @@ window.VIDEOS = {
     {
       "id": "MkeuZJB4rB4",
       "title": "Black Hole Size Comparison: How Big Is TON 618, and How Do We Know?",
-      "views": 0,
+      "views": 6,
       "duration": "5:26",
       "date": "2026-10-26",
       "description": "How big can a black hole get, and how do astronomers weigh something that gives off no light of its own? In this video, we line up black holes from a few solar masses to tens of billions, and we turn each mass into the…"
@@ -111,7 +111,7 @@ window.VIDEOS = {
     {
       "id": "2DENsGlyOhQ",
       "title": "Fiber Optic Cables: How Light Carries the Internet Through Glass",
-      "views": 4,
+      "views": 24,
       "short": true,
       "date": "2026-10-26",
       "description": "Light stays inside a glass fibre because it reflects off the wall, much like light that follows a stream of water. The first fibres kept only 1 percent of the light after 20 metres. In 1966, Charles Kao and George…"
@@ -119,7 +119,7 @@ window.VIDEOS = {
     {
       "id": "PFyABhqXUWU",
       "title": "Neutron Star: One Teaspoon Would Weigh a Billion Tons",
-      "views": 13,
+      "views": 21,
       "short": true,
       "date": "2026-10-26",
       "description": "NASA says that, on Earth, one teaspoon of neutron star matter would weigh a billion tons. A neutron star is the collapsed core of a massive star: NASA describes an ultra-dense sphere only about 12 miles (20 kilometres)…"
@@ -127,7 +127,7 @@ window.VIDEOS = {
     {
       "id": "Y-mbCgHtNyc",
       "title": "Sunita Williams: A One-Week Test Flight Became 286 Days in Space",
-      "views": 6,
+      "views": 14,
       "short": true,
       "date": "2026-10-26",
       "description": "Suni Williams and Butch Wilmore launched on Boeing's Starliner on 5 June 2024 for a Crew Flight Test that NASA planned for eight to fourteen days. Some of Starliner's thrusters did not perform as expected and its helium…"
@@ -135,7 +135,7 @@ window.VIDEOS = {
     {
       "id": "qNTSwyanQQ0",
       "title": "Chandrayaan-3: Moon Soil Drops 80 Degrees in 10 Centimetres",
-      "views": 16,
+      "views": 28,
       "short": true,
       "date": "2026-10-26",
       "description": "On 23 August 2023, India's Chandrayaan-3 lander Vikram touched down near the Moon's south polar region. Its probe ChaSTE, with ten temperature sensors, measured the first such temperature profile of the lunar topsoil…"
@@ -143,7 +143,7 @@ window.VIDEOS = {
     {
       "id": "vMYt-UaMcrk",
       "title": "Who Invented the Internet? The Web Began at CERN, a Physics Lab",
-      "views": 8,
+      "views": 11,
       "short": true,
       "date": "2026-10-26",
       "description": "The internet and the World Wide Web are not the same thing. The internet is the network: ARPANET installation began in September 1969, and the goal of the transition plan in IETF RFC 801 was a complete switch to the…"
@@ -151,7 +151,7 @@ window.VIDEOS = {
     {
       "id": "6J04YNY5fo0",
       "title": "Space Debris Removal: Astronauts Did It by Hand in 1984. Robots Are Next",
-      "views": 267,
+      "views": 315,
       "short": true,
       "date": "2026-10-26",
       "description": "In November 1984, two astronauts on jetpacks caught two satellites stranded in the wrong orbits, and the Space Shuttle Discovery carried them home. Today, the job of removing dead satellites and rocket stages falls to…"
@@ -159,7 +159,7 @@ window.VIDEOS = {
     {
       "id": "cdd-YIOC7r8",
       "title": "Artemis II: How Four Astronauts Flew Farther From Earth Than Anyone Before",
-      "views": 10,
+      "views": 11,
       "short": true,
       "date": "2026-10-26",
       "description": "On 6 April 2026, the four Artemis II astronauts, Reid Wiseman, Victor Glover, Christina Koch and Jeremy Hansen of the Canadian Space Agency, passed the distance record that Apollo 13 had set in 1970. At their farthest,…"
@@ -167,7 +167,7 @@ window.VIDEOS = {
     {
       "id": "uhRKPwFeHwI",
       "title": "Black Hole Size Comparison: Cygnus X-1, Sagittarius A*, M87* and TON 618",
-      "views": 120,
+      "views": 152,
       "short": true,
       "date": "2026-10-26",
       "description": "How big is a black hole? The size of its event horizon grows in step with its mass, by about 3 km of radius for every solar mass (our arithmetic from R = 2GM/c²). Squeezed into a black hole, the Sun would be about 6 km…"
@@ -191,7 +191,7 @@ window.VIDEOS = {
     {
       "id": "RbFhBYpE9JY",
       "title": "Starlink and the Geomagnetic Storm of February 2022: Why 38 Satellites Were Lost",
-      "views": 11,
+      "views": 12,
       "duration": "5:46",
       "date": "2026-10-25",
       "description": "How can a storm that most people on the ground never noticed bring down 38 new satellites? On 3 February 2022 a Falcon 9 launched 49 Starlink satellites into a low orbit near 210 km, from which they raise themselves to…"
@@ -199,7 +199,7 @@ window.VIDEOS = {
     {
       "id": "a0L3X7iErOU",
       "title": "Solar Storm vs Power Grid: How the Sun Blacked Out Québec in 1989",
-      "views": 173,
+      "views": 179,
       "short": true,
       "date": "2026-10-25",
       "description": "On 13 March 1989, a storm from the Sun shook Earth's magnetic field, and the changing field drove currents through Hydro-Québec's long power lines. Protective equipment tripped one unit after another, the network lost…"
@@ -207,7 +207,7 @@ window.VIDEOS = {
     {
       "id": "0zGsS7I3bZM",
       "title": "Chandrayaan-3: The First Landing Near the Moon's South Pole",
-      "views": 530,
+      "views": 534,
       "short": true,
       "date": "2026-10-25",
       "description": "On 23 August 2023, ISRO's Vikram lander touched down near the lunar south polar region, at about 69.37 degrees south. ISRO states that this made India the fourth nation to soft-land on the Moon and the first to land…"
@@ -215,7 +215,7 @@ window.VIDEOS = {
     {
       "id": "x3uxmcOns88",
       "title": "NASA Spinoff Myths Explained: Tang, Teflon, Velcro and the Real Story of Memory Foam",
-      "views": 2,
+      "views": 3,
       "duration": "5:29",
       "date": "2026-10-24",
       "description": "NASA has profiled more than 2,000 spinoffs, commercial products that use NASA technology or expertise, since 1976, yet the three items most often called NASA inventions are not among them. In this video, we trace Tang,…"
@@ -223,7 +223,7 @@ window.VIDEOS = {
     {
       "id": "Axm2vgJM--w",
       "title": "Mangalyaan (Mars Orbiter Mission) Explained: India's First Journey to Mars, 2013 to 2022",
-      "views": 16,
+      "views": 23,
       "duration": "6:16",
       "date": "2026-10-24",
       "description": "Reaching another planet asks a spacecraft to leave Earth, cross hundreds of millions of kilometres on its own, and then brake hard enough at the right moment to be captured. India's Mars Orbiter Mission, often called…"
@@ -231,7 +231,7 @@ window.VIDEOS = {
     {
       "id": "KwZq0PvVKlY",
       "title": "Did NASA Invent Tang, Teflon and Velcro? Only One of Four Came From NASA",
-      "views": 57,
+      "views": 61,
       "short": true,
       "date": "2026-10-24",
       "description": "Tang, Teflon and Velcro are often called NASA inventions, but NASA's own Spinoff office says that none of the three came from NASA. General Foods developed Tang in 1957, the DuPont chemist Roy Plunkett found the polymer…"
@@ -239,7 +239,7 @@ window.VIDEOS = {
     {
       "id": "QjBZKseyzc8",
       "title": "Starlink 2022: How a Minor Geomagnetic Storm Brought Down 38 New Satellites",
-      "views": 769,
+      "views": 768,
       "short": true,
       "date": "2026-10-24",
       "description": "On 3 February 2022, SpaceX launched 49 Starlink satellites into a low orbit with its lowest point at about 210 km, and 38 of them were lost within days. Two geomagnetic storms, set off by coronal mass ejections from the…"
@@ -247,7 +247,7 @@ window.VIDEOS = {
     {
       "id": "JFnlUjiNSEI",
       "title": "Mangalyaan: How India Reached Mars Orbit on Its First Attempt",
-      "views": 235,
+      "views": 246,
       "short": true,
       "date": "2026-10-24",
       "description": "India's Mars Orbiter Mission, often called Mangalyaan, was launched on 5 November 2013 by PSLV-C25 from Sriharikota and entered orbit around Mars on 24 September 2014. According to ISRO, India became the first country…"
@@ -263,7 +263,7 @@ window.VIDEOS = {
     {
       "id": "q9Szgq4mMXM",
       "title": "Moon South Pole Explained: Water Ice, Chandrayaan-3, Artemis IV and Chang'e-7",
-      "views": 13,
+      "views": 14,
       "duration": "5:38",
       "date": "2026-10-22",
       "description": "India, the United States and China are all aiming at the Moon's south pole, because of water ice in craters that never see the Sun. This video explains why the 1.5 degree tilt of the Moon's axis keeps crater floors…"
@@ -295,7 +295,7 @@ window.VIDEOS = {
     {
       "id": "Q99fYApJA2c",
       "title": "Aditya-L1 Explained: ISRO's Sun Mission, Its Halo Orbit and Seven Instruments",
-      "views": 81,
+      "views": 82,
       "duration": "7:33",
       "date": "2026-10-21",
       "description": "Aditya-L1, the first space-based Indian mission to study the Sun, built by the Indian Space Research Organisation (ISRO), has circled the Sun-Earth Lagrange point L1, about 1.5 million km from Earth, since January 2024.…"
@@ -341,14 +341,6 @@ window.VIDEOS = {
       "description": "Voyager 1, launched by NASA on 5 September 1977, is the most distant spacecraft, and on 18 November 2026 it reaches one light-day from Earth, about 25.9 billion km. This video follows its journey: the Grand Tour…"
     },
     {
-      "id": "0B_O3z3b9vs",
-      "title": "The Keeling Curve Explained: Carbon Dioxide at Mauna Loa Since 1958",
-      "views": 9,
-      "duration": "5:27",
-      "date": "2026-10-20",
-      "description": "Charles David Keeling of the Scripps Institution of Oceanography began to measure carbon dioxide at Mauna Loa Observatory, Hawaii, in March 1958, and the record shows two things: the seasonal breathing of the planet and…"
-    },
-    {
       "id": "gX5NztkzJ9c",
       "title": "Aditya-L1: How ISRO Watches the Sun Nonstop from L1",
       "views": 345,
@@ -359,7 +351,7 @@ window.VIDEOS = {
     {
       "id": "-ZB1jYqksuk",
       "title": "Leonid Meteor Shower 2026: Comet Dust Hitting Our Sky at 71 km/s",
-      "views": 142,
+      "views": 143,
       "short": true,
       "date": "2026-10-20",
       "description": "The Leonid meteor shower returns every November, when Earth passes through the dust released by Comet 55P/Tempel-Tuttle, and these grains enter the atmosphere at about 71 km/s, which makes the Leonids some of the…"
@@ -367,10 +359,18 @@ window.VIDEOS = {
     {
       "id": "NxWNsUxg5q8",
       "title": "We Can Watch Earth Breathe: The Keeling Curve of Carbon Dioxide",
-      "views": 402,
+      "views": 405,
       "short": true,
       "date": "2026-10-20",
       "description": "Charles David Keeling of the Scripps Institution of Oceanography began to measure carbon dioxide at Mauna Loa Observatory, Hawaii, in March 1958, and the National Oceanic and Atmospheric Administration (NOAA) and…"
+    },
+    {
+      "id": "0B_O3z3b9vs",
+      "title": "The Keeling Curve Explained: Carbon Dioxide at Mauna Loa Since 1958",
+      "views": 9,
+      "duration": "5:27",
+      "date": "2026-10-20",
+      "description": "Charles David Keeling of the Scripps Institution of Oceanography began to measure carbon dioxide at Mauna Loa Observatory, Hawaii, in March 1958, and the record shows two things: the seasonal breathing of the planet and…"
     },
     {
       "id": "BUyCingJDiM",
@@ -397,6 +397,12 @@ window.VIDEOS = {
       "duration": "2:36"
     },
     {
+      "id": "O0yMsHIyIA4",
+      "title": "Europa Clipper Explained: The Ocean, the December 2026 Earth Flyby and 49 Europa Flybys",
+      "views": 0,
+      "duration": "5:22"
+    },
+    {
       "id": "MeRZcWfs1EQ",
       "title": "The Indian Monsoon Explained: Sea Breeze or Moving Tropical Rain Belt (ITCZ)?",
       "views": 4,
@@ -405,7 +411,7 @@ window.VIDEOS = {
     {
       "id": "8otmBst_VRo",
       "title": "Parker Solar Probe Explained: How the Fastest Spacecraft Reaches 192 km/s and Survives the Sun",
-      "views": 2,
+      "views": 3,
       "duration": "6:01"
     },
     {
@@ -457,9 +463,15 @@ window.VIDEOS = {
       "duration": "5:49"
     },
     {
+      "id": "jlyA57WrCmI",
+      "title": "Europa Clipper: Ocean With Twice Earth's Water and the 3 December 2026 Earth Flyby",
+      "views": 13,
+      "short": true
+    },
+    {
       "id": "KxLsf0jEe-4",
       "title": "Parker Solar Probe: The Fastest Human-Made Object, at 192 km/s",
-      "views": 5,
+      "views": 6,
       "short": true
     },
     {
@@ -471,7 +483,7 @@ window.VIDEOS = {
     {
       "id": "goOri81wAc0",
       "title": "Why the Monsoon Reaches Kerala Around 1 June: The Moving Tropical Rain Belt",
-      "views": 454,
+      "views": 458,
       "short": true
     },
     {
@@ -483,7 +495,7 @@ window.VIDEOS = {
     {
       "id": "sMk6o1gKpi8",
       "title": "How CSIRO Engineers Used Radio Astronomy Know-How to Solve Indoor Wi-Fi Echoes",
-      "views": 397,
+      "views": 398,
       "short": true
     },
     {
@@ -511,5 +523,5 @@ window.VIDEOS = {
       "short": true
     }
   ],
-  "updated": "2026-10-26"
+  "updated": "2026-10-27"
 };
