@@ -111,7 +111,7 @@ window.VIDEOS = {
     {
       "id": "2DENsGlyOhQ",
       "title": "Fiber Optic Cables: How Light Carries the Internet Through Glass",
-      "views": 24,
+      "views": 25,
       "short": true,
       "date": "2026-10-26",
       "description": "Light stays inside a glass fibre because it reflects off the wall, much like light that follows a stream of water. The first fibres kept only 1 percent of the light after 20 metres. In 1966, Charles Kao and George…"
@@ -127,7 +127,7 @@ window.VIDEOS = {
     {
       "id": "Y-mbCgHtNyc",
       "title": "Sunita Williams: A One-Week Test Flight Became 286 Days in Space",
-      "views": 14,
+      "views": 18,
       "short": true,
       "date": "2026-10-26",
       "description": "Suni Williams and Butch Wilmore launched on Boeing's Starliner on 5 June 2024 for a Crew Flight Test that NASA planned for eight to fourteen days. Some of Starliner's thrusters did not perform as expected and its helium…"
@@ -151,7 +151,7 @@ window.VIDEOS = {
     {
       "id": "6J04YNY5fo0",
       "title": "Space Debris Removal: Astronauts Did It by Hand in 1984. Robots Are Next",
-      "views": 315,
+      "views": 332,
       "short": true,
       "date": "2026-10-26",
       "description": "In November 1984, two astronauts on jetpacks caught two satellites stranded in the wrong orbits, and the Space Shuttle Discovery carried them home. Today, the job of removing dead satellites and rocket stages falls to…"
@@ -167,7 +167,7 @@ window.VIDEOS = {
     {
       "id": "uhRKPwFeHwI",
       "title": "Black Hole Size Comparison: Cygnus X-1, Sagittarius A*, M87* and TON 618",
-      "views": 152,
+      "views": 157,
       "short": true,
       "date": "2026-10-26",
       "description": "How big is a black hole? The size of its event horizon grows in step with its mass, by about 3 km of radius for every solar mass (our arithmetic from R = 2GM/c²). Squeezed into a black hole, the Sun would be about 6 km…"
@@ -207,7 +207,7 @@ window.VIDEOS = {
     {
       "id": "0zGsS7I3bZM",
       "title": "Chandrayaan-3: The First Landing Near the Moon's South Pole",
-      "views": 534,
+      "views": 536,
       "short": true,
       "date": "2026-10-25",
       "description": "On 23 August 2023, ISRO's Vikram lander touched down near the lunar south polar region, at about 69.37 degrees south. ISRO states that this made India the fourth nation to soft-land on the Moon and the first to land…"
@@ -247,7 +247,7 @@ window.VIDEOS = {
     {
       "id": "JFnlUjiNSEI",
       "title": "Mangalyaan: How India Reached Mars Orbit on Its First Attempt",
-      "views": 246,
+      "views": 247,
       "short": true,
       "date": "2026-10-24",
       "description": "India's Mars Orbiter Mission, often called Mangalyaan, was launched on 5 November 2013 by PSLV-C25 from Sriharikota and entered orbit around Mars on 24 September 2014. According to ISRO, India became the first country…"
@@ -351,7 +351,7 @@ window.VIDEOS = {
     {
       "id": "-ZB1jYqksuk",
       "title": "Leonid Meteor Shower 2026: Comet Dust Hitting Our Sky at 71 km/s",
-      "views": 143,
+      "views": 145,
       "short": true,
       "date": "2026-10-20",
       "description": "The Leonid meteor shower returns every November, when Earth passes through the dust released by Comet 55P/Tempel-Tuttle, and these grains enter the atmosphere at about 71 km/s, which makes the Leonids some of the…"
@@ -519,7 +519,7 @@ window.VIDEOS = {
     {
       "id": "yoD_kw_fulQ",
       "title": "Voyager 1 Reaches One Light-Day from Earth in November 2026",
-      "views": 1200,
+      "views": 1300,
       "short": true
     }
   ],
