@@ -52,7 +52,7 @@ window.VIDEOS = {
     {
       "id": "muri5saShho",
       "title": "Why Is Space Black if the Sun Is So Bright?",
-      "views": 131,
+      "views": 140,
       "short": true,
       "date": "2026-10-29",
       "description": "Why is space black if the Sun is so bright? Light is only seen when something scatters it into the eye. On Earth, air molecules scatter sunlight by Rayleigh scattering, and blue light is scattered about four times more…"
@@ -84,7 +84,7 @@ window.VIDEOS = {
     {
       "id": "ipNj2L6JHs0",
       "title": "NISAR Explained: NASA-ISRO Radar Satellite, Venezuela Earthquakes and Anak Krakatau in 2026",
-      "views": 3,
+      "views": 4,
       "duration": "5:59",
       "date": "2026-10-27",
       "description": "NISAR is a radar satellite built by NASA and ISRO. ISRO's GSLV-F16 launched it from Sriharikota on 30 July 2025, and NASA released its first images on 25 September 2025. In this video, we follow what the mission has…"
@@ -100,7 +100,7 @@ window.VIDEOS = {
     {
       "id": "wBxBrvOoluw",
       "title": "Gaganyaan G1 Explained: What ISRO's Uncrewed Flight With Vyommitra Must Prove",
-      "views": 9,
+      "views": 10,
       "duration": "6:33",
       "date": "2026-10-27",
       "description": "Before astronauts fly on Gaganyaan, ISRO plans an uncrewed rehearsal called G1. ISRO's latest statement, on 16 October 2026, says it is \"targeted for launch in 2026\", and a government reply of 6 August 2026 places it in…"
@@ -332,7 +332,7 @@ window.VIDEOS = {
     {
       "id": "0zGsS7I3bZM",
       "title": "Chandrayaan-3: The First Landing Near the Moon's South Pole",
-      "views": 542,
+      "views": 543,
       "short": true,
       "date": "2026-10-25",
       "description": "On 23 August 2023, ISRO's Vikram lander touched down near the lunar south polar region, at about 69.37 degrees south. ISRO states that this made India the fourth nation to soft-land on the Moon and the first to land…"
@@ -468,7 +468,7 @@ window.VIDEOS = {
     {
       "id": "NxWNsUxg5q8",
       "title": "We Can Watch Earth Breathe: The Keeling Curve of Carbon Dioxide",
-      "views": 409,
+      "views": 410,
       "short": true,
       "date": "2026-10-20",
       "description": "Charles David Keeling of the Scripps Institution of Oceanography began to measure carbon dioxide at Mauna Loa Observatory, Hawaii, in March 1958, and the National Oceanic and Atmospheric Administration (NOAA) and…"
@@ -572,7 +572,7 @@ window.VIDEOS = {
     {
       "id": "D5s1jYEszwc",
       "title": "Gaganyaan Explained: How ISRO Tests the Escape System, Parachutes and Crew",
-      "views": 24,
+      "views": 26,
       "duration": "5:59"
     },
     {
