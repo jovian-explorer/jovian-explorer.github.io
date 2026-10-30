@@ -375,6 +375,10 @@ a.chip:hover { color: var(--accent); border-color: var(--accent); }
 .card h3 { font-size: var(--t-lg); }
 .card p { color: var(--muted); font-size: var(--t-sm); }
 .card-top { display: flex; justify-content: space-between; align-items: baseline; gap: 0.75rem; }
+.card-top:has(.card-logo) { display: grid; grid-template-columns: auto 1fr; column-gap: 0.8rem; row-gap: 0.15rem; align-items: center; }
+.card-title { display: contents; }
+.card-logo { grid-row: span 2; width: 3rem; height: 3rem; object-fit: contain; border-radius: 0.6rem; }
+.card-top:has(.card-logo) h3 { line-height: 1.15; }
 .card-foot { margin-top: auto; padding-top: 0.5rem; display: flex; gap: 0.4rem; flex-wrap: wrap; }
 .status { font-family: var(--f-mono); font-size: 0.72rem; letter-spacing: 0.04em; text-transform: uppercase; display: inline-flex; align-items: center; gap: 0.4rem; color: var(--muted); white-space: nowrap; }
 .status::before { content: ""; width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--faint); }
