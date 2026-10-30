@@ -60,6 +60,26 @@ window.WORKS = {
       "doi": "10.48550/arxiv.2603.25421"
     },
     {
+      "title": "Dynamics of Earth’s Magnetopause During Solar Storms: Insights from In-Situ Measurements of NASA’s MMS Mission",
+      "type": "conference-poster",
+      "venue": "Proceedings of the 7th URSI Asia-Pacific RadioScience Conference – AP-RASC 2025",
+      "year": 2025,
+      "doi": "10.46620/ursiaprasc25/qzpe5277",
+      "dated": "earliest",
+      "authors": "Deep, A., Datta, A., Brawar, B., Aggarwal, K.",
+      "month": 9
+    },
+    {
+      "title": "Studying the “Smiley Sun” using the Akatsuki radio occultation experiment",
+      "type": "conference-presentation",
+      "venue": "Proceedings of the 7th URSI Asia-Pacific RadioScience Conference – AP-RASC 2025",
+      "year": 2025,
+      "doi": "10.46620/ursiaprasc25/ahct9245",
+      "dated": "earliest",
+      "authors": "Aggarwal, K., Datta, A., Choudhary, R. K.",
+      "month": 9
+    },
+    {
       "title": "On the estimation of solar wind velocity under varying solar activity conditions using Akatsuki measurements",
       "type": "journal-article",
       "venue": "Monthly Notices of the Royal Astronomical Society",
@@ -78,6 +98,16 @@ window.WORKS = {
       "doi": "10.3847/1538-4357/adb627",
       "dated": "earliest",
       "authors": "Aggarwal, K., Choudhary, R. K., Datta, A., V., R. M., Dai, B. K."
+    },
+    {
+      "title": "Results from Radio Occultation studies using Indian Mars Orbiter Mission",
+      "type": "conference-poster",
+      "venue": "Proceedings of the 6th URSI Regional Conference on Radio Science – RCRS 2024",
+      "year": 2024,
+      "doi": "10.46620/ursi_rsrc24/1017qon9346",
+      "dated": "earliest",
+      "authors": "Aggarwal, K., Choudhary, R., Datta, A.",
+      "month": 12
     },
     {
       "title": "A benchmark JWST near-infrared spectrum for the exoplanet WASP-39 b",
@@ -117,12 +147,32 @@ window.WORKS = {
       "month": 11
     },
     {
+      "title": "COMPLETE: a flagship mission for complete understanding of 3D coronal magnetic energy release",
+      "type": "journal-article",
+      "venue": "Bulletin of the AAS",
+      "year": 2023,
+      "month": 7,
+      "doi": "10.3847/25c2cfeb.b95dd671",
+      "dated": "earliest",
+      "authors": "Caspi, A., Casini, R., Downs, C., Gibson, S., Gilbert, H., Glesener, L., Guidoni, S., Hughes, J. M., McKenzie, D., Plowman, J., Seaton, D., Reeves, K., et al."
+    },
+    {
       "title": "Improving Multi-Dimensional Data Formats, Access, and Assimilation Tools for the Twenty-First Century",
       "type": "journal-article",
       "venue": "Vol. 55, Issue 3 (Heliophysics 2024 Decadal Whitepapers)",
       "year": 2023,
       "month": 7,
       "doi": "10.48550/arxiv.2305.16535"
+    },
+    {
+      "title": "Magnetic Energy Powers the Corona: How We Can Understand its 3D Storage &amp; Release",
+      "type": "journal-article",
+      "venue": "Bulletin of the AAS",
+      "year": 2023,
+      "month": 7,
+      "doi": "10.3847/25c2cfeb.1dbfea1f",
+      "dated": "earliest",
+      "authors": "Caspi, A., Seaton, D., Casini, R., Downs, C., Gibson, S., Gilbert, H., Glesener, L., Guidoni, S., Hughes, J. M., McKenzie, D., Plowman, J., Reeves, K., et al."
     },
     {
       "title": "COMPLETE: a flagship mission for complete understanding of 3D coronal magnetic energy release",
@@ -153,14 +203,6 @@ window.WORKS = {
       "year": 2023,
       "month": 5,
       "doi": "10.48550/arxiv.2301.08192"
-    },
-    {
-      "title": "jovian-explorer/Sun: sun",
-      "type": "software",
-      "venue": "",
-      "year": 2023,
-      "month": 4,
-      "doi": "10.5281/zenodo.7834734"
     },
     {
       "title": "Early Release Science of the exoplanet WASP-39b with JWST NIRSpec PRISM",
@@ -228,5 +270,5 @@ window.WORKS = {
       "doi": "10.5281/zenodo.23331689"
     }
   ],
-  "updated": "2026-10-22"
+  "updated": "2026-10-30"
 };
