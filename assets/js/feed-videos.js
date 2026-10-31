@@ -14,7 +14,7 @@ window.VIDEOS = {
       {
         "id": "PLARLB4dK4ysE",
         "title": "Space News",
-        "count": 7
+        "count": 8
       },
       {
         "id": "PLHJPB7Vucp8k",
@@ -39,7 +39,7 @@ window.VIDEOS = {
       {
         "id": "PLeDUJ_o66ZlY",
         "title": "Astronomy",
-        "count": 61
+        "count": 62
       },
       {
         "id": "PLGZDzv6-DDT4",
@@ -50,9 +50,25 @@ window.VIDEOS = {
   },
   "videos": [
     {
+      "id": "8ZqphMD2akc",
+      "title": "ISRO's GSLV-F18 Puts NVS-03 in Orbit: India's New Navigation Satellite With an L1 Signal",
+      "views": 6,
+      "short": true,
+      "date": "2026-10-31",
+      "description": "ISRO's GSLV-F18, the 20th GSLV flight, launched from the Second Launch Pad at Sriharikota on the night of 30 October 2026 and placed the navigation satellite NVS-03 in a Geosynchronous Transfer Orbit. Sources: - ISRO,…"
+    },
+    {
+      "id": "aPK3J1zp7Vg",
+      "title": "ISRO's GSLV-F18 Launch: Can Wind High Above Hold a Rocket?",
+      "views": 29,
+      "short": true,
+      "date": "2026-10-31",
+      "description": "ISRO set the launch of GSLV-F18 with the navigation satellite NVS-03 for 30 October 2026 at 11:51 pm IST from the Second Launch Pad of the Satish Dhawan Space Centre at Sriharikota, two days after the very severe…"
+    },
+    {
       "id": "muri5saShho",
       "title": "Why Is Space Black if the Sun Is So Bright?",
-      "views": 153,
+      "views": 161,
       "short": true,
       "date": "2026-10-29",
       "description": "Why is space black if the Sun is so bright? Light is only seen when something scatters it into the eye. On Earth, air molecules scatter sunlight by Rayleigh scattering, and blue light is scattered about four times more…"
@@ -60,7 +76,7 @@ window.VIDEOS = {
     {
       "id": "IJNh4tqgV6A",
       "title": "ISRO's Pushpak: Why Drop a Spaceplane From a Helicopter?",
-      "views": 26,
+      "views": 27,
       "short": true,
       "date": "2026-10-28",
       "description": "Why would ISRO drop a spaceplane from a helicopter? A reusable launch vehicle must come back and land intact so that it can fly again, and ISRO is testing a winged prototype that it calls Pushpak (the word spaceplane is…"
@@ -84,7 +100,7 @@ window.VIDEOS = {
     {
       "id": "ipNj2L6JHs0",
       "title": "NISAR Explained: NASA-ISRO Radar Satellite, Venezuela Earthquakes and Anak Krakatau in 2026",
-      "views": 4,
+      "views": 5,
       "duration": "5:59",
       "date": "2026-10-27",
       "description": "NISAR is a radar satellite built by NASA and ISRO. ISRO's GSLV-F16 launched it from Sriharikota on 30 July 2025, and NASA released its first images on 25 September 2025. In this video, we follow what the mission has…"
@@ -92,7 +108,7 @@ window.VIDEOS = {
     {
       "id": "_R1cUw2Ybh0",
       "title": "Nancy Grace Roman Space Telescope Explained: Launch, First Checks and What Comes Next",
-      "views": 7,
+      "views": 9,
       "duration": "5:19",
       "date": "2026-10-27",
       "description": "What can a telescope see when its view is a hundred times wider than Hubble's, and what has it done since its launch on 30 August 2026? NASA says the Nancy Grace Roman Space Telescope has a field of view at least 100…"
@@ -100,7 +116,7 @@ window.VIDEOS = {
     {
       "id": "wBxBrvOoluw",
       "title": "Gaganyaan G1 Explained: What ISRO's Uncrewed Flight With Vyommitra Must Prove",
-      "views": 10,
+      "views": 12,
       "duration": "6:33",
       "date": "2026-10-27",
       "description": "Before astronauts fly on Gaganyaan, ISRO plans an uncrewed rehearsal called G1. ISRO's latest statement, on 16 October 2026, says it is \"targeted for launch in 2026\", and a government reply of 6 August 2026 places it in…"
@@ -108,7 +124,7 @@ window.VIDEOS = {
     {
       "id": "SaMKXKCdoPk",
       "title": "BepiColombo Reaches Mercury This November: Why Stopping There Is So Hard",
-      "views": 99,
+      "views": 100,
       "short": true,
       "date": "2026-10-27",
       "description": "BepiColombo is due to enter orbit around Mercury in November 2026. ESA's latest update, dated 6 October 2026, says the composite spacecraft will enter orbit around Mercury on 21 November 2026, and ESA's own timeline…"
@@ -180,7 +196,7 @@ window.VIDEOS = {
     {
       "id": "PVn0zrqevXw",
       "title": "Space Debris Removal Explained: Magnets, Robot Arms, Drag Sails and the 5-Year Rule",
-      "views": 4,
+      "views": 6,
       "duration": "5:45",
       "date": "2026-10-26",
       "description": "How do you remove a dead satellite or a spent rocket stage from orbit, when nobody on board can steer it? ESA's model counts about 68,450 objects larger than 10 cm around Earth, only about 11,300 of them working…"
@@ -228,7 +244,7 @@ window.VIDEOS = {
     {
       "id": "MkeuZJB4rB4",
       "title": "Black Hole Size Comparison: How Big Is TON 618, and How Do We Know?",
-      "views": 8,
+      "views": 9,
       "duration": "5:26",
       "date": "2026-10-26",
       "description": "How big can a black hole get, and how do astronomers weigh something that gives off no light of its own? In this video, we line up black holes from a few solar masses to tens of billions, and we turn each mass into the…"
@@ -236,7 +252,7 @@ window.VIDEOS = {
     {
       "id": "2DENsGlyOhQ",
       "title": "Fiber Optic Cables: How Light Carries the Internet Through Glass",
-      "views": 65,
+      "views": 66,
       "short": true,
       "date": "2026-10-26",
       "description": "Light stays inside a glass fibre because it reflects off the wall, much like light that follows a stream of water. The first fibres kept only 1 percent of the light after 20 metres. In 1966, Charles Kao and George…"
@@ -244,7 +260,7 @@ window.VIDEOS = {
     {
       "id": "PFyABhqXUWU",
       "title": "Neutron Star: One Teaspoon Would Weigh a Billion Tons",
-      "views": 34,
+      "views": 33,
       "short": true,
       "date": "2026-10-26",
       "description": "NASA says that, on Earth, one teaspoon of neutron star matter would weigh a billion tons. A neutron star is the collapsed core of a massive star: NASA describes an ultra-dense sphere only about 12 miles (20 kilometres)…"
@@ -292,7 +308,7 @@ window.VIDEOS = {
     {
       "id": "uhRKPwFeHwI",
       "title": "Black Hole Size Comparison: Cygnus X-1, Sagittarius A*, M87* and TON 618",
-      "views": 182,
+      "views": 183,
       "short": true,
       "date": "2026-10-26",
       "description": "How big is a black hole? The size of its event horizon grows in step with its mass, by about 3 km of radius for every solar mass (our arithmetic from R = 2GM/c²). Squeezed into a black hole, the Sun would be about 6 km…"
@@ -468,7 +484,7 @@ window.VIDEOS = {
     {
       "id": "NxWNsUxg5q8",
       "title": "We Can Watch Earth Breathe: The Keeling Curve of Carbon Dioxide",
-      "views": 410,
+      "views": 411,
       "short": true,
       "date": "2026-10-20",
       "description": "Charles David Keeling of the Scripps Institution of Oceanography began to measure carbon dioxide at Mauna Loa Observatory, Hawaii, in March 1958, and the National Oceanic and Atmospheric Administration (NOAA) and…"
@@ -588,12 +604,6 @@ window.VIDEOS = {
       "duration": "5:49"
     },
     {
-      "id": "7LYU5cqnOKQ",
-      "title": "ISRO's GSLV-F18 Launch: Can Wind High Above Hold a Rocket?",
-      "views": 34,
-      "short": true
-    },
-    {
       "id": "bUXR0-Xc8h0",
       "title": "NASA's Perseverance Rover Sets the Off-World Driving Distance Record",
       "views": 25,
@@ -663,6 +673,12 @@ window.VIDEOS = {
       "id": "yoD_kw_fulQ",
       "title": "Voyager 1 Reaches One Light-Day from Earth in November 2026",
       "views": 1300,
+      "short": true
+    },
+    {
+      "id": "7LYU5cqnOKQ",
+      "title": "ISRO's GSLV-F18 Launch: Can Wind High Above Hold a Rocket?",
+      "views": 34,
       "short": true
     }
   ],
