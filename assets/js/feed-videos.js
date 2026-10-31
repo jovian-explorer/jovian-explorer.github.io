@@ -39,7 +39,7 @@ window.VIDEOS = {
       {
         "id": "PLeDUJ_o66ZlY",
         "title": "Astronomy",
-        "count": 60
+        "count": 61
       },
       {
         "id": "PLGZDzv6-DDT4",
@@ -52,7 +52,7 @@ window.VIDEOS = {
     {
       "id": "muri5saShho",
       "title": "Why Is Space Black if the Sun Is So Bright?",
-      "views": 140,
+      "views": 153,
       "short": true,
       "date": "2026-10-29",
       "description": "Why is space black if the Sun is so bright? Light is only seen when something scatters it into the eye. On Earth, air molecules scatter sunlight by Rayleigh scattering, and blue light is scattered about four times more…"
@@ -60,7 +60,7 @@ window.VIDEOS = {
     {
       "id": "IJNh4tqgV6A",
       "title": "ISRO's Pushpak: Why Drop a Spaceplane From a Helicopter?",
-      "views": 25,
+      "views": 26,
       "short": true,
       "date": "2026-10-28",
       "description": "Why would ISRO drop a spaceplane from a helicopter? A reusable launch vehicle must come back and land intact so that it can fly again, and ISRO is testing a winged prototype that it calls Pushpak (the word spaceplane is…"
@@ -108,7 +108,7 @@ window.VIDEOS = {
     {
       "id": "SaMKXKCdoPk",
       "title": "BepiColombo Reaches Mercury This November: Why Stopping There Is So Hard",
-      "views": 94,
+      "views": 99,
       "short": true,
       "date": "2026-10-27",
       "description": "BepiColombo is due to enter orbit around Mercury in November 2026. ESA's latest update, dated 6 October 2026, says the composite spacecraft will enter orbit around Mercury on 21 November 2026, and ESA's own timeline…"
@@ -148,7 +148,7 @@ window.VIDEOS = {
     {
       "id": "ySwBYZ_wT5I",
       "title": "NISAR Measured the Venezuela Earthquake Ground Shift From Orbit",
-      "views": 44,
+      "views": 45,
       "short": true,
       "date": "2026-10-27",
       "description": "NISAR, the satellite that NASA and ISRO built together, is a radar in orbit. After the two Venezuela earthquakes of 24 June 2026, NASA compared NISAR images taken before and after and mapped westward ground displacement…"
@@ -196,7 +196,7 @@ window.VIDEOS = {
     {
       "id": "dSnEQB_aPgw",
       "title": "Sunita Williams and Starliner Explained: Why a Short Test Flight Became 286 Days in Orbit",
-      "views": 0,
+      "views": 1,
       "duration": "5:57",
       "date": "2026-10-26",
       "description": "How does a test flight planned for eight to fourteen days turn into 286 days in space? In this video, we follow the Starliner Crew Flight Test of Suni Williams and Butch Wilmore, using NASA's own pages and its…"
@@ -252,7 +252,7 @@ window.VIDEOS = {
     {
       "id": "Y-mbCgHtNyc",
       "title": "Sunita Williams: A One-Week Test Flight Became 286 Days in Space",
-      "views": 65,
+      "views": 68,
       "short": true,
       "date": "2026-10-26",
       "description": "Suni Williams and Butch Wilmore launched on Boeing's Starliner on 5 June 2024 for a Crew Flight Test that NASA planned for eight to fourteen days. Some of Starliner's thrusters did not perform as expected and its helium…"
@@ -292,7 +292,7 @@ window.VIDEOS = {
     {
       "id": "uhRKPwFeHwI",
       "title": "Black Hole Size Comparison: Cygnus X-1, Sagittarius A*, M87* and TON 618",
-      "views": 179,
+      "views": 182,
       "short": true,
       "date": "2026-10-26",
       "description": "How big is a black hole? The size of its event horizon grows in step with its mass, by about 3 km of radius for every solar mass (our arithmetic from R = 2GM/c²). Squeezed into a black hole, the Sun would be about 6 km…"
@@ -316,7 +316,7 @@ window.VIDEOS = {
     {
       "id": "RbFhBYpE9JY",
       "title": "Starlink and the Geomagnetic Storm of February 2022: Why 38 Satellites Were Lost",
-      "views": 55,
+      "views": 56,
       "duration": "5:46",
       "date": "2026-10-25",
       "description": "How can a storm that most people on the ground never noticed bring down 38 new satellites? On 3 February 2022 a Falcon 9 launched 49 Starlink satellites into a low orbit near 210 km, from which they raise themselves to…"
@@ -324,7 +324,7 @@ window.VIDEOS = {
     {
       "id": "a0L3X7iErOU",
       "title": "Solar Storm vs Power Grid: How the Sun Blacked Out Québec in 1989",
-      "views": 180,
+      "views": 181,
       "short": true,
       "date": "2026-10-25",
       "description": "On 13 March 1989, a storm from the Sun shook Earth's magnetic field, and the changing field drove currents through Hydro-Québec's long power lines. Protective equipment tripped one unit after another, the network lost…"
@@ -340,7 +340,7 @@ window.VIDEOS = {
     {
       "id": "x3uxmcOns88",
       "title": "NASA Spinoff Myths Explained: Tang, Teflon, Velcro and the Real Story of Memory Foam",
-      "views": 4,
+      "views": 6,
       "duration": "5:29",
       "date": "2026-10-24",
       "description": "NASA has profiled more than 2,000 spinoffs, commercial products that use NASA technology or expertise, since 1976, yet the three items most often called NASA inventions are not among them. In this video, we trace Tang,…"
@@ -372,7 +372,7 @@ window.VIDEOS = {
     {
       "id": "JFnlUjiNSEI",
       "title": "Mangalyaan: How India Reached Mars Orbit on Its First Attempt",
-      "views": 267,
+      "views": 269,
       "short": true,
       "date": "2026-10-24",
       "description": "India's Mars Orbiter Mission, often called Mangalyaan, was launched on 5 November 2013 by PSLV-C25 from Sriharikota and entered orbit around Mars on 24 September 2014. According to ISRO, India became the first country…"
@@ -530,7 +530,7 @@ window.VIDEOS = {
     {
       "id": "MeRZcWfs1EQ",
       "title": "The Indian Monsoon Explained: Sea Breeze or Moving Tropical Rain Belt (ITCZ)?",
-      "views": 4,
+      "views": 6,
       "duration": "6:16"
     },
     {
@@ -560,7 +560,7 @@ window.VIDEOS = {
     {
       "id": "jGcOUCJbDy0",
       "title": "Kessler Syndrome Explained: Space Debris, Satellite Collisions and the Rules to Limit Them",
-      "views": 7,
+      "views": 8,
       "duration": "6:54"
     },
     {
@@ -586,6 +586,12 @@ window.VIDEOS = {
       "title": "Auroras Explained: Their Colours, the May 2024 Superstorm and the Red Glow over Ladakh",
       "views": 2,
       "duration": "5:49"
+    },
+    {
+      "id": "7LYU5cqnOKQ",
+      "title": "ISRO's GSLV-F18 Launch: Can Wind High Above Hold a Rocket?",
+      "views": 34,
+      "short": true
     },
     {
       "id": "bUXR0-Xc8h0",
@@ -626,7 +632,7 @@ window.VIDEOS = {
     {
       "id": "r12QmoFJa7U",
       "title": "Your Phone Camera Sensor Came From NASA's JPL, Not From the CCD",
-      "views": 488,
+      "views": 489,
       "short": true
     },
     {
@@ -660,5 +666,5 @@ window.VIDEOS = {
       "short": true
     }
   ],
-  "updated": "2026-10-30"
+  "updated": "2026-10-31"
 };
