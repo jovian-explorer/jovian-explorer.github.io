@@ -12,9 +12,14 @@ window.VIDEOS = {
     "subscribers": "26",
     "playlists": [
       {
+        "id": "PLAhv0Xi9T5rw",
+        "title": "Research at SPL, VSSC",
+        "count": 1
+      },
+      {
         "id": "PLARLB4dK4ysE",
         "title": "Space News",
-        "count": 8
+        "count": 9
       },
       {
         "id": "PLHJPB7Vucp8k",
@@ -39,7 +44,7 @@ window.VIDEOS = {
       {
         "id": "PLeDUJ_o66ZlY",
         "title": "Astronomy",
-        "count": 62
+        "count": 63
       },
       {
         "id": "PLGZDzv6-DDT4",
@@ -50,9 +55,25 @@ window.VIDEOS = {
   },
   "videos": [
     {
+      "id": "yHNSpAfVilA",
+      "title": "Falcon 9 Flies for the 700th Time as SpaceX Launches 27 Starlink Satellites",
+      "views": 2,
+      "short": true,
+      "date": "2026-11-01",
+      "description": "On 31 October 2026 at 04:04 UTC a Falcon 9 lifted off from Vandenberg Space Force Base with 27 Starlink satellites (Starlink 15-18). It was the 700th Falcon 9 launch to date and the 118th of 2026, and its first stage…"
+    },
+    {
+      "id": "gs6k7U7ODq8",
+      "title": "SPL's Fabry-Perot Interferometer Measures Night Winds at Trivandrum",
+      "views": 16,
+      "short": true,
+      "date": "2026-11-01",
+      "description": "The Space Physics Laboratory (SPL) of the Vikram Sarabhai Space Centre (VSSC), ISRO, installed a ground-based Fabry-Perot Interferometer (FPI) at Trivandrum (8.5 N, 77 E, 0.5 degrees dip latitude), an Indian station…"
+    },
+    {
       "id": "8ZqphMD2akc",
       "title": "ISRO's GSLV-F18 Puts NVS-03 in Orbit: India's New Navigation Satellite With an L1 Signal",
-      "views": 6,
+      "views": 87,
       "short": true,
       "date": "2026-10-31",
       "description": "ISRO's GSLV-F18, the 20th GSLV flight, launched from the Second Launch Pad at Sriharikota on the night of 30 October 2026 and placed the navigation satellite NVS-03 in a Geosynchronous Transfer Orbit. Sources: - ISRO,…"
@@ -60,7 +81,7 @@ window.VIDEOS = {
     {
       "id": "aPK3J1zp7Vg",
       "title": "ISRO's GSLV-F18 Launch: Can Wind High Above Hold a Rocket?",
-      "views": 29,
+      "views": 96,
       "short": true,
       "date": "2026-10-31",
       "description": "ISRO set the launch of GSLV-F18 with the navigation satellite NVS-03 for 30 October 2026 at 11:51 pm IST from the Second Launch Pad of the Satish Dhawan Space Centre at Sriharikota, two days after the very severe…"
@@ -68,7 +89,7 @@ window.VIDEOS = {
     {
       "id": "muri5saShho",
       "title": "Why Is Space Black if the Sun Is So Bright?",
-      "views": 161,
+      "views": 164,
       "short": true,
       "date": "2026-10-29",
       "description": "Why is space black if the Sun is so bright? Light is only seen when something scatters it into the eye. On Earth, air molecules scatter sunlight by Rayleigh scattering, and blue light is scattered about four times more…"
@@ -76,7 +97,7 @@ window.VIDEOS = {
     {
       "id": "IJNh4tqgV6A",
       "title": "ISRO's Pushpak: Why Drop a Spaceplane From a Helicopter?",
-      "views": 27,
+      "views": 30,
       "short": true,
       "date": "2026-10-28",
       "description": "Why would ISRO drop a spaceplane from a helicopter? A reusable launch vehicle must come back and land intact so that it can fly again, and ISRO is testing a winged prototype that it calls Pushpak (the word spaceplane is…"
@@ -84,7 +105,7 @@ window.VIDEOS = {
     {
       "id": "1f8x_jD9dPI",
       "title": "नासा का साइकी स्पेसक्राफ्ट अपने धातु-समृद्ध एस्टेरॉयड की ओर लगभग लगातार थ्रस्ट कर रहा है",
-      "views": 10,
+      "views": 11,
       "short": true,
       "date": "2026-10-28",
       "description": "NASA/JPL के अनुसार, अक्टूबर 2023 में प्रक्षेपित और मंगल की ग्रैविटी असिस्ट से गति पाने वाले साइकी स्पेसक्राफ्ट ने 28 सितंबर 2026 से अपना इलेक्ट्रिक प्रोपल्शन सिस्टम लगभग लगातार चलाना शुरू किया है, और वह हफ़्ते में एक…"
@@ -108,7 +129,7 @@ window.VIDEOS = {
     {
       "id": "_R1cUw2Ybh0",
       "title": "Nancy Grace Roman Space Telescope Explained: Launch, First Checks and What Comes Next",
-      "views": 9,
+      "views": 10,
       "duration": "5:19",
       "date": "2026-10-27",
       "description": "What can a telescope see when its view is a hundred times wider than Hubble's, and what has it done since its launch on 30 August 2026? NASA says the Nancy Grace Roman Space Telescope has a field of view at least 100…"
@@ -116,7 +137,7 @@ window.VIDEOS = {
     {
       "id": "wBxBrvOoluw",
       "title": "Gaganyaan G1 Explained: What ISRO's Uncrewed Flight With Vyommitra Must Prove",
-      "views": 12,
+      "views": 14,
       "duration": "6:33",
       "date": "2026-10-27",
       "description": "Before astronauts fly on Gaganyaan, ISRO plans an uncrewed rehearsal called G1. ISRO's latest statement, on 16 October 2026, says it is \"targeted for launch in 2026\", and a government reply of 6 August 2026 places it in…"
@@ -132,7 +153,7 @@ window.VIDEOS = {
     {
       "id": "FB5s-gNhPr0",
       "title": "NASA's Dragonfly Rotorcraft Completes Its First Simulated Flight for Titan",
-      "views": 31,
+      "views": 32,
       "short": true,
       "date": "2026-10-27",
       "description": "According to NASA, Dragonfly has completed its first simulated flight on flight-like avionics at the Johns Hopkins Applied Physics Laboratory in Laurel, Maryland. In the simulation the rotorcraft separated from its back…"
@@ -140,7 +161,7 @@ window.VIDEOS = {
     {
       "id": "BAQVR247R98",
       "title": "NASA's Psyche Spacecraft Now Thrusts Almost Continuously Towards Its Metal-Rich Asteroid",
-      "views": 9,
+      "views": 10,
       "short": true,
       "date": "2026-10-27",
       "description": "According to NASA/JPL, the Psyche spacecraft, launched in October 2023 and boosted by a Mars gravity assist, began using its electric propulsion system nearly continuously on 28 September 2026, pausing once a week to…"
@@ -180,7 +201,7 @@ window.VIDEOS = {
     {
       "id": "9t-OewyoolU",
       "title": "Gaganyaan G1: India's First Uncrewed Flight Carries a Robot Called Vyommitra",
-      "views": 34,
+      "views": 35,
       "short": true,
       "date": "2026-10-27",
       "description": "India's first Gaganyaan flight, G1, is planned to carry a robot instead of a crew. ISRO's latest statement, on 16 October 2026, says the mission is \"targeted for launch in 2026\", and a government reply of 6 August 2026…"
@@ -228,7 +249,7 @@ window.VIDEOS = {
     {
       "id": "AqME5XyTg8A",
       "title": "Who Invented the Internet? ARPANET, TCP/IP and the Web Born at CERN Explained",
-      "views": 4,
+      "views": 10,
       "duration": "5:45",
       "date": "2026-10-26",
       "description": "Who invented the internet? The question mixes up two different inventions. The internet is a network of networks, and the World Wide Web is a service that runs on it. In this video, we separate the two, using primary…"
@@ -236,7 +257,7 @@ window.VIDEOS = {
     {
       "id": "rFQRjldeSFY",
       "title": "Artemis II Explained: The Record Moon Flyby and the Race to the South Pole",
-      "views": 14,
+      "views": 15,
       "duration": "5:45",
       "date": "2026-10-26",
       "description": "How did four astronauts travel farther from Earth than any humans before them, without landing on the Moon? Artemis II launched on 1 April 2026 on NASA's Space Launch System from Launch Pad 39B, with Reid Wiseman,…"
@@ -244,7 +265,7 @@ window.VIDEOS = {
     {
       "id": "MkeuZJB4rB4",
       "title": "Black Hole Size Comparison: How Big Is TON 618, and How Do We Know?",
-      "views": 9,
+      "views": 10,
       "duration": "5:26",
       "date": "2026-10-26",
       "description": "How big can a black hole get, and how do astronomers weigh something that gives off no light of its own? In this video, we line up black holes from a few solar masses to tens of billions, and we turn each mass into the…"
@@ -252,7 +273,7 @@ window.VIDEOS = {
     {
       "id": "2DENsGlyOhQ",
       "title": "Fiber Optic Cables: How Light Carries the Internet Through Glass",
-      "views": 66,
+      "views": 67,
       "short": true,
       "date": "2026-10-26",
       "description": "Light stays inside a glass fibre because it reflects off the wall, much like light that follows a stream of water. The first fibres kept only 1 percent of the light after 20 metres. In 1966, Charles Kao and George…"
@@ -276,7 +297,7 @@ window.VIDEOS = {
     {
       "id": "qNTSwyanQQ0",
       "title": "Chandrayaan-3: Moon Soil Drops 80 Degrees in 10 Centimetres",
-      "views": 57,
+      "views": 58,
       "short": true,
       "date": "2026-10-26",
       "description": "On 23 August 2023, India's Chandrayaan-3 lander Vikram touched down near the Moon's south polar region. Its probe ChaSTE, with ten temperature sensors, measured the first such temperature profile of the lunar topsoil…"
@@ -348,7 +369,7 @@ window.VIDEOS = {
     {
       "id": "0zGsS7I3bZM",
       "title": "Chandrayaan-3: The First Landing Near the Moon's South Pole",
-      "views": 543,
+      "views": 544,
       "short": true,
       "date": "2026-10-25",
       "description": "On 23 August 2023, ISRO's Vikram lander touched down near the lunar south polar region, at about 69.37 degrees south. ISRO states that this made India the fourth nation to soft-land on the Moon and the first to land…"
@@ -396,7 +417,7 @@ window.VIDEOS = {
     {
       "id": "ld5bzg6wAJ0",
       "title": "Why Is the Sky Blue? Rayleigh Scattering, the Violet Puzzle, Red Sunsets and White Clouds",
-      "views": 7,
+      "views": 8,
       "duration": "5:15",
       "date": "2026-10-22",
       "description": "Air scatters violet light even more strongly than blue light, so why is the clear sky blue? This video follows sunlight into the atmosphere, into our eyes, and into sunsets and clouds. Rayleigh's law (1871) says that…"
@@ -408,6 +429,15 @@ window.VIDEOS = {
       "duration": "5:38",
       "date": "2026-10-22",
       "description": "India, the United States and China are all aiming at the Moon's south pole, because of water ice in craters that never see the Sun. This video explains why the 1.5 degree tilt of the Moon's axis keeps crater floors…"
+    },
+    {
+      "id": "sMk6o1gKpi8",
+      "title": "How CSIRO Engineers Used Radio Astronomy Know-How to Solve Indoor Wi-Fi Echoes",
+      "views": 397,
+      "short": true,
+      "date": "2026-10-22",
+      "description": "Indoors, radio waves are reflected by walls and furniture, so a receiver gets several copies of the same signal at slightly different times (the multipath problem). In the early 1990s a team in the Radiophysics Division…",
+      "duration": "0:56"
     },
     {
       "id": "8pDhCpbolKk",
@@ -468,7 +498,7 @@ window.VIDEOS = {
     {
       "id": "gX5NztkzJ9c",
       "title": "Aditya-L1: How ISRO Watches the Sun Nonstop from L1",
-      "views": 348,
+      "views": 349,
       "short": true,
       "date": "2026-10-20",
       "description": "Aditya-L1, the first space-based Indian mission to study the Sun, built by the Indian Space Research Organisation (ISRO), circles the Sun-Earth Lagrange point L1, about 1.5 million km from Earth toward the Sun. At L1…"
@@ -582,13 +612,13 @@ window.VIDEOS = {
     {
       "id": "txNkhfqiEKs",
       "title": "Exoplanet Transits Explained: How Kepler and TESS Find Planets Around Other Stars",
-      "views": 15,
+      "views": 20,
       "duration": "5:28"
     },
     {
       "id": "D5s1jYEszwc",
       "title": "Gaganyaan Explained: How ISRO Tests the Escape System, Parachutes and Crew",
-      "views": 26,
+      "views": 31,
       "duration": "5:59"
     },
     {
@@ -624,7 +654,7 @@ window.VIDEOS = {
     {
       "id": "KxLsf0jEe-4",
       "title": "Parker Solar Probe: The Fastest Human-Made Object, at 192 km/s",
-      "views": 6,
+      "views": 7,
       "short": true
     },
     {
@@ -642,13 +672,7 @@ window.VIDEOS = {
     {
       "id": "r12QmoFJa7U",
       "title": "Your Phone Camera Sensor Came From NASA's JPL, Not From the CCD",
-      "views": 489,
-      "short": true
-    },
-    {
-      "id": "sMk6o1gKpi8",
-      "title": "How CSIRO Engineers Used Radio Astronomy Know-How to Solve Indoor Wi-Fi Echoes",
-      "views": 397,
+      "views": 490,
       "short": true
     },
     {
@@ -682,5 +706,5 @@ window.VIDEOS = {
       "short": true
     }
   ],
-  "updated": "2026-10-31"
+  "updated": "2026-11-01"
 };

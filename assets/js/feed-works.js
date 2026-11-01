@@ -7,6 +7,14 @@ window.WORKS = {
   "orcid": "0000-0002-7004-8670",
   "items": [
     {
+      "title": "corona3d: a three-dimensional reconstruction of a coronal mass ejection and the corona from public MHD, coronagraph, and radio data",
+      "type": "software",
+      "venue": "",
+      "year": 2026,
+      "month": 10,
+      "doi": "10.5281/zenodo.23801369"
+    },
+    {
       "title": "India-station-map: v1.0.0",
       "type": "software",
       "venue": "",
@@ -147,16 +155,6 @@ window.WORKS = {
       "month": 11
     },
     {
-      "title": "COMPLETE: a flagship mission for complete understanding of 3D coronal magnetic energy release",
-      "type": "journal-article",
-      "venue": "Bulletin of the AAS",
-      "year": 2023,
-      "month": 7,
-      "doi": "10.3847/25c2cfeb.b95dd671",
-      "dated": "earliest",
-      "authors": "Caspi, A., Casini, R., Downs, C., Gibson, S., Gilbert, H., Glesener, L., Guidoni, S., Hughes, J. M., McKenzie, D., Plowman, J., Seaton, D., Reeves, K., et al."
-    },
-    {
       "title": "Improving Multi-Dimensional Data Formats, Access, and Assimilation Tools for the Twenty-First Century",
       "type": "journal-article",
       "venue": "Vol. 55, Issue 3 (Heliophysics 2024 Decadal Whitepapers)",
@@ -179,7 +177,10 @@ window.WORKS = {
       "type": "journal-article",
       "venue": "Bulletin of the AAS",
       "year": 2023,
-      "month": 7
+      "month": 7,
+      "doi": "10.3847/25c2cfeb.b95dd671",
+      "dated": "earliest",
+      "authors": "Caspi, A., Casini, R., Downs, C., Gibson, S., Gilbert, H., Glesener, L., Guidoni, S., Hughes, J. M., McKenzie, D., Plowman, J., Seaton, D., Reeves, K., et al."
     },
     {
       "title": "Magnetic Energy Powers the Corona: How We Can Understand its 3D Storage & Release",
@@ -270,5 +271,5 @@ window.WORKS = {
       "doi": "10.5281/zenodo.23331689"
     }
   ],
-  "updated": "2026-10-30"
+  "updated": "2026-11-01"
 };
