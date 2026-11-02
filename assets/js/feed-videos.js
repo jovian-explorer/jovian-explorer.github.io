@@ -9,7 +9,7 @@ window.VIDEOS = {
     "id": "UCCXaTGdT28P09_WMwT2Z-8Q",
     "handle": "jovian_explorer",
     "title": "Jovian Explorer",
-    "subscribers": "26",
+    "subscribers": "30",
     "playlists": [
       {
         "id": "PLAhv0Xi9T5rw",
@@ -19,7 +19,7 @@ window.VIDEOS = {
       {
         "id": "PLARLB4dK4ysE",
         "title": "Space News",
-        "count": 9
+        "count": 10
       },
       {
         "id": "PLHJPB7Vucp8k",
@@ -44,7 +44,7 @@ window.VIDEOS = {
       {
         "id": "PLeDUJ_o66ZlY",
         "title": "Astronomy",
-        "count": 63
+        "count": 67
       },
       {
         "id": "PLGZDzv6-DDT4",
@@ -55,9 +55,33 @@ window.VIDEOS = {
   },
   "videos": [
     {
+      "id": "177nm0Ea6XM",
+      "title": "NASA's Swift Observatory Is Falling Back to Earth: Reentry Forecast Around 4 November",
+      "views": 0,
+      "short": true,
+      "date": "2026-11-02",
+      "description": "NASA's Neil Gehrels Swift Observatory, launched in 2004 to study gamma-ray bursts, is falling back to Earth after science ended with its final observation on 20 October 2026. The Aerospace Corporation forecasts reentry…"
+    },
+    {
+      "id": "9lT92efGLkY",
+      "title": "Chandrayaan-4: Why India Wants Moon Rocks Home",
+      "views": 107,
+      "short": true,
+      "date": "2026-11-02",
+      "description": "India plans to bring Moon rocks home. The mission is Chandrayaan-4, approved by India's Cabinet on 18 September 2024 with a budget of 2,104 crore rupees. Only the United States, the Soviet Union and China have brought…"
+    },
+    {
+      "id": "NREnFtlGFcg",
+      "title": "Orion: How Artemis Astronauts Hide From a Solar Storm",
+      "views": 53,
+      "short": true,
+      "date": "2026-11-01",
+      "description": "NASA's Crew Systems page states that during a radiation event the crew of the Orion spacecraft will open two large storage bays located beneath their seats in the central part of the crew module, remove all the stowage…"
+    },
+    {
       "id": "yHNSpAfVilA",
       "title": "Falcon 9 Flies for the 700th Time as SpaceX Launches 27 Starlink Satellites",
-      "views": 2,
+      "views": 173,
       "short": true,
       "date": "2026-11-01",
       "description": "On 31 October 2026 at 04:04 UTC a Falcon 9 lifted off from Vandenberg Space Force Base with 27 Starlink satellites (Starlink 15-18). It was the 700th Falcon 9 launch to date and the 118th of 2026, and its first stage…"
@@ -65,7 +89,7 @@ window.VIDEOS = {
     {
       "id": "gs6k7U7ODq8",
       "title": "SPL's Fabry-Perot Interferometer Measures Night Winds at Trivandrum",
-      "views": 16,
+      "views": 74,
       "short": true,
       "date": "2026-11-01",
       "description": "The Space Physics Laboratory (SPL) of the Vikram Sarabhai Space Centre (VSSC), ISRO, installed a ground-based Fabry-Perot Interferometer (FPI) at Trivandrum (8.5 N, 77 E, 0.5 degrees dip latitude), an Indian station…"
@@ -73,7 +97,7 @@ window.VIDEOS = {
     {
       "id": "8ZqphMD2akc",
       "title": "ISRO's GSLV-F18 Puts NVS-03 in Orbit: India's New Navigation Satellite With an L1 Signal",
-      "views": 87,
+      "views": 92,
       "short": true,
       "date": "2026-10-31",
       "description": "ISRO's GSLV-F18, the 20th GSLV flight, launched from the Second Launch Pad at Sriharikota on the night of 30 October 2026 and placed the navigation satellite NVS-03 in a Geosynchronous Transfer Orbit. Sources: - ISRO,…"
@@ -81,7 +105,7 @@ window.VIDEOS = {
     {
       "id": "aPK3J1zp7Vg",
       "title": "ISRO's GSLV-F18 Launch: Can Wind High Above Hold a Rocket?",
-      "views": 96,
+      "views": 116,
       "short": true,
       "date": "2026-10-31",
       "description": "ISRO set the launch of GSLV-F18 with the navigation satellite NVS-03 for 30 October 2026 at 11:51 pm IST from the Second Launch Pad of the Satish Dhawan Space Centre at Sriharikota, two days after the very severe…"
@@ -89,7 +113,7 @@ window.VIDEOS = {
     {
       "id": "muri5saShho",
       "title": "Why Is Space Black if the Sun Is So Bright?",
-      "views": 164,
+      "views": 165,
       "short": true,
       "date": "2026-10-29",
       "description": "Why is space black if the Sun is so bright? Light is only seen when something scatters it into the eye. On Earth, air molecules scatter sunlight by Rayleigh scattering, and blue light is scattered about four times more…"
@@ -105,7 +129,7 @@ window.VIDEOS = {
     {
       "id": "1f8x_jD9dPI",
       "title": "नासा का साइकी स्पेसक्राफ्ट अपने धातु-समृद्ध एस्टेरॉयड की ओर लगभग लगातार थ्रस्ट कर रहा है",
-      "views": 11,
+      "views": 14,
       "short": true,
       "date": "2026-10-28",
       "description": "NASA/JPL के अनुसार, अक्टूबर 2023 में प्रक्षेपित और मंगल की ग्रैविटी असिस्ट से गति पाने वाले साइकी स्पेसक्राफ्ट ने 28 सितंबर 2026 से अपना इलेक्ट्रिक प्रोपल्शन सिस्टम लगभग लगातार चलाना शुरू किया है, और वह हफ़्ते में एक…"
@@ -121,7 +145,7 @@ window.VIDEOS = {
     {
       "id": "ipNj2L6JHs0",
       "title": "NISAR Explained: NASA-ISRO Radar Satellite, Venezuela Earthquakes and Anak Krakatau in 2026",
-      "views": 5,
+      "views": 7,
       "duration": "5:59",
       "date": "2026-10-27",
       "description": "NISAR is a radar satellite built by NASA and ISRO. ISRO's GSLV-F16 launched it from Sriharikota on 30 July 2025, and NASA released its first images on 25 September 2025. In this video, we follow what the mission has…"
@@ -129,7 +153,7 @@ window.VIDEOS = {
     {
       "id": "_R1cUw2Ybh0",
       "title": "Nancy Grace Roman Space Telescope Explained: Launch, First Checks and What Comes Next",
-      "views": 10,
+      "views": 11,
       "duration": "5:19",
       "date": "2026-10-27",
       "description": "What can a telescope see when its view is a hundred times wider than Hubble's, and what has it done since its launch on 30 August 2026? NASA says the Nancy Grace Roman Space Telescope has a field of view at least 100…"
@@ -145,7 +169,7 @@ window.VIDEOS = {
     {
       "id": "SaMKXKCdoPk",
       "title": "BepiColombo Reaches Mercury This November: Why Stopping There Is So Hard",
-      "views": 100,
+      "views": 101,
       "short": true,
       "date": "2026-10-27",
       "description": "BepiColombo is due to enter orbit around Mercury in November 2026. ESA's latest update, dated 6 October 2026, says the composite spacecraft will enter orbit around Mercury on 21 November 2026, and ESA's own timeline…"
@@ -153,7 +177,7 @@ window.VIDEOS = {
     {
       "id": "FB5s-gNhPr0",
       "title": "NASA's Dragonfly Rotorcraft Completes Its First Simulated Flight for Titan",
-      "views": 32,
+      "views": 34,
       "short": true,
       "date": "2026-10-27",
       "description": "According to NASA, Dragonfly has completed its first simulated flight on flight-like avionics at the Johns Hopkins Applied Physics Laboratory in Laurel, Maryland. In the simulation the rotorcraft separated from its back…"
@@ -161,7 +185,7 @@ window.VIDEOS = {
     {
       "id": "BAQVR247R98",
       "title": "NASA's Psyche Spacecraft Now Thrusts Almost Continuously Towards Its Metal-Rich Asteroid",
-      "views": 10,
+      "views": 11,
       "short": true,
       "date": "2026-10-27",
       "description": "According to NASA/JPL, the Psyche spacecraft, launched in October 2023 and boosted by a Mars gravity assist, began using its electric propulsion system nearly continuously on 28 September 2026, pausing once a week to…"
@@ -177,7 +201,7 @@ window.VIDEOS = {
     {
       "id": "sKjTbXjE5sc",
       "title": "Two Dead Chinese Rocket Stages May Pass Within 300 m Over Australia on 2 November",
-      "views": 35,
+      "views": 36,
       "short": true,
       "date": "2026-10-27",
       "description": "Two spent Chinese rocket stages, CZ-4C R/B (NORAD 37215, launched 2010) and CZ-11 R/B (NORAD 43872, launched 2018), are predicted to pass within 300 metres of each other on Monday 2 November 2026 at about 03:01 UTC,…"
@@ -185,7 +209,7 @@ window.VIDEOS = {
     {
       "id": "ySwBYZ_wT5I",
       "title": "NISAR Measured the Venezuela Earthquake Ground Shift From Orbit",
-      "views": 45,
+      "views": 47,
       "short": true,
       "date": "2026-10-27",
       "description": "NISAR, the satellite that NASA and ISRO built together, is a radar in orbit. After the two Venezuela earthquakes of 24 June 2026, NASA compared NISAR images taken before and after and mapped westward ground displacement…"
@@ -193,7 +217,7 @@ window.VIDEOS = {
     {
       "id": "ubccyh1pvms",
       "title": "Nancy Grace Roman Telescope: 100 Times Hubble's Field of View, Working After Launch",
-      "views": 62,
+      "views": 63,
       "short": true,
       "date": "2026-10-27",
       "description": "NASA says the Nancy Grace Roman Space Telescope has a field of view at least 100 times larger than Hubble's (the field of view, not the sharpness). It launched on 30 August 2026 on a SpaceX Falcon Heavy and is…"
@@ -201,7 +225,7 @@ window.VIDEOS = {
     {
       "id": "9t-OewyoolU",
       "title": "Gaganyaan G1: India's First Uncrewed Flight Carries a Robot Called Vyommitra",
-      "views": 35,
+      "views": 36,
       "short": true,
       "date": "2026-10-27",
       "description": "India's first Gaganyaan flight, G1, is planned to carry a robot instead of a crew. ISRO's latest statement, on 16 October 2026, says the mission is \"targeted for launch in 2026\", and a government reply of 6 August 2026…"
@@ -241,7 +265,7 @@ window.VIDEOS = {
     {
       "id": "xrxb8CyRvBA",
       "title": "Chandrayaan-3 Explained: What Vikram and Pragyan Measured Near the Moon's South Pole",
-      "views": 7,
+      "views": 8,
       "duration": "5:26",
       "date": "2026-10-26",
       "description": "How hot is the soil of the Moon near its south polar region, and how fast does the temperature change as you go down? In August 2023, India's Chandrayaan-3 measured it on the spot. In this video, we follow what the…"
@@ -273,7 +297,7 @@ window.VIDEOS = {
     {
       "id": "2DENsGlyOhQ",
       "title": "Fiber Optic Cables: How Light Carries the Internet Through Glass",
-      "views": 67,
+      "views": 68,
       "short": true,
       "date": "2026-10-26",
       "description": "Light stays inside a glass fibre because it reflects off the wall, much like light that follows a stream of water. The first fibres kept only 1 percent of the light after 20 metres. In 1966, Charles Kao and George…"
@@ -289,7 +313,7 @@ window.VIDEOS = {
     {
       "id": "Y-mbCgHtNyc",
       "title": "Sunita Williams: A One-Week Test Flight Became 286 Days in Space",
-      "views": 68,
+      "views": 69,
       "short": true,
       "date": "2026-10-26",
       "description": "Suni Williams and Butch Wilmore launched on Boeing's Starliner on 5 June 2024 for a Crew Flight Test that NASA planned for eight to fourteen days. Some of Starliner's thrusters did not perform as expected and its helium…"
@@ -329,7 +353,7 @@ window.VIDEOS = {
     {
       "id": "uhRKPwFeHwI",
       "title": "Black Hole Size Comparison: Cygnus X-1, Sagittarius A*, M87* and TON 618",
-      "views": 183,
+      "views": 184,
       "short": true,
       "date": "2026-10-26",
       "description": "How big is a black hole? The size of its event horizon grows in step with its mass, by about 3 km of radius for every solar mass (our arithmetic from R = 2GM/c²). Squeezed into a black hole, the Sun would be about 6 km…"
@@ -353,7 +377,7 @@ window.VIDEOS = {
     {
       "id": "RbFhBYpE9JY",
       "title": "Starlink and the Geomagnetic Storm of February 2022: Why 38 Satellites Were Lost",
-      "views": 56,
+      "views": 57,
       "duration": "5:46",
       "date": "2026-10-25",
       "description": "How can a storm that most people on the ground never noticed bring down 38 new satellites? On 3 February 2022 a Falcon 9 launched 49 Starlink satellites into a low orbit near 210 km, from which they raise themselves to…"
@@ -369,7 +393,7 @@ window.VIDEOS = {
     {
       "id": "0zGsS7I3bZM",
       "title": "Chandrayaan-3: The First Landing Near the Moon's South Pole",
-      "views": 544,
+      "views": 546,
       "short": true,
       "date": "2026-10-25",
       "description": "On 23 August 2023, ISRO's Vikram lander touched down near the lunar south polar region, at about 69.37 degrees south. ISRO states that this made India the fourth nation to soft-land on the Moon and the first to land…"
@@ -393,7 +417,7 @@ window.VIDEOS = {
     {
       "id": "KwZq0PvVKlY",
       "title": "Did NASA Invent Tang, Teflon and Velcro? Only One of Four Came From NASA",
-      "views": 59,
+      "views": 60,
       "short": true,
       "date": "2026-10-24",
       "description": "Tang, Teflon and Velcro are often called NASA inventions, but NASA's own Spinoff office says that none of the three came from NASA. General Foods developed Tang in 1957, the DuPont chemist Roy Plunkett found the polymer…"
@@ -401,7 +425,7 @@ window.VIDEOS = {
     {
       "id": "QjBZKseyzc8",
       "title": "Starlink 2022: How a Minor Geomagnetic Storm Brought Down 38 New Satellites",
-      "views": 771,
+      "views": 773,
       "short": true,
       "date": "2026-10-24",
       "description": "On 3 February 2022, SpaceX launched 49 Starlink satellites into a low orbit with its lowest point at about 210 km, and 38 of them were lost within days. Two geomagnetic storms, set off by coronal mass ejections from the…"
@@ -409,7 +433,7 @@ window.VIDEOS = {
     {
       "id": "JFnlUjiNSEI",
       "title": "Mangalyaan: How India Reached Mars Orbit on Its First Attempt",
-      "views": 269,
+      "views": 271,
       "short": true,
       "date": "2026-10-24",
       "description": "India's Mars Orbiter Mission, often called Mangalyaan, was launched on 5 November 2013 by PSLV-C25 from Sriharikota and entered orbit around Mars on 24 September 2014. According to ISRO, India became the first country…"
@@ -433,7 +457,7 @@ window.VIDEOS = {
     {
       "id": "sMk6o1gKpi8",
       "title": "How CSIRO Engineers Used Radio Astronomy Know-How to Solve Indoor Wi-Fi Echoes",
-      "views": 397,
+      "views": 398,
       "short": true,
       "date": "2026-10-22",
       "description": "Indoors, radio waves are reflected by walls and furniture, so a receiver gets several copies of the same signal at slightly different times (the multipath problem). In the early 1990s a team in the Radiophysics Division…",
@@ -498,7 +522,7 @@ window.VIDEOS = {
     {
       "id": "gX5NztkzJ9c",
       "title": "Aditya-L1: How ISRO Watches the Sun Nonstop from L1",
-      "views": 349,
+      "views": 350,
       "short": true,
       "date": "2026-10-20",
       "description": "Aditya-L1, the first space-based Indian mission to study the Sun, built by the Indian Space Research Organisation (ISRO), circles the Sun-Earth Lagrange point L1, about 1.5 million km from Earth toward the Sun. At L1…"
@@ -576,7 +600,7 @@ window.VIDEOS = {
     {
       "id": "MeRZcWfs1EQ",
       "title": "The Indian Monsoon Explained: Sea Breeze or Moving Tropical Rain Belt (ITCZ)?",
-      "views": 6,
+      "views": 7,
       "duration": "6:16"
     },
     {
@@ -588,7 +612,7 @@ window.VIDEOS = {
     {
       "id": "wpwjtjnGOKM",
       "title": "GPS and Einstein's Relativity: Why Satellite Clocks Need a 38 Microsecond Daily Correction",
-      "views": 39,
+      "views": 40,
       "duration": "6:32"
     },
     {
@@ -612,7 +636,7 @@ window.VIDEOS = {
     {
       "id": "txNkhfqiEKs",
       "title": "Exoplanet Transits Explained: How Kepler and TESS Find Planets Around Other Stars",
-      "views": 20,
+      "views": 21,
       "duration": "5:28"
     },
     {
@@ -624,7 +648,7 @@ window.VIDEOS = {
     {
       "id": "UCbJHFcEj3M",
       "title": "What If the 1859 Carrington Solar Storm Hit Today? Grids, Satellites and GPS",
-      "views": 1,
+      "views": 2,
       "duration": "6:37"
     },
     {
@@ -642,7 +666,7 @@ window.VIDEOS = {
     {
       "id": "ZUyFavLREk8",
       "title": "NASA's Swift Observatory Ends Its Mission, Re-Entry Expected Within Weeks",
-      "views": 32,
+      "views": 34,
       "short": true
     },
     {
@@ -666,7 +690,7 @@ window.VIDEOS = {
     {
       "id": "goOri81wAc0",
       "title": "Why the Monsoon Reaches Kerala Around 1 June: The Moving Tropical Rain Belt",
-      "views": 461,
+      "views": 462,
       "short": true
     },
     {
@@ -706,5 +730,5 @@ window.VIDEOS = {
       "short": true
     }
   ],
-  "updated": "2026-11-01"
+  "updated": "2026-11-02"
 };
