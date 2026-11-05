@@ -9,17 +9,17 @@ window.VIDEOS = {
     "id": "UCCXaTGdT28P09_WMwT2Z-8Q",
     "handle": "jovian_explorer",
     "title": "Jovian Explorer",
-    "subscribers": "30",
+    "subscribers": "32",
     "playlists": [
       {
         "id": "PLAhv0Xi9T5rw",
         "title": "Research at SPL, VSSC",
-        "count": 1
+        "count": 2
       },
       {
         "id": "PLARLB4dK4ysE",
         "title": "Space News",
-        "count": 10
+        "count": 11
       },
       {
         "id": "PLHJPB7Vucp8k",
@@ -44,7 +44,7 @@ window.VIDEOS = {
       {
         "id": "PLeDUJ_o66ZlY",
         "title": "Astronomy",
-        "count": 67
+        "count": 74
       },
       {
         "id": "PLGZDzv6-DDT4",
@@ -55,9 +55,73 @@ window.VIDEOS = {
   },
   "videos": [
     {
+      "id": "2wYYnV_fUaY",
+      "title": "NASA's Swift Observatory Has Re-entered the Atmosphere After Almost 22 Years",
+      "views": 8,
+      "short": true,
+      "date": "2026-11-05",
+      "description": "NASA's Neil Gehrels Swift Observatory, launched in 2004 to study gamma-ray bursts, re-entered Earth's atmosphere on 4 November 2026 at 7:39 a.m. EST (12:39 UT, 6:09 p.m. IST) over the North Sumatra region of Indonesia,…"
+    },
+    {
+      "id": "vq99JQCKvYI",
+      "title": "Moon South Pole Ice: How We Know It Is There, From LCROSS to Chandrayaan-3",
+      "views": 2,
+      "duration": "5:46",
+      "date": "2026-11-04",
+      "description": "Is there really ice in the dark craters at the Moon's south pole, and how would anyone know? India, the United States and China are all sending missions toward that region, and the argument for each of them rests on one…"
+    },
+    {
+      "id": "3-MRWStWaFk",
+      "title": "Could This Be the First Moon Found Outside Our Solar System?",
+      "views": 21,
+      "short": true,
+      "date": "2026-11-04",
+      "description": "Could this be the first moon found outside our solar system? In the {CD-35 2722|C D thirty five, twenty seven twenty two} system, 73 light years away, a brown dwarf of about 37 Jupiter masses orbits a star half as…"
+    },
+    {
+      "id": "N4e36NCSw1Q",
+      "title": "What If the 420-Tonne ISS Fell Without Control?",
+      "views": 20,
+      "short": true,
+      "date": "2026-11-04",
+      "description": "Without reboosts, the ISS falls within two years. At roughly 420 tonnes, it is the largest structure ever built in space. Falling uncontrolled, it would scatter very large pieces of debris over a large footprint, a…"
+    },
+    {
+      "id": "P1_rZTnZQog",
+      "title": "Chandrayaan-3 ChaSTE: Deeper Moon Soil Carries Heat 5 Times Better",
+      "views": 28,
+      "short": true,
+      "date": "2026-11-04",
+      "description": "The thermal probe ChaSTE (Chandra's Surface Thermophysical Experiment) flew on the Vikram lander of Chandrayaan-3. It carries 10 temperature sensors and a 0.1 W heater foil. R. Renju of the Space Physics Laboratory…"
+    },
+    {
+      "id": "FTXPgqY7Tps",
+      "title": "Apophis Will Pass Closer Than Satellites in 2029",
+      "views": 56,
+      "short": true,
+      "date": "2026-11-03",
+      "description": "Apophis passes 32,000 kilometers away, closer than satellites. It will not hit Earth. On 13 April 2029, this asteroid, about 340 meters wide, will come about 32,000 kilometers from Earth's surface. Geostationary…"
+    },
+    {
+      "id": "CQmrVnzWFSc",
+      "title": "Why Does the Moon Look Bigger Near the Horizon?",
+      "views": 50,
+      "short": true,
+      "date": "2026-11-03",
+      "description": "Why does the Moon look bigger near the horizon? It is not bigger: photographs taken with the same zoom show the same width near the horizon as high in the sky, and a fingernail held at arm's length fits the Moon about…"
+    },
+    {
+      "id": "KNW0btM07tY",
+      "title": "How Astronauts Sleep on the ISS: 6.09 Hours a Night",
+      "views": 7,
+      "short": true,
+      "date": "2026-11-03",
+      "description": "The International Space Station (ISS) circles Earth every 92 minutes, so NASA's Earth Observatory says the crew experience 15 or 16 sunrises and sets every day; the comparison with a bedroom window that gets a sunrise…"
+    },
+    {
       "id": "177nm0Ea6XM",
       "title": "NASA's Swift Observatory Is Falling Back to Earth: Reentry Forecast Around 4 November",
-      "views": 0,
+      "views": 55,
       "short": true,
       "date": "2026-11-02",
       "description": "NASA's Neil Gehrels Swift Observatory, launched in 2004 to study gamma-ray bursts, is falling back to Earth after science ended with its final observation on 20 October 2026. The Aerospace Corporation forecasts reentry…"
@@ -65,7 +129,7 @@ window.VIDEOS = {
     {
       "id": "9lT92efGLkY",
       "title": "Chandrayaan-4: Why India Wants Moon Rocks Home",
-      "views": 107,
+      "views": 191,
       "short": true,
       "date": "2026-11-02",
       "description": "India plans to bring Moon rocks home. The mission is Chandrayaan-4, approved by India's Cabinet on 18 September 2024 with a budget of 2,104 crore rupees. Only the United States, the Soviet Union and China have brought…"
@@ -73,7 +137,7 @@ window.VIDEOS = {
     {
       "id": "NREnFtlGFcg",
       "title": "Orion: How Artemis Astronauts Hide From a Solar Storm",
-      "views": 53,
+      "views": 80,
       "short": true,
       "date": "2026-11-01",
       "description": "NASA's Crew Systems page states that during a radiation event the crew of the Orion spacecraft will open two large storage bays located beneath their seats in the central part of the crew module, remove all the stowage…"
@@ -81,7 +145,7 @@ window.VIDEOS = {
     {
       "id": "yHNSpAfVilA",
       "title": "Falcon 9 Flies for the 700th Time as SpaceX Launches 27 Starlink Satellites",
-      "views": 173,
+      "views": 216,
       "short": true,
       "date": "2026-11-01",
       "description": "On 31 October 2026 at 04:04 UTC a Falcon 9 lifted off from Vandenberg Space Force Base with 27 Starlink satellites (Starlink 15-18). It was the 700th Falcon 9 launch to date and the 118th of 2026, and its first stage…"
@@ -89,7 +153,7 @@ window.VIDEOS = {
     {
       "id": "gs6k7U7ODq8",
       "title": "SPL's Fabry-Perot Interferometer Measures Night Winds at Trivandrum",
-      "views": 74,
+      "views": 97,
       "short": true,
       "date": "2026-11-01",
       "description": "The Space Physics Laboratory (SPL) of the Vikram Sarabhai Space Centre (VSSC), ISRO, installed a ground-based Fabry-Perot Interferometer (FPI) at Trivandrum (8.5 N, 77 E, 0.5 degrees dip latitude), an Indian station…"
@@ -97,7 +161,7 @@ window.VIDEOS = {
     {
       "id": "8ZqphMD2akc",
       "title": "ISRO's GSLV-F18 Puts NVS-03 in Orbit: India's New Navigation Satellite With an L1 Signal",
-      "views": 92,
+      "views": 95,
       "short": true,
       "date": "2026-10-31",
       "description": "ISRO's GSLV-F18, the 20th GSLV flight, launched from the Second Launch Pad at Sriharikota on the night of 30 October 2026 and placed the navigation satellite NVS-03 in a Geosynchronous Transfer Orbit. Sources: - ISRO,…"
@@ -105,7 +169,7 @@ window.VIDEOS = {
     {
       "id": "aPK3J1zp7Vg",
       "title": "ISRO's GSLV-F18 Launch: Can Wind High Above Hold a Rocket?",
-      "views": 116,
+      "views": 118,
       "short": true,
       "date": "2026-10-31",
       "description": "ISRO set the launch of GSLV-F18 with the navigation satellite NVS-03 for 30 October 2026 at 11:51 pm IST from the Second Launch Pad of the Satish Dhawan Space Centre at Sriharikota, two days after the very severe…"
@@ -121,7 +185,7 @@ window.VIDEOS = {
     {
       "id": "IJNh4tqgV6A",
       "title": "ISRO's Pushpak: Why Drop a Spaceplane From a Helicopter?",
-      "views": 30,
+      "views": 55,
       "short": true,
       "date": "2026-10-28",
       "description": "Why would ISRO drop a spaceplane from a helicopter? A reusable launch vehicle must come back and land intact so that it can fly again, and ISRO is testing a winged prototype that it calls Pushpak (the word spaceplane is…"
@@ -129,7 +193,7 @@ window.VIDEOS = {
     {
       "id": "1f8x_jD9dPI",
       "title": "नासा का साइकी स्पेसक्राफ्ट अपने धातु-समृद्ध एस्टेरॉयड की ओर लगभग लगातार थ्रस्ट कर रहा है",
-      "views": 14,
+      "views": 22,
       "short": true,
       "date": "2026-10-28",
       "description": "NASA/JPL के अनुसार, अक्टूबर 2023 में प्रक्षेपित और मंगल की ग्रैविटी असिस्ट से गति पाने वाले साइकी स्पेसक्राफ्ट ने 28 सितंबर 2026 से अपना इलेक्ट्रिक प्रोपल्शन सिस्टम लगभग लगातार चलाना शुरू किया है, और वह हफ़्ते में एक…"
@@ -137,7 +201,7 @@ window.VIDEOS = {
     {
       "id": "gG2L0DGxc6E",
       "title": "ISRO, Part 1: From a Church in Thumba to the First Satellite",
-      "views": 4,
+      "views": 10,
       "duration": "17:21",
       "date": "2026-10-27",
       "description": "In 1962 India had no rocket, no launch site and no satellite programme. This episode follows how a cosmic-ray physicist, a coastal village near the magnetic equator and a Soviet launch vehicle led to Aryabhata, the…"
@@ -145,7 +209,7 @@ window.VIDEOS = {
     {
       "id": "ipNj2L6JHs0",
       "title": "NISAR Explained: NASA-ISRO Radar Satellite, Venezuela Earthquakes and Anak Krakatau in 2026",
-      "views": 7,
+      "views": 8,
       "duration": "5:59",
       "date": "2026-10-27",
       "description": "NISAR is a radar satellite built by NASA and ISRO. ISRO's GSLV-F16 launched it from Sriharikota on 30 July 2025, and NASA released its first images on 25 September 2025. In this video, we follow what the mission has…"
@@ -161,7 +225,7 @@ window.VIDEOS = {
     {
       "id": "wBxBrvOoluw",
       "title": "Gaganyaan G1 Explained: What ISRO's Uncrewed Flight With Vyommitra Must Prove",
-      "views": 14,
+      "views": 18,
       "duration": "6:33",
       "date": "2026-10-27",
       "description": "Before astronauts fly on Gaganyaan, ISRO plans an uncrewed rehearsal called G1. ISRO's latest statement, on 16 October 2026, says it is \"targeted for launch in 2026\", and a government reply of 6 August 2026 places it in…"
@@ -177,7 +241,7 @@ window.VIDEOS = {
     {
       "id": "FB5s-gNhPr0",
       "title": "NASA's Dragonfly Rotorcraft Completes Its First Simulated Flight for Titan",
-      "views": 34,
+      "views": 38,
       "short": true,
       "date": "2026-10-27",
       "description": "According to NASA, Dragonfly has completed its first simulated flight on flight-like avionics at the Johns Hopkins Applied Physics Laboratory in Laurel, Maryland. In the simulation the rotorcraft separated from its back…"
@@ -193,7 +257,7 @@ window.VIDEOS = {
     {
       "id": "Ud2QsjDOlC8",
       "title": "NASA's Webb Telescope Finds the Host Galaxy of the Most Distant Fast Radio Burst",
-      "views": 23,
+      "views": 24,
       "short": true,
       "date": "2026-10-27",
       "description": "According to NASA, astronomers using the James Webb Space Telescope have pinpointed the host galaxy of the most distant fast radio burst seen to date, FRB 20240304B, which the MeerTRAP team detected with the MeerKAT…"
@@ -201,7 +265,7 @@ window.VIDEOS = {
     {
       "id": "sKjTbXjE5sc",
       "title": "Two Dead Chinese Rocket Stages May Pass Within 300 m Over Australia on 2 November",
-      "views": 36,
+      "views": 38,
       "short": true,
       "date": "2026-10-27",
       "description": "Two spent Chinese rocket stages, CZ-4C R/B (NORAD 37215, launched 2010) and CZ-11 R/B (NORAD 43872, launched 2018), are predicted to pass within 300 metres of each other on Monday 2 November 2026 at about 03:01 UTC,…"
@@ -217,7 +281,7 @@ window.VIDEOS = {
     {
       "id": "ubccyh1pvms",
       "title": "Nancy Grace Roman Telescope: 100 Times Hubble's Field of View, Working After Launch",
-      "views": 63,
+      "views": 64,
       "short": true,
       "date": "2026-10-27",
       "description": "NASA says the Nancy Grace Roman Space Telescope has a field of view at least 100 times larger than Hubble's (the field of view, not the sharpness). It launched on 30 August 2026 on a SpaceX Falcon Heavy and is…"
@@ -225,7 +289,7 @@ window.VIDEOS = {
     {
       "id": "9t-OewyoolU",
       "title": "Gaganyaan G1: India's First Uncrewed Flight Carries a Robot Called Vyommitra",
-      "views": 36,
+      "views": 41,
       "short": true,
       "date": "2026-10-27",
       "description": "India's first Gaganyaan flight, G1, is planned to carry a robot instead of a crew. ISRO's latest statement, on 16 October 2026, says the mission is \"targeted for launch in 2026\", and a government reply of 6 August 2026…"
@@ -233,7 +297,7 @@ window.VIDEOS = {
     {
       "id": "U3fgxDJr9Y8",
       "title": "How Fiber Optics Work: Kao, Corning, Erbium Amplifiers and the Internet Under the Sea",
-      "views": 18,
+      "views": 19,
       "duration": "5:53",
       "date": "2026-10-26",
       "description": "How can a flash of light cross an ocean inside a thread of glass? In this video, we follow how that became possible, from a water jet in Geneva in 1841 to the amplifiers in today's cables, using primary sources: the…"
@@ -249,7 +313,7 @@ window.VIDEOS = {
     {
       "id": "pBWUljYZmoA",
       "title": "Neutron Stars Explained: Pulsars, Magnetars and the 2017 Merger That Could Have Made Gold",
-      "views": 3,
+      "views": 4,
       "duration": "5:36",
       "date": "2026-10-26",
       "description": "What would a teaspoon of a neutron star weigh? NASA's answer is a billion tons, on Earth. In this video, we look at what a neutron star is, how pulsars were found in 1967, how fast and how magnetic these stars can be,…"
@@ -273,7 +337,7 @@ window.VIDEOS = {
     {
       "id": "AqME5XyTg8A",
       "title": "Who Invented the Internet? ARPANET, TCP/IP and the Web Born at CERN Explained",
-      "views": 10,
+      "views": 12,
       "duration": "5:45",
       "date": "2026-10-26",
       "description": "Who invented the internet? The question mixes up two different inventions. The internet is a network of networks, and the World Wide Web is a service that runs on it. In this video, we separate the two, using primary…"
@@ -289,7 +353,7 @@ window.VIDEOS = {
     {
       "id": "MkeuZJB4rB4",
       "title": "Black Hole Size Comparison: How Big Is TON 618, and How Do We Know?",
-      "views": 10,
+      "views": 11,
       "duration": "5:26",
       "date": "2026-10-26",
       "description": "How big can a black hole get, and how do astronomers weigh something that gives off no light of its own? In this video, we line up black holes from a few solar masses to tens of billions, and we turn each mass into the…"
@@ -297,7 +361,7 @@ window.VIDEOS = {
     {
       "id": "2DENsGlyOhQ",
       "title": "Fiber Optic Cables: How Light Carries the Internet Through Glass",
-      "views": 68,
+      "views": 71,
       "short": true,
       "date": "2026-10-26",
       "description": "Light stays inside a glass fibre because it reflects off the wall, much like light that follows a stream of water. The first fibres kept only 1 percent of the light after 20 metres. In 1966, Charles Kao and George…"
@@ -321,7 +385,7 @@ window.VIDEOS = {
     {
       "id": "qNTSwyanQQ0",
       "title": "Chandrayaan-3: Moon Soil Drops 80 Degrees in 10 Centimetres",
-      "views": 58,
+      "views": 59,
       "short": true,
       "date": "2026-10-26",
       "description": "On 23 August 2023, India's Chandrayaan-3 lander Vikram touched down near the Moon's south polar region. Its probe ChaSTE, with ten temperature sensors, measured the first such temperature profile of the lunar topsoil…"
@@ -329,7 +393,7 @@ window.VIDEOS = {
     {
       "id": "vMYt-UaMcrk",
       "title": "Who Invented the Internet? The Web Began at CERN, a Physics Lab",
-      "views": 20,
+      "views": 21,
       "short": true,
       "date": "2026-10-26",
       "description": "The internet and the World Wide Web are not the same thing. The internet is the network: ARPANET installation began in September 1969, and the goal of the transition plan in IETF RFC 801 was a complete switch to the…"
@@ -337,7 +401,7 @@ window.VIDEOS = {
     {
       "id": "6J04YNY5fo0",
       "title": "Space Debris Removal: Astronauts Did It by Hand in 1984. Robots Are Next",
-      "views": 369,
+      "views": 375,
       "short": true,
       "date": "2026-10-26",
       "description": "In November 1984, two astronauts on jetpacks caught two satellites stranded in the wrong orbits, and the Space Shuttle Discovery carried them home. Today, the job of removing dead satellites and rocket stages falls to…"
@@ -401,7 +465,7 @@ window.VIDEOS = {
     {
       "id": "x3uxmcOns88",
       "title": "NASA Spinoff Myths Explained: Tang, Teflon, Velcro and the Real Story of Memory Foam",
-      "views": 6,
+      "views": 8,
       "duration": "5:29",
       "date": "2026-10-24",
       "description": "NASA has profiled more than 2,000 spinoffs, commercial products that use NASA technology or expertise, since 1976, yet the three items most often called NASA inventions are not among them. In this video, we trace Tang,…"
@@ -409,7 +473,7 @@ window.VIDEOS = {
     {
       "id": "Axm2vgJM--w",
       "title": "Mangalyaan (Mars Orbiter Mission) Explained: India's First Journey to Mars, 2013 to 2022",
-      "views": 29,
+      "views": 30,
       "duration": "6:16",
       "date": "2026-10-24",
       "description": "Reaching another planet asks a spacecraft to leave Earth, cross hundreds of millions of kilometres on its own, and then brake hard enough at the right moment to be captured. India's Mars Orbiter Mission, often called…"
@@ -417,7 +481,7 @@ window.VIDEOS = {
     {
       "id": "KwZq0PvVKlY",
       "title": "Did NASA Invent Tang, Teflon and Velcro? Only One of Four Came From NASA",
-      "views": 60,
+      "views": 61,
       "short": true,
       "date": "2026-10-24",
       "description": "Tang, Teflon and Velcro are often called NASA inventions, but NASA's own Spinoff office says that none of the three came from NASA. General Foods developed Tang in 1957, the DuPont chemist Roy Plunkett found the polymer…"
@@ -433,7 +497,7 @@ window.VIDEOS = {
     {
       "id": "JFnlUjiNSEI",
       "title": "Mangalyaan: How India Reached Mars Orbit on Its First Attempt",
-      "views": 271,
+      "views": 272,
       "short": true,
       "date": "2026-10-24",
       "description": "India's Mars Orbiter Mission, often called Mangalyaan, was launched on 5 November 2013 by PSLV-C25 from Sriharikota and entered orbit around Mars on 24 September 2014. According to ISRO, India became the first country…"
@@ -441,18 +505,10 @@ window.VIDEOS = {
     {
       "id": "ld5bzg6wAJ0",
       "title": "Why Is the Sky Blue? Rayleigh Scattering, the Violet Puzzle, Red Sunsets and White Clouds",
-      "views": 8,
+      "views": 9,
       "duration": "5:15",
       "date": "2026-10-22",
       "description": "Air scatters violet light even more strongly than blue light, so why is the clear sky blue? This video follows sunlight into the atmosphere, into our eyes, and into sunsets and clouds. Rayleigh's law (1871) says that…"
-    },
-    {
-      "id": "q9Szgq4mMXM",
-      "title": "Moon South Pole Explained: Water Ice, Chandrayaan-3, Artemis IV and Chang'e-7",
-      "views": 15,
-      "duration": "5:38",
-      "date": "2026-10-22",
-      "description": "India, the United States and China are all aiming at the Moon's south pole, because of water ice in craters that never see the Sun. This video explains why the 1.5 degree tilt of the Moon's axis keeps crater floors…"
     },
     {
       "id": "sMk6o1gKpi8",
@@ -462,6 +518,14 @@ window.VIDEOS = {
       "date": "2026-10-22",
       "description": "Indoors, radio waves are reflected by walls and furniture, so a receiver gets several copies of the same signal at slightly different times (the multipath problem). In the early 1990s a team in the Radiophysics Division…",
       "duration": "0:56"
+    },
+    {
+      "id": "q9Szgq4mMXM",
+      "title": "Moon South Pole Explained: Water Ice, Chandrayaan-3, Artemis IV and Chang'e-7",
+      "views": 15,
+      "duration": "5:38",
+      "date": "2026-10-22",
+      "description": "India, the United States and China are all aiming at the Moon's south pole, because of water ice in craters that never see the Sun. This video explains why the 1.5 degree tilt of the Moon's axis keeps crater floors…"
     },
     {
       "id": "8pDhCpbolKk",
@@ -600,13 +664,13 @@ window.VIDEOS = {
     {
       "id": "MeRZcWfs1EQ",
       "title": "The Indian Monsoon Explained: Sea Breeze or Moving Tropical Rain Belt (ITCZ)?",
-      "views": 7,
+      "views": 8,
       "duration": "6:16"
     },
     {
       "id": "8otmBst_VRo",
       "title": "Parker Solar Probe Explained: How the Fastest Spacecraft Reaches 192 km/s and Survives the Sun",
-      "views": 3,
+      "views": 4,
       "duration": "6:01"
     },
     {
@@ -618,19 +682,19 @@ window.VIDEOS = {
     {
       "id": "q2iit9eri_c",
       "title": "Where Did Your Phone Camera Come From? The CMOS Sensor From NASA's JPL",
-      "views": 3,
+      "views": 4,
       "duration": "5:45"
     },
     {
       "id": "QQbhA0llNqQ",
       "title": "Did Black Holes Give Us Wi-Fi? The CSIRO Patent, Indoor Echoes and OFDM",
-      "views": 1,
+      "views": 3,
       "duration": "6:54"
     },
     {
       "id": "jGcOUCJbDy0",
       "title": "Kessler Syndrome Explained: Space Debris, Satellite Collisions and the Rules to Limit Them",
-      "views": 8,
+      "views": 11,
       "duration": "6:54"
     },
     {
@@ -642,7 +706,7 @@ window.VIDEOS = {
     {
       "id": "D5s1jYEszwc",
       "title": "Gaganyaan Explained: How ISRO Tests the Escape System, Parachutes and Crew",
-      "views": 31,
+      "views": 32,
       "duration": "5:59"
     },
     {
@@ -654,19 +718,19 @@ window.VIDEOS = {
     {
       "id": "fSU9F9by2PA",
       "title": "Auroras Explained: Their Colours, the May 2024 Superstorm and the Red Glow over Ladakh",
-      "views": 2,
+      "views": 3,
       "duration": "5:49"
     },
     {
       "id": "bUXR0-Xc8h0",
       "title": "NASA's Perseverance Rover Sets the Off-World Driving Distance Record",
-      "views": 25,
+      "views": 26,
       "short": true
     },
     {
       "id": "ZUyFavLREk8",
       "title": "NASA's Swift Observatory Ends Its Mission, Re-Entry Expected Within Weeks",
-      "views": 34,
+      "views": 41,
       "short": true
     },
     {
@@ -690,7 +754,7 @@ window.VIDEOS = {
     {
       "id": "goOri81wAc0",
       "title": "Why the Monsoon Reaches Kerala Around 1 June: The Moving Tropical Rain Belt",
-      "views": 462,
+      "views": 463,
       "short": true
     },
     {
@@ -730,5 +794,5 @@ window.VIDEOS = {
       "short": true
     }
   ],
-  "updated": "2026-11-02"
+  "updated": "2026-11-05"
 };
