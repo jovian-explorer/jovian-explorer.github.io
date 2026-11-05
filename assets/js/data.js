@@ -171,6 +171,24 @@ window.SITE = {
     },
 
     {
+      role: "first", kind: "journal", status: "Under review", year: 2026,
+      title: "Evidence for an Alfvénic oscillation in the middle solar corona from Akatsuki radio observations",
+      authors: "Aggarwal, K., Wexler, D., Choudhary, R. K.",
+      venue: "The Astrophysical Journal"
+    },
+    {
+      role: "first", kind: "journal", status: "Under review", year: 2026,
+      title: "Radial evolution of coronal density turbulence between 1.45 and 9 solar radii from Akatsuki radio occultation",
+      authors: "Aggarwal, K., Kumari, A., Choudhary, R. K., Imamura, T.",
+      venue: "The Astrophysical Journal Letters"
+    },
+    {
+      role: "first", kind: "journal", status: "Under review", year: 2026,
+      title: "Increasing orbital decay of space debris has implications for the ozone layer",
+      authors: "Aggarwal, K., Bhaskar, A., Pant, T. K., Nair, A. J.",
+      venue: "Communications Earth & Environment"
+    },
+    {
       role: "co", kind: "journal", status: "Under review", year: 2026,
       title: "Long-term GNSS loss-of-lock across the Indian equatorial ionization anomaly",
       authors: "Choudhary, R. K., Aggarwal, K., Potdar, A.",
