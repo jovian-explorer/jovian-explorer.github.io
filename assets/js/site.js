@@ -240,9 +240,9 @@
   };
   /* Sections of the "All" tab, in reading order. */
   var PUB_SECTIONS = [["fj", "First-author journal papers"], ["fp", "First-author conference proceedings"], ["cj", "Co-authored journal papers"],
-    ["cp", "Co-authored proceedings and book chapters"], ["wp", "White papers and preprints"], ["ur", "Under review"]];
+    ["cp", "Co-authored proceedings and book chapters"], ["wp", "White papers and preprints"]];
   /* Sections shown in each publications tab. */
-  var TAB_SECTIONS = { all: ["fj", "fp", "cj", "cp", "wp", "ur"], firstauthor: ["fj", "fp"], coauthored: ["cj", "cp", "wp"], ur: ["ur"] };
+  var TAB_SECTIONS = { all: ["fj", "fp", "cj", "cp", "wp"], firstauthor: ["fj", "fp"], coauthored: ["cj", "cp", "wp"] };
 
   /* ---------- BibTeX ---------- */
   function bibAuthors(s) {
