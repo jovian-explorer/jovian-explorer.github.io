@@ -57,7 +57,7 @@ window.VIDEOS = {
     {
       "id": "2wYYnV_fUaY",
       "title": "NASA's Swift Observatory Has Re-entered the Atmosphere After Almost 22 Years",
-      "views": 33,
+      "views": 36,
       "short": true,
       "date": "2026-11-05",
       "description": "NASA's Neil Gehrels Swift Observatory, launched in 2004 to study gamma-ray bursts, re-entered Earth's atmosphere on 4 November 2026 at 7:39 a.m. EST (12:39 UT, 6:09 p.m. IST) over the North Sumatra region of Indonesia,…"
@@ -81,7 +81,7 @@ window.VIDEOS = {
     {
       "id": "N4e36NCSw1Q",
       "title": "What If the 420-Tonne ISS Fell Without Control?",
-      "views": 37,
+      "views": 38,
       "short": true,
       "date": "2026-11-04",
       "description": "Without reboosts, the ISS falls within two years. At roughly 420 tonnes, it is the largest structure ever built in space. Falling uncontrolled, it would scatter very large pieces of debris over a large footprint, a…"
@@ -670,7 +670,7 @@ window.VIDEOS = {
     {
       "id": "8otmBst_VRo",
       "title": "Parker Solar Probe Explained: How the Fastest Spacecraft Reaches 192 km/s and Survives the Sun",
-      "views": 4,
+      "views": 5,
       "duration": "6:01"
     },
     {
@@ -724,19 +724,19 @@ window.VIDEOS = {
     {
       "id": "Iog4kY7PMkk",
       "title": "China Launches Three Undisclosed Yaogan Satellites on a Long March 2C",
-      "views": 10,
+      "views": 11,
       "short": true
     },
     {
       "id": "wKO2jP4pCWA",
       "title": "Why Thunder Rumbles: Divide by 3 to Find the Lightning",
-      "views": 9,
+      "views": 10,
       "short": true
     },
     {
       "id": "1sEr94Jmw8Y",
       "title": "India's Own Space Station: First Module Targeted for 2028",
-      "views": 33,
+      "views": 37,
       "short": true
     },
     {
