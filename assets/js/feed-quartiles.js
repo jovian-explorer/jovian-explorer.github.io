@@ -7,15 +7,12 @@ window.QUARTILES = {
   "rankings": "sjr-2025",
   "journals": {
     "Advances in Space Research": "Q1",
-    "Communications Earth & Environment": "Q1",
-    "GPS Solutions": "Q1",
     "Icarus": "Q1",
     "Journal of Geophysical Research: Planets": "Q1",
     "Monthly Notices of the Royal Astronomical Society": "Q1",
     "Nature": "Q1",
     "Nature 2023": "Q1",
     "Nature Astronomy": "Q1",
-    "Solar Physics": "Q2",
     "The Astrophysical Journal": "Q1",
     "The Astrophysical Journal Letters": "Q1"
   },
@@ -30,5 +27,5 @@ window.QUARTILES = {
     "since": 2016,
     "works": 22
   },
-  "updated": "2026-11-05"
+  "updated": "2026-11-06"
 };

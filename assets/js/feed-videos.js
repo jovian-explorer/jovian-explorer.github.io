@@ -19,7 +19,7 @@ window.VIDEOS = {
       {
         "id": "PLARLB4dK4ysE",
         "title": "Space News",
-        "count": 11
+        "count": 12
       },
       {
         "id": "PLHJPB7Vucp8k",
@@ -39,12 +39,12 @@ window.VIDEOS = {
       {
         "id": "PLId4H9D2tDYU",
         "title": "Science",
-        "count": 19
+        "count": 20
       },
       {
         "id": "PLeDUJ_o66ZlY",
         "title": "Astronomy",
-        "count": 74
+        "count": 76
       },
       {
         "id": "PLGZDzv6-DDT4",
@@ -57,7 +57,7 @@ window.VIDEOS = {
     {
       "id": "2wYYnV_fUaY",
       "title": "NASA's Swift Observatory Has Re-entered the Atmosphere After Almost 22 Years",
-      "views": 8,
+      "views": 33,
       "short": true,
       "date": "2026-11-05",
       "description": "NASA's Neil Gehrels Swift Observatory, launched in 2004 to study gamma-ray bursts, re-entered Earth's atmosphere on 4 November 2026 at 7:39 a.m. EST (12:39 UT, 6:09 p.m. IST) over the North Sumatra region of Indonesia,…"
@@ -65,7 +65,7 @@ window.VIDEOS = {
     {
       "id": "vq99JQCKvYI",
       "title": "Moon South Pole Ice: How We Know It Is There, From LCROSS to Chandrayaan-3",
-      "views": 2,
+      "views": 3,
       "duration": "5:46",
       "date": "2026-11-04",
       "description": "Is there really ice in the dark craters at the Moon's south pole, and how would anyone know? India, the United States and China are all sending missions toward that region, and the argument for each of them rests on one…"
@@ -73,7 +73,7 @@ window.VIDEOS = {
     {
       "id": "3-MRWStWaFk",
       "title": "Could This Be the First Moon Found Outside Our Solar System?",
-      "views": 21,
+      "views": 28,
       "short": true,
       "date": "2026-11-04",
       "description": "Could this be the first moon found outside our solar system? In the {CD-35 2722|C D thirty five, twenty seven twenty two} system, 73 light years away, a brown dwarf of about 37 Jupiter masses orbits a star half as…"
@@ -81,7 +81,7 @@ window.VIDEOS = {
     {
       "id": "N4e36NCSw1Q",
       "title": "What If the 420-Tonne ISS Fell Without Control?",
-      "views": 20,
+      "views": 37,
       "short": true,
       "date": "2026-11-04",
       "description": "Without reboosts, the ISS falls within two years. At roughly 420 tonnes, it is the largest structure ever built in space. Falling uncontrolled, it would scatter very large pieces of debris over a large footprint, a…"
@@ -89,7 +89,7 @@ window.VIDEOS = {
     {
       "id": "P1_rZTnZQog",
       "title": "Chandrayaan-3 ChaSTE: Deeper Moon Soil Carries Heat 5 Times Better",
-      "views": 28,
+      "views": 32,
       "short": true,
       "date": "2026-11-04",
       "description": "The thermal probe ChaSTE (Chandra's Surface Thermophysical Experiment) flew on the Vikram lander of Chandrayaan-3. It carries 10 temperature sensors and a 0.1 W heater foil. R. Renju of the Space Physics Laboratory…"
@@ -97,7 +97,7 @@ window.VIDEOS = {
     {
       "id": "FTXPgqY7Tps",
       "title": "Apophis Will Pass Closer Than Satellites in 2029",
-      "views": 56,
+      "views": 63,
       "short": true,
       "date": "2026-11-03",
       "description": "Apophis passes 32,000 kilometers away, closer than satellites. It will not hit Earth. On 13 April 2029, this asteroid, about 340 meters wide, will come about 32,000 kilometers from Earth's surface. Geostationary…"
@@ -105,7 +105,7 @@ window.VIDEOS = {
     {
       "id": "CQmrVnzWFSc",
       "title": "Why Does the Moon Look Bigger Near the Horizon?",
-      "views": 50,
+      "views": 51,
       "short": true,
       "date": "2026-11-03",
       "description": "Why does the Moon look bigger near the horizon? It is not bigger: photographs taken with the same zoom show the same width near the horizon as high in the sky, and a fingernail held at arm's length fits the Moon about…"
@@ -113,7 +113,7 @@ window.VIDEOS = {
     {
       "id": "KNW0btM07tY",
       "title": "How Astronauts Sleep on the ISS: 6.09 Hours a Night",
-      "views": 7,
+      "views": 9,
       "short": true,
       "date": "2026-11-03",
       "description": "The International Space Station (ISS) circles Earth every 92 minutes, so NASA's Earth Observatory says the crew experience 15 or 16 sunrises and sets every day; the comparison with a bedroom window that gets a sunrise…"
@@ -121,7 +121,7 @@ window.VIDEOS = {
     {
       "id": "177nm0Ea6XM",
       "title": "NASA's Swift Observatory Is Falling Back to Earth: Reentry Forecast Around 4 November",
-      "views": 55,
+      "views": 57,
       "short": true,
       "date": "2026-11-02",
       "description": "NASA's Neil Gehrels Swift Observatory, launched in 2004 to study gamma-ray bursts, is falling back to Earth after science ended with its final observation on 20 October 2026. The Aerospace Corporation forecasts reentry…"
@@ -137,7 +137,7 @@ window.VIDEOS = {
     {
       "id": "NREnFtlGFcg",
       "title": "Orion: How Artemis Astronauts Hide From a Solar Storm",
-      "views": 80,
+      "views": 81,
       "short": true,
       "date": "2026-11-01",
       "description": "NASA's Crew Systems page states that during a radiation event the crew of the Orion spacecraft will open two large storage bays located beneath their seats in the central part of the crew module, remove all the stowage…"
@@ -145,7 +145,7 @@ window.VIDEOS = {
     {
       "id": "yHNSpAfVilA",
       "title": "Falcon 9 Flies for the 700th Time as SpaceX Launches 27 Starlink Satellites",
-      "views": 216,
+      "views": 217,
       "short": true,
       "date": "2026-11-01",
       "description": "On 31 October 2026 at 04:04 UTC a Falcon 9 lifted off from Vandenberg Space Force Base with 27 Starlink satellites (Starlink 15-18). It was the 700th Falcon 9 launch to date and the 118th of 2026, and its first stage…"
@@ -153,7 +153,7 @@ window.VIDEOS = {
     {
       "id": "gs6k7U7ODq8",
       "title": "SPL's Fabry-Perot Interferometer Measures Night Winds at Trivandrum",
-      "views": 97,
+      "views": 98,
       "short": true,
       "date": "2026-11-01",
       "description": "The Space Physics Laboratory (SPL) of the Vikram Sarabhai Space Centre (VSSC), ISRO, installed a ground-based Fabry-Perot Interferometer (FPI) at Trivandrum (8.5 N, 77 E, 0.5 degrees dip latitude), an Indian station…"
@@ -169,7 +169,7 @@ window.VIDEOS = {
     {
       "id": "aPK3J1zp7Vg",
       "title": "ISRO's GSLV-F18 Launch: Can Wind High Above Hold a Rocket?",
-      "views": 118,
+      "views": 119,
       "short": true,
       "date": "2026-10-31",
       "description": "ISRO set the launch of GSLV-F18 with the navigation satellite NVS-03 for 30 October 2026 at 11:51 pm IST from the Second Launch Pad of the Satish Dhawan Space Centre at Sriharikota, two days after the very severe…"
@@ -209,7 +209,7 @@ window.VIDEOS = {
     {
       "id": "ipNj2L6JHs0",
       "title": "NISAR Explained: NASA-ISRO Radar Satellite, Venezuela Earthquakes and Anak Krakatau in 2026",
-      "views": 8,
+      "views": 9,
       "duration": "5:59",
       "date": "2026-10-27",
       "description": "NISAR is a radar satellite built by NASA and ISRO. ISRO's GSLV-F16 launched it from Sriharikota on 30 July 2025, and NASA released its first images on 25 September 2025. In this video, we follow what the mission has…"
@@ -233,7 +233,7 @@ window.VIDEOS = {
     {
       "id": "SaMKXKCdoPk",
       "title": "BepiColombo Reaches Mercury This November: Why Stopping There Is So Hard",
-      "views": 101,
+      "views": 106,
       "short": true,
       "date": "2026-10-27",
       "description": "BepiColombo is due to enter orbit around Mercury in November 2026. ESA's latest update, dated 6 October 2026, says the composite spacecraft will enter orbit around Mercury on 21 November 2026, and ESA's own timeline…"
@@ -265,7 +265,7 @@ window.VIDEOS = {
     {
       "id": "sKjTbXjE5sc",
       "title": "Two Dead Chinese Rocket Stages May Pass Within 300 m Over Australia on 2 November",
-      "views": 38,
+      "views": 39,
       "short": true,
       "date": "2026-10-27",
       "description": "Two spent Chinese rocket stages, CZ-4C R/B (NORAD 37215, launched 2010) and CZ-11 R/B (NORAD 43872, launched 2018), are predicted to pass within 300 metres of each other on Monday 2 November 2026 at about 03:01 UTC,…"
@@ -289,7 +289,7 @@ window.VIDEOS = {
     {
       "id": "9t-OewyoolU",
       "title": "Gaganyaan G1: India's First Uncrewed Flight Carries a Robot Called Vyommitra",
-      "views": 41,
+      "views": 42,
       "short": true,
       "date": "2026-10-27",
       "description": "India's first Gaganyaan flight, G1, is planned to carry a robot instead of a crew. ISRO's latest statement, on 16 October 2026, says the mission is \"targeted for launch in 2026\", and a government reply of 6 August 2026…"
@@ -473,7 +473,7 @@ window.VIDEOS = {
     {
       "id": "Axm2vgJM--w",
       "title": "Mangalyaan (Mars Orbiter Mission) Explained: India's First Journey to Mars, 2013 to 2022",
-      "views": 30,
+      "views": 32,
       "duration": "6:16",
       "date": "2026-10-24",
       "description": "Reaching another planet asks a spacecraft to leave Earth, cross hundreds of millions of kilometres on its own, and then brake hard enough at the right moment to be captured. India's Mars Orbiter Mission, often called…"
@@ -497,7 +497,7 @@ window.VIDEOS = {
     {
       "id": "JFnlUjiNSEI",
       "title": "Mangalyaan: How India Reached Mars Orbit on Its First Attempt",
-      "views": 272,
+      "views": 273,
       "short": true,
       "date": "2026-10-24",
       "description": "India's Mars Orbiter Mission, often called Mangalyaan, was launched on 5 November 2013 by PSLV-C25 from Sriharikota and entered orbit around Mars on 24 September 2014. According to ISRO, India became the first country…"
@@ -676,7 +676,7 @@ window.VIDEOS = {
     {
       "id": "wpwjtjnGOKM",
       "title": "GPS and Einstein's Relativity: Why Satellite Clocks Need a 38 Microsecond Daily Correction",
-      "views": 40,
+      "views": 41,
       "duration": "6:32"
     },
     {
@@ -700,13 +700,13 @@ window.VIDEOS = {
     {
       "id": "txNkhfqiEKs",
       "title": "Exoplanet Transits Explained: How Kepler and TESS Find Planets Around Other Stars",
-      "views": 21,
+      "views": 22,
       "duration": "5:28"
     },
     {
       "id": "D5s1jYEszwc",
       "title": "Gaganyaan Explained: How ISRO Tests the Escape System, Parachutes and Crew",
-      "views": 32,
+      "views": 34,
       "duration": "5:59"
     },
     {
@@ -722,6 +722,24 @@ window.VIDEOS = {
       "duration": "5:49"
     },
     {
+      "id": "Iog4kY7PMkk",
+      "title": "China Launches Three Undisclosed Yaogan Satellites on a Long March 2C",
+      "views": 10,
+      "short": true
+    },
+    {
+      "id": "wKO2jP4pCWA",
+      "title": "Why Thunder Rumbles: Divide by 3 to Find the Lightning",
+      "views": 9,
+      "short": true
+    },
+    {
+      "id": "1sEr94Jmw8Y",
+      "title": "India's Own Space Station: First Module Targeted for 2028",
+      "views": 33,
+      "short": true
+    },
+    {
       "id": "bUXR0-Xc8h0",
       "title": "NASA's Perseverance Rover Sets the Off-World Driving Distance Record",
       "views": 26,
@@ -730,7 +748,7 @@ window.VIDEOS = {
     {
       "id": "ZUyFavLREk8",
       "title": "NASA's Swift Observatory Ends Its Mission, Re-Entry Expected Within Weeks",
-      "views": 41,
+      "views": 42,
       "short": true
     },
     {
@@ -794,5 +812,5 @@ window.VIDEOS = {
       "short": true
     }
   ],
-  "updated": "2026-11-05"
+  "updated": "2026-11-06"
 };
