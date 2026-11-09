@@ -7,12 +7,28 @@ window.WORKS = {
   "orcid": "0000-0002-7004-8670",
   "items": [
     {
+      "title": "occulta discoveries: new eclipsing binaries and transit candidates from TESS, K2 and Kepler photometry",
+      "type": "data-set",
+      "venue": "",
+      "year": 2026,
+      "month": 11,
+      "doi": "10.5281/zenodo.23864982"
+    },
+    {
       "title": "corona3d: a three-dimensional reconstruction of a coronal mass ejection and the corona from public MHD, coronagraph, and radio data",
       "type": "software",
       "venue": "",
       "year": 2026,
       "month": 10,
       "doi": "10.5281/zenodo.23801369"
+    },
+    {
+      "title": "occulta: search of TESS, K2 and Kepler photometry for uncatalogued transiting planets and eclipsing binaries",
+      "type": "software",
+      "venue": "",
+      "year": 2026,
+      "month": 10,
+      "doi": "10.5281/zenodo.23634487"
     },
     {
       "title": "India-station-map: v1.0.0",
@@ -271,5 +287,5 @@ window.WORKS = {
       "doi": "10.5281/zenodo.23331689"
     }
   ],
-  "updated": "2026-11-01"
+  "updated": "2026-11-09"
 };
