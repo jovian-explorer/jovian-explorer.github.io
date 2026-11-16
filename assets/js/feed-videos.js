@@ -9,7 +9,7 @@ window.VIDEOS = {
     "id": "UCCXaTGdT28P09_WMwT2Z-8Q",
     "handle": "jovian_explorer",
     "title": "Jovian Explorer",
-    "subscribers": "32",
+    "subscribers": "37",
     "playlists": [
       {
         "id": "PLAhv0Xi9T5rw",
@@ -19,7 +19,7 @@ window.VIDEOS = {
       {
         "id": "PLARLB4dK4ysE",
         "title": "Space News",
-        "count": 12
+        "count": 15
       },
       {
         "id": "PLHJPB7Vucp8k",
@@ -39,12 +39,12 @@ window.VIDEOS = {
       {
         "id": "PLId4H9D2tDYU",
         "title": "Science",
-        "count": 21
+        "count": 28
       },
       {
         "id": "PLeDUJ_o66ZlY",
         "title": "Astronomy",
-        "count": 78
+        "count": 105
       },
       {
         "id": "PLGZDzv6-DDT4",
@@ -55,9 +55,129 @@ window.VIDEOS = {
   },
   "videos": [
     {
+      "id": "mvsbqJL5IJE",
+      "title": "Chang'e-6: What the First Far Side Moon Rocks Revealed",
+      "views": 21,
+      "short": true,
+      "date": "2026-11-16",
+      "description": "The Moon's far side is a different world. From Earth we never see it, because the Moon always keeps the same face toward us. First photographed by the Soviet Luna 3 in 1959, it has far fewer dark lava plains and a…"
+    },
+    {
+      "id": "S8uHzogc6LE",
+      "title": "Why Are There No Green Stars?",
+      "views": 19,
+      "short": true,
+      "date": "2026-11-16",
+      "description": "Why are there no green stars? The Sun's light peaks near 500 nanometers (green-cyan), yet the Sun looks white (NASA Goddard), because a star emits a broad blackbody spread of every colour at once: even at the green peak…"
+    },
+    {
+      "id": "y_dZMoW4cfs",
+      "title": "What Happens to Your Body in Space Without a Spacesuit?",
+      "views": 975,
+      "short": true,
+      "date": "2026-11-16",
+      "description": "Space without a suit is not instant death. Above about 63,000 feet, air pressure falls below the vapor pressure of water at body temperature. Then water in your tissues begins to vaporize, a process called ebullism. It…"
+    },
+    {
+      "id": "L1588F_HC3Y",
+      "title": "Did NASA Invent the Cordless Drill?",
+      "views": 57,
+      "short": true,
+      "date": "2026-11-15",
+      "description": "NASA did not invent the cordless drill. Black and Decker unveiled the first cordless power tools in 1961, years before Apollo landed on the Moon. Then, in the 1960s, NASA asked the company for a drill that astronauts…"
+    },
+    {
+      "id": "3_Q4s-xXXgE",
+      "title": "Euclid Was Hunting Dark Matter and Found a Comet",
+      "views": 20,
+      "short": true,
+      "date": "2026-11-15",
+      "description": "Euclid was built to reveal the hidden influence of dark matter and dark energy, yet in images taken between 16 and 24 September 2026 the ESA space telescope caught its first previously unknown comet, C/2026 S1 (Euclid),…"
+    },
+    {
+      "id": "PoayeT6WOEE",
+      "title": "Saturn Ring Rain: What Cassini Measured Falling Into the Planet",
+      "views": 29,
+      "short": true,
+      "date": "2026-11-15",
+      "description": "Saturn's rings are raining down. During its Grand Finale in 2017 the Cassini spacecraft flew between Saturn and its rings, and its Ion Neutral Mass Spectrometer found material flowing inward from the rings at 4,800 to…"
+    },
+    {
+      "id": "PAZlyMD0_c0",
+      "title": "Vanguard 1: The Solar Satellite That Is Still in Orbit",
+      "views": 196,
+      "short": true,
+      "date": "2026-11-15",
+      "description": "Space did not invent solar panels. Bell Labs reported a silicon solar cell in 1954 (Chapin, Fuller and Pearson 1954); our arithmetic: four years before Vanguard 1. Vanguard 1 launched on 17 March 1958 and NASA lists it…"
+    },
+    {
+      "id": "dOLv-RRdYQI",
+      "title": "How Companies Now Land Spacecraft on the Moon",
+      "views": 29,
+      "short": true,
+      "date": "2026-11-14",
+      "description": "Companies now land spacecraft on the Moon. Odysseus, built by Intuitive Machines, touched down in the Moon's south polar region on 22 February 2024, the United States' first lunar landing since Apollo 17 and the first…"
+    },
+    {
+      "id": "rqWtrQaIzZs",
+      "title": "How Does Gravity Bend Distant Galaxies Into Rings?",
+      "views": 28,
+      "short": true,
+      "date": "2026-11-14",
+      "description": "How does gravity bend distant galaxies into rings? The gravity of a massive foreground galaxy bends and magnifies light from a galaxy far behind it, drawing it into arcs and rings. NASA released this Hubble gallery of…"
+    },
+    {
+      "id": "L9qt-7xH-14",
+      "title": "Why GPS Can Fade Out After Sunset Near the Equator",
+      "views": 28,
+      "short": true,
+      "date": "2026-11-14",
+      "description": "After sunset, GPS signals can fade out. Low-density pockets of plasma called equatorial plasma bubbles can form in the ionosphere as night falls (NASA GOLD; Cai et al. 2020). Signals crossing such irregularities…"
+    },
+    {
+      "id": "QdgdmpFCX9A",
+      "title": "Why Every Rainbow Sits About 42 Degrees From Your Shadow",
+      "views": 327,
+      "short": true,
+      "date": "2026-11-14",
+      "description": "A rainbow is seen about 42 degrees from the antisolar point, the point opposite the Sun (the shadow of your head). Sunlight that is refracted, reflected once inside a raindrop and refracted again leaves the drop with a…"
+    },
+    {
+      "id": "11cNrFr4k1A",
+      "title": "Betelgeuse Supernova: Why You Will Wait 100,000 Years",
+      "views": 37,
+      "short": true,
+      "date": "2026-11-14",
+      "description": "Betelgeuse, the red supergiant on Orion's shoulder, lies about 550 light-years away and is about 764 times wider than the Sun (Joyce et al. 2020). Stellar models place it in core helium burning, about 100,000 years…"
+    },
+    {
+      "id": "NDIuuTom-ps",
+      "title": "2027 Solar Eclipse: Six Minutes of Darkness Over Egypt",
+      "views": 88,
+      "short": true,
+      "date": "2026-11-13",
+      "description": "On 2 August 2027 the Moon will hide the Sun completely along a path across North Africa and Arabia. The Sun is about 400 times wider than the Moon and about 389 times farther away (our arithmetic), so the two look…"
+    },
+    {
+      "id": "R_qGKfK-b90",
+      "title": "Why Does the Sun Not Burn Out?",
+      "views": 51,
+      "short": true,
+      "date": "2026-11-13",
+      "description": "The Sun is not actually burning. It is a ball of hydrogen and helium, and in its core, hydrogen fuses into helium. That core is about 15 million degrees Celsius, hot enough to sustain the fusion. Each second, the Sun…"
+    },
+    {
+      "id": "vYhQWcrXnY4",
+      "title": "Why Is Venus Hotter Than Mercury?",
+      "views": 289,
+      "short": true,
+      "date": "2026-11-13",
+      "description": "Mercury is not the hottest planet. Venus is nearly twice as far from the Sun, yet its surface averages 464 degrees Celsius. On Mercury, the sunlit side reaches about 430 degrees, but with almost no atmosphere, the night…"
+    },
+    {
       "id": "aOX1NjYzsks",
       "title": "What If the Sun Vanished? Earth Would Not Notice for 499 Seconds",
-      "views": 80,
+      "views": 82,
       "short": true,
       "date": "2026-11-06",
       "description": "Thought experiment: if the Sun vanished, Earth would not notice for 499 seconds. The Sun cannot actually disappear; the question only asks what the speed limit of light and gravity implies. Earth is on average 149.598…"
@@ -65,7 +185,7 @@ window.VIDEOS = {
     {
       "id": "mlsSoaANCag",
       "title": "Mars Trip Radiation: 0.66 Sievert for a Round Trip",
-      "views": 37,
+      "views": 46,
       "short": true,
       "date": "2026-11-06",
       "description": "A round trip to Mars delivers about 0.66 sievert of radiation. The Radiation Assessment Detector on NASA's Curiosity rover measured the dose inside the Mars Science Laboratory spacecraft during its 253-day cruise…"
@@ -73,7 +193,7 @@ window.VIDEOS = {
     {
       "id": "Iog4kY7PMkk",
       "title": "China Launches Three Undisclosed Yaogan Satellites on a Long March 2C",
-      "views": 25,
+      "views": 29,
       "short": true,
       "date": "2026-11-05",
       "description": "A Long March 2C rocket launched from the Xichang Satellite Launch Center on 5 November 2026 at 15:58 UTC (9:28 p.m. IST), carrying three satellites listed as Yaogan 51-07 to 09 into low Earth orbit. China describes…"
@@ -81,7 +201,7 @@ window.VIDEOS = {
     {
       "id": "wKO2jP4pCWA",
       "title": "Why Thunder Rumbles: Divide by 3 to Find the Lightning",
-      "views": 13,
+      "views": 15,
       "short": true,
       "date": "2026-11-05",
       "description": "The National Weather Service (NWS) of the United States states that the air in a lightning channel may reach as high as 50,000 degrees Fahrenheit, five times hotter than the surface of the Sun; that is about 28,000…"
@@ -89,7 +209,7 @@ window.VIDEOS = {
     {
       "id": "1sEr94Jmw8Y",
       "title": "India's Own Space Station: First Module Targeted for 2028",
-      "views": 52,
+      "views": 59,
       "short": true,
       "date": "2026-11-05",
       "description": "NASA plans to run the ISS through 2030. India is building its own, the Bharatiya Antariksh Station. In September 2024, the Union Cabinet approved its first part, the base module. It would orbit Earth in low Earth orbit,…"
@@ -97,7 +217,7 @@ window.VIDEOS = {
     {
       "id": "2wYYnV_fUaY",
       "title": "NASA's Swift Observatory Has Re-entered the Atmosphere After Almost 22 Years",
-      "views": 47,
+      "views": 55,
       "short": true,
       "date": "2026-11-05",
       "description": "NASA's Neil Gehrels Swift Observatory, launched in 2004 to study gamma-ray bursts, re-entered Earth's atmosphere on 4 November 2026 at 7:39 a.m. EST (12:39 UT, 6:09 p.m. IST) over the North Sumatra region of Indonesia,…"
@@ -105,7 +225,7 @@ window.VIDEOS = {
     {
       "id": "vq99JQCKvYI",
       "title": "Moon South Pole Ice: How We Know It Is There, From LCROSS to Chandrayaan-3",
-      "views": 4,
+      "views": 7,
       "duration": "5:46",
       "date": "2026-11-04",
       "description": "Is there really ice in the dark craters at the Moon's south pole, and how would anyone know? India, the United States and China are all sending missions toward that region, and the argument for each of them rests on one…"
@@ -113,7 +233,7 @@ window.VIDEOS = {
     {
       "id": "3-MRWStWaFk",
       "title": "Could This Be the First Moon Found Outside Our Solar System?",
-      "views": 31,
+      "views": 32,
       "short": true,
       "date": "2026-11-04",
       "description": "Could this be the first moon found outside our solar system? In the {CD-35 2722|C D thirty five, twenty seven twenty two} system, 73 light years away, a brown dwarf of about 37 Jupiter masses orbits a star half as…"
@@ -121,7 +241,7 @@ window.VIDEOS = {
     {
       "id": "N4e36NCSw1Q",
       "title": "What If the 420-Tonne ISS Fell Without Control?",
-      "views": 42,
+      "views": 43,
       "short": true,
       "date": "2026-11-04",
       "description": "Without reboosts, the ISS falls within two years. At roughly 420 tonnes, it is the largest structure ever built in space. Falling uncontrolled, it would scatter very large pieces of debris over a large footprint, a…"
@@ -129,7 +249,7 @@ window.VIDEOS = {
     {
       "id": "P1_rZTnZQog",
       "title": "Chandrayaan-3 ChaSTE: Deeper Moon Soil Carries Heat 5 Times Better",
-      "views": 37,
+      "views": 38,
       "short": true,
       "date": "2026-11-04",
       "description": "The thermal probe ChaSTE (Chandra's Surface Thermophysical Experiment) flew on the Vikram lander of Chandrayaan-3. It carries 10 temperature sensors and a 0.1 W heater foil. R. Renju of the Space Physics Laboratory…"
@@ -137,7 +257,7 @@ window.VIDEOS = {
     {
       "id": "FTXPgqY7Tps",
       "title": "Apophis Will Pass Closer Than Satellites in 2029",
-      "views": 64,
+      "views": 65,
       "short": true,
       "date": "2026-11-03",
       "description": "Apophis passes 32,000 kilometers away, closer than satellites. It will not hit Earth. On 13 April 2029, this asteroid, about 340 meters wide, will come about 32,000 kilometers from Earth's surface. Geostationary…"
@@ -145,7 +265,7 @@ window.VIDEOS = {
     {
       "id": "CQmrVnzWFSc",
       "title": "Why Does the Moon Look Bigger Near the Horizon?",
-      "views": 53,
+      "views": 54,
       "short": true,
       "date": "2026-11-03",
       "description": "Why does the Moon look bigger near the horizon? It is not bigger: photographs taken with the same zoom show the same width near the horizon as high in the sky, and a fingernail held at arm's length fits the Moon about…"
@@ -153,7 +273,7 @@ window.VIDEOS = {
     {
       "id": "KNW0btM07tY",
       "title": "How Astronauts Sleep on the ISS: 6.09 Hours a Night",
-      "views": 12,
+      "views": 13,
       "short": true,
       "date": "2026-11-03",
       "description": "The International Space Station (ISS) circles Earth every 92 minutes, so NASA's Earth Observatory says the crew experience 15 or 16 sunrises and sets every day; the comparison with a bedroom window that gets a sunrise…"
@@ -161,7 +281,7 @@ window.VIDEOS = {
     {
       "id": "177nm0Ea6XM",
       "title": "NASA's Swift Observatory Is Falling Back to Earth: Reentry Forecast Around 4 November",
-      "views": 58,
+      "views": 59,
       "short": true,
       "date": "2026-11-02",
       "description": "NASA's Neil Gehrels Swift Observatory, launched in 2004 to study gamma-ray bursts, is falling back to Earth after science ended with its final observation on 20 October 2026. The Aerospace Corporation forecasts reentry…"
@@ -169,7 +289,7 @@ window.VIDEOS = {
     {
       "id": "9lT92efGLkY",
       "title": "Chandrayaan-4: Why India Wants Moon Rocks Home",
-      "views": 193,
+      "views": 194,
       "short": true,
       "date": "2026-11-02",
       "description": "India plans to bring Moon rocks home. The mission is Chandrayaan-4, approved by India's Cabinet on 18 September 2024 with a budget of 2,104 crore rupees. Only the United States, the Soviet Union and China have brought…"
@@ -177,7 +297,7 @@ window.VIDEOS = {
     {
       "id": "NREnFtlGFcg",
       "title": "Orion: How Artemis Astronauts Hide From a Solar Storm",
-      "views": 100,
+      "views": 103,
       "short": true,
       "date": "2026-11-01",
       "description": "NASA's Crew Systems page states that during a radiation event the crew of the Orion spacecraft will open two large storage bays located beneath their seats in the central part of the crew module, remove all the stowage…"
@@ -185,7 +305,7 @@ window.VIDEOS = {
     {
       "id": "yHNSpAfVilA",
       "title": "Falcon 9 Flies for the 700th Time as SpaceX Launches 27 Starlink Satellites",
-      "views": 217,
+      "views": 218,
       "short": true,
       "date": "2026-11-01",
       "description": "On 31 October 2026 at 04:04 UTC a Falcon 9 lifted off from Vandenberg Space Force Base with 27 Starlink satellites (Starlink 15-18). It was the 700th Falcon 9 launch to date and the 118th of 2026, and its first stage…"
@@ -193,7 +313,7 @@ window.VIDEOS = {
     {
       "id": "gs6k7U7ODq8",
       "title": "SPL's Fabry-Perot Interferometer Measures Night Winds at Trivandrum",
-      "views": 99,
+      "views": 116,
       "short": true,
       "date": "2026-11-01",
       "description": "The Space Physics Laboratory (SPL) of the Vikram Sarabhai Space Centre (VSSC), ISRO, installed a ground-based Fabry-Perot Interferometer (FPI) at Trivandrum (8.5 N, 77 E, 0.5 degrees dip latitude), an Indian station…"
@@ -201,7 +321,7 @@ window.VIDEOS = {
     {
       "id": "8ZqphMD2akc",
       "title": "ISRO's GSLV-F18 Puts NVS-03 in Orbit: India's New Navigation Satellite With an L1 Signal",
-      "views": 96,
+      "views": 99,
       "short": true,
       "date": "2026-10-31",
       "description": "ISRO's GSLV-F18, the 20th GSLV flight, launched from the Second Launch Pad at Sriharikota on the night of 30 October 2026 and placed the navigation satellite NVS-03 in a Geosynchronous Transfer Orbit. Sources: - ISRO,…"
@@ -209,7 +329,7 @@ window.VIDEOS = {
     {
       "id": "aPK3J1zp7Vg",
       "title": "ISRO's GSLV-F18 Launch: Can Wind High Above Hold a Rocket?",
-      "views": 121,
+      "views": 122,
       "short": true,
       "date": "2026-10-31",
       "description": "ISRO set the launch of GSLV-F18 with the navigation satellite NVS-03 for 30 October 2026 at 11:51 pm IST from the Second Launch Pad of the Satish Dhawan Space Centre at Sriharikota, two days after the very severe…"
@@ -217,7 +337,7 @@ window.VIDEOS = {
     {
       "id": "muri5saShho",
       "title": "Why Is Space Black if the Sun Is So Bright?",
-      "views": 165,
+      "views": 166,
       "short": true,
       "date": "2026-10-29",
       "description": "Why is space black if the Sun is so bright? Light is only seen when something scatters it into the eye. On Earth, air molecules scatter sunlight by Rayleigh scattering, and blue light is scattered about four times more…"
@@ -225,7 +345,7 @@ window.VIDEOS = {
     {
       "id": "IJNh4tqgV6A",
       "title": "ISRO's Pushpak: Why Drop a Spaceplane From a Helicopter?",
-      "views": 56,
+      "views": 70,
       "short": true,
       "date": "2026-10-28",
       "description": "Why would ISRO drop a spaceplane from a helicopter? A reusable launch vehicle must come back and land intact so that it can fly again, and ISRO is testing a winged prototype that it calls Pushpak (the word spaceplane is…"
@@ -233,7 +353,7 @@ window.VIDEOS = {
     {
       "id": "1f8x_jD9dPI",
       "title": "नासा का साइकी स्पेसक्राफ्ट अपने धातु-समृद्ध एस्टेरॉयड की ओर लगभग लगातार थ्रस्ट कर रहा है",
-      "views": 22,
+      "views": 23,
       "short": true,
       "date": "2026-10-28",
       "description": "NASA/JPL के अनुसार, अक्टूबर 2023 में प्रक्षेपित और मंगल की ग्रैविटी असिस्ट से गति पाने वाले साइकी स्पेसक्राफ्ट ने 28 सितंबर 2026 से अपना इलेक्ट्रिक प्रोपल्शन सिस्टम लगभग लगातार चलाना शुरू किया है, और वह हफ़्ते में एक…"
@@ -241,7 +361,7 @@ window.VIDEOS = {
     {
       "id": "gG2L0DGxc6E",
       "title": "ISRO, Part 1: From a Church in Thumba to the First Satellite",
-      "views": 11,
+      "views": 15,
       "duration": "17:21",
       "date": "2026-10-27",
       "description": "In 1962 India had no rocket, no launch site and no satellite programme. This episode follows how a cosmic-ray physicist, a coastal village near the magnetic equator and a Soviet launch vehicle led to Aryabhata, the…"
@@ -249,7 +369,7 @@ window.VIDEOS = {
     {
       "id": "ipNj2L6JHs0",
       "title": "NISAR Explained: NASA-ISRO Radar Satellite, Venezuela Earthquakes and Anak Krakatau in 2026",
-      "views": 10,
+      "views": 12,
       "duration": "5:59",
       "date": "2026-10-27",
       "description": "NISAR is a radar satellite built by NASA and ISRO. ISRO's GSLV-F16 launched it from Sriharikota on 30 July 2025, and NASA released its first images on 25 September 2025. In this video, we follow what the mission has…"
@@ -257,7 +377,7 @@ window.VIDEOS = {
     {
       "id": "_R1cUw2Ybh0",
       "title": "Nancy Grace Roman Space Telescope Explained: Launch, First Checks and What Comes Next",
-      "views": 11,
+      "views": 12,
       "duration": "5:19",
       "date": "2026-10-27",
       "description": "What can a telescope see when its view is a hundred times wider than Hubble's, and what has it done since its launch on 30 August 2026? NASA says the Nancy Grace Roman Space Telescope has a field of view at least 100…"
@@ -265,7 +385,7 @@ window.VIDEOS = {
     {
       "id": "wBxBrvOoluw",
       "title": "Gaganyaan G1 Explained: What ISRO's Uncrewed Flight With Vyommitra Must Prove",
-      "views": 23,
+      "views": 33,
       "duration": "6:33",
       "date": "2026-10-27",
       "description": "Before astronauts fly on Gaganyaan, ISRO plans an uncrewed rehearsal called G1. ISRO's latest statement, on 16 October 2026, says it is \"targeted for launch in 2026\", and a government reply of 6 August 2026 places it in…"
@@ -273,7 +393,7 @@ window.VIDEOS = {
     {
       "id": "SaMKXKCdoPk",
       "title": "BepiColombo Reaches Mercury This November: Why Stopping There Is So Hard",
-      "views": 107,
+      "views": 108,
       "short": true,
       "date": "2026-10-27",
       "description": "BepiColombo is due to enter orbit around Mercury in November 2026. ESA's latest update, dated 6 October 2026, says the composite spacecraft will enter orbit around Mercury on 21 November 2026, and ESA's own timeline…"
@@ -281,7 +401,7 @@ window.VIDEOS = {
     {
       "id": "FB5s-gNhPr0",
       "title": "NASA's Dragonfly Rotorcraft Completes Its First Simulated Flight for Titan",
-      "views": 39,
+      "views": 41,
       "short": true,
       "date": "2026-10-27",
       "description": "According to NASA, Dragonfly has completed its first simulated flight on flight-like avionics at the Johns Hopkins Applied Physics Laboratory in Laurel, Maryland. In the simulation the rotorcraft separated from its back…"
@@ -289,7 +409,7 @@ window.VIDEOS = {
     {
       "id": "BAQVR247R98",
       "title": "NASA's Psyche Spacecraft Now Thrusts Almost Continuously Towards Its Metal-Rich Asteroid",
-      "views": 12,
+      "views": 13,
       "short": true,
       "date": "2026-10-27",
       "description": "According to NASA/JPL, the Psyche spacecraft, launched in October 2023 and boosted by a Mars gravity assist, began using its electric propulsion system nearly continuously on 28 September 2026, pausing once a week to…"
@@ -337,7 +457,7 @@ window.VIDEOS = {
     {
       "id": "U3fgxDJr9Y8",
       "title": "How Fiber Optics Work: Kao, Corning, Erbium Amplifiers and the Internet Under the Sea",
-      "views": 23,
+      "views": 26,
       "duration": "5:53",
       "date": "2026-10-26",
       "description": "How can a flash of light cross an ocean inside a thread of glass? In this video, we follow how that became possible, from a water jet in Geneva in 1841 to the amplifiers in today's cables, using primary sources: the…"
@@ -345,7 +465,7 @@ window.VIDEOS = {
     {
       "id": "PVn0zrqevXw",
       "title": "Space Debris Removal Explained: Magnets, Robot Arms, Drag Sails and the 5-Year Rule",
-      "views": 6,
+      "views": 9,
       "duration": "5:45",
       "date": "2026-10-26",
       "description": "How do you remove a dead satellite or a spent rocket stage from orbit, when nobody on board can steer it? ESA's model counts about 68,450 objects larger than 10 cm around Earth, only about 11,300 of them working…"
@@ -353,7 +473,7 @@ window.VIDEOS = {
     {
       "id": "pBWUljYZmoA",
       "title": "Neutron Stars Explained: Pulsars, Magnetars and the 2017 Merger That Could Have Made Gold",
-      "views": 5,
+      "views": 6,
       "duration": "5:36",
       "date": "2026-10-26",
       "description": "What would a teaspoon of a neutron star weigh? NASA's answer is a billion tons, on Earth. In this video, we look at what a neutron star is, how pulsars were found in 1967, how fast and how magnetic these stars can be,…"
@@ -361,7 +481,7 @@ window.VIDEOS = {
     {
       "id": "dSnEQB_aPgw",
       "title": "Sunita Williams and Starliner Explained: Why a Short Test Flight Became 286 Days in Orbit",
-      "views": 1,
+      "views": 2,
       "duration": "5:57",
       "date": "2026-10-26",
       "description": "How does a test flight planned for eight to fourteen days turn into 286 days in space? In this video, we follow the Starliner Crew Flight Test of Suni Williams and Butch Wilmore, using NASA's own pages and its…"
@@ -369,7 +489,7 @@ window.VIDEOS = {
     {
       "id": "xrxb8CyRvBA",
       "title": "Chandrayaan-3 Explained: What Vikram and Pragyan Measured Near the Moon's South Pole",
-      "views": 9,
+      "views": 11,
       "duration": "5:26",
       "date": "2026-10-26",
       "description": "How hot is the soil of the Moon near its south polar region, and how fast does the temperature change as you go down? In August 2023, India's Chandrayaan-3 measured it on the spot. In this video, we follow what the…"
@@ -377,7 +497,7 @@ window.VIDEOS = {
     {
       "id": "AqME5XyTg8A",
       "title": "Who Invented the Internet? ARPANET, TCP/IP and the Web Born at CERN Explained",
-      "views": 12,
+      "views": 14,
       "duration": "5:45",
       "date": "2026-10-26",
       "description": "Who invented the internet? The question mixes up two different inventions. The internet is a network of networks, and the World Wide Web is a service that runs on it. In this video, we separate the two, using primary…"
@@ -393,7 +513,7 @@ window.VIDEOS = {
     {
       "id": "MkeuZJB4rB4",
       "title": "Black Hole Size Comparison: How Big Is TON 618, and How Do We Know?",
-      "views": 11,
+      "views": 12,
       "duration": "5:26",
       "date": "2026-10-26",
       "description": "How big can a black hole get, and how do astronomers weigh something that gives off no light of its own? In this video, we line up black holes from a few solar masses to tens of billions, and we turn each mass into the…"
@@ -481,7 +601,7 @@ window.VIDEOS = {
     {
       "id": "RbFhBYpE9JY",
       "title": "Starlink and the Geomagnetic Storm of February 2022: Why 38 Satellites Were Lost",
-      "views": 58,
+      "views": 59,
       "duration": "5:46",
       "date": "2026-10-25",
       "description": "How can a storm that most people on the ground never noticed bring down 38 new satellites? On 3 February 2022 a Falcon 9 launched 49 Starlink satellites into a low orbit near 210 km, from which they raise themselves to…"
@@ -513,7 +633,7 @@ window.VIDEOS = {
     {
       "id": "Axm2vgJM--w",
       "title": "Mangalyaan (Mars Orbiter Mission) Explained: India's First Journey to Mars, 2013 to 2022",
-      "views": 36,
+      "views": 40,
       "duration": "6:16",
       "date": "2026-10-24",
       "description": "Reaching another planet asks a spacecraft to leave Earth, cross hundreds of millions of kilometres on its own, and then brake hard enough at the right moment to be captured. India's Mars Orbiter Mission, often called…"
@@ -696,21 +816,27 @@ window.VIDEOS = {
       "duration": "2:36"
     },
     {
+      "id": "dw6lO5pBSpY",
+      "title": "BepiColombo at Mercury Explained: Orbit on 21 November 2026",
+      "views": 9,
+      "duration": "5:27"
+    },
+    {
       "id": "O0yMsHIyIA4",
       "title": "Europa Clipper Explained: The Ocean, the December 2026 Earth Flyby and 49 Europa Flybys",
-      "views": 0,
+      "views": 3,
       "duration": "5:22"
     },
     {
       "id": "MeRZcWfs1EQ",
       "title": "The Indian Monsoon Explained: Sea Breeze or Moving Tropical Rain Belt (ITCZ)?",
-      "views": 9,
+      "views": 10,
       "duration": "6:16"
     },
     {
       "id": "8otmBst_VRo",
       "title": "Parker Solar Probe Explained: How the Fastest Spacecraft Reaches 192 km/s and Survives the Sun",
-      "views": 6,
+      "views": 10,
       "duration": "6:01"
     },
     {
@@ -722,7 +848,7 @@ window.VIDEOS = {
     {
       "id": "q2iit9eri_c",
       "title": "Where Did Your Phone Camera Come From? The CMOS Sensor From NASA's JPL",
-      "views": 5,
+      "views": 9,
       "duration": "5:45"
     },
     {
@@ -734,19 +860,19 @@ window.VIDEOS = {
     {
       "id": "jGcOUCJbDy0",
       "title": "Kessler Syndrome Explained: Space Debris, Satellite Collisions and the Rules to Limit Them",
-      "views": 11,
+      "views": 19,
       "duration": "6:54"
     },
     {
       "id": "txNkhfqiEKs",
       "title": "Exoplanet Transits Explained: How Kepler and TESS Find Planets Around Other Stars",
-      "views": 22,
+      "views": 23,
       "duration": "5:28"
     },
     {
       "id": "D5s1jYEszwc",
       "title": "Gaganyaan Explained: How ISRO Tests the Escape System, Parachutes and Crew",
-      "views": 42,
+      "views": 46,
       "duration": "5:59"
     },
     {
@@ -758,8 +884,56 @@ window.VIDEOS = {
     {
       "id": "fSU9F9by2PA",
       "title": "Auroras Explained: Their Colours, the May 2024 Superstorm and the Red Glow over Ladakh",
-      "views": 3,
+      "views": 6,
       "duration": "5:49"
+    },
+    {
+      "id": "VwxtwV5D-Yc",
+      "title": "Why Is the Sea Salty but Rivers Are Not?",
+      "views": 76,
+      "short": true
+    },
+    {
+      "id": "odaeJVsDX14",
+      "title": "Mars and Jupiter One Finger Apart in Leo: 16 November 2026, India",
+      "views": 85,
+      "short": true
+    },
+    {
+      "id": "rcxHW-o7mJE",
+      "title": "What Are China's Four Pathfinder Satellites Testing in Orbit?",
+      "views": 31,
+      "short": true
+    },
+    {
+      "id": "UIrYRPlh3Uk",
+      "title": "Gaganyaan G1: How the Indian Navy Will Recover the Crew Module From the Sea",
+      "views": 410,
+      "short": true
+    },
+    {
+      "id": "3HzJpWU78No",
+      "title": "BepiColombo Needs Nine Flybys Just to Stop at Mercury",
+      "views": 614,
+      "short": true
+    },
+    {
+      "id": "PdLayUSvH3Y",
+      "title": "What Is the Space Force's Classified Falcon 9 Payload?",
+      "views": 218,
+      "short": true
+    },
+    {
+      "id": "1JeoU5E0Wq8",
+      "title": "Marathon Space Blankets: Built on NASA Technology",
+      "views": 105,
+      "short": true
+    },
+    {
+      "id": "dBIQo3flhPI",
+      "title": "The Moon Is Leaving Earth at 3.8 Centimetres a Year",
+      "views": 1400,
+      "short": true
     },
     {
       "id": "bUXR0-Xc8h0",
@@ -834,5 +1008,5 @@ window.VIDEOS = {
       "short": true
     }
   ],
-  "updated": "2026-11-09"
+  "updated": "2026-11-16"
 };
